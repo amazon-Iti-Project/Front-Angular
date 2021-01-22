@@ -14,6 +14,8 @@ import { CarouselComponent } from 'src/app/appComponent/carousel/carousel.compon
 import { SidebarComponent } from 'src/app/appComponent/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { DeliveredPackageComponent } from './Components/delivered-package/delivered-package.component';
+import { SignInComponent } from '../auth/Components/sign-in/sign-in.component';
+import { SignUpComponent } from '../auth/Components/sign-up/sign-up.component';
 
 
 
@@ -28,7 +30,9 @@ import { DeliveredPackageComponent } from './Components/delivered-package/delive
     FooterComponent,
     CarouselComponent,
     SidebarComponent,
-    DeliveredPackageComponent
+    DeliveredPackageComponent,
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     CommonModule,

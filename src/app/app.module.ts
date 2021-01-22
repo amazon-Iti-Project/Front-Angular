@@ -14,6 +14,8 @@ import { OrderNavBarComponent } from './Modules/orders/Components/order-nav-bar/
 import { OrdersHomeComponent } from './Modules/orders/Components/orders-home/orders-home.component';
 import { PackageTrackComponent } from './Modules/orders/Components/package-track/package-track.component';
 import { DeliveredPackageComponent } from './Modules/orders/Components/delivered-package/delivered-package.component';
+import { SignUpComponent } from './Modules/auth/Components/sign-up/sign-up.component';
+import { SignInComponent } from './Modules/auth/Components/sign-in/sign-in.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { DeliveredPackageComponent } from './Modules/orders/Components/delivered
     OrderNavBarComponent,
     OrdersHomeComponent,
     PackageTrackComponent,
-    DeliveredPackageComponent
+    DeliveredPackageComponent,
+    SignUpComponent,
+    SignInComponent
     
   ],
   imports: [
