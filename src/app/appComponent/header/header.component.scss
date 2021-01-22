@@ -2,7 +2,7 @@
   .nav-height{min-height: 3.25em;}
 
   // on hover Navbar elements
-  .nav-haver
+  .nav-hover
   {
     border: 1px transparent solid;
     border-radius: 1px;
@@ -15,4 +15,7 @@
     *{
       font-family: inherit;
       font-weight: inherit;
+    }
+    .navbar-logo{
+      height:46px;
     }
