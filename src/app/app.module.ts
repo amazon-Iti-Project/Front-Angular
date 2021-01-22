@@ -9,6 +9,10 @@ import { CarouselComponent } from './appComponent/carousel/carousel.component';
 import { SidebarComponent } from './appComponent/sidebar/sidebar.component';
 import { HomeComponent } from './appComponent/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
+import { OrderNavBarComponent } from './Modules/orders/Components/order-nav-bar/order-nav-bar.component';
+import { OrdersHomeComponent } from './Modules/orders/Components/orders-home/orders-home.component';
+import { PackageTrackComponent } from './Modules/orders/Components/package-track/package-track.component';
 
 
 @NgModule({
@@ -18,12 +22,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FooterComponent,
     CarouselComponent,
     SidebarComponent,
-    HomeComponent
+    HomeComponent,
+    OrderNavBarComponent,
+    OrdersHomeComponent,
+    PackageTrackComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    RouterModule
      //font awesome Module
      // use this command to init
      //(npm install --save font-awesome angular-font-awesome)
