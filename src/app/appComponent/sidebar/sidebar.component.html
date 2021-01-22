@@ -1,0 +1,107 @@
+<p>sidebar works!</p>
+  <!-- Side bar starts -->
+  <!-- backgroun -->
+  <div id="sideBar">
+    <div  class="side-bar-bg d-flex">
+              this is side bar
+        </div>
+        <div class="side-bar-container d-flex  vh-100">
+        
+          <div class=" side-bar bg-white d-flex flex-column  ">
+            <!-- side nav -->
+            <div class=" side-nav-bg text-white d-flex p-3 font-amazon-bold h4  "> 
+              <i class="fas fa-user-circle"></i><p>&nbsp; Hello, Guest</p>
+            </div>
+            <!-- side col -->
+            <ul class="list-group ">
+              <!-- first list -->
+              <li class="list-group list-group-flush ">
+                <div class="d-flex flex-column  overflow-auto h6 font-amazon-normal px-3 ">
+                  <p class="h5 font-amazon-bold py-1">Shop by Department</p>
+                  <!--  -->
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                      Electronics
+                      <span class="fas fa-chevron-right"></span>
+                    </li>
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                      Computers and Accessories
+                      <span class="fas fa-chevron-right"></span>
+                    </li>
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                      Smart Homes
+                      <span class="fas fa-chevron-right"></span>
+                    </li>
+                    <!-- show more action -->
+                    <li class="list-group-item list-group-item-action seeAll"
+                    data-toggle="collapse" data-value=1 href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"
+                    onclick="toggleDisplayItem(this)">
+                      See All &nbsp<span class="fas fa-chevron-down" ></span>
+                    </li>
+                         <!-- collabse list -->
+                      <!--  -->
+                      <ul class="collapse list-group list-group-flush" id="collapseExample">
+                        <li  class=" list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                          Smart Homes
+                          <span class="fas fa-chevron-right"></span>
+                      </li>
+                      <li  class=" list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        Smart Homes
+                        <span class="fas fa-chevron-right"></span>
+                    </li>
+                    <li  class=" list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                      Smart Homes
+                      <span class="fas fa-chevron-right"></span>
+                  </li>
+                  <li  class=" list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    Smart Homes
+                    <span class="fas fa-chevron-right"></span>
+                </li>
+                <li  class=" list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                  Smart Homes
+                  <span class="fas fa-chevron-right"></span>
+              </li>
+              <li  class=" list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                Smart Homes
+                <span class="fas fa-chevron-right"></span>
+            </li>
+            <!-- show less action -->
+                      </ul>
+                    
+                    <li class="list-group-item list-group-item-action   seeAll "
+                    data-toggle="collapse" data-value=0 href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"
+                    onclick="toggleDisplayItem(this)"style="display: none;">
+                      See Less &nbsp<span class="fas fa-chevron-up" ></span>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!-- second group list -->
+              <li class="list-group list-group-flush">
+                <div class="d-flex flex-column  overflow-auto h6 font-amazon-normal px-3 ">
+                  <p class="h5 font-amazon-bold py-1">Help and Setting</p>
+                  <!--  -->
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                      Your Account
+                    </li>
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                      English
+                    </li>
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                      Help
+                     
+                    </li>
+                    <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                      Sign in
+                    </li>
+                  </ul>
+                  <!--  -->
+                </div>
+              </li>
+            </ul>
+          </div>
+            <!-- close button -->
+            <p onclick="closeSideBar()" class="fas fa-times h5 mx-2 text-white-50"></p>
+        </div>
+      </div>

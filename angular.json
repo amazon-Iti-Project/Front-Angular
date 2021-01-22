@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "AmazonProject"
+  "defaultProject": "AmazonProject",
+  "cli": {
+    "analytics": "3dfc5cbd-d88a-4971-92fc-2a55c8ae8be3"
+  }
 }

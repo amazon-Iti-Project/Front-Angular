@@ -1,1 +1,129 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'reset.css';
+$base-color: #EAEDED;
+$navBackground:#131921;
+$navBackground:#232F3E;
+$iconColor:#F3A847;
+// mixin for background color
+$font:amazon-font,Arial, Helvetica, sans-serif;
+//main font family
+@font-face {
+    font-family: amazon-font;
+    src: url(./fonts/Ember/AmazonEmber_Rg.ttf);
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: amazon-font;
+    src: url(./fonts/Ember/AmazonEmber_Bd.ttf);
+    font-weight: 200;
+}
+@font-face {
+  font-family: amazon-font;
+  src: url(./fonts/Ember/Amazon-Ember-Medium.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: amazon-font;
+  src: url(./fonts/Ember/AmazonEmber_Th.ttf);
+  font-weight: 400;
+}
+//1- global attributes
+*{
+    font-family: amazon-font,Arial, Helvetica, sans-serif;  
+    padding: 0;
+    margin: 0;
+    font-weight: 100;
+  }
+
+  .font-amazon-normal{
+    font-family:amazon-font ;
+    font-weight: 100!important;
+  }
+  .font-amazon-bold{
+    font-family:amazon-font ;
+    font-weight: 200!important;
+  }
+  .font-amazon-thin{
+    font-family:amazon-font ;
+    font-weight: 400!important;
+  }
+
+  // mixin For Size
+@mixin baseFonts($fontsize) {
+    font-size:$fontsize;
+    $baseFont: $font,Arial, Helvetica, sans-serif;  
+  }
+
+  // fonts size 
+  .font-0{@include baseFonts(0.8em);}
+  .font-1{@include baseFonts(0.95em);}
+  .font-2{@include baseFonts(1em);}
+  .font-3{@include baseFonts(1.2em);}
+// mixin for colors
+@mixin setBgColor($color){background-color:$color;}
+// mixin for textcolors
+@mixin setTextColor($color){color:$color;}
+
+.navBg{@include setBgColor(#131921);}
+.nav-2-Bg{@include setBgColor(#232F3E);}
+.icon-color{@include setBgColor($iconColor);}
+.icon-text-color{@include setTextColor($iconColor);}
+// img sizes
+  @mixin imgSize($imgSize) {width:$imgSize;}
+  .imgSize_0{ @include imgSize(0.5em);}
+  .imgSize_1{ @include imgSize(0.75em);}
+  .imgSize_2{ @include imgSize(1em);}
+  .imgSize_3{ @include imgSize(2em);}
+  .imgSize_4{ @include imgSize(3em);}
+  .imgSize_5{ @include imgSize(4em);}
+// hover menu
+
+// min width
+.fit-content{ width:max-content;}
+
+  // indicator position
+  .indicator{top:50%}
+  // item container position
+  .item-container{
+    top:-10vh;
+    min-width: 100%;
+  }
+
+
+
+   // media query to apply on item container class
+   @media only screen and (min-width: 992px) {
+    .item-container{
+      top:-20vh;
+      min-width: 100%;
+    }
+  }
+
+
+
+
+
+// department Page
+// side filter bar 
+.hover-txt-orange:hover{
+  color:#c45500!important;
+}
+
+
+.max-content{
+  max-width: fit-content;
+}
+
+.min-content{
+  min-width: max-content;
+}
+.active-tab {
+  color: #F3A847!important;
+}
+.display-none{
+  display: none;
+}
+.display-block{
+  display: block;
+}
+
