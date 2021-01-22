@@ -5,6 +5,7 @@ import { HomeComponent } from './appComponent/home/home.component';
 const routes: Routes = [
   { path: 'home', component:HomeComponent  },
   // { path: 'aboutus', component:  },
+  { path: 'category', loadChildren:()=> import('./Modules/categories/categories.module').then(module => module.CategoriesModule) },
   { path: 'sell', loadChildren:()=> import('./Modules/seller/seller.module').then(module => module.SellerModule) },
   { path: 'admin', loadChildren:()=> import('./Modules/admin/admin.module').then(module => module.AdminModule) },
   { path: 'auth', loadChildren:()=> import('./Modules/auth/auth.module').then(module => module.AuthModule) },
