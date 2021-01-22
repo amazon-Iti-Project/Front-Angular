@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { OrderNavBarComponent } from './Modules/orders/Components/order-nav-bar/order-nav-bar.component';
 import { OrdersHomeComponent } from './Modules/orders/Components/orders-home/orders-home.component';
 import { PackageTrackComponent } from './Modules/orders/Components/package-track/package-track.component';
+import { DeliveredPackageComponent } from './Modules/orders/Components/delivered-package/delivered-package.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PackageTrackComponent } from './Modules/orders/Components/package-track
     HomeComponent,
     OrderNavBarComponent,
     OrdersHomeComponent,
-    PackageTrackComponent
+    PackageTrackComponent,
+    DeliveredPackageComponent
     
   ],
   imports: [

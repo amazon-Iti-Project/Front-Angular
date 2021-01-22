@@ -13,6 +13,7 @@ import { FooterComponent } from 'src/app/appComponent/footer/footer.component';
 import { CarouselComponent } from 'src/app/appComponent/carousel/carousel.component';
 import { SidebarComponent } from 'src/app/appComponent/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
+import { DeliveredPackageComponent } from './Components/delivered-package/delivered-package.component';
 
 
 
@@ -26,7 +27,8 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     FooterComponent,
     CarouselComponent,
-    SidebarComponent
+    SidebarComponent,
+    DeliveredPackageComponent
   ],
   imports: [
     CommonModule,
