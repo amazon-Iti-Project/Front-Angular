@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'reset.css';
 $base-color: #EAEDED;
-$navBackground:#131921;
-$navBackground:#232F3E;
+$navBackground1:#131921;
+$navBackground2:#232F3E;
 $iconColor:#F3A847;
 // mixin for background color
 $font:amazon-font,Arial, Helvetica, sans-serif;
@@ -28,11 +28,11 @@ $font:amazon-font,Arial, Helvetica, sans-serif;
   font-weight: 400;
 }
 //1- global attributes
-*{
-    font-family: amazon-font,Arial, Helvetica, sans-serif;  
+*:not(.fab .fas){
+    font-family: amazon-font,Arial, Helvetica, sans-serif ;  
     padding: 0;
     margin: 0;
-    font-weight: 100;
+    font-weight: 100 ;
   }
 
   .font-amazon-normal{
@@ -64,8 +64,8 @@ $font:amazon-font,Arial, Helvetica, sans-serif;
 // mixin for textcolors
 @mixin setTextColor($color){color:$color;}
 
-.navBg{@include setBgColor(#131921);}
-.nav-2-Bg{@include setBgColor(#232F3E);}
+.navBg{@include setBgColor($navBackground1);}
+.nav-2-Bg{@include setBgColor($navBackground2);}
 .icon-color{@include setBgColor($iconColor);}
 .icon-text-color{@include setTextColor($iconColor);}
 // img sizes
@@ -109,6 +109,10 @@ $font:amazon-font,Arial, Helvetica, sans-serif;
   color:#c45500!important;
 }
 
+// to be checked to be deleted
+.active-tab {
+  color: #F3A847!important;
+}
 
 .max-content{
   max-width: fit-content;
@@ -117,9 +121,7 @@ $font:amazon-font,Arial, Helvetica, sans-serif;
 .min-content{
   min-width: max-content;
 }
-.active-tab {
-  color: #F3A847!important;
-}
+
 .display-none{
   display: none;
 }

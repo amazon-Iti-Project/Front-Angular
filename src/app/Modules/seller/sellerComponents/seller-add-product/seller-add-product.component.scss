@@ -1,0 +1,20 @@
+.bg-addProduct{
+    background-color:#D6D5D6;
+  }
+  .bg-nav-addproduct{
+    background-color:#DCDBDC;
+  }
+  .nav-tabs .nav-link.active{
+    color: orangered;
+  }
+ .nav-tabs .nav-link{
+    color: black;
+  }
+  .button-addproduct-hover:hover{
+    color: #fca432;
+    border-color: #fca432;
+  }
+  button:disabled {
+    border-color: #fca432;
+    background-color: #fca4327c;
+  }
