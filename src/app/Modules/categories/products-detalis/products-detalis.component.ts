@@ -13,7 +13,8 @@ import{Location} from '@angular/common'
 
 export class ProductsDetalisComponent implements OnInit {
   prd:Iproduct|null=null;
-  prdID:number=0;
+  // this is passed Id >>> 
+  prdID:number=1;
 
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -22,11 +23,13 @@ export class ProductsDetalisComponent implements OnInit {
 
     ngOnInit(): void {
       this.activatedRoute.paramMap.subscribe((params:ParamMap)=>{
-        let prdIDParam = params.get('1')
+        // this will be handeled lated
+        let prdIDParam = params.get('pId')
         this .prdID= (prdIDParam)? parseInt(prdIDParam) : 0;
         // this.prd= this.prdService.getProductByID(this.prdID);
         this.pService.getProductById(this.prdID).subscribe(
           (res)=>{
+            console.log(res)
             this.prd=res;
           }
         )
