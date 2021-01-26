@@ -1,5 +1,43 @@
 {
-    "products": [],
-    "categories": [],
-    "users": []
-  }
+  "products": [],
+  "categories": [
+    {
+      "id": 1,
+      "name": "category1",
+      "image": "firstUrl"
+    },
+    {
+      "name": "category2",
+      "image": "firstUrl",
+      "id": 2
+    },
+    {
+      "name": "category3",
+      "image": "firstUrl",
+      "id": 3
+    }
+  ],
+  "brands": [
+    {
+      "name": "brand1",
+      "image": "firstUrl",
+      "id": 1
+    },
+    {
+      "name": "brand2",
+      "image": "firstUrl",
+      "id": 2
+    },
+    {
+      "name": "brand3",
+      "image": "firstUrl",
+      "id": 3
+    },
+    {
+      "name": "brand4",
+      "image": "firstUrl",
+      "id": 4
+    }
+  ],
+  "users": []
+}

@@ -12,6 +12,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TestNavComponent } from './appComponent/test-nav/test-nav.component';
 import { HomeBodyComponent } from './appComponent/home-body/home-body.component';
 import { NotFoundComponent } from './appComponent/not-found/not-found.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -30,10 +32,16 @@ import { NotFoundComponent } from './appComponent/not-found/not-found.component'
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-     //font awesome Module
-     // use this command to init
-     //(npm install --save font-awesome angular-font-awesome)
+    //font awesome Module
+    // use this command to init
+    //(npm install --save font-awesome angular-font-awesome)
     //  AngularFontAwesomeModule
+    // to use NgModel
+    FormsModule,
+    //have service to use Http requests for apis 
+    HttpClientModule,
+    // for reactive forms
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

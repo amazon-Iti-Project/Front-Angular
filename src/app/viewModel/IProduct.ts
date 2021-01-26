@@ -1,5 +1,6 @@
 
 export interface Iproduct{
+  id:number;
   name:string;
   image:string|ArrayBuffer;
   description?:string;
@@ -9,12 +10,14 @@ export interface Iproduct{
   price:number;
   shipping:number;
   fee:number;
+  discount:number;
   quantity:number;
   brand:number;
   category:number;
 }
 export interface IproductSeller{
-
+  
+  
 }
 
 

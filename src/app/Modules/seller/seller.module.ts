@@ -7,6 +7,8 @@ import { SellerHomeLeftComponent } from './sellerComponents/seller-home-left/sel
 import { SellerHomeRightComponent } from './sellerComponents/seller-home-right/seller-home-right.component';
 import { SellerAddProductComponent } from './sellerComponents/seller-add-product/seller-add-product.component';
 import { SellerHomeBodyComponent } from './sellerComponents/seller-home-body/seller-home-body.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes:Routes = [
   {path:'home',component:SellerHomeComponent},
@@ -23,7 +25,13 @@ const routes:Routes = [
     SellerHomeBodyComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule,
+    //have service to use Http requests for apis 
+    HttpClientModule,
+    // for reactive forms
+    ReactiveFormsModule
+
   ]
 })
 export class SellerModule { }

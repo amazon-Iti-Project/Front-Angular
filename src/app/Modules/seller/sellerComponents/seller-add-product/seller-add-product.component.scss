@@ -1,3 +1,4 @@
+
 .bg-addProduct{
     background-color:#D6D5D6;
   }
@@ -10,11 +11,29 @@
  .nav-tabs .nav-link{
     color: black;
   }
-  .button-addproduct-hover:hover{
-    color: #fca432;
-    border-color: #fca432;
-  }
+
   button:disabled {
+    color: black;
     border-color: #fca432;
     background-color: #fca4327c;
   }
+
+  button:not(disapled){
+    color: #fa9004;
+    border-color: #ff9100;
+  }
+  button:enabled:hover{
+    color: black;
+    font-weight: 200!important;
+    border-color: #fda22c;
+    background-color: #fcd097 ;
+  }
+
+  
+
+  button, input, optgroup, select, textarea,option{
+    font-family: amazon-font,Arial, Helvetica, sans-serif !important ;  
+    font-weight: 100 !important;
+
+  }
+  

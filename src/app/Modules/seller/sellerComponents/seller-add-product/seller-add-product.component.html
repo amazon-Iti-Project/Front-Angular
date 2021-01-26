@@ -22,57 +22,56 @@
       </div>
     </nav>
     <!-- taps content container -->
-    <div class="tab-content p-3" id="nav-tabContent">
+    <form  [formGroup]="prodForm"  class="tab-content p-3 font-amazon-normal" id="nav-tabContent">
       <!-- tap1 product detail -->
       <div class="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
         <!-- product form -->
-        <form class="font-amazon-normal">
           <div class="form-row ">
             <!-- product id input and choose -->
-            <div class="col-12 form-group d-flex justify-content-between p-1">
-              <label class="min-content pr-2 align-self-center " for="prodId">Product Id</label>
-              <input type="text" class="form-control" id="prodId">
-              <select class="custom-select max-content font-amazon-normal" id="validationTooltip04" required>
+            <div class="col-12 form-group d-flex justify-content-between p-0 row">
+              <div class="d-flex col ">
+                <label class="min-content pr-2 align-self-center " for="prodId">category</label>
+                <!-- <input type="text" class="form-control" id="prodId"> -->
+                <select formControlName="category" class="custom-select  " id="validationTooltip04" required>
+                  <option selected disabled value="">select</option>
+                  <option *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</option>
+                </select>
+              </div>
+              <div class="d-flex col ">
+              <label class="min-content pr-2 align-self-center " for="prodId">brand</label>
+              <select formControlName="brand" class="custom-select  " id="validationTooltip04" required>
                 <option selected disabled value="">select</option>
                 <option>5430A</option>
               </select>
             </div>
+
+            </div>
             <!-- product Name -->
             <div class="col-12 form-group d-flex justify-content-between p-1">
               <label class="min-content pr-2 align-self-center " for="pId">Product Name</label>
-              <input type="text" class="form-control" id="prodId" placeholder="ex.C50-Digital Camera">
+              <input formControlName="name" type="text" class="form-control" id="prodId" placeholder="ex.C50-Digital Camera">
             </div>
-              <!-- product Brand -->
-              <div class="col-12 form-group d-flex justify-content-between p-1">
-                <label class="min-content pr-2 align-self-center " for="pname">Product Brand</label>
-                <input type="text" class="form-control"placeholder="ex.sony,samsung" id="prodId">
-              </div>
               <!-- product color -->
               <div class="col-12 form-group d-flex justify-content-between p-1">
                 <label class="min-content pr-2 align-self-center " for="prodId">Color</label>
-                <input type="text" class="form-control" id="pcolor">
-              </div>
+                <input formControlName="color" type="text" class="form-control" id="pcolor">
               <!-- product size -->
-              <div class="col-12 form-group d-flex justify-content-between p-1">
-                <label class="min-content pr-2 align-self-center " for="prodId">size</label>
-                <input type="text" class="form-control" id="psize" placeholder="ex.smallxLarge">
+                  <label class="min-content mx-2 pr-2 align-self-center " for="prodId">size</label>
+                  <input formControlName="size"  type="text" class="form-control" id="psize" placeholder="ex.smallxLarge">
               </div>
           </div>
 
-        </form>
       </div>
 
 
       <!-- tap2 product image -->
       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
         <div class="input-group mb-3">
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile02">
-            <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+          <div class="custom-file ">
+            <input type="file" class="custom-file-input " id="inputGroupFile02">
+            <label class="custom-file-label font-amazon-normal" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
           </div>
-          <div class="input-group-append">
-            <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-          </div>
+         
         </div>
       </div>
       <!-- tap3 product Info -->
@@ -92,11 +91,11 @@
       </div>
       </div>
  
-   
+    <!-- submit button -->
     <div class="container d-flex justify-content-center  ">
-     <button type="button"  class="btn button-addproduct-hover mx-2 font-amazon-bold">Cancel</button>
-       <button type="button" disabled class="btn  mx-2 font-amazon-bold">Safe and Finish</button>
+     <button type="button"  class="btn  mx-2 ">Cancel</button>
+       <button type="button" [disabled]="prodForm?.invalid" class="btn  mx-2 ">Safe and Finish</button>
     </div>
   
-    </div>
+  </form>
   </div>
