@@ -23,7 +23,7 @@ export class ProductsDetalisComponent implements OnInit {
     ngOnInit(): void {
       this.activatedRoute.paramMap.subscribe((params:ParamMap)=>{
         let prdIDParam = params.get('1')
-        this.prdID= (prdIDParam)? parseInt(prdIDParam) : 0;
+        this .prdID= (prdIDParam)? parseInt(prdIDParam) : 0;
         // this.prd= this.prdService.getProductByID(this.prdID);
         this.pService.getProductById(this.prdID).subscribe(
           (res)=>{
