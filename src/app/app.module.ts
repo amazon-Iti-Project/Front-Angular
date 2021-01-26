@@ -9,6 +9,7 @@ import { CarouselComponent } from './appComponent/carousel/carousel.component';
 import { SidebarComponent } from './appComponent/sidebar/sidebar.component';
 import { HomeComponent } from './appComponent/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TestNavComponent } from './appComponent/test-nav/test-nav.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FooterComponent,
     CarouselComponent,
     SidebarComponent,
-    HomeComponent
+    HomeComponent,
+    TestNavComponent
   ],
   imports: [
     BrowserModule,
