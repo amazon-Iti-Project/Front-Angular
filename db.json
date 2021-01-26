@@ -1,5 +1,11 @@
 {
-  "products": [],
+  "products": [
+    {
+      "id":1,
+      "name":"Lenovo",
+      "price":150
+    }
+  ],
   "categories": [
     {
       "id": 1,
