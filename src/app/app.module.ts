@@ -10,6 +10,10 @@ import { SidebarComponent } from './appComponent/sidebar/sidebar.component';
 import { HomeComponent } from './appComponent/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TestNavComponent } from './appComponent/test-nav/test-nav.component';
+import { HomeBodyComponent } from './appComponent/home-body/home-body.component';
+import { NotFoundComponent } from './appComponent/not-found/not-found.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -20,16 +24,24 @@ import { TestNavComponent } from './appComponent/test-nav/test-nav.component';
     CarouselComponent,
     SidebarComponent,
     HomeComponent,
-    TestNavComponent
+    TestNavComponent,
+    HomeBodyComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-     //font awesome Module
-     // use this command to init
-     //(npm install --save font-awesome angular-font-awesome)
+    //font awesome Module
+    // use this command to init
+    //(npm install --save font-awesome angular-font-awesome)
     //  AngularFontAwesomeModule
+    // to use NgModel
+    FormsModule,
+    //have service to use Http requests for apis 
+    HttpClientModule,
+    // for reactive forms
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

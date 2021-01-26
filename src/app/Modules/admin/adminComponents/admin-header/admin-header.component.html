@@ -1,0 +1,116 @@
+
+<p>admin header works!</p>
+     <!-- Nav Bar1 -->
+     <nav class="navbar  navbar-expand-md navbar-dark navBg p-0 pl-2 pr-2 nav-height ">
+        <!-- nav Logo -->
+        <a class="navbar-brand" href="index.html">
+          <p class="fab fa-amazon h1 p-0 icon-text-color  "></p>
+        </a>
+        <!-- toggler button -->
+        <div class="collapse navbar-collapse  justify-content-end" id="navbarSupportedContent">
+          <!-- search input -->
+          <form class="w-50 d-md-block d-none ">
+            <div class="form-row align-items-center">
+              <div class="col-auto w-100">
+                <label class="sr-only" for="inlineFormInputGroup">search</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                    <!-- all dropdown Menu -->
+                    <button class="btn btn-light input-group-text dropdown-toggle text-dark font-1"
+                      data-toggle="dropdown">All</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                  <!-- search input -->
+                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="search">
+                  <!-- search icon -->
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-warning input-group-text icon-color fas fa-search"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </nav>
+    
+      <!-- Nav Bar2 -->
+      <nav class="navbar navbar-expand-md navbar-dark nav-2-Bg py-0 px-2 nav-height font-amazon-normal" >
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- list1 start -->
+          <ul class="nav nav-tabs navbar-nav justify-content-start align-items-baseline " role="tablist">
+            <li class="nav-item " onclick="showSide()">
+              <!-- All menus -->
+                <a class="nav-link  d-flex align-items-end " id="sidebtn">
+                  <span class="fas fa-bars h4 m-0 text-white "></span>
+                  <span class="font-2 px-1 text-white">All</span>
+                </a>
+            </li>
+            <li class="nav-item  "onclick="activeTab(this)">
+              <a class="nav-link active " data-toggle="tab" href="#dashboard">
+                <span >Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item "onclick="activeTab(this)">
+              <a class="nav-link " data-toggle="tab" href="#products">
+                <span >Products</span>
+              </a>
+            </li>
+            <li class="nav-item "onclick="activeTab(this)">
+              <a class="nav-link " data-toggle="tab" href="#orders">
+                <span >Orders</span>
+              </a>
+            </li>
+            <li class="nav-item "onclick="activeTab(this)">
+              <a class="nav-link " data-toggle="tab" href="#customers">
+                <span >Customers</span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link  "onclick="activeTab(this)" data-toggle="tab" href="#sellers">
+                <span >Sellers</span>
+              </a>
+            </li>
+            <li class="nav-item "onclick="activeTab(this)">
+              <a class="nav-link " data-toggle="tab" href="#earings">
+                <span>Earings</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+        <!-- nav bar3 -->
+        <nav class="navbar navbar-expand navbar-light bg-white shadow-sm ">
+            <span class="nav-item font-amazon-bold font-1">1-16 over 100,000 Result</span>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item d-flex">
+                        <div class="dropdown px-2">
+                            <button class="btn btn-light shadow-sm dropdown-toggle rounded shadow-sm p-0" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="font-amazon-normal font-1">Desending</span>
+                            </button>
+                            <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item font-amazon-normal font-1" href="#"> Desending</a>
+                                <a class="dropdown-item font-amazon-normal font-1" href="#"> Ascending</a>
+                            </div>
+                        </div>
+                        <div class="dropdown px-2">
+                            <button class="btn btn-light shadow-sm dropdown-toggle rounded shadow-sm p-0" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="font-amazon-normal">sorty by:</span><span class="font-amazon-normal">stock
+                                    number</span>
+                            </button>
+                            <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item font-amazon-normal" href="#"> price</a>
+                                <a class="dropdown-item font-amazon-normal" href="#"> price</a>
+                                <a class="dropdown-item font-amazon-normal" href="#">stock number</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
