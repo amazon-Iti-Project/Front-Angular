@@ -1,5 +1,129 @@
 {
-    "products": [],
-    "categories": [],
+    "products": [
+      {
+        "id" :1,
+        "categoryName" : "laptops",
+        "name" : "Acer Swift 3 Intel Evo Thin & Light Laptop, 14' Full HD, Intel Core i7-1165G7, Intel Iris Xe Graphics, 8GB LPDDR4X, 256GB NVMe SSD, Wi-Fi 6, Fingerprint Reader, Back-lit KB, SF314-59-75QC",
+        "rating" : 30,
+        "currentPrice" : 10.53,
+        "cents" : 99,
+        "oldPrice" : 12.77,
+        "stock" : 5,
+        "shippingLabel" : true,
+        "img" : "https://m.media-amazon.com/images/I/61LHj2XV1wL._AC_UY218_.jpg",
+        "about":"This laptop is simply powerful and portable and delivers exceptional performance for everyday com...",
+        "title":"Top Pick Recommendation",
+        "subtitle":"Making your life easier"
+      },
+      {
+        "id" :2,
+        "categoryName" : "laptops",
+        "name" : "CHUWI AeroBook Pro 13.3 inch 8th Intel Core M3-8100Y 8GB RAM 256GB SSD Laptop,Windows 10 Notebook,Thin and Lightweight Notebook with Backlit Keyboard Type-C",
+        "rating" : 22,
+        "currentPrice" : 4.57,
+        "cents" : 99,
+        "oldPrice" : 9.05,
+        "stock" : 1,
+        "shippingLabel" : false,
+        "img" : "https://m.media-amazon.com/images/I/71vvXGmdKWL._AC_UY218_.jpg",
+        "brand" : ["HP", "Acer", "Lenovo", "ASUS", "Dell", "Microsoft", "Apple"],
+        "about":"This laptop is simply powerful and portable and delivers exceptional performance for everyday com...",
+        "title":"Productive Performance",
+        "subtitle":"Speed you need"
+      },
+      {
+        "id" :3,
+        "categoryName" : "laptops",
+        "name" : "Lenovo IdeaPad 3 14' Laptop, 14.0' FHD 1920 x 1080 Display, AMD Ryzen 5 3500U Processor, 8GB DDR4 RAM, 256GB SSD, AMD Radeon Vega 8 Graphics, Narrow Bezel, Windows 10",
+        "rating" : 98,
+        "currentPrice" : 505,
+        "cents" : 0,
+        "oldPrice" : 0.0,
+        "stock" : 45,
+        "shippingLabel" : true,
+        "img" : "https://m.media-amazon.com/images/I/81fstJkUlaL._AC_UY218_.jpg",
+        "brand" : ["HP", "Acer", "Lenovo", "ASUS", "Dell", "Microsoft", "Apple"],
+        "about":"This laptop is simply powerful and portable and delivers exceptional performance for everyday com...",
+        "title":"Innovative Features",
+        "subtitle":"Be ahead"
+      }
+    ],
+    "categories": [
+      {
+        "title":"Computers & Accessories",
+        "data":[
+          {
+            "id":1,
+            "name":"External Hard Drives",
+            "img":"https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/91S1naupylL_harddrive._CB403556433_.jpg"    
+          },
+          {
+            "id":2,
+            "name":"Laptops",
+            "img":"https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/258726044.jpg"
+          },
+          {
+            "id":3,
+            "name":"Tablets",
+            "img":"https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/tablet.jpg"
+          },
+          {
+            "id":4,
+            "name":"Internal State Drives",
+            "img":"https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/61se5nkFVkL._CB403556432_.jpg"
+          }
+        ]
+      },
+      {
+        "title" : "Mobile Phones & Accessories",
+        "data":[
+          {
+            "id":5,
+            "name":"Mobile Phones",
+            "img":"https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/385336660.jpg"
+          },
+          {
+            "id":6,
+            "name":"Fitness GPS",
+            "img":"https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/71q48i0pGcL_gps.jpg"
+          },
+          {
+            "id":7,
+            "name":"Cases",
+            "img":"https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/61Rrv-bvdhL.jpg"
+          },
+          {
+            "id":8,
+            "name":"Smart Watches",
+            "img":"https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/71NWRdNUfYL_smartwatch.jpg"
+          }
+        ]
+      },
+      {
+        "title":"Set The Table",
+        "data":[
+          {
+            "id":9,
+            "name":"Tablecloths",
+            "img":"https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/March/Fuji_Passover_Tablecloth2._CB422372530_.jpg"
+          },
+          {
+            "id":10,
+            "name":"Cutlery",
+            "img":"https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/March/Fuji_Passover_Cutlery_v3._CB422560501_.jpg"
+          },
+          {
+            "id":11,
+            "name":"Napkins",
+            "img":"https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/March/Fuji_Passover_Napkins_v2._CB422559805_.jpg"
+          },
+          {
+            "id":12,
+            "name":"Dinnerware",
+            "img":"https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/March/Fuji_Passover_Dinnerware_v2._CB422559827_.jpg"
+          }
+        ]
+      }
+    ],
     "users": []
   }

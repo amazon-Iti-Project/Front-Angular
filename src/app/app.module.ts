@@ -9,6 +9,7 @@ import { CarouselComponent } from './appComponent/carousel/carousel.component';
 import { SidebarComponent } from './appComponent/sidebar/sidebar.component';
 import { HomeComponent } from './appComponent/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
      // use this command to init
      //(npm install --save font-awesome angular-font-awesome)
     //  AngularFontAwesomeModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
