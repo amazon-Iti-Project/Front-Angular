@@ -1,0 +1,87 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-11 col-sm-12 p-0">
+            <div class="row mt-4 w-100 mx-0">
+                <!-- left side menu for filtering -->
+                <div class="col-2 left-menu">
+                    <div id="department" class="mb-3">
+                        <strong><span>Departments</span></strong><br>
+                        <div class="ml-3 mb-3 links">
+                    <a href="#"><span>Deals</span></a><br>
+                    <a href="#"><span>Amazon International Shopping</span></a><br>
+                    <a href="#"><span>Arts & Crafts</span></a><br>
+                    <a href="#"><span>Automotive</span></a><br>
+                    <a href="#"><span>Baby</span></a><br>
+                    <a href="#"><span>Beauty & Personal Care</span></a><br>
+                    <a href="#"><span>Books</span></a><br>
+                    <a href="#"><span>Computers</span></a><br>
+                    <a href="#"><span>Electronics</span></a><br>
+                    <a href="#"><span>Women's Fashion</span></a><br>
+                    <a href="#"><span>Men's Fashion</span></a><br>
+                    <a href="#"><span>Girls' Fashion</span></a><br>
+                    <a href="#"><span>Boys' Fashion</span></a><br>
+                    <a href="#"><span>Health & Household</span></a><br>
+                    <a href="#"><span>Home & Kitchen</span></a><br>
+                    <a href="#"><span>Industrial & Scientific</span></a><br>
+                    <a href="#"><span>Luggage</span></a><br>
+                    <a href="#"><span>Movies & Television</span></a><br>
+                    <a href="#"><span>Music, CDs & Vinyl</span></a><br>
+                    <a href="#"><span>Pet Supplies</span></a><br>
+                    <a href="#"><span>Software</span></a><br>
+                    <a href="#"><span>Sports & Outdoors</span></a><br>
+                    <a href="#"><span>Tools & Home Improvement</span></a><br>
+                    <a href="#"><span>Toys & Games</span></a><br>
+                    <a href="#"><span>Video Games</span></a><br>
+                        </div>
+                        <strong><span class="mt-4">Departments</span></strong><br>
+                        <strong><span class=" ml-3">International Shopping Top</span></strong><br>
+                        <strong><span class="mt-4">Categories</span></strong><br>   
+                    </div>
+                </div>
+                <!-- main center menu -->
+                <div class="col-10">
+                    <a href="#">
+                        <img src="assets/images/cat-head1.jpg" class="img-fluid">
+                    </a>
+                    <a href="#">
+                        <img src="assets/images/cat-head2.jpg" class="img-fluid mt-4">
+                    </a>
+                    <ng-container *ngFor="let cat of catList">
+                        <img *ngIf="cat.title=='Set The Table'" class="img-fluid" src="assets/images/cat-head3.jpg">
+                        <section class="my-2">
+                            <h2 class="title my-2"><strong>{{cat.title}}</strong></h2>
+                            <div class="row py-4">
+                                <ng-container *ngFor="let item of cat.data">
+                                    <div class="col-3 sec-details">
+                                        <a [routerLink]="'/departments/'+item.name">
+                                            <img class="img-fluid" src={{item.img}}> 
+                                        </a>
+                                        <div class="sub-title px-2">
+                                            <span>{{item.name}}</span>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </section>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="col-1 sticky-top d-sm-none d-md-block" id="side-menu">
+            <span> Subtotal</span><br>
+            <strong class="price-tag">$<span>20.23</span></strong>
+            <div class="cart-items w-90 mt-3">
+                <div>
+                    <a href="#">
+                        <img class="img-fluid mt-4" src="images/lap-img.jpg">
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img class="img-fluid mt-4" src="images/glasses.jpg">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

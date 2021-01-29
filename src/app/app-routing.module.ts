@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'seller', loadChildren:()=> import('./Modules/seller/seller.module').then(module => module.SellerModule) },
   { path: 'admin', loadChildren:()=> import('./Modules/admin/admin-app.module').then(module => module.AdminModule) },
   { path: 'auth', loadChildren:()=> import('./Modules/auth/auth.module').then(module => module.AuthModule) },
+  {path:'departments', loadChildren:()=> import('src/app/Modules/categories/categories.module').then(m => m.CategoriesModule ) },
   { path: '', redirectTo: '', pathMatch: 'full' },
   
   // Default path 

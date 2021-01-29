@@ -8,6 +8,7 @@ export const environment = {
   brands:'brands',
   categories:'categories',
   products:'products',
+  // API_URL:"http://localhost:3000"
 };
 
 /*

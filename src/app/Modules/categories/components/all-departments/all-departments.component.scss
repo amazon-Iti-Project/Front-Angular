@@ -1,0 +1,69 @@
+.container-fluid{
+    font-size: 14px;
+    line-height: 20px;
+    background-color: white;
+    // font-family: Arial, sans-serif; // Amazon-light
+    margin: 0%;
+  }
+  
+//   @font-face {
+//     font-family: Amazon-light;
+//     // src: url(../fonts/AmazonEmber_Rg.ttf);
+//   }
+  
+  #side-menu {
+    background-color: white;
+    text-align: center;
+    padding-top: 10px;
+    height: 100%;
+    border-left: 1px solid lightgray;
+    position: sticky;
+  }
+  #side-menu span{
+    font-size: 1vw;
+  }
+  .price-tag {
+    color: #B12708;
+  }
+  .cart-items{
+    word-wrap: break-word;
+  }
+  .left-menu {
+    border-right: 1px solid lightgray;
+  }
+  
+  .side-links {
+    padding-left: 10px;
+  }
+  
+  .left-menu a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #C4550C !important;
+  }
+  
+  .links span {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .title {
+    font-size: 21px;
+    text-align: center;
+  }
+  
+  .sub-title {
+    background-color: rgba(255, 255, 255, .9);
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .sec-details {
+    position: relative;
+    color: black;
+  }
