@@ -10,8 +10,8 @@ import { IProduct } from '../viewModels/IProduct';
 export class ProductsJsonService {
 
   constructor(private httpClient : HttpClient) { }
-  getProductsByCatName(catName : string) : Observable<IProduct[]>{
-    return this.httpClient.get<IProduct[]>
-    (`${environment.API_URL}/products?categoryName=${catName}`);
-  }
+  // getProductsByCatName(catName : string) : Observable<IProduct[]>{
+  //   return this.httpClient.get<IProduct[]>
+  //   (`${environment.API_URL}/products?categoryName=${catName}`);
+  // }
 }

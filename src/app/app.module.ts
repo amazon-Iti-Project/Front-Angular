@@ -22,16 +22,12 @@ import {HttpClientModule} from '@angular/common/http';
     // use this command to init
     //(npm install --save font-awesome angular-font-awesome)
     //  AngularFontAwesomeModule
-<<<<<<< HEAD
     // to use NgModel
     FormsModule,
     //have service to use Http requests for apis 
     HttpClientModule,
     // for reactive forms
     ReactiveFormsModule,
-=======
-    HttpClientModule
->>>>>>> CatChangeBySal
   ],
   providers: [],
   bootstrap: [AppComponent]

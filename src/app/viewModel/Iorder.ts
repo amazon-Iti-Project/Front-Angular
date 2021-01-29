@@ -4,7 +4,7 @@ export interface Iorder{
     id:number;
     products:number[];
     customer:number;
-    status:DELIVERY_STATE;
+    state:DELIVERY_STATE;
     payment:number;
     address:string;
     orderShip:number;

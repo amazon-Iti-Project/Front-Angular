@@ -117,7 +117,9 @@
       "customer": 1,
       "payment": 1,
       "address": "orderAddress",
+      "state":0,
       "orderShip": 200,
+      "orderPrice": 250,
       "date": "2020",
       "id": 1
     },
@@ -195,7 +197,7 @@
   ],
   "customers": [
     {
-      "user": 20,
+      "user": 1,
       "cart": [
         1,
         2,

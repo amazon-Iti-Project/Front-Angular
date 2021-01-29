@@ -17,12 +17,12 @@ export class AllDepartmentsComponent implements OnInit {
     private router : Router) {
   }
   ngOnInit(): void {
-    const sub = this.catService.getAllCategories().subscribe(
-      response => { this.catList = response;
-        console.log(this.catList);
-      },
-      error => { console.log(error); }
-    );
-    this.subscriptionList.push(sub);
+    // const sub = this.catService.getAllCategories().subscribe(
+    //   response => { this.catList = response;
+    //     console.log(this.catList);
+    //   },
+    //   error => { console.log(error); }
+    // );
+    // this.subscriptionList.push(sub);
   }
 }

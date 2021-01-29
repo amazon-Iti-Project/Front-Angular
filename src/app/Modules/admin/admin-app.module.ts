@@ -16,14 +16,9 @@ import { ProductSummaryComponent } from './adminComponents/product-statistics/pr
 import { ProductExpectedComponent } from './adminComponents/product-statistics/product-expected/product-expected.component';
 import { ProductTapsComponent } from './adminComponents/product-statistics/product-taps/product-taps.component';
 
-// const routes:Routes = [
-//   // {path:'home',component:AdminHomeComponent},
-//   { path: 'home1', loadChildren:()=> import('./admin-home/admin-home.module').then(module =>AdminHomeModule ) },
-
-// ]
 const routes: Routes = [
   {
-    path: "", component: AdminHomeComponent, children: [
+    path: '' ,component: AdminHomeComponent, children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'products', component: ProductStatisticsComponent },
       { path: 'customers', component: CustomerStatisticsComponent },
@@ -31,7 +26,7 @@ const routes: Routes = [
       { path: 'orders', component: OrderStatisticsComponent },
       { path: 'earings', component: EaringsStatisticsComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      // { path: "**", component: NotFoundComponent }
+      { path: "**", component: NotFoundComponent }
     ]
   }
 ]
@@ -55,7 +50,7 @@ const routes: Routes = [
   imports: [
   CommonModule,
     RouterModule.forChild(routes),
-    // AdminHomeModule
+    // RouterModule
   ],
   // exports: [RouterModule],
 })

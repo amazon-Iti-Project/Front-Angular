@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class CategoriesJSONService {
 
   constructor(private httpClient : HttpClient) { }
-  getAllCategories() : Observable<ICategory[]>{
-    return this.httpClient.get<ICategory[]>(`${environment.API_URL}/categories`);
-  }
+  // getAllCategories() : Observable<ICategory[]>{
+  //   return this.httpClient.get<ICategory[]>(`${environment.API_URL}/categories`);
+  // }
 }

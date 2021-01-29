@@ -15,15 +15,15 @@ export class DepartmentComponent implements OnInit {
   constructor(private activatedRoute : ActivatedRoute,
     private productService : ProductsJsonService) { }
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe( param => {
-      this.depName = param.get('depName');
-      this.productService.getProductsByCatName(this.depName?this.depName.toLowerCase():'')
-      .subscribe(
-        response => { this.productsList = response;
-    console.log(this.productsList);},
-        error => { console.log(error); }
-      )
-    });
+    // this.activatedRoute.paramMap.subscribe( param => {
+    //   this.depName = param.get('depName');
+    //   this.productService.getProductsByCatName(this.depName?this.depName.toLowerCase():'')
+    //   .subscribe(
+    //     response => { this.productsList = response;
+    // console.log(this.productsList);},
+    //     error => { console.log(error); }
+    //   )
+    // });
   }
 
 }

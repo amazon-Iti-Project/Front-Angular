@@ -12,8 +12,10 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 
 const routes:Routes = [
   {
-    path: "", component: HomeComponent, children: [
+    path: '', component: HomeComponent, children: [
       { path: "home", component: HomeBodyComponent },
+      { path: 'category', loadChildren: () => import('../categories/categories.module').then(module => module.CategoriesModule) },
+      { path: 'departments', loadChildren: () => import('src/app/Modules/categories/categories.module').then(m => m.CategoriesModule) },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: "**", component: NotFoundComponent }
     ]
