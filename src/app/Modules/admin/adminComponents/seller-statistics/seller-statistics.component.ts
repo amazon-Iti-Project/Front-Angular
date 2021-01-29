@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SellerStatisticsComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    console.log("seller state")
+  }
 
   ngOnInit(): void {
   }

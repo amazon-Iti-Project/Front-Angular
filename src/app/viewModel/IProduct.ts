@@ -14,11 +14,15 @@ export interface Iproduct{
   quantity:number;
   brand:number;
   category:number;
+  rate:number;
 }
-export interface IproductSeller{
+
+
+// export interface IproductSeller{
+//   id:number;
+//   name:string;
   
-  
-}
+// }
 
 
   // var  product = {name:"DellLaptop",images:["path1","path2"],description:"corei7",price:100,

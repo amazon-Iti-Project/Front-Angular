@@ -49,33 +49,33 @@
                   <span class="font-2 px-1 text-white">All</span>
                 </a>
             </li>
-            <li class="nav-item  "onclick="activeTab(this)">
-              <a class="nav-link active " data-toggle="tab" href="#dashboard">
+            <li class="nav-item  ">
+              <a class="nav-link  " data-toggle="tab" [routerLink]="['/admin/dashboard']" routerLinkActive="active" >
                 <span >Dashboard</span>
               </a>
             </li>
-            <li class="nav-item "onclick="activeTab(this)">
-              <a class="nav-link " data-toggle="tab" href="#products">
+            <li class="nav-item ">
+              <a class="nav-link " data-toggle="tab" [routerLink]="['/admin/products']" routerLinkActive="active" >
                 <span >Products</span>
               </a>
             </li>
-            <li class="nav-item "onclick="activeTab(this)">
-              <a class="nav-link " data-toggle="tab" href="#orders">
+            <li class="nav-item ">
+              <a class="nav-link " data-toggle="tab" [routerLink]="['/admin/orders']"routerLinkActive="active" >
                 <span >Orders</span>
               </a>
             </li>
-            <li class="nav-item "onclick="activeTab(this)">
-              <a class="nav-link " data-toggle="tab" href="#customers">
+            <li class="nav-item ">
+              <a class="nav-link " data-toggle="tab" [routerLink]="['/admin/customers']"routerLinkActive="active" >
                 <span >Customers</span>
               </a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link  "onclick="activeTab(this)" data-toggle="tab" href="#sellers">
+              <a class="nav-link "  data-toggle="tab" [routerLink]="['/admin/sellers']"routerLinkActive="active" >
                 <span >Sellers</span>
               </a>
             </li>
-            <li class="nav-item "onclick="activeTab(this)">
-              <a class="nav-link " data-toggle="tab" href="#earings">
+            <li class="nav-item ">
+              <a class="nav-link " data-toggle="tab" [routerLink]="['/admin/earings']"routerLinkActive="active" >
                 <span>Earings</span>
               </a>
             </li>
@@ -114,3 +114,17 @@
                 </ul>
             </div>
         </nav>
+       
+         <!--Product top bar filter -->
+           <div class="container">
+         <div class="row shadow-sm p-2 ">
+          <div class="max-content filter-bg filter-bg font-amazon-normal text-white p-1 mx-1 rounded-pill font-0">
+            <span class="">Department1</span>
+            <span class="fas fa-times"></span>
+          </div>
+          <div class="max-content filter-bg filter-bg font-amazon-normal text-white p-1 mx-1 rounded-pill font-0">
+            <span class="">Brand 1</span>
+            <span class="fas fa-times"></span>
+          </div>
+        </div>
+      </div>

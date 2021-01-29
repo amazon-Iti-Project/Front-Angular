@@ -86,6 +86,8 @@ export class SellerAddProductComponent implements OnInit {
 
 addProduct():void{
   console.log(this.prodForm.value)
+  this.proServ.addNewProduct(this.prodForm.value)
+  .subscribe(res=>console.log(res),err=>{console.log(err)})
 }
   
 }

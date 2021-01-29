@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
   selector: 'app-admin-header',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productServ:ProductService) { }
 
   ngOnInit(): void {
   }
+
+  // on click product link
+getProducts():void {
+  console.log("click")
+  
+
+}
+
 
 }

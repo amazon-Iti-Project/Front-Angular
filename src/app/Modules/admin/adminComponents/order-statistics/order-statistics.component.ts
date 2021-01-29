@@ -12,4 +12,8 @@ export class OrderStatisticsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getOrders():void{
+    
+  }
+
 }

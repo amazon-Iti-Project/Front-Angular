@@ -15,15 +15,17 @@
         <!-- collapsive nav  -->
         <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav font-amazon-bold font-1 ">
+
+              
                 <li class="nav-item active">
-                    <a class="nav-link">Catalog <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" [routerLink]="['/seller/home']" routerLinkActive="router-link-active" >Catalog</a>
                 </li>
                 <li class="nav-item">
                     <div class="btn-group ">
                         <a class="nav-link " data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">Inventory</a>
+                            aria-expanded="false" href="">Inventory</a>
                         <div class="dropdown-menu ">
-                            <a class="dropdown-item font-amazon-normal" href="addProduct.html">Add product</a>
+                            <a class="dropdown-item font-amazon-normal" [routerLink]="['/seller/add']" routerLinkActive="router-link-active" >Add product</a>
                             <a class="dropdown-item font-amazon-normal" href="#">Sell grobally</a>
                             <a class="dropdown-item font-amazon-normal" href="#">Manage Inventory</a>
                         </div>

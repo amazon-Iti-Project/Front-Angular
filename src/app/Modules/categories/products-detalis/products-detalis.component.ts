@@ -1,7 +1,7 @@
 import { ProductService } from './../../../services/product/product.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { Iproduct } from 'src/app/viewModel/IProduct';
+import { Iproduct } from 'src/app/viewModel/Iproduct';
 import{Location} from '@angular/common'
 
 @Component({

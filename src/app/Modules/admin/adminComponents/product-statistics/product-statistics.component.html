@@ -1,233 +1,30 @@
 <p>product-statistics works!</p>
-    <!-- page content1 Products  -->
-    <!-- layout -->
-        <div class="row ">
-                <!-- side bar For Filtration -->
-                <div class=" col-md-4 col-lg-3 col-xl-2 font-amazon-normal row mx-0 justify-content-around  ">
-                    <!-- filter Department -->
-                    <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 d-flex flex-column justify-content-center">
-                        <p class="font-amazon-bold">Department</p>
-                        <ul class="custom-control custom-checkbox ">
-                            <li>
-                                <input type="checkbox" class="custom-control-input" id="dep1">
-                                <label class="custom-control-label " for="dep1" onclick="makebold(this,event)">
-                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Department1</p>
-                                </label>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="custom-control-input" id="dep2">
-                                <label class=" custom-control-label " for="dep2" onclick="makebold(this,event)">
-                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Department2</p>
-                                </label>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="custom-control-input" id="dep3">
-                                <label class="custom-control-label " for="dep3" onclick="makebold(this,event)">
-                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Department3</p>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                
-                    <!-- filter brand -->
-                    <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 d-flex flex-column justify-content-center">
-                        <p class="font-amazon-bold">Brand</p>
-                        <ul class="custom-control custom-checkbox ">
-                            <li>
-                                <input type="checkbox" class="custom-control-input" id="brand1">
-                                <label class="custom-control-label " for="brand1" onclick="makebold(this,event)">
-                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Brand1</p>
-                                </label>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="custom-control-input" id="brand2">
-                                <label class=" custom-control-label " for="brand2" onclick="makebold(this,event)">
-                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Brand2</p>
-                                </label>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="custom-control-input" id="brand3">
-                                <label class="custom-control-label " for="brand3" onclick="makebold(this,event)">
-                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Brand3</p>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- filter Deliver State -->
-                    <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 d-flex flex-column justify-content-center">
-                        <p class="font-amazon-bold">Deliever State</p>
-                        <ul class="custom-control custom-checkbox ">
-                            <li>
-                                <input type="checkbox" class="custom-control-input" id="delievered">
-                                <label class="custom-control-label " for="delievered" onclick="makebold(this,event)">
-                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Delievered</p>
-                                </label>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="custom-control-input" id="cancelled">
-                                <label class=" custom-control-label " for="cancelled" onclick="makebold(this,event)">
-                                    <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Cancelled</p>
-                                </label>
-                            </li>
-    
-                        </ul>
-                    </div>
-                        <!-- filter Price -->
-                        <div class="col-md-12 col-sm col-6 m-0 px-0 py-1 ">
-                          <p class="font-amazon-bold py-2">Price</p>
-                          <ul>
-                              <li class="d-flex flex-column ">
-                                  <div class="input-group mb-3">
-                                      <div class="input-group-prepend">
-                                          <span class="input-group-text px-1 font-amazon-bold font-1"
-                                              id="basic-addon1 ">$</span>
-                                      </div>
-                                      <input type="text" class="form-control font-amazon-normal font-1" placeholder="min"
-                                          aria-label="min" aria-describedby="basic-addon1">
-                                  </div>
-                                  <div class="input-group mb-3">
-                                      <div class="input-group-prepend">
-                                          <span class="input-group-text px-1 font-amazon-bold font-1"
-                                              id="basic-addon1">$</span>
-                                      </div>
-                                      <input type="text" class="form-control font-amazon-normal font-1" placeholder="max"
-                                          aria-label="max" aria-describedby="basic-addon1">
-                                  </div>
-                                  <div class="">
-                                      <button type="button"
-                                          class="btn btn-outline-secondary px-1  font-amazon-bold font-1">Go</button>
-                                  </div>
-      
-                              </li>
-                          </ul>
-                      </div>
-                      <!-- filter avg rate -->
-                      <div class="col-md-12 col-sm col-6 text-center px-0 py-1 d-flex flex-column justify-content-center ">
-                        
-                          <p class="font-amazon-bold py-1">Minimum Average Rate</p>
-                          <ul>
-                              <li class="text-warning p-2" onclick="filterRate(this,event)">
-                                  <!-- <i class="fas fa-star"></i>
-                              <i class="far fa-star"></i>
-                              <i class="far fa-star"></i>
-                              <i class="far fa-star"></i> -->
-                                  <!-- <i class="fas fa-star-half"></i> -->
-                                  <!-- <i class="far fa-star-half"></i> -->
-                                  <i class="far fa-star " data-value=0></i>
-                                  <i class="far fa-star" data-value=1></i>
-                                  <i class="far fa-star" data-value=2></i>
-                                  <i class="far fa-star" data-value=3></i>
-                                  <i class="far fa-star" data-value=4></i>
-                                  <!-- <i class="fas fa-star-half-alt"></i> -->
-                              </li>
-                          </ul>
-                       
-                        </div>
-                </div>
-                <!-- page Container -->
-                <div class="col-md-8 col-lg-9 col-xl-10">
-                    <!-- Product Section -->
-                    <div class=" row">
-                        <div class="col-12 ">
-                            <!--Product top bar filter -->
-                            <div class="row shadow-sm p-2">
-                                <div class="max-content ft-head-bg ft-head-hover font-amazon-normal text-white p-1 mx-1 rounded-pill font-0" >
-                                    <span class="">Department1</span> 
-                                    <span class="fas fa-times"></span>
-                                </div>
-                                <div class="max-content ft-head-bg ft-head-hover font-amazon-normal text-white p-1 mx-1 rounded-pill font-0" >
-                                    <span class="">Brand 1</span> 
-                                    <span class="fas fa-times"></span>
-                                </div>
-                            </div>
-                            <!--Product tabs -->
-                            <div class="container-fluid">
-                              <ul class="nav nav-tabs font-amazon-bold " id="myTab" role="tablist">
-                                <li class="nav-item " role="presentation">
-                                  <a class="nav-link active px-1" id="productDet-tab" data-toggle="tab" href="#productDet" role="tab" aria-controls="home" aria-selected="true">Details</a>
-                                </li>
-                                <li class="nav-item " role="presentation">
-                                  <a class="nav-link px-1" id="productSumm-tab" data-toggle="tab" href="#productSumm" role="tab" aria-controls="profile" aria-selected="false">Summary</a>
-                                </li>
-                                <li class="nav-item " role="presentation">
-                                  <a class="nav-link px-1" id="productExp-tab" data-toggle="tab" href="#productExp" role="tab" aria-controls="contact" aria-selected="false">Expected</a>
-                                </li>
-                              </ul>
-                              <!-- tabs content -->
-                              <div class="tab-content py-1" id="productTabsContent">
-                                <div class="tab-pane fade show active overflow-auto" id="productDet" role="tabpanel" aria-labelledby="home-tab">
-                                     <!-- Product table -->
-                            <table class="table font-amazon-normal table-hover min-content">
-                              <thead class="font-amazon-bold">
-                                  <tr>
-                                      <th scope="col">serial </th>
-                                      <th scope="col">Name</th>
-                                      <th scope="col">Number</th>
-                                      <th scope="col"># Ordered </th>
-                                      <th scope="col">Price <span class="fas fa-dollar-sign"></span></th>
-                                      <th scope="col">Tax % <span class="fas fa-dollar-sign"></span></th>
-                                      <th scope="col">Total Price <span class="fas fa-dollar-sign"></span></th>
-                                      <th scope="col">Total Tax <span class="fas fa-dollar-sign"></span></th>
-                                      <th scope="col">Delivered %</th>
-                                      <th scope="col">Cancelled %</th>
-                                      <th scope="col">Seller</th>
-                                      <th scope="col">Product Rate</th>
-                                      <th scope="col">Seller Rate</th>
-    
-    
-                                  </tr>
-    
-                              </thead>
-                              <tbody>
-                                  <!-- row1 -->
-                                  <tr>
-                                      <th class="font-amazon-normal" scope="row">1</th>
-                                      <td>product 1</td>
-                                      <td>500</td>
-                                      <td>350</td>
-                                      <td>250<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
-                                      <td>25<span>&nbsp</span><span>%</span></td>
-                                      <td>250<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
-                                      <td>250<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
-                                      <td>80<span>&nbsp%&nbsp</span><span class="fas fa-check-circle text-success font-3"></span></td>
-                                      <td>20<span>&nbsp%&nbsp</span><span class="fas fa-times-circle text-danger font-3"></span></td>
-                                      <td>John Dick</td>
-                                      <td>5.0</td>
-                                      <td>5.0</td>
-                                  </tr>
-                                  <!-- row2  -->
-                                  <tr>
-                                    <th class="font-amazon-normal" scope="row">1</th>
-                                    <td>product 1</td>
-                                    <td>500</td>
-                                    <td>350</td>
-                                    <td>250<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
-                                    <td>25<span>&nbsp</span><span>%</span></td>
-                                    <td>250<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
-                                    <td>250<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
-                                    <td>80<span>&nbsp%&nbsp</span><span class="fas fa-check-circle text-success font-3"></span></td>
-                                    <td>20<span>&nbsp%&nbsp</span><span class="fas fa-times-circle text-danger font-3"></span></td>
-                                  <td>John Dick</td>
-                                    <td>5.0</td>
-                                    <td>5.0</td>
-    
-                                </tr>
-    
-                              </tbody>
-                          </table>
-                          <!-- summary tap -->
-                                </div>
-                                <div class="tab-pane fade show  py-1" id="productSumm" role="tabpanel" aria-labelledby="profile-tab">
-                                  <canvas class="my-4 w-100" id="product-chart"  ></canvas>
-    
-                                </div>
-                                <div class="tab-pane fade py-1" id="productExp" role="tabpanel" aria-labelledby="contact-tab"></div>
-                              </div>
-                            </div>
-                         
-                          
-                        </div>
-                    </div>
-                </div>
-            </div>
-     
+<!-- page content1 Products  -->
+<!-- layout -->
+<!-- page Container -->
+<!-- Product Section -->
+<div class=" row">
+  <div class="col-12 ">
+    <div class="container-fluid">
+      <!--Product tabs -->
+      <app-product-taps></app-product-taps>
+      <!-- tabs content -->
+      <div class="tab-content py-1" id="productTabsContent">
+        <div class="tab-pane fade show active overflow-auto" id="productDet" role="tabpanel" aria-labelledby="home-tab">
+          <!-- Product table -->
+        <app-product-details></app-product-details>
+        </div>
+
+        <!-- summary tap -->
+        <div class="tab-pane fade show  py-1" id="productSumm" role="tabpanel" aria-labelledby="profile-tab">
+          <canvas class="my-4 w-100" id="product-chart"></canvas>
+        </div>
+        <!-- Expect tap -->
+        <div class="tab-pane fade py-1" id="productExp" role="tabpanel" aria-labelledby="contact-tab"></div>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>

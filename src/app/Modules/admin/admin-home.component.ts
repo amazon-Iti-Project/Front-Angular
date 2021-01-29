@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
   selector: 'app-admin-home',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-home.component.scss']
 })
 export class AdminHomeComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor(private productServ:ProductService) { }
 
   ngOnInit(): void {
+  
   }
+
+  getDashBoard() {
+
+  }
+
+  
+getCustomers():void{}
+getSellers():void {}
+getEartings():void {}
+getOrders():void {}
 
 }
