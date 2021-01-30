@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product/product.service';
-import { Iproduct } from 'src/app/viewModel/Iproduct';
+import { Iproduct } from 'src/app/viewModel/IProduct';
 
 @Component({
   selector: 'app-product-statistics',

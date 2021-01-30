@@ -8,12 +8,14 @@ import { HomeBodyComponent } from './components/home-body/home-body.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { CartComponent } from '../orders/cart/cart.component';
 
 
 const routes:Routes = [
   {
     path: '', component: HomeComponent, children: [
       { path: "home", component: HomeBodyComponent },
+      {path:'cart',component:CartComponent}, //delete it from here after testing
       { path: 'category', loadChildren: () => import('../categories/categories.module').then(module => module.CategoriesModule) },
       { path: 'departments', loadChildren: () => import('src/app/Modules/categories/categories.module').then(m => m.CategoriesModule) },
       { path: '', redirectTo: 'home', pathMatch: 'full' },

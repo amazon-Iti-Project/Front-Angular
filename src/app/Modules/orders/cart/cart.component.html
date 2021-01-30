@@ -1,0 +1,132 @@
+<div class="big-pic">
+    <div class="row justify-content-around w-100 my-4">
+        <!-- start the main cart menu items -->
+        <div class="col-9 bg-white p-3">
+            <!-- main menu header -->
+            <div class="container">
+                <h1>Shopping Cart</h1>
+                <a href="#" onclick="deSelectAll()">Deselect all items</a>
+                <div id="price-title"><span>Price</span></div>
+            </div>
+            <!-- single cart item -->
+            <div class="container border-top cart-item">
+                <div id="menu-check">
+                    <input type="checkbox" checked="true" aria-label="Checkbox for following text input">
+                </div>
+                <div class="cart-img m-3">
+                    <img class="img-fluid" src="images/im1.jpeg">
+                </div>
+                <div class="cart-cont">
+                    <a class="cart-title">Soundance Laptop Stand, Aluminum Computer Riser, Ergonomic
+                        Laptops Elevator for Desk, Metal Holder Compatible with 10 to 15.6 Inches Notebook Computer,
+                        Rose Gold </a>
+                    <br>
+                    <span class="status"> In Stock</span>
+                    <br>
+                    <div class="gift-mark">
+                        <input type="checkbox" class="mr-2">
+                        <label>This is a gift <a href="#"> Learn more</a></label>
+                    </div>
+                    <div class="cart-info mt-2">
+                        <div class="cart-info-item mr-3 border-right">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle p-2" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Qty: <span id="drop-val">1</span>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" value="0" href="#">0 (Delete)</a>
+                                    <a class="dropdown-item" value="1" href="#">1</a>
+                                    <a class="dropdown-item" value="2" href="#">2</a>
+                                    <a class="dropdown-item" value="3" href="#">3</a>
+                                    <a class="dropdown-item" value="4" href="#">4</a>
+                                    <a class="dropdown-item" value="5" href="#">5</a>
+                                    <a class="dropdown-item" value="6" href="#">6</a>
+                                    <a class="dropdown-item" value="7" href="#">7</a>
+                                    <a class="dropdown-item" value="8" href="#">8</a>
+                                    <a class="dropdown-item" value="9" href="#">9</a>
+                                    <a class="dropdown-item" value="+10" href="#">+10</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-info-item mr-3 border-right">
+                            <a href="#">Delete</a>
+                        </div>
+                        <div class="cart-info-item mr-3 border-right">
+                            <a href="#">Save for later</a>
+                        </div>
+                        <div class="cart-info-item mr-3">
+                            <a href="#">Compare with similar items</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing">$<span name="price-tag">3.99</span></div>
+            </div>
+            <hr>
+            <!-- total price -->
+            <div id="main-total-price">
+                $<span name="total-price-tag">0.00</span>
+            </div>
+        </div>
+        <!-- end main menu -->
+
+        <!-- start right menu -->
+        <div class="col-lg-2 col-2 d-none d-sm-block">
+            <!-- subtotal menu box -->
+            <div class="row bg-white details-box py-3 justify-content-around">
+                <div>
+                    Subtotal(<span>9</span> items):
+                    <strong>$<span name="total-price-tag">70.93</span></strong>
+                </div>
+                <div>
+                    <input type="checkbox" class="mx-2 my-1">This order contains a gift
+                </div>
+                <div>
+                    <button type="button" class="btn btn-warning px-3 my-3"
+                        onclick="location.href='shipping.html'">Proceed to checkout</button>
+                </div>
+            </div>
+            <!-- recommendation card box -->
+            <div class="row card my-4 recom-box">
+                <div class="card-body w-100">
+                    <h5 class="card-title">
+                        Sponsored Products related to items in your cart
+                    </h5>
+                    <!-- single recom-item div -->
+                    <div class="card-box mt-4 w-100">
+                        <img class="img-fluid" src="images/im1.jpeg">
+                        <div class="ml-1">
+                            <a href="#">BlueLight Blocking</a>
+                            <!-- start Rating bar code -->
+                            <div class="rating mx-0">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span>12,324</span>
+                            </div>
+                            <span class="recom-price">$19.99</span><br>
+                            <button class="btn btn-light border" type="button">
+                                <span style="font-size: 10px;">See all buing options</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end side menu -->
+    </div>
+    <!-- my prev. items history page -->
+    <div class="row m-3">
+        <div class="col-9 bg-white p-3">
+            <div class="container">
+                <h1>Your Items</h1>
+                <!-- Dispaly page -->
+            </div>
+        </div>
+        <small class="col-9 mt-3 pl-0">
+            The price and availability of items at Amazon.com are subject to change. The Cart is a temporary place to
+            store a list of your items and reflects each item's most recent price. Shopping Cart <a href="#"> Learn
+                more</a>
+            <br>
+            Do you have a gift card or promotional code? We'll ask you to enter your claim code when it's time to pay.
+        </small>
+    </div>
+</div>
