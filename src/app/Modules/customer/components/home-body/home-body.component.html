@@ -1,23 +1,21 @@
-<p>home-body works!</p>
- 
 <!-- carousel -->
 <app-carousel></app-carousel>
 <!-- home-body -->
 <!-- items container -->
  <!-- <div class="container position-relative item-container mx-0  "> -->
-    <div class="container   ">
+    <div class="container-fluid ">
         <!-- row -->
-        <div class="row mx-0 ">
+        <div class="row mx-0  ">
           <!-- col -->
           <div class="col-lg-3 col-md-4 col-sm-6 p-2 ">
-            <div class="bg-white p-2 ">
-              <p class="h5 font-amazon-bold">Recently Viewed</p>
-              <div class="imgContainer d-flex align-items-center ">
-                <div class=" p-2 ">
-                <img src="images/dep/item-01.jpg" class="home-item-img">
+            <div class="bg-white p-2  row h-100  ">
+              <p class="col-12 h5 font-amazon-bold">Recently Viewed</p>
+              <div class="col-12  p-0  align-self-end">
+                <a class="d-block p-2 test-container">
+                <img src="../../../../../assets/home-body/item-01.jpg" class="img-fluid">
+                </a>
               </div>
-              </div>
-              <a class="font-0 text-info  py-1 font-amazon-normal">Shop now</a>
+              <a class="font-0 text-info align-self-end  py-1 font-amazon-normal">Shop now</a>
             </div>
     
           </div>
@@ -27,12 +25,12 @@
           <div class="col-lg-3 col-md-4 col-sm-6 p-2" >
             <div class="bg-white p-2">
               <p class="h5 font-amazon-bold">Shop top categories</p>
-              <div class="imgContainer">
-                <a class="d-block" href="all-categories.html">
-                  <img src="images/dep/04.jpg" class="imgContainer">
+              <div class=" d-flex align-items-center">
+                <a class="d-block test-container" [routerLink]="['/category']" routerLinkActive="" >
+                  <img src="../../../../../assets/home-body/04.jpg" class="test ">
                 </a>
               </div>
-              <a class="font-0 text-info  py-1 font-amazon-normal">Shop now</a>
+              <a class="font-0 text-info  py-1 font-amazon-normal"[routerLink]="['/category']" routerLinkActive="">Shop now</a>
             </div>
           </div>
         </div>

@@ -15,8 +15,10 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.productServ.getAllProducts().subscribe(res=>{
       console.log(res)
-      this.products =res
+     this.products  =res
+
     },err=>console.log(err))
+    
   }
 
 }

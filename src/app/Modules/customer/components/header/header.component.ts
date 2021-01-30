@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +7,19 @@ import { Component, OnInit } from '@angular/core';
   // "../../../../node_modules/font-awesome/css/font-awesome.css",
 ]
 })
+
+
 export class HeaderComponent implements OnInit {
+  @Output() allBtnChecked:EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor() { }
 
   ngOnInit(): void {
+    
+  }
+  sendEventToHome():void{
+    console.log("event fired")
+    this.allBtnChecked.emit()
   }
 
 }

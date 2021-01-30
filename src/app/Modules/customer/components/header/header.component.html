@@ -37,7 +37,7 @@
               <div class="input-group-prepend">
                 <!-- all dropdown Menu -->
                 <button class="btn btn-light input-group-text dropdown-toggle text-dark font-1"
-                  data-toggle="dropdown">All</button>
+                  data-toggle="dropdown"  >All</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" href="#">Action</a>
                   <a class="dropdown-item" href="#">Another action</a>
@@ -173,30 +173,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- list1 start -->
       <ul class="navbar-nav justify-content-start align-items-baseline ">
-        <li class="nav-item nav-hover" onclick="showSide()">
+        <li class="nav-item nav-hover" (click)="sendEventToHome()">
           <!-- All menus -->
-            <a class="nav-link  d-flex align-items-end " id="sidebtn">
+            <a class="nav-link  d-flex align-items-end cursor-pointer" id="sidebtn">
               <span class="fas fa-bars h4 m-0 text-white "></span>
-              <span class="font-2 px-1 text-white">All</span>
+              <span class="font-2 px-1 text-white ">All</span>
             </a>
         </li>
         <li class="nav-item nav-hover">
-          <a class="nav-link" href="#">
+          <a class="nav-link" [routerLink]="['']"  >
             <span class="text-white">Today`s Deals</span>
           </a>
         </li>
         <li class="nav-item nav-hover">
-          <a class="nav-link" href="#">
+          <a class="nav-link"  [routerLink]="['']"  >
             <span class="text-white">Customer Service</span>
           </a>
         </li>
         <li class="nav-item nav-hover">
-          <a class="nav-link" href="#">
+          <a class="nav-link"  [routerLink]="['']"  >
             <span class="text-white">Buy Again</span>
           </a>
         </li>
         <li class="nav-item nav-hover">
-          <a class="nav-link" href="#">
+          <a class="nav-link"  [routerLink]="['']"  >
             <span class="text-white">Gift Cards</span>
           </a>
         </li>

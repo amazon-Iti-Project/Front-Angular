@@ -1,11 +1,8 @@
-<p>seller-add-product works!</p>
-
    <!-- all page inside container -->
-   <div class="container">
+   <div class="container-sm container-fluid">
     <!-- logo -->
     <header class="my-4">
       <img src="../../../../../assets/seller/amazon-serv.png" class="img-fluid" style="width: 150px;">
-
     </header>
     <!-- Nav Bar -->
     <!-- nav list -->
@@ -22,7 +19,7 @@
       </div>
     </nav>
     <!-- taps content container -->
-    <form  [formGroup]="prodForm"  class="tab-content p-3 font-amazon-normal" id="nav-tabContent">
+    <form  [formGroup]="prodForm"  class="tab-content p-1 p-md-5 font-amazon-normal" id="nav-tabContent">
       <!-- tap1 product detail -->
       <div class="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
         <!-- product form -->
@@ -32,7 +29,7 @@
               <div class="d-flex col ">
                 <label class="min-content pr-2 align-self-center " for="prodId">category</label>
                 <!-- <input type="text" class="form-control" id="prodId"> -->
-                <select formControlName="category" name="category" class="custom-select" id="catId" required
+                <select (change)="getFee()" formControlName="category" name="category" class="custom-select" id="catId" required
                 [class.is-invalid]="prodForm.controls['category'].invalid&&prodForm.controls['category'].touched"
                 [class.is-valid]="prodForm.controls['category'].valid&&prodForm.controls['category'].touched" >
 
@@ -87,50 +84,155 @@
 
       <!-- tap2 product image -->
       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-        <div class="input-group mb-3 justify-content-center">
-          <div class="custom-file w-100">
+        <!-- <div class="input-group mb-3 justify-content-center"> -->
+        <div class="alert d-flex mb-3 justify-content-between  align-items-center">
+
+          <!-- input -->
+          <div class="custom-file w-50">
             <input type="file" (change)="onSeleImg($event)" class="custom-file-input " id="inputGroupFile02">
             <label class="custom-file-label font-amazon-normal" for="inputGroupFile02"
               aria-describedby="inputGroupFileAddon02">Choose file</label>
-            </div>
-              <div class="w-50">
-              <img class="img-fluid card-img-top border my-3" [src]="prodForm.controls['image'].value" *ngIf="prodForm.controls['image'].value; else elseBlock">
-              <ng-template #elseBlock>
-                <img  class="img-fluid card-img-top border my-3"
-                  src="../../../../assets/seller/add/uploadProduct.png">
-              </ng-template>
           </div>
+
+          <!-- image -->
+          <div class="w-25">
+            <img class="img-fluid card-img-top  border my-3" [src]="prodForm.controls['image'].value"
+              *ngIf="prodForm.controls['image'].value; else elseBlock">
+            <ng-template #elseBlock>
+              <img class="img-fluid card-img-top border my-3" src="../../../../assets/seller/add/uploadProduct.png">
+            </ng-template>
+          </div>
+          <!-- img ends -->
         </div>
       </div>
 
       <!-- tap3 product Info -->
-      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-              <span class="input-group-text px-1 font-amazon-bold font-1"
-                  id="basic-addon1 ">$</span>
+      <div class="tab-pane fade container" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+      <!-- row of price and discount -->
+      <div class="row ">
+        <!-- price starts-->
+        <div class="input-group mb-3 col row  align-items-center">
+          <label class="  col-sm-auto col-12 mb-sm-0 mb-1 ">Price</label>
+          <div class="col d-flex">
+            <div class="input-group-prepend ">
+              <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">$</span>
+            </div>
+            <!-- price -->
+            <input type="number" class="form-control font-amazon-normal font-1 mr-2" placeholder="Price"
+               aria-label="min" aria-describedby="basic-addon1" min="0" />
+              
           </div>
-          <!-- price -->
-          <input type="number" class="form-control font-amazon-normal font-1" placeholder="Price"
-          formControlName="price"   aria-label="min" aria-describedby="basic-addon1"
-          [class.is-invalid]="prodForm.controls['price'].invalid&&prodForm.controls['price'].dirty"
-          [class.is-valid]="prodForm.controls['price'].valid&&prodForm.controls['price'].dirty" />
-
+        </div>
+        <!-- price ends -->
+        <!-- discount starts -->
+        <div class="input-group mb-3 col row align-items-center">
+          <label class="col-sm-auto col-12 mb-sm-0 mb-1">discount</label>
+          <div class="col d-flex">
+            <div class="input-group-prepend">
+              <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">%</span>
+            </div>
+            <!-- discount -->
+            <input type="number" class="form-control font-amazon-normal font-1" placeholder="20%" formControlName="discount"
+              aria-label="max" aria-describedby="basic-addon1"
+              [class.is-invalid]="prodForm.controls['discount'].invalid&&prodForm.controls['discount'].dirty"
+              [class.is-valid]="prodForm.controls['discount'].valid&&prodForm.controls['discount'].dirty" />
+          </div>
+        </div>
+        <!-- discount ends -->
       </div>
-      <div class="input-group mb-3">
-          <!-- quantity -->
-          <input type="number" class="form-control font-amazon-normal font-1" placeholder="Quantity"
-          formControlName="quantity"  aria-label="max" aria-describedby="basic-addon1"
-          [class.is-invalid]="prodForm.controls['quantity'].invalid&&prodForm.controls['quantity'].dirty"
-          [class.is-valid]="prodForm.controls['quantity'].valid&&prodForm.controls['quantity'].dirty" />
+      <!-- row of price and discount ends -->
 
-      </div>
+      <!-- row of fees and quantity stars -->
+        <div class="row mb-3">
+          <div class="col row  align-items-center">
+              <!-- fees starts -->
+            <label class=" col-sm-auto col-12 mb-sm-0 mb-1 ">fees</label>
+            <div class="input-group -3 col ">
+              <div class="input-group-prepend">
+                <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">%</span>
+              </div>
+              <!-- fees input -->
+              <input type="number"  class=" form-control font-amazon-normal font-1 " disabled [value]="feePercent"
+                aria-label="min" aria-describedby="basic-addon1" />
+              <!-- fees ends -->
+            </div>
+          </div>
+          <div class="col row align-items-center">
+            <!-- quantity starts -->
+              <label class="col-sm-auto col-12 mb-sm-0 mb-1">Quantity</label>
+              <div class="input-group  col">
+                <div class="input-group-prepend">
+                  <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">#</span>
+                </div>
+                <!-- quantity -->
+                <input type="number" class="form-control font-amazon-normal font-1" placeholder="Quantity" formControlName="quantity"
+                  aria-label="max" aria-describedby="basic-addon1"
+                  [class.is-invalid]="prodForm.controls['quantity'].invalid&&prodForm.controls['quantity'].dirty"
+                  [class.is-valid]="prodForm.controls['quantity'].valid&&prodForm.controls['quantity'].dirty" />
+              </div>
+          
+          </div>
+        </div>
+      <!-- row of fees and quantity ends -->
+        
+          <!-- row of shipping starts -->
+        <!-- shipping starts -->
+        <form [formGroup]="shipForm" class="row mb-3">
+          <div class="input-group row  col align-items-center">
+            <!-- shipping period -->
+            <label class="col-sm-auto col-12 mb-sm-0 mb-1">Shipping Period</label>
+            <div  class="col d-flex">
+            <div class="input-group-prepend ">
+              <span class="input-group-text px-1 font-amazon-bold font-1 " id="basic-addon1 ">days</span>
+            </div>
+      
+            <input type="number" class="form-control font-amazon-normal  font-1" placeholder="2 days"
+              formControlName="period" aria-label="max" aria-describedby="basic-addon1"
+              [class.is-invalid]="shipForm.controls['period'].invalid&&shipForm.controls['period'].dirty"
+              [class.is-valid]="shipForm.controls['period'].valid&&shipForm.controls['period'].dirty" />
+            </div>
+            </div>
+            <!-- shipping price starts -->
+          <div class="input-group row  col align-items-center">
+          
+            <label class="col-sm-auto col-12 mb-sm-0 mb-1">Shipping Price</label>
+          
+            <div class="col  d-flex">
+              <div class="input-group-prepend">
+                <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">$</span>
+              </div>
+              <!-- shipping price  -->
+              <input type="number" class="form-control font-amazon-normal  font-1" placeholder="20$" formControlName="shipPrice"
+                aria-label="max" aria-describedby="basic-addon1"
+                [class.is-invalid]="shipForm.controls['shipPrice'].invalid&&shipForm.controls['shipPrice'].dirty"
+                [class.is-valid]="shipForm.controls['shipPrice'].valid&&shipForm.controls['shipPrice'].dirty" />
+            </div>
+          
+            </div>
+        </form>
+        <!-- shipping ends -->
+        <!-- Total price start -->
+        <div class=" col row align-items-center p-0 m-0 mb-3">
+          <label class="col-sm-auto col-12 mb-sm-0 mb-1 px-0">Total Price</label>
+          <div class="col-auto d-flex px-0">
+            <div class="input-group-prepend">
+              <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">$</span>
+            </div>
+            <!-- total price input  -->
+            <input type="number"  class="form-control font-amazon-normal  font-1" placeholder="20$"
+              formControlName="price" aria-label="max" aria-describedby="basic-addon1"
+              [class.is-invalid]="prodForm.controls['price'].invalid&&prodForm.controls['price'].dirty"
+              [class.is-valid]="prodForm.controls['price'].valid&&prodForm.controls['price'].dirty" />
+          </div>
+        </div>
+      
+      
       </div>
  
     <!-- submit button -->
     <div class="container d-flex justify-content-center  ">
-     <button type="button"  class="btn  mx-2 ">Cancel</button>
-       <button  (click)="addProduct()" type="submit" [disabled]="prodForm?.invalid" class="btn  mx-2 ">Safe and Finish</button>
+     <button type="button"  class="btn  mx-sm-2 mx-1  ">Cancel</button>
+       <button  (click)="addProduct()" type="submit" [disabled]="prodForm?.invalid" class="btn  mx-sm-2 mx-1">Safe and Finish</button>
     </div>
   
   </form>

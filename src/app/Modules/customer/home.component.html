@@ -1,8 +1,7 @@
-<p>Customer home works!</p>
 <!-- header -->
-<app-header></app-header>
+<app-header (allBtnChecked)="onCheckAllBtn($event)" ></app-header>
 <!-- sidebar -->
-<app-sidebar></app-sidebar>
+<app-sidebar [isOpen]="isSideBarOpen" (sideBarClosed)="closeSideBar($event)" ></app-sidebar>
 <router-outlet></router-outlet>
 <!-- footer -->
 <app-footer></app-footer> 

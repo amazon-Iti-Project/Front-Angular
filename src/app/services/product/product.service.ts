@@ -35,8 +35,8 @@ export class ProductService {
     return this.http.post<Iproduct>(`${environment.API_BASE_URL}/${environment.products}`, prod, httpOptions);
   }
 
-  deleteProduct(catId: number): Observable<Iproduct> {
-    let prod = this.http.delete<Iproduct>(`${environment.API_BASE_URL}/${environment.products}/${catId}`)
+  deleteProduct(prodId: number): Observable<Iproduct> {
+    let prod = this.http.delete<Iproduct>(`${environment.API_BASE_URL}/${environment.products}/${prodId}`)
     return prod
   }
 }

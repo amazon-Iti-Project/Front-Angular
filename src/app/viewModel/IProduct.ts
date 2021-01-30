@@ -17,6 +17,20 @@ export interface Iproduct{
   rate:number;
 }
 
+export interface adminIproduct{
+  id:number;
+  name:string;
+  image:string|ArrayBuffer;
+  price:number;
+  shipping:number;
+  fee:number;
+  discount:number;
+  quantity:number;
+  brand:number;
+  category:number;
+  rate:number;
+}
+
 
 // export interface IproductSeller{
 //   id:number;
