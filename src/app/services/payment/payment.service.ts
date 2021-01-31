@@ -11,7 +11,10 @@ export class PaymentService {
 
   constructor(private http:HttpClient) { }
 
-
+  getAllPayments(): Observable<Ipayment[]> {
+    let obs = this.http.get<Ipayment[]>(`${environment.API_BASE_URL}/${environment.payment}`)
+    return obs;
+  }
 
 getPaymentById(id: number): Observable<Ipayment> {
   let obs = this.http.get<Ipayment>(`${environment.API_BASE_URL}/${environment.payment}/${id}`)

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FeeService } from 'src/app/services/feeService/fee.service';
 import { ProductService } from 'src/app/services/product/product.service';
 import { Iproduct } from 'src/app/viewModel/IProduct';
 
@@ -10,7 +11,7 @@ import { Iproduct } from 'src/app/viewModel/IProduct';
 export class ProductDetailsComponent implements OnInit {
   products:Iproduct[]=[]
 
-  constructor(private productServ:ProductService) { }
+  constructor(private productServ:ProductService,private feeServ:FeeService) { }
 
   ngOnInit(): void {
     this.productServ.getAllProducts().subscribe(res=>{
@@ -20,5 +21,14 @@ export class ProductDetailsComponent implements OnInit {
     },err=>console.log(err))
     
   }
+
+  getFee(feeId:number):number|void{
+    this.feeServ.getFeeById(feeId).subscribe(res=>{
+      console.log(res)
+     return res.fee
+
+    },err=>console.log(err))
+  }
+  
 
 }

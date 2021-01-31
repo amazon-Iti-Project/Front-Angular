@@ -36,5 +36,9 @@ export class FeeService {
     console.log(obs)
     return obs;
    }
+
+   getFeeById(id:number):Observable<Ifee>{
+    return this.http.get<Ifee>(`${environment.API_BASE_URL}/${environment.fees}${id}`)
+   }
    
 }
