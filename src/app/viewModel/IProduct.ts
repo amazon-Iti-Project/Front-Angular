@@ -8,13 +8,13 @@ export interface Iproduct{
   colors:string[];
   size:string;
   price:number;
-  shipping:number;
-  fee:number;
+  shipping:number; // shipping id
+  fee:number; // fee id 
   discount:number;
   quantity:number;
   brand:number;
   category:number;
-  rate:number;
+  rate:number;  // rate id
 }
 
 export interface adminIproduct{

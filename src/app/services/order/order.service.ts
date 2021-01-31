@@ -23,6 +23,12 @@ export class OrderService {
     return test;
   }
 
+  getOrderbyCustomerId(id:number):Observable<Iorder> {
+    let test = this.http.get<Iorder>(`${environment.API_BASE_URL}/${environment.orders}/?customer=${id}`)
+    console.log(test)
+    return test;
+  }
+
   addNewOrder(order: Iorder): Observable<Iorder> {
     console.log("recieved Product: ", order)
     const httpOptions = {
@@ -35,7 +41,7 @@ export class OrderService {
     return this.http.post<Iorder>(`${environment.API_BASE_URL}/${environment.orders}`, order, httpOptions);
   }
 
-  deleteProduct(orderId: number): Observable<Iorder> {
+  deleteOrder(orderId: number): Observable<Iorder> {
     let order = this.http.delete<Iorder>(`${environment.API_BASE_URL}/${environment.orders}/${orderId}`)
     return order
   }
