@@ -28,10 +28,9 @@ $font:amazon-font,Arial, Helvetica, sans-serif;
   font-weight: 400;
 }
 //1- global attributes
-*:not(.fab .fas){
+*:not(.fas,.fab ,.fa){
     font-family: amazon-font,Arial, Helvetica, sans-serif ;  
-    padding: 0;
-    margin: 0;
+
     font-weight: 100 ;
   }
 

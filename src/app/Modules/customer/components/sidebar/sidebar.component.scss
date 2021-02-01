@@ -42,7 +42,7 @@
   .side-nav-bg{
     background-color: #232F3E;
   }
-  *:not(.fab .fas){
+  *:not(.fab ,.fas,.fa){
     font-family: inherit;
     font-weight: inherit;
   }
