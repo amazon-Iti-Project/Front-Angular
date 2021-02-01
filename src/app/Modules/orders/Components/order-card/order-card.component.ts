@@ -53,9 +53,9 @@ export class OrderCardComponent implements OnInit {
 
   target(): void {
     let oId = this.model.id;
-    if (this.model.state == DELIVERY_STATE.Delivered)
+    if (this.model.status == DELIVERY_STATE.Delivered)
       this.router.navigate([`/Orders/DeliveredPackage/${oId}`]);
-    else if (this.model.state == DELIVERY_STATE.Arriving)
+    else if (this.model.status == DELIVERY_STATE.Arriving)
       this.router.navigate([`/Orders/DeliveringPackage/${oId}`]);
   }
   canceling(orderID:number){

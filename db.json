@@ -208,53 +208,141 @@
   ],
   "orders": [
     {
-      "name": "order1",
+      "id": 1,
+      "customer":1,
+      "status": 1,
+      "payment":1,
+      "address":"123 test street USA",
+      "orderShip":10,
+      "orderPrice": 500,
+      "dueDate": "2021-01-07",
+      "canCancelledUntil": "2021-01-09",
+      "orderDate": "2021-01-01",
+      "deliveredDate":"2021-01-10",
       "products": [
-        1,
-        2,
-        3,
-        4
-      ],
-      "customer": 1,
-      "payment": 1,
-      "address": "orderAddress",
-      "state": 0,
-      "orderShip": 200,
-      "orderPrice": 250,
-      "date": "2020",
-      "id": 1
-    },
-    {
-      "name": "order1",
+        {
+          "id": 100,
+          "name": "USB Switcher Box",
+          "price": 250,
+          "description": "USB Switcher Box 2 Computers Sharing 4 USB Devices USB 2.0 KVM Switch Selector for Keyboard Mouse U-Disk Card Reader Printer Scanner",
+          "image":"https://m.media-amazon.com/images/I/51-GC+EkzBL._AC_UY218_.jpg"
+        }
+      ]
+    },{
+      "id": 11,
+      "customer":1,
+      "status": 1,
+      "payment":1,
+      "address":"123 test street USA",
+      "orderShip":10,
+      "orderPrice": 200,
+      "dueDate": "2021-01-07",
+      "canCancelledUntil": "2021-01-09",
+      "orderDate": "2021-01-01",
+      "deliveredDate":"2021-01-10",
       "products": [
-        1,
-        2,
-        3,
-        4
-      ],
-      "customer": 1,
-      "payment": 1,
-      "address": "orderAddress",
-      "orderShip": 20,
-      "orderPrice": 250,
-      "date": "2020",
-      "id": 2
-    },
-    {
-      "name": "order1",
+        {
+          "id": 100,
+          "name": "Samsung Electronics Galaxy Watch 3 Titanium ",
+          "price": 200,
+          "description": "Samsung Electronics Galaxy Watch 3 Titanium (45mm, GPS, Bluetooth) Smart Watch with Advanced Health Monitoring, Fitness Tracking, and Long Lasting Battery, Mystic Black (US Version)",
+          "image":"https://m.media-amazon.com/images/I/71ejkOW4y2L._AC_AA180_.jpg"
+        }
+      ]
+    },{
+      "id":2,
+      "customer":2,
+      "status": 2,
+      "payment":1,
+      "address":"222 test street USA",
+      "orderShip":20,
+      "orderPrice": 1000,
+      "dueDate": "2021-02-07",
+      "canCancelledUntil": "2021-02-09",
+      "orderDate": "2021-02-01",
+      "deliveredDate":"2021-01-10",
       "products": [
-        1,
-        2,
-        3
-      ],
-      "customer": 1,
-      "payment": 1,
-      "address": "orderAddress",
-      "orderShip": 20,
-      "orderPrice": 250,
-      "date": "2020",
-      "id": 3
+        {
+          "id": 100,
+          "name": "Portable 2TB External Hard",
+          "price": 500,
+          "description": "Seagate Portable 2TB External Hard Drive Portable",
+          "image":"https://m.media-amazon.com/images/I/81tjLksKixL._AC_UY218_.jpg"
+        },
+        {
+          "id": 200,
+          "name": "audio Video Capture Cards ",
+          "price": 250,
+          "description": "MeiYin Audio Video Capture Cards HDMI to USB HDMI Video Capture, Full HD 1080P USB 2.0",
+          "image":"https://m.media-amazon.com/images/I/71lw+9N+7QL._AC_UY218_.jpg"
+          
+        }
+      ]
+    },{
+      "id": 3,
+      "customer":3,
+      "status": 3,
+      "payment":1,
+      "address":"333 test street USA",
+      "orderShip":30,
+      "orderPrice": 2000,
+      "dueDate": "2021-03-07",
+      "canCancelledUntil": "2021-03-09",
+      "orderDate": "2021-03-01",
+      "deliveredDate":"2021-01-10",
+      "products": [
+        {
+          "id": 500,
+          "name": "Seagate FireCuda 120 SSD",
+          "price": 2000,
+          "description": "Seagate FireCuda 120 SSD 500GB Internal Solid State Drive – SATA 6Gb/s 3D TLC for Gaming PC Laptop",
+          "image":"https://m.media-amazon.com/images/I/414gCFbFBhL._AC_SR160,160_.jpg"
+        }
+      ]
+    },{
+      "id": 4,
+      "customer":4,
+      "status": 3,
+      "payment":1,
+      "address":"333 test street USA",
+      "orderShip":30,
+      "orderPrice": 50,
+      "dueDate": "2021-04-22",
+      "canCancelledUntil": "2021-04-25",
+      "orderDate": "2021-04-15",
+      "deliveredDate":"2021-01-10",
+      "products": [
+        {
+          "id": 500,
+          "name": "TEAMGROUP GX2 512GB 3D NAND TLC 2.5 Inch SATA III",
+          "price": 50,
+          "description": "TEAMGROUP GX2 512GB 3D NAND TLC 2.5 Inch SATA III Internal Solid State Drive SSD (Read Speed up to 530 MB/s) Compatible with Laptop & PC Desktop T253X2512G0C101",
+          "image":"https://m.media-amazon.com/images/I/31lIp0Cw7VL._AC_SR160,160_.jpg"
+        }
+      ]
+    },{
+      "id": 5,
+      "customer":5,
+      "status": 3,
+      "payment":1,
+      "address":"333 test street USA",
+      "orderShip":30,
+      "orderPrice": 50,
+      "dueDate": "2021-06-22",
+      "canCancelledUntil": "2021-06-25",
+      "orderDate": "2021-06-15",
+      "deliveredDate":"2021-01-10",
+      "products": [
+        {
+          "id": 500,
+          "name": "HP SSD S700 Pro 2.5",
+          "price": 50,
+          "description": "HP SSD S700 Pro 512GB SATA III 3D NAND Internal Solid State Drive",
+          "image":"https://m.media-amazon.com/images/I/31bm-bLi36L._AC_SR160,160_.jpg"
+        }
+      ]
     }
+    
   ],
   "payments": [
     {

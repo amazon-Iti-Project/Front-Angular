@@ -6,7 +6,7 @@ export interface Iorder{
     id:number;
     products:Iproduct[]; // products id
     user:number; // user id
-    state:DELIVERY_STATE;
+    status:DELIVERY_STATE;
     payment:Ipayment; // paymentId >> object 
     address:string;     
     orderShip:number;   // $

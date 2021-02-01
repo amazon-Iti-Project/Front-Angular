@@ -16,7 +16,7 @@
     <div class="card-body">
         <div>
             <!-- <h5 class="card-title m-0">{{ model.dueDate | date:'EEEE' }} </h5> -->
-            <p class="card-text" style="color:green;"><b>Status</b> : {{ getEnumName(model.state) }}  
+            <p class="card-text" style="color:green;"><b>Status</b> : {{ getEnumName(model.status) }}  
                 <!-- {{ model.deliveredDate | date:'fullDate' }}  -->
             </p>
         </div>
@@ -38,10 +38,10 @@
 
 
             <div class="col-3">
-                <button class="btn btn-warning mb-3" style="width: 100%;"[disabled]="canTrack(model.state)" (click)="target()">Track
+                <button class="btn btn-warning mb-3" style="width: 100%;"[disabled]="canTrack(model.status)" (click)="target()">Track
                     package</button>
 
-                <button class="btn btn-secondary my-1" [disabled]="canCancel(model.state)"
+                <button class="btn btn-secondary my-1" [disabled]="canCancel(model.status)"
                  (click)="open(mymodal)" style="width: 100%;">Request cancellation
                 </button>
                 <ng-template #mymodal let-modal>
