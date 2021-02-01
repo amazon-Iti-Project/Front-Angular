@@ -22,6 +22,8 @@ export class ProductDetailsComponent implements OnInit {
     
   }
 
+
+  // old not used now 
   getFee(feeId:number):number|void{
     this.feeServ.getFeeById(feeId).subscribe(res=>{
       console.log(res)

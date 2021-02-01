@@ -1,3 +1,5 @@
+import { Ifee } from "./Ifee";
+import { Ishipping } from 'src/app/viewModel/Ishipping';
 
 export interface Iproduct{
   id:number;
@@ -8,8 +10,8 @@ export interface Iproduct{
   colors:string[];
   size:string;
   price:number;
-  shipping:number; // shipping id
-  fee:number; // fee id 
+  shipping:Ishipping; // shipping id 
+  fee:Ifee; // fee id 
   discount:number;
   quantity:number;
   brand:number;
@@ -17,19 +19,21 @@ export interface Iproduct{
   rate:number;  // rate id
 }
 
-export interface adminIproduct{
-  id:number;
-  name:string;
-  image:string|ArrayBuffer;
-  price:number;
-  shipping:number;
-  fee:number;
-  discount:number;
-  quantity:number;
-  brand:number;
-  category:number;
-  rate:number;
-}
+// export
+
+// export interface adminIproduct{
+//   id:number;
+//   name:string;
+//   image:string|ArrayBuffer;
+//   price:number;
+//   shipping:number;
+//   fee:number;
+//   discount:number;
+//   quantity:number;
+//   brand:number;
+//   category:number;
+//   rate:number;
+// }
 
 
 // export interface IproductSeller{

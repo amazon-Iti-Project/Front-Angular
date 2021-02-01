@@ -1,13 +1,27 @@
 import { DELIVERY_STATE } from "../enums/enums";
+import { Ipayment } from './Ipayment';
 
 export interface Iorder{
     id:number;
     products:number[]; // products id
-    customer:number; // customer id
+    user:number; // user id
     state:DELIVERY_STATE;
-    payment:number; // paymentId
-    address:string;
+    payment:Ipayment; // paymentId >> object 
+    address:string;     
     orderShip:number;   // $
     orderPrice:number;  // $
-    date:string
+    orderPeriod:number; // biggest of products shipping
+    date:string;
 }
+
+
+export interface IorderdProducts{
+    id:number;
+    productId:number;
+    orderId:number;
+    
+}
+
+
+
+

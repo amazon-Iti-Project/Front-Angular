@@ -48,9 +48,17 @@ export class SellerAddProductComponent implements OnInit {
       category: ['', Validators.required],
       brand: [, Validators.required],
       discount: [,[Validators.required,Validators.min(0),Validators.max(this.feePercent?(100-this.feePercent):100)]],
-      shipping: [0, Validators.required],
+      shipping: this.fb.group({
+          period:[,[Validators.required, Validators.min(0)]],
+          shipPrice:[,[Validators.required, Validators.min(1)]]
+      }),
       // test: [{value:0,disabled:true}, Validators.required],  // failed in value check
-      fee: new FormControl({value: '', disabled: false},[Validators.required]),
+      // fee: new FormControl({value: '', disabled: false},[Validators.required]),
+      fee: this.fb.group({
+        fee:new FormControl({value: '', disabled: false},[Validators.required]),
+        admin:[,[Validators.required]],
+        category:[,[Validators.required]]
+      }),
       size: ['', Validators.required],
       color: ['', Validators.required],
       image: [, Validators.required],
@@ -63,7 +71,7 @@ export class SellerAddProductComponent implements OnInit {
 
     })
     console.log(this.prodForm.controls['image'].value)
-    console.log(this.prodForm.value)
+    // shipForm.['id'].value
 
   }
 
@@ -104,8 +112,9 @@ export class SellerAddProductComponent implements OnInit {
     console.log("id: ",typeof id)
     this.feeServ.getFeebyCatId(id).subscribe(res =>
     {
+
       console.log(res)
-      this.prodForm.controls['fee'].setValue(res?.id);
+      this.prodForm.controls['fee'].setValue(res);
       console.log(this.prodForm.controls['fee'].value)
 
       this.feePercent=res?.fee;
