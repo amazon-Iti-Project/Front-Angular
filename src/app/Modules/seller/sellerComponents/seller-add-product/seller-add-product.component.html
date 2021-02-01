@@ -1,0 +1,137 @@
+<p>seller-add-product works!</p>
+
+   <!-- all page inside container -->
+   <div class="container">
+    <!-- logo -->
+    <header class="my-4">
+      <img src="../../../../../assets/seller/amazon-serv.png" class="img-fluid" style="width: 150px;">
+
+    </header>
+    <!-- Nav Bar -->
+    <!-- nav list -->
+    <nav class="bg-nav-addproduct ">
+      <div class="nav nav-tabs font-amazon-bold  " id="nav-tab" role="tablist">
+        <a class="nav-link active py-3 " id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+          aria-controls="nav-home" aria-selected="true">Vital info</a>
+    
+        <a class="nav-link py-3" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+          aria-controls="nav-profile" aria-selected="false">Image</a>
+    
+        <a class="nav-link py-3" id="nav-profile-tab" data-toggle="tab" href="#nav-contact" role="tab"
+          aria-controls="nav-profile" aria-selected="false">offer</a>
+      </div>
+    </nav>
+    <!-- taps content container -->
+    <form  [formGroup]="prodForm"  class="tab-content p-3 font-amazon-normal" id="nav-tabContent">
+      <!-- tap1 product detail -->
+      <div class="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <!-- product form -->
+          <div class="form-row ">
+            <!-- product id input and choose -->
+            <div class="col-12 form-group d-flex justify-content-between p-0 row">
+              <div class="d-flex col ">
+                <label class="min-content pr-2 align-self-center " for="prodId">category</label>
+                <!-- <input type="text" class="form-control" id="prodId"> -->
+                <select formControlName="category" name="category" class="custom-select" id="catId" required
+                [class.is-invalid]="prodForm.controls['category'].invalid&&prodForm.controls['category'].touched"
+                [class.is-valid]="prodForm.controls['category'].valid&&prodForm.controls['category'].touched" >
+
+                  <option selected disabled value="">select category</option>
+                  <option *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</option>
+                </select>
+              </div>
+              <div class="d-flex col ">
+              <label class="min-content pr-2 align-self-center " for="prodId">brand</label>
+              <select formControlName="brand" class="custom-select"name="brand" id="brandId" required
+              [class.is-invalid]="prodForm.controls['brand'].invalid&&prodForm.controls['brand'].touched"
+              [class.is-valid]="prodForm.controls['brand'].valid&&prodForm.controls['brand'].touched" >
+
+                <option selected disabled value="">select brand</option>
+                <option *ngFor="let brand of brands" [value]="brand.id">{{brand.name}}</option>
+              </select>
+            </div>
+
+            </div>
+            <!-- product Name -->
+            <div class="col-12 form-group row p-0 ">
+              <div class="col-12 d-flex justify-content-between ">
+              <label class="min-content pr-2 align-self-center " for="pId">Product Name</label>
+              <input formControlName="name" type="text" class="form-control" id="prodId" 
+              placeholder="ex.C50-Digital Camera" autocomplete="off"
+              [class.is-invalid]="prodForm.controls['name'].invalid&&prodForm.controls['name'].dirty"
+              [class.is-valid]="prodForm.controls['name'].valid&&prodForm.controls['name'].dirty" />
+            </div>
+              <div class="d-flex w-100  my-2 px-3 justify-content-end"  >
+              <small  [hidden]="(prodForm.controls['name'].valid||prodForm.controls['name'].pristine) "
+              class="text-muted font-0">min 1</small>
+            </div>
+            </div>
+              <!-- product color -->
+              <div class="col-12 form-group d-flex justify-content-between p-1">
+                <label class="min-content pr-2 align-self-center " for="prodId">Color</label>
+                <input formControlName="color" type="text" class="form-control" id="pcolor"
+                [class.is-invalid]="prodForm.controls['color'].invalid&&prodForm.controls['color'].dirty"
+                [class.is-valid]="prodForm.controls['color'].valid&&prodForm.controls['color'].dirty" />
+  
+              <!-- product size -->
+                  <label class="min-content mx-2 pr-2 align-self-center " for="prodId">size</label>
+                  <input formControlName="size"  type="text" class="form-control" id="psize" placeholder="ex.smallxLarge"
+                  [class.is-invalid]="prodForm.controls['size'].invalid&&prodForm.controls['size'].dirty"
+                  [class.is-valid]="prodForm.controls['size'].valid&&prodForm.controls['size'].dirty" />
+  
+              </div>
+          </div>
+
+      </div>
+
+
+      <!-- tap2 product image -->
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="input-group mb-3 justify-content-center">
+          <div class="custom-file w-100">
+            <input type="file" (change)="onSeleImg($event)" class="custom-file-input " id="inputGroupFile02">
+            <label class="custom-file-label font-amazon-normal" for="inputGroupFile02"
+              aria-describedby="inputGroupFileAddon02">Choose file</label>
+            </div>
+              <div class="w-50">
+              <img class="img-fluid card-img-top border my-3" [src]="prodForm.controls['image'].value" *ngIf="prodForm.controls['image'].value; else elseBlock">
+              <ng-template #elseBlock>
+                <img  class="img-fluid card-img-top border my-3"
+                  src="../../../../assets/seller/add/uploadProduct.png">
+              </ng-template>
+          </div>
+        </div>
+      </div>
+
+      <!-- tap3 product Info -->
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+              <span class="input-group-text px-1 font-amazon-bold font-1"
+                  id="basic-addon1 ">$</span>
+          </div>
+          <!-- price -->
+          <input type="number" class="form-control font-amazon-normal font-1" placeholder="Price"
+          formControlName="price"   aria-label="min" aria-describedby="basic-addon1"
+          [class.is-invalid]="prodForm.controls['price'].invalid&&prodForm.controls['price'].dirty"
+          [class.is-valid]="prodForm.controls['price'].valid&&prodForm.controls['price'].dirty" />
+
+      </div>
+      <div class="input-group mb-3">
+          <!-- quantity -->
+          <input type="number" class="form-control font-amazon-normal font-1" placeholder="Quantity"
+          formControlName="quantity"  aria-label="max" aria-describedby="basic-addon1"
+          [class.is-invalid]="prodForm.controls['quantity'].invalid&&prodForm.controls['quantity'].dirty"
+          [class.is-valid]="prodForm.controls['quantity'].valid&&prodForm.controls['quantity'].dirty" />
+
+      </div>
+      </div>
+ 
+    <!-- submit button -->
+    <div class="container d-flex justify-content-center  ">
+     <button type="button"  class="btn  mx-2 ">Cancel</button>
+       <button  (click)="addProduct()" type="submit" [disabled]="prodForm?.invalid" class="btn  mx-2 ">Safe and Finish</button>
+    </div>
+  
+  </form>
+  </div>

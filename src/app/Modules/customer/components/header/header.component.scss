@@ -1,0 +1,25 @@
+  // on hover Nav2 height
+  .nav-height{min-height: 3.25em;}
+
+  // on hover Navbar elements
+  .nav-hover
+  {
+    border: 1px transparent solid;
+    border-radius: 1px;
+  }
+  .nav-hover:hover{
+        border: 1px white solid;
+        border-radius: 1px;
+    }
+
+    .navbar-logo{
+      height:46px;
+      background-color: #131921;
+    }
+
+    *:not(.fab .fas){
+    font-family: amazon-font,Arial, Helvetica, sans-serif ;  
+    padding: 0;
+    margin: 0;
+    font-weight: 100 ;
+  }

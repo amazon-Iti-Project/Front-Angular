@@ -1,0 +1,17 @@
+<h1>admin home works</h1>
+<app-admin-header></app-admin-header>
+<div class="row  m-0 p-3 ">
+    <app-sidebar class=" col-md-3 col-lg-2 col-xl-2 font-amazon-normal row mx-0 px-0 justify-content-around"></app-sidebar>
+    <!-- pages taps content -->
+    <div class="tab-content col-md-9 col-lg-10 col-xl-10 px-0" id="pages-content">
+        <!-- <app-dashboard (click)="getDashBoard()" class="container-fluid tab-pane fade show active" id="dashboard"></app-dashboard>
+        <app-product-statistics  class="container-fluid tab-pane  " id="products"></app-product-statistics>
+        <app-seller-statistics (click)="getSellers()" class="container-fluid tab-pane  " id="sellers"></app-seller-statistics>
+        <app-earings-statistics (click)="getEartings()" class="container-fluid tab-pane  " id="earings"></app-earings-statistics>
+        <app-order-statistics (click)="getOrders()" class="container-fluid tab-pane " id="orders"> </app-order-statistics>
+       
+        <app-customer-statistics (click)="getCustomers()" class="container-fluid tab-pane" id="customers"> </app-customer-statistics> -->
+        <router-outlet class="container-fluid tab-pane"></router-outlet>
+    </div>
+</div>
+

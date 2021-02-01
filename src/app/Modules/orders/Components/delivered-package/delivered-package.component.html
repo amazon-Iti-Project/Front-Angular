@@ -1,4 +1,4 @@
-<app-order-nav-bar></app-order-nav-bar>
+
 <div class="container">
     <div class="row">
         <div class="d-flex col-12">
@@ -10,37 +10,38 @@
                         </div>
                     </div>
                     <div>
-                        <div style="font-weight:bold ;" class="mb-1">132 , hagaian MT</div>
-                        <h6>levice ,Outside USA and Canada</h6>
+                        <div style="font-weight:bold ;" class="mb-1"></div>
+                        <p><b>Delivered in </b>{{order.deliveredDate |date}}</p>
+                        <h6>At {{order.address}}</h6>
                     </div>
 
                 </div>
+                <div class="add-box m-3 p-3 col-12">
+                    <div style="font-weight:bold ;" class="mb-2">Address info</div>
+                    <div> {{order.address}}
+                    </div>
+                    <div>
+                        Reiciendis ipsam consequatur
+                    </div>
+                </div>
             </div>
-            <div class="col-6">
-                <img class="pkgImg m-5"
-                    src="images/19-AUKEY True Wireless Earbuds, Bluetooth 5 Headphones in Ear with Charging Case, Hands-Free Headset with Mic, Touch Contr.jpg"
-                    class="img-pro">
+            <div class="col-6" >
+                <div *ngFor="let prd of order.products">
+                    <img class="pkgImg m-5" [src]="prd.image" class="img-pro">
+                </div>
+                
             </div>
-
-
-
+            
         </div>
 
         <div class="info-box d-flex mb-5">
-            <div class="add-box m-3 p-3 col-6">
-                <div style="font-weight:bold ;" class="mb-2">Address info</div>
-                <div> 123 Lorem ipsum dolor sit amet consectetur
-                </div>
-                <div>
-                    Reiciendis ipsam consequatur
-                </div>
-            </div>
+            
 
-            <div class="add-box m-3 p-3 col-6">
+            <!-- <div class="add-box m-3 p-3 col-6">
                 <div style="font-weight:bold ;" class="mb-2">Order info</div>
                 <div class="mb-2"> <a href="#">View or change this order</a></div>
                 <div> <a href="#">Cancel order</a></div>
-            </div>
+            </div> -->
             <hr>
         </div>
     </div>

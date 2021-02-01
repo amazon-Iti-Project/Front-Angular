@@ -1,0 +1,49 @@
+  // on hover Navbar elements
+  // .nav-hover
+  // {
+  //   border: 1px transparent solid;
+  //   border-radius: 1px;
+  // }
+  // .nav-hover:hover{
+  //       border: 1px white solid;
+  //       border-radius: 1px;
+  //   }
+
+ 
+    .navbar-logo{
+      height:46px;
+      background-color: #131921;
+    }
+
+    // set dropdown list text in nav 
+   nav div.input-group-prepend:not(.fas) ,nav button.btn:not(.fas)  ,nav a.dropdown-item:not(.fas){
+      font-family: amazon-font,Arial, Helvetica, sans-serif !important ;  
+      font-weight: 100 !important;
+    }
+
+    // set tabs in inactive 
+    $navBackground2:#232F3E;
+    @mixin setBgColor($color){background-color:$color;}
+    .navbar-dark .navbar-nav .nav-link {
+      color: white;
+    }
+
+
+    // on hover active tabs
+    .nav-tabs .nav-link.active{
+      color: #F3A847!important;
+      font-weight: 200!important;
+      @include setBgColor($navBackground2);
+      border: 1px transparent solid;
+      border-radius: 1px;
+
+    }
+
+    // on hover tabs
+    .nav-tabs .nav-link:hover {
+        border: 1px white solid;
+        border-radius: 1px;
+    }
+
+    .filter-bg{background-color:#37475A; }
+    .filter-bg:hover{background-color: #485769;}

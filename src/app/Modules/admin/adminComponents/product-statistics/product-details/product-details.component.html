@@ -1,0 +1,38 @@
+<table class="table font-amazon-normal table-hover min-content">
+    <thead class="font-amazon-bold">
+      <tr>
+        <th scope="col">serial </th>
+        <th scope="col">Name</th>
+        <th scope="col">Number</th>
+        <th scope="col"># Ordered </th>
+        <th scope="col">Price <span class="fas fa-dollar-sign"></span></th>
+        <th scope="col">Tax % <span class="fas fa-dollar-sign"></span></th>
+        <th scope="col">discount%</th>
+        <th scope="col">Net Price <span class="fas fa-dollar-sign"></span></th>
+        <th scope="col">Delivered %</th>
+        <th scope="col">Cancelled %</th>
+        <th scope="col">Seller</th>
+        <th scope="col">Product Rate</th>
+        <th scope="col">Seller Rate</th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <!-- row1 -->
+      <tr *ngFor="let product of products ; index as sn;  "> 
+        <th  class="font-amazon-normal" scope="row">{{sn+1}}</th>
+        <td>{{product.name}}</td>
+        <td>{{product.quantity}}</td>
+        <td>'Number of Orders'</td>
+        <td>{{product.price}}<span class="fas fa-dollar-sign"></span></td>4
+        <td>{{product.fee}}%</td>
+        <td>{{product.discount}}%</td>
+        <td>{{product.price*product.fee*product.discount}}</td>
+        <td>80%<span class="fas fa-check-circle text-success font-3"></span></td>
+        <td>20%<span class="fas fa-times-circle text-danger font-3"></span></td>
+        <td>sellername</td>
+        <td>product rate</td>
+        <td>seller rate</td>
+      </tr>
+    </tbody>
+  </table>

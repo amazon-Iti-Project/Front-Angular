@@ -1,81 +1,81 @@
-<app-order-nav-bar></app-order-nav-bar>
-
-  <div class="container mt-4">
-    <div class="row">
-      <div class="d-flex col-12">
-        <div class="lvls col-6">
-          <div class="d-flex">
-            <div>
-              <div class="squFl d-flex  mr-3">
-                <i class="chkIcon fas fa-check"></i>
-              </div>
-              <div class="line ml-2"></div>
+<div class="container mt-4">
+  <div class="row">
+    <div class="d-flex col-12">
+      <div class="lvls col-6">
+        <div class="d-flex">
+          <div>
+            <div class="squFl d-flex  mr-3">
+              <i class="chkIcon fas fa-check"></i>
             </div>
-            <div>
-              <div style="font-weight: bold;">Ordered Tuseday, September 1</div>
-              <h6>Previously expected September 14</h6>
-            </div>
-
-          </div>
-          <div class="d-flex mt-2 ">
-            <div>
-              <div class="squ d-flex  mr-3">
-              </div>
-              <div class="dshLn ml-2 mt-2"></div>
-            </div>
-            <div class="pkgLvl">
-              Shipped
-            </div>
-
-          </div>
-          <div class="d-flex mt-2 ">
-            <div>
-              <div class="squ d-flex  mr-3">
-              </div>
-              <div class="dshLn ml-2 mt-2"></div>
-            </div>
-            <div class="pkgLvl">
-              Out for delivery
-            </div>
-
-          </div>
-          <div class="d-flex mt-2 mb-5">
-            <div>
-              <div class="squ d-flex mr-3">
-              </div>
-            </div>
-            <div class="pkgLvl">
-              Arriving September 9 - September 12
-            </div>
-
-          </div>
-        </div>
-        <div class="col-6 d-flex align-self-center">
-          <img class="pkgImg m-5" src="images/5.jpg" class="img-pro">
-        </div>
-
-
-
-      </div>
-
-      <div class="info-box d-flex mb-5">
-        <div class="add-box m-3 p-3 col-6">
-          <div style="font-weight:bold ;" class="mb-2">Address info</div>
-          <div> 123 Lorem ipsum dolor sit amet consectetur
+            <div class="line ml-2"></div>
           </div>
           <div>
-            Reiciendis ipsam consequatur
+            <div style="font-weight: bold;">Ordered {{ order.orderDate | date}}</div>
+            <h6>Previously expected {{order.dueDate}}</h6>
           </div>
-        </div>
 
-        <div class="add-box m-3 p-3 col-6">
-          <div style="font-weight:bold ;" class="mb-2">Order info</div>
-          <div class="mb-2"> <a href="#">View or change this order</a></div>
-          <div> <a href="#">Cancel order</a></div>
         </div>
-        <hr>
+        <div class="d-flex mt-2 ">
+          <div>
+            <div class="squ d-flex  mr-3">
+            </div>
+            <div class="dshLn ml-2 mt-2"></div>
+          </div>
+          <div class="pkgLvl">
+            Shipped
+          </div>
+
+        </div>
+        <div class="d-flex mt-2 ">
+          <div>
+            <div class="squ d-flex  mr-3">
+            </div>
+            <div class="dshLn ml-2 mt-2"></div>
+          </div>
+          <div class="pkgLvl">
+            Out for delivery
+          </div>
+
+        </div>
+        <div class="d-flex mt-2 mb-5">
+          <div>
+            <div class="squ d-flex mr-3">
+            </div>
+          </div>
+          <div class="pkgLvl">
+            Arriving {{order.deliveredDate | date}}
+          </div>
+
+        </div>
       </div>
-      <!-- <div class="container">
+      <div class="col-6 d-flex align-self-center">
+        <div *ngFor="let prd of order.products">
+          <img class="pkgImg m-5" [src]="prd.image" class="img-pro">
+      </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="info-box d-flex mb-5">
+      <div class="add-box m-3 p-3 col-12">
+        <div style="font-weight:bold ;" class="mb-2">Address info</div>
+        <div> {{order.address}}
+        </div>
+        <div>
+          Reiciendis ipsam consequatur
+        </div>
+      </div>
+
+      <!-- <div class="add-box m-3 p-3 col-6">
+        <div style="font-weight:bold ;" class="mb-2">Order info</div>
+        <div class="mb-2"> <a href="#">View or change this order</a></div>
+        <div> <a href="#">Cancel order</a></div>
+      </div> -->
+      <hr>
+    </div>
+    <!-- <div class="container">
         <div style="font-size: 35px;"> Inspired by your browsing history</div>
         <div class="row my-5">
           <div class="col-2">
@@ -248,5 +248,5 @@
     
       </div> -->
 
-    </div>
   </div>
+</div>

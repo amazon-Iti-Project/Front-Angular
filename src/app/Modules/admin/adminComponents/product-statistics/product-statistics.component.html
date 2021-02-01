@@ -1,0 +1,30 @@
+<p>product-statistics works!</p>
+<!-- page content1 Products  -->
+<!-- layout -->
+<!-- page Container -->
+<!-- Product Section -->
+<div class=" row">
+  <div class="col-12 ">
+    <div class="container-fluid">
+      <!--Product tabs -->
+      <app-product-taps></app-product-taps>
+      <!-- tabs content -->
+      <div class="tab-content py-1" id="productTabsContent">
+        <div class="tab-pane fade show active overflow-auto" id="productDet" role="tabpanel" aria-labelledby="home-tab">
+          <!-- Product table -->
+        <app-product-details></app-product-details>
+        </div>
+
+        <!-- summary tap -->
+        <div class="tab-pane fade show  py-1" id="productSumm" role="tabpanel" aria-labelledby="profile-tab">
+          <canvas class="my-4 w-100" id="product-chart"></canvas>
+        </div>
+        <!-- Expect tap -->
+        <div class="tab-pane fade py-1" id="productExp" role="tabpanel" aria-labelledby="contact-tab"></div>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>

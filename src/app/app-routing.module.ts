@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './appComponent/home/home.component';
-import { SignInComponent } from './Modules/auth/Components/sign-in/sign-in.component';
-import { SignUpComponent } from './Modules/auth/Components/sign-up/sign-up.component';
-import { DeliveredPackageComponent } from './Modules/orders/Components/delivered-package/delivered-package.component';
-import { OrdersHomeComponent } from './Modules/orders/Components/orders-home/orders-home.component';
-import { PackageTrackComponent } from './Modules/orders/Components/package-track/package-track.component';
+import { NotFoundComponent } from './Modules/customer/components/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: 'Home', component: HomeComponent },
-  { path: 'Orders', component: OrdersHomeComponent },
-  { path: 'TrackPackage', component: PackageTrackComponent },
-  { path: 'DeliveredPackage', component:DeliveredPackageComponent},
-  { path: 'SignIn', component:SignInComponent},
-  { path: 'SignUp', component:SignUpComponent},
-  { path: '', redirectTo: '/Home', pathMatch: 'full' },
+  // { path: 'home', component:HomeComponent  },
+  // { path: 'aboutus', component:  },
+  { path: 'seller', loadChildren: () => import('./Modules/seller/seller.module').then(module => module.SellerModule) },
+  { path: 'admin', loadChildren: () => import('./Modules/admin/admin-app.module').then(module => module.AdminModule) },
+  { path: 'auth', loadChildren: () => import('./Modules/auth/auth.module').then(module => module.AuthModule) },
+  { path: '', loadChildren: () => import('./Modules/customer/customer.module').then(module => module.CustomerModule)  },
+  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: "**", component:NotFoundComponent  }
+  
+  // Default path 
+  //, full mean not relative path match the full path
+  // { path: '', redirectTo: 'home', pathMatch: 'full' }, 
 
+  // Wildcard path;
+  // to match any path that not met about
+  //note if wildCard was the satrt path it will be matched every time so must be the last one
 ];
 
 @NgModule({

@@ -1,0 +1,91 @@
+<!-- page content3  Sellers-->
+<!-- layout -->
+        <!-- page of Seller Container -->
+            <!-- Seller Section -->
+            <div class=" row">
+                <div class="col-12 ">
+                    <!-- top bar filter -->
+                    <!--Seller tabs -->
+                    <div class="container-fluid">
+                        <!-- seller details -->
+                        <ul class="nav nav-tabs font-amazon-bold " id="myTab" role="tablist">
+                            <li class="nav-item " role="presentation">
+                                <a class="nav-link active px-1" id="sellerDet-tab" data-toggle="tab" href="#sellerDet"
+                                    role="tab" aria-controls="sellerDet" aria-selected="true">Details</a>
+                            </li>
+                            <!-- seller Summary -->
+                            <li class="nav-item " role="presentation">
+                                <a class="nav-link px-1" id="sellerSumm-tab" data-toggle="tab" href="#sellerSumm"
+                                    role="tab" aria-controls="sellerSumm" aria-selected="false">Summary</a>
+                            </li>
+                            <!-- seller Expected -->
+                            <li class="nav-item " role="presentation">
+                                <a class="nav-link px-1" id="sellerExp-tab" data-toggle="tab" href="#sellerExp"
+                                    role="tab" aria-controls="sellerExp" aria-selected="false">Expected</a>
+                            </li>
+                        </ul>
+                        <!-- tabs content -->
+                        <div class="tab-content py-1" id="sellerContent">
+                            <div class="tab-pane fade show active overflow-auto" id="sellerDet" role="tabpanel"
+                                aria-labelledby="sellerDet-tab">
+                                <!-- Seller table -->
+                                <table class="table font-amazon-normal table-hover min-content">
+                                    <thead class="font-amazon-bold">
+                                        <tr>
+                                            <th scope="col">Id </th>
+                                            <th scope="col">SellerName</th>
+                                            <th scope="col"># Stock </th>
+                                            <th scope="col"># Sold </th>
+                                            <th scope="col">Stock Value <span class="fas fa-dollar-sign"></span></th>
+                                            <th scope="col">Sold Value <span class="fas fa-dollar-sign"></span></th>
+                                            <th scope="col">Tax % </th>
+                                            <th scope="col">Tax Value<span class="fas fa-dollar-sign"></span></th>
+                                            <th scope="col">Avg.Customer rate</th>
+                                            <th scope="col">Avg.Stock rate</th>
+                                            <th scope="col">Avg.site rate</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- row1 -->
+                                        <tr>
+                                            <th class="font-amazon-normal" scope="row">1</th>
+                                            <td>Jone Adames</td>
+                                            <td>500</td>
+                                            <td>500</td>
+                                            <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                            <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                            <td>25<span>&nbsp</span><span>%</span></td>
+                                            <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                            <td>5.0</td>
+                                            <td>5.0</td>
+                                            <td>5.0</td>
+                                        </tr>
+                                        <!-- row2  -->
+                                        <tr>
+                                            <th class="font-amazon-normal" scope="row">1</th>
+                                            <td>Joe bradly</td>
+                                            <td>500</td>
+                                            <td>500</td>
+                                            <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                            <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                            <td>25<span>&nbsp</span><span>%</span></td>
+                                            <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
+                                            <td>5.0</td>
+                                            <td>5.0</td>
+                                            <td>5.0</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!-- summary tap -->
+                            </div>
+                            <div class="tab-pane fade show py-1" id="sellerSumm" role="tabpanel"
+                                aria-labelledby="sellerSumm-tab">
+                                <canvas class="my-4 w-100" id="sellerSumm-myChart"></canvas>
+
+                            </div>
+                            <div class="tab-pane fade py-1" id="sellerExp" role="tabpanel"
+                                aria-labelledby="sellerExp-tab"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>

@@ -1,45 +1,43 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppComponent } from 'src/app/app.component';
 import { OrdersHomeComponent } from './Components/orders-home/orders-home.component';
 import { PackageTrackComponent } from './Components/package-track/package-track.component';
 import { OrderNavBarComponent } from './Components/order-nav-bar/order-nav-bar.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from 'src/app/app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HomeComponent } from 'src/app/appComponent/home/home.component';
-import { HeaderComponent } from 'src/app/appComponent/header/header.component';
-import { FooterComponent } from 'src/app/appComponent/footer/footer.component';
-import { CarouselComponent } from 'src/app/appComponent/carousel/carousel.component';
-import { SidebarComponent } from 'src/app/appComponent/sidebar/sidebar.component';
-import { RouterModule } from '@angular/router';
 import { DeliveredPackageComponent } from './Components/delivered-package/delivered-package.component';
-import { SignInComponent } from '../auth/Components/sign-in/sign-in.component';
-import { SignUpComponent } from '../auth/Components/sign-up/sign-up.component';
+import { OrdersListComponent } from './Components/orders-list/orders-list.component';
+import { OrdersRoutingModule } from './orders-routing.modules';
+import { ArchivedOrderComponent } from './Components/archived-order/archived-order.component';
+import { OrderCardComponent } from './Components/order-card/order-card.component';
+import { OrdersService } from './orders.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CanceledOrderComponent } from './Components/canceled-order/canceled-order.component';
+import { DigitalOrdersComponent } from './Components/digital-orders/digital-orders.component';
+import { CanceledListComponent } from './Components/canceled-list/canceled-list.component';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
     OrdersHomeComponent,
     PackageTrackComponent,
     OrderNavBarComponent,
-    HomeComponent,
-    HeaderComponent,
-    FooterComponent,
-    CarouselComponent,
-    SidebarComponent,
     DeliveredPackageComponent,
-    SignInComponent,
-    SignUpComponent
+    OrdersListComponent,
+    ArchivedOrderComponent,
+    OrderCardComponent,
+    CanceledOrderComponent,
+    DigitalOrdersComponent,
+    CanceledListComponent,
   ],
   imports: [
     CommonModule,
-    BrowserModule,
-    AppRoutingModule,
     NgbModule,
-    RouterModule
-  ]
+    OrdersRoutingModule,
+    HttpClientModule,
+    FormsModule
+  ],
+  providers: [OrdersService]
 })
 export class OrdersModule { }
