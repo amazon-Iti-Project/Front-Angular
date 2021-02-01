@@ -12,9 +12,12 @@ export enum PAYMENT_TYPE   {
     credit
 }
 export enum DELIVERY_STATE{
-    received,
-    pending,
-    cancelled
+    Pending = 1,
+    Arriving = 2,
+    Delivered = 3,
+    Archived = 4,
+    Cancelled = 5,
+    Cancelling = 6,
 }
 export enum PAYMENT_STATE{
     paid,

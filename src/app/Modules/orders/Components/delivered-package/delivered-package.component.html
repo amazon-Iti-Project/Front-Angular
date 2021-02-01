@@ -1,0 +1,48 @@
+
+<div class="container">
+    <div class="row">
+        <div class="d-flex col-12">
+            <div class="lvls col-6">
+                <div class="d-flex align-items-center my-3">
+                    <div>
+                        <div class="squFl d-flex  mr-3">
+                            <i class="chkIcon fas fa-check"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-weight:bold ;" class="mb-1"></div>
+                        <p><b>Delivered in </b>{{order.deliveredDate |date}}</p>
+                        <h6>At {{order.address}}</h6>
+                    </div>
+
+                </div>
+                <div class="add-box m-3 p-3 col-12">
+                    <div style="font-weight:bold ;" class="mb-2">Address info</div>
+                    <div> {{order.address}}
+                    </div>
+                    <div>
+                        Reiciendis ipsam consequatur
+                    </div>
+                </div>
+            </div>
+            <div class="col-6" >
+                <div *ngFor="let prd of order.products">
+                    <img class="pkgImg m-5" [src]="prd.image" class="img-pro">
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div class="info-box d-flex mb-5">
+            
+
+            <!-- <div class="add-box m-3 p-3 col-6">
+                <div style="font-weight:bold ;" class="mb-2">Order info</div>
+                <div class="mb-2"> <a href="#">View or change this order</a></div>
+                <div> <a href="#">Cancel order</a></div>
+            </div> -->
+            <hr>
+        </div>
+    </div>
+</div>

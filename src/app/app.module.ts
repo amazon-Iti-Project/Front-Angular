@@ -7,6 +7,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TestNavComponent } from './appComponent/test-nav/test-nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// by abanoub
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -28,6 +31,8 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     // for reactive forms
     ReactiveFormsModule,
+    // by abanoub to be checked
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

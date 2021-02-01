@@ -19,6 +19,14 @@ export interface Iproduct{
   rate:number;  // rate id
 }
 
+
+
+
+
+
+
+
+{
 // export
 
 // export interface adminIproduct{
@@ -58,3 +66,4 @@ export interface Iproduct{
   // var payment = {type:"cash",date:"2020",price:200,shippingFee:20,order:"6GQxcJHffYmKOYHovJih",shipping:"36EWaTxYDHGlcZI2xRZb"}//abnoub
   // var admin =  {name:"admin"}// rule can read all tables and write fees if not ordered
   // var order={date:"2020",status:"received",customer:"MXir9HsbH8Qo0RGFFHrxT1r0caj2",seller:"MXir9HsbH8Qo0RGFFHrxT1r0caj2",products:"productId1"}//kamal
+}

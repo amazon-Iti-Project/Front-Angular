@@ -1,0 +1,252 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="d-flex col-12">
+      <div class="lvls col-6">
+        <div class="d-flex">
+          <div>
+            <div class="squFl d-flex  mr-3">
+              <i class="chkIcon fas fa-check"></i>
+            </div>
+            <div class="line ml-2"></div>
+          </div>
+          <div>
+            <div style="font-weight: bold;">Ordered {{ order.orderDate | date}}</div>
+            <h6>Previously expected {{order.dueDate}}</h6>
+          </div>
+
+        </div>
+        <div class="d-flex mt-2 ">
+          <div>
+            <div class="squ d-flex  mr-3">
+            </div>
+            <div class="dshLn ml-2 mt-2"></div>
+          </div>
+          <div class="pkgLvl">
+            Shipped
+          </div>
+
+        </div>
+        <div class="d-flex mt-2 ">
+          <div>
+            <div class="squ d-flex  mr-3">
+            </div>
+            <div class="dshLn ml-2 mt-2"></div>
+          </div>
+          <div class="pkgLvl">
+            Out for delivery
+          </div>
+
+        </div>
+        <div class="d-flex mt-2 mb-5">
+          <div>
+            <div class="squ d-flex mr-3">
+            </div>
+          </div>
+          <div class="pkgLvl">
+            Arriving {{order.deliveredDate | date}}
+          </div>
+
+        </div>
+      </div>
+      <div class="col-6 d-flex align-self-center">
+        <div *ngFor="let prd of order.products">
+          <img class="pkgImg m-5" [src]="prd.image" class="img-pro">
+      </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="info-box d-flex mb-5">
+      <div class="add-box m-3 p-3 col-12">
+        <div style="font-weight:bold ;" class="mb-2">Address info</div>
+        <div> {{order.address}}
+        </div>
+        <div>
+          Reiciendis ipsam consequatur
+        </div>
+      </div>
+
+      <!-- <div class="add-box m-3 p-3 col-6">
+        <div style="font-weight:bold ;" class="mb-2">Order info</div>
+        <div class="mb-2"> <a href="#">View or change this order</a></div>
+        <div> <a href="#">Cancel order</a></div>
+      </div> -->
+      <hr>
+    </div>
+    <!-- <div class="container">
+        <div style="font-size: 35px;"> Inspired by your browsing history</div>
+        <div class="row my-5">
+          <div class="col-2">
+            <img src="images/1.jpg" class="img-pro">
+            <div>LDFAS Titanium Band Compatible for Galaxy Watch 45mm/46mm Bands, 22mm Titanium…</div>
+            <div>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star"></span>
+              <span class="fas fa-star-half-alt"></span>
+            </div>
+            <div>$31.99</div>
+          </div>
+          <div class="col-2">
+            <img src="images/2.jpg" class="img-pro">
+            <div>LDFAS Titanium Band Compatible for Galaxy Watch 45mm/46mm Bands, 22mm Titanium…</div>
+            <div>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star"></span>
+              <span class="fas fa-star-half-alt"></span>
+            </div>
+            <div>$31.99</div>
+          </div>
+          <div class="col-2">
+            <img src="images/3.jpg" class="img-pro">
+            <div>LDFAS Titanium Band Compatible for Galaxy Watch 45mm/46mm Bands, 22mm Titanium…</div>
+            <div>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star"></span>
+              <span class="fas fa-star-half-alt"></span>
+            </div>
+            <div>$31.99</div>
+          </div>
+          <div class="col-2">
+            <img src="images/4.jpg" class="img-pro">
+            <div>LDFAS Titanium Band Compatible for Galaxy Watch 45mm/46mm Bands, 22mm Titanium…</div>
+            <div>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star"></span>
+              <span class="fas fa-star-half-alt"></span>
+            </div>
+            <div>$31.99</div>
+          </div>
+          <div class="col-2">
+            <img
+              src="images/7-Wyze Cam 1080p HD Indoor WiFi Smart Home Camera with Night Vision, 2-Way Audio, Works with Alexa.jpg"
+              class="img-pro">
+            <div>Samsung Electronics Wireless Charger Trio - Charge up to 3 Devices - for Galaxy Phones…</div>
+            <div>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fas fa-star-half-alt"></span>
+              <span class="far fa-star"></span>
+            </div>
+            <div>$31.99</div>
+          </div>
+          <div class="col-2">
+            <img src="images/8-Xbox Core Controller - Robot White.jpg" class="img-pro">
+            <div>Samsung Electronics Wireless Charger Trio- Charge up to 3 Devices - for Galaxy Phones…</div>
+            <div>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fas fa-star-half-alt"></span>
+              <span class="far fa-star"></span>
+            </div>
+            <div>$31.99</div>
+          </div>
+    
+        </div>
+    
+      </div>
+      <div class="container">
+    
+        <div style="font-size: 35px;">Gift ideas inspired by your shopping history</div>
+        <div class="row my-5">
+          <div class="col-2">
+            <img
+              src="images/9-Samsung Galaxy Buds+ Plus, True Wireless Earbuds (Wireless Charging Case Included), Black – US Version.jpg"
+              class="img-pro">
+            <div>LDFAS Titanium Band Compatible for Galaxy Watch 45mm/46mm Bands, 22mm Titanium…</div>
+            <div>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star"></span>
+              <span class="fas fa-star-half-alt"></span>
+            </div>
+            <div>$31.99</div>
+          </div>
+          <div class="col-2">
+            <img
+              src="images/10-RUNMUS Gaming Headset Xbox One Headset with 7.1 Surround Sound, PS4 Headset with Noise Canceling Mic .jpg"
+              class="img-pro">
+            <div>LDFAS Titanium Band Compatible for Galaxy Watch 45mm/46mm Bands, 22mm Titanium…</div>
+            <div>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star"></span>
+              <span class="fas fa-star-half-alt"></span>
+            </div>
+            <div>$31.99</div>
+          </div>
+          <div class="col-2">
+            <img src="images/11-Samsung Galaxy Buds Live, True Wireless Earbuds w-Active Noise Cancelling.jpg"
+              class="img-pro">
+            <div>LDFAS Titanium Band Compatible for Galaxy Watch 45mm/46mm Bands, 22mm Titanium…</div>
+            <div>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star"></span>
+              <span class="fas fa-star-half-alt"></span>
+            </div>
+            <div>$31.99</div>
+          </div>
+          <div class="col-2">
+            <img
+              src="images/12-10'' Ring Light with 50'' Extendable Tripod Stand, Sensyne LED Circle Lights with Phone Holder for Live Stream.jpg"
+              class="img-pro">
+            <div>LDFAS Titanium Band Compatible for Galaxy Watch 45mm/46mm Bands, 22mm Titanium…</div>
+            <div>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star"></span>
+              <span class="fas fa-star-half-alt"></span>
+            </div>
+            <div>$31.99</div>
+          </div>
+          <div class="col-2">
+            <img
+              src="images/13-Gskyer Telescope, 70mm Aperture 400mm AZ Mount Astronomical Refracting Telescope for Kids Beginners.jpg"
+              class="img-pro">
+            <div>Samsung Electronics Wireless Charger Trio- Charge up to 3 Devices - for Galaxy Phones…</div>
+            <div>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fas fa-star-half-alt"></span>
+              <span class="far fa-star"></span>
+            </div>
+            <div>$31.99</div>
+          </div>
+          <div class="col-2">
+            <img
+              src="images/14-DJI Mini 2 Fly More Combo – Ultralight Foldable Drone, 3-Axis Gimbal with 4K Camera, 12MP Photos, 31 Mins Flight Time, OcuSync 2.0 10km HD Video.jpg"
+              class="img-pro">
+            <div>Samsung Electronics Wireless Charger Trio- Charge up to 3 Devices - for Galaxy Phones…</div>
+            <div>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fa fa-star "></span>
+              <span class="fas fa-star-half-alt"></span>
+              <span class="far fa-star"></span>
+            </div>
+            <div>$31.99</div>
+          </div>
+    
+        </div>
+    
+      </div> -->
+
+  </div>
+</div>

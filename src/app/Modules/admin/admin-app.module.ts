@@ -11,10 +11,10 @@ import { SellerStatisticsComponent } from './adminComponents/seller-statistics/s
 import { OrderStatisticsComponent } from './adminComponents/order-statistics/order-statistics.component';
 import { EaringsStatisticsComponent } from './adminComponents/earings-statistics/earings-statistics.component';
 import { NotFoundComponent } from '../customer/components/not-found/not-found.component';
-import { ProductDetailsComponent } from './adminComponents/product-statistics/product-details/product-details.component';
 import { ProductSummaryComponent } from './adminComponents/product-statistics/product-summary/product-summary.component';
 import { ProductExpectedComponent } from './adminComponents/product-statistics/product-expected/product-expected.component';
 import { ProductTapsComponent } from './adminComponents/product-statistics/product-taps/product-taps.component';
+import { ProductDetailsComponent } from './adminComponents/product-statistics/product-details/product-details.component';
 
 const routes: Routes = [
   {
