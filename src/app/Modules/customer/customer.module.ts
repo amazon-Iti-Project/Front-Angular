@@ -44,7 +44,8 @@ const routes:Routes = [
     NotFoundComponent,
     CarouselComponent,
     HomeBodyComponent,
-    SignUpComponent
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
 CommonModule,
