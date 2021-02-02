@@ -12,6 +12,7 @@ import { CartComponent } from '../orders/cart/cart.component';
 import { OrdersHomeComponent } from '../orders/Components/orders-home/orders-home.component';
 import { SignInComponent } from '../auth/Components/sign-in/sign-in.component';
 import { SignUpComponent } from '../auth/Components/sign-up/sign-up.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes:Routes = [
@@ -48,7 +49,8 @@ const routes:Routes = [
   imports: [
 CommonModule,
     RouterModule.forChild(routes),
-    
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class CustomerModule { }
