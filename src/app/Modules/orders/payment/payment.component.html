@@ -29,7 +29,7 @@
                   <tr>
                     <td>{{ord?.id}}</td>
                     <td>{{ord?.orderDate |date}}</td>
-                    <td>Order Payment</td>
+                    <td>{{ord?.payment?.payment}}</td>
                     <td>{{ord?.deliveredDate |date}}</td>
                     <td>{{ord?.orderPrice |currency}}</td>
                     <td>{{ord?.orderShip | currency}}</td>

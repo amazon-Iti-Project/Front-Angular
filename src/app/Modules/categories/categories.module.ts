@@ -8,9 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DepartmentComponent } from './components/department/department.component';
 
 const routes: Routes = [
-  { path: 'product', component:PaymentComponent  },
+  { path: 'payment', component:PaymentComponent  },
   // this is product id path
-  { path: 'product/:pId', component:PaymentComponent  },
+  { path: 'product/:pId', component:ProductsDetalisComponent  },
   {path:'',component:AllDepartmentsComponent},
   {path:':depName',component:DepartmentComponent}
 ]

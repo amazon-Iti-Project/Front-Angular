@@ -4,6 +4,8 @@ import { Iorder } from 'src/app/viewModel/Iorder';
 import { Component, OnInit } from '@angular/core';
 import{Location} from '@angular/common'
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { UserService } from './../../../services/user/user.service';
+import { Iuser } from './../../../viewModel/Iuser';
 
 
 @Component({
@@ -14,37 +16,53 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 export class PaymentComponent implements OnInit {
   ord:Iorder|null=null;
   // this is passed Id >>>
-  oID:number=1;
+  user:Iuser|undefined;
   total:number=1;
 
-  constructor(private activatedRoute: ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,private userServ:UserService,
     private router: Router,
     private oService:OrderService,
     private location: Location) { }
 
     ngOnInit(): void {
       this.activatedRoute.paramMap.subscribe((params:ParamMap)=>{
-        let oIDParam = params.get('Id')
-        this .oID= (oIDParam)? parseInt(oIDParam) : 1;
-        this.oService.getOrderById(this.oID).subscribe(
-          (res)=>{
-            console.log(res)
-            this.ord=res;
-          }
-        )
+        this.getUser();
+        if(this.user&&this.user.id){
+          this.oService.getOrderbyCustomerId(this.user.id).subscribe(
+            (res)=>{
+              console.log(res)
+              this.ord=res;
+            }
+          )
+        }
+       
 
       })
 
-     console.log(this.oID);
+     console.log(this.user);
      console.log(this.ord);
     }
 
-    calc(x:number , y:number){
-      this.total=x+y;
-      return this.total;
+    calc(x:number|undefined , y:number|undefined){
+      if(x && y){
+        this.total=x+y;
+        return this.total;
+      }else return ''
+      
 
 
     }
+
+     // to get user
+  getUser():void{
+    let token = this.userServ.isUserSignedIn()
+    if(token) this.userServ.getUserByToken(token).subscribe(res=>{
+      console.log(res)
+      this.user = res;
+    })
+    else console.log('not logged in ')
+
+  }
 
 }
 

@@ -7,7 +7,7 @@ export interface Iproduct{
   image:string|ArrayBuffer;
   description?:string;
   tags:string[];
-  colors:string[];
+  color:string;
   size:string;
   price:number;
   shipping:Ishipping; // shipping id 
