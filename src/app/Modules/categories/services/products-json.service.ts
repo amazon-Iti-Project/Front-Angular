@@ -14,4 +14,7 @@ export class ProductsJsonService {
   //   return this.httpClient.get<IProduct[]>
   //   (`${environment.API_URL}/products?categoryName=${catName}`);
   // }
+  getAllProducts(): Observable<IProduct[]> {
+    return this.httpClient.get<IProduct[]>(`${environment.API_BASE_URL}/Salmaproducts`)
+  }
 }

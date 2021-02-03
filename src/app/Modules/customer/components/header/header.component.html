@@ -156,10 +156,12 @@
       </li>
       <li class="nav-item active nav-hover">
         <!-- cart -->
+        <a class="nav-link" [routerLink]="['/cart']">
         <div class="d-flex ">
-          <a href="cart.html"><span class="fas fa-shopping-cart text-light h2 "></span></a>
-          <a href="cart.html" class="badge font-1 text-warning">1</a>
+          <a [routerLink]="['/cart']" ><span class="fas fa-shopping-cart text-light h2 "></span></a>
+          <a [routerLink]="['/cart']" class="badge font-1 text-warning">1</a>
         </div>
+        </a>
       </li>
     </ul>
   </div>
