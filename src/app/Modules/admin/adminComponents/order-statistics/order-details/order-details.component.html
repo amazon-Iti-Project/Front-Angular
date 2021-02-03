@@ -1,0 +1,25 @@
+<table class="table font-amazon-normal table-hover min-content">
+    <thead class="font-amazon-bold">
+      <tr>
+        <th scope="col">serial </th>
+        <th scope="col">Order Id </th>
+        <th scope="col">order Price&nbsp;<span class="fas fa-dollar-sign"></span></th>
+        <th scope="col">order Ship&nbsp;<span class="fas fa-dollar-sign"></span></th>
+        <th scope="col">Payment&nbsp;<span class="fas fa-dollar-sign"></span></th>
+        <th scope="col">Deliverey State&nbsp; %</th>
+      </tr>
+
+    </thead>
+    <tbody>
+     
+      <!-- row1 -->
+      <tr *ngFor="let order of orders ; index as sn;  "> 
+        <th  class="font-amazon-normal" scope="row">{{sn+1}}</th>
+        <td>{{order.id}}</td>
+        <td>{{order.orderPrice}}</td>
+        <td>{{order.orderShip}}&nbsp;<span class="fas fa-dollar-sign"></span></td>
+        <td>{{order.payment.payment}}&nbsp;<span class="fas fa-dollar-sign"></span></td>
+        <td>{{order.status}}&nbsp;%</td>
+      </tr>
+    </tbody>
+  </table>

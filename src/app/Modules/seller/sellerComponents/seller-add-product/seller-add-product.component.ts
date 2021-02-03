@@ -17,9 +17,7 @@ import { FeeService } from './../../../../services/feeService/fee.service';
 })
 export class SellerAddProductComponent implements OnInit {
   imgName: string | undefined
-  feePercent:number|undefined
   prodForm: FormGroup = this.fb.group({})
-  shipForm: FormGroup = this.fb.group({})
   subscription: Subscription[] = [];
   categories: Icategory[] = [];
   brands: Ibrand[] = [];
@@ -47,7 +45,9 @@ export class SellerAddProductComponent implements OnInit {
       quantity: [, [Validators.required, Validators.min(1)]],
       category: ['', Validators.required],
       brand: [, Validators.required],
-      discount: [,[Validators.required,Validators.min(0),Validators.max(this.feePercent?(100-this.feePercent):100)]],
+      discount: [,[Validators.required,Validators.min(0),Validators.max(100
+        // this.prodForm.controls['fee'].value.fee?(100-this.prodForm.controls['fee'].value.fee):100
+        )]],
       shipping: this.fb.group({
           period:[,[Validators.required, Validators.min(0)]],
           shipPrice:[,[Validators.required, Validators.min(1)]]
@@ -55,7 +55,7 @@ export class SellerAddProductComponent implements OnInit {
       // test: [{value:0,disabled:true}, Validators.required],  // failed in value check
       // fee: new FormControl({value: '', disabled: false},[Validators.required]),
       fee: this.fb.group({
-        fee:new FormControl({value: '', disabled: false},[Validators.required]),
+        fee:new FormControl('',[Validators.required]),
         admin:[,[Validators.required]],
         category:[,[Validators.required]]
       }),
@@ -65,13 +65,8 @@ export class SellerAddProductComponent implements OnInit {
       tags: [[], ],
 
     })
-    this.shipForm = this.fb.group({
-      period: [, [Validators.required, Validators.min(0)]],
-      shipPrice: [, [Validators.required, Validators.min(1)]],
 
-    })
-    console.log(this.prodForm.controls['image'].value)
-    // shipForm.['id'].value
+    console.log(this.prodForm.controls['fee'].get('fee'))
 
   }
 
@@ -114,10 +109,10 @@ export class SellerAddProductComponent implements OnInit {
     {
 
       console.log(res)
-      this.prodForm.controls['fee'].setValue(res);
-      console.log(this.prodForm.controls['fee'].value)
+      let {fee,admin,category} = res? res:{fee:undefined,admin:undefined,category:undefined};
+      this.prodForm.controls['fee'].setValue({fee,admin,category});
+      console.log(this.prodForm.controls['fee'].get('fee'))
 
-      this.feePercent=res?.fee;
     }, err => console.log(err))
 
   }
@@ -125,46 +120,37 @@ export class SellerAddProductComponent implements OnInit {
   updateTotalPrice(priceEle:any){
     let price = this.prodForm.controls['price'].value;
     let discount = this.prodForm.controls['discount'].value;
-    let fee = this.feePercent ? this.feePercent : 0
+    let fee = this.prodForm.controls['fee'].value.fee
     let netPrice = price * (100-discount)/100
     let totalPrice = netPrice*(100-fee)/(100)
-    console.log(this.prodForm.controls['fee'].value)
-    console.log(this.shipForm.controls['shipPrice'].value)
+    console.log(this.prodForm.value)
     // this.prodForm.controls['price'].setValue()
     priceEle.value = totalPrice
 
     console.log("prod state: ",this.prodForm.value)
-    console.log("ship state",this.shipForm.value)
-    console.log("cond: ",this.prodForm.invalid&&this.shipForm.invalid)
 
     
   }
   
 
-addProduct():void{
-  console.log(this.prodForm.value)
-  console.log(this.shipForm.value)
-  // add shipping
-  this.shipService.addNewShipping(this.shipForm.value)
-    .subscribe(res =>{
-      console.log("newShipping",res)
-      // set shipping id to product
-      this.prodForm.controls['shipping'].setValue(res.id)
-      console.log(this.prodForm.value)
-      //add new product with new shipping
-      this.proServ.addNewProduct(this.prodForm.value)
-      .subscribe(res=>console.log(res),err=>{console.log(err)})
-      // nav to home
-      this.router.navigate(['/seller/home'])
-      .then(res=>{console.log(res)})
-      .catch(err=>console.log(err))
-      
-    } ,err=>console.log(err));
+  addProduct(): void {
+    console.log(this.prodForm.value)
+    //add new product with new shipping
+    this.proServ.addNewProduct(this.prodForm.value)
+      .subscribe(res => {
+        console.log(res)
+        alert("successfully added your product")
+        // nav to home
+        this.router.navigate(['/seller/home'])
+          .then(res => { console.log(res) })
+          .catch(err => console.log(err))
 
-}
+      }, err => { console.log(err) })
+
+  }
 resetForm():void{
   this.prodForm.reset();
-  this.shipForm.reset();
+  // this.shipForm.reset();
 }
   
 }

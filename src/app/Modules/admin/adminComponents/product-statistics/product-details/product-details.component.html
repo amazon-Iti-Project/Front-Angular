@@ -3,14 +3,14 @@
       <tr>
         <th scope="col">serial </th>
         <th scope="col">Name</th>
-        <th scope="col">image</th>
+        <th scope="col">in Stock</th>
         <th scope="col">price</th>
-        <th scope="col">shipping <span class="fas fa-dollar-sign"></span></th>
-        <th scope="col">Tax % <span class="fas fa-dollar-sign"></span></th>
-        <th scope="col">discount%</th>
-        <th scope="col">Net Price <span class="fas fa-dollar-sign"></span></th>
-        <th scope="col">Delivered %</th>
-        <th scope="col">Cancelled %</th>
+        <th scope="col">shipping&nbsp; <span class="fas fa-dollar-sign"></span></th>
+        <th scope="col">Tax&nbsp; % <span class="fas fa-dollar-sign"></span></th>
+        <th scope="col">discount&nbsp;%</th>
+        <th scope="col">Net Price&nbsp; <span class="fas fa-dollar-sign"></span></th>
+        <th scope="col">Delivered&nbsp; %</th>
+        <th scope="col">Cancelled &nbsp;%</th>
         <th scope="col">Seller</th>
         <th scope="col">Product Rate</th>
         <th scope="col">Seller Rate</th>
@@ -24,16 +24,11 @@
         <th  class="font-amazon-normal" scope="row">{{sn+1}}</th>
         <td>{{product.name}}</td>
         <td>{{product.quantity}}</td>
-        <td>'Number of Orders'</td>
-        <td>{{product.price}}<span class="fas fa-dollar-sign"></span></td>4
-        <td>{{product.fee}}%</td>
-        <td>{{product.discount}}%</td>
-        <!-- <td>{{product.price*product.fee*product.discount}}</td> -->
-        <td>80%<span class="fas fa-check-circle text-success font-3"></span></td>
-        <td>20%<span class="fas fa-times-circle text-danger font-3"></span></td>
-        <td>sellername</td>
-        <td>product rate</td>
-        <td>seller rate</td>
+        <td>{{product.price}}&nbsp;<span class="fas fa-dollar-sign"></span></td>
+        <td>{{product.shipping.shipPrice}}&nbsp;<span class="fas fa-dollar-sign"></span></td>
+        <td>{{product.fee.fee}}&nbsp;%</td>
+        <td>{{product.discount}}&nbsp;%</td>
+        <td>{{product.price*(100-product.fee.fee)*(100-product.discount)/10000}}</td>
       </tr>
     </tbody>
   </table>

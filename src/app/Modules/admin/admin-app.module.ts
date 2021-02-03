@@ -15,6 +15,18 @@ import { ProductSummaryComponent } from './adminComponents/product-statistics/pr
 import { ProductExpectedComponent } from './adminComponents/product-statistics/product-expected/product-expected.component';
 import { ProductTapsComponent } from './adminComponents/product-statistics/product-taps/product-taps.component';
 import { ProductDetailsComponent } from './adminComponents/product-statistics/product-details/product-details.component';
+import { OrderDetailsComponent } from './adminComponents/order-statistics/order-details/order-details.component';
+import { OrderExpectedComponent } from './adminComponents/order-statistics/order-expected/order-expected.component';
+import { OrderSummaryComponent } from './adminComponents/order-statistics/order-summary/order-summary.component';
+import { OrderTapsComponent } from './adminComponents/order-statistics/order-taps/order-taps.component';
+import { CustomerDetailsComponent } from './adminComponents/customer-statistics/customer-details/customer-details.component';
+import { CustomerSummaryComponent } from './adminComponents/customer-statistics/customer-summary/customer-summary.component';
+import { CutomerExpectedComponent } from './adminComponents/customer-statistics/cutomer-expected/cutomer-expected.component';
+import { SellerDetailsComponent } from './adminComponents/seller-statistics/seller-details/seller-details.component';
+import { SellerSummaryComponent } from './adminComponents/seller-statistics/seller-summary/seller-summary.component';
+import { SellerExpectedComponent } from './adminComponents/seller-statistics/seller-expected/seller-expected.component';
+import { SellerTapsComponent } from './adminComponents/seller-statistics/seller-taps/seller-taps.component';
+import { CustomerTapsComponent } from './adminComponents/customer-statistics/customer-taps/customer-taps.component';
 
 const routes: Routes = [
   {
@@ -45,7 +57,19 @@ const routes: Routes = [
     ProductDetailsComponent,
     ProductSummaryComponent,
     ProductExpectedComponent,
-    ProductTapsComponent
+    ProductTapsComponent,
+    OrderDetailsComponent,
+    OrderExpectedComponent,
+    OrderSummaryComponent,
+    OrderTapsComponent,
+    CustomerDetailsComponent,
+    CustomerSummaryComponent,
+    CutomerExpectedComponent,
+    SellerDetailsComponent,
+    SellerSummaryComponent,
+    SellerExpectedComponent,
+    SellerTapsComponent,
+    CustomerTapsComponent
   ],
   imports: [
   CommonModule,

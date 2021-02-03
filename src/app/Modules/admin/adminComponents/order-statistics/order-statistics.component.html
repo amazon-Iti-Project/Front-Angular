@@ -1,7 +1,26 @@
-<p>order-statisticscs works!</p>
-      <!-- page  Orders  -->
-    <!-- layout -->
+<!-- page content1 Orders  -->
+<!-- page Container -->
+<!-- orders Section -->
+<div class="row">
+  <div class="col-12">
+    <div class="container-fluid">
+      <!--order tabs -->
+      <app-order-taps></app-order-taps>
+      <!-- tabs content -->
+      <div class="tab-content py-1" id="orderTabsContent">
+        <div class="tab-pane fade show active overflow-auto" id="orderDet" role="tabpanel" aria-labelledby="home-tab">
+          <!-- order table -->
+          <app-order-details></app-order-details>
+        </div>
 
+        <!-- summary tap -->
+        <div class="tab-pane fade show  py-1" id="orderSumm" role="tabpanel" aria-labelledby="profile-tab">
+          <canvas class="my-4 w-100" id="order-chart"></canvas>
+        </div>
+        <!-- Expect tap -->
+        <div class="tab-pane fade py-1" id="orderExp" role="tabpanel" aria-labelledby="contact-tab"></div>
 
-        <div class="row ">
-            </div>
+      </div>
+    </div>
+  </div>
+</div>

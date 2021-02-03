@@ -24,13 +24,13 @@ export class ProductDetailsComponent implements OnInit {
 
 
   // old not used now 
-  getFee(feeId:number):number|void{
-    this.feeServ.getFeeById(feeId).subscribe(res=>{
-      console.log(res)
-     return res.fee
+  // getFee(feeId:number):number|void{
+  //   this.feeServ.getFeeById(feeId).subscribe(res=>{
+  //     console.log(res)
+  //    return res.fee
 
-    },err=>console.log(err))
-  }
+  //   },err=>console.log(err))
+  // }
   
 
 }

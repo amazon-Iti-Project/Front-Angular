@@ -151,13 +151,13 @@
         <div class="col row  align-items-center">
           <!-- fees starts -->
           <label class=" col-sm-auto col-12 mb-sm-0 mb-1 ">fees</label>
-          <div class="input-group -3 col ">
+          <div class="input-group -3 col "formGroupName="fee">
             <div class="input-group-prepend">
               <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">%</span>
             </div>
             <!-- fees input -->
-            <input type="number" class=" form-control font-amazon-normal font-1 " disabled [value]="feePercent"
-              aria-label="min" aria-describedby="basic-addon1" />
+            <input type="number" class=" form-control font-amazon-normal font-1 "  disabled  
+              aria-label="min" aria-describedby="basic-addon1" [value]="prodForm.controls['fee'].get('fee')?.value"  />
             <!-- fees ends -->
           </div>
         </div>
@@ -181,7 +181,7 @@
 
       <!-- row of shipping starts -->
       <!-- shipping starts -->
-      <form [formGroup]="shipForm" class="row mb-3">
+      <div formGroupName="shipping" class="row mb-3">
         <div class="input-group row  col align-items-center">
           <!-- shipping period -->
           <label class="col-sm-auto col-12 mb-sm-0 mb-1">Shipping Period</label>
@@ -192,8 +192,8 @@
 
             <input type="number" class="form-control font-amazon-normal  font-1" placeholder="2 days"
               formControlName="period" aria-label="max" aria-describedby="basic-addon1"
-              [class.is-invalid]="shipForm.controls['period'].invalid&&shipForm.controls['period'].dirty"
-              [class.is-valid]="shipForm.controls['period'].valid&&shipForm.controls['period'].dirty" />
+              [class.is-invalid]="prodForm['controls'].shipping.get('period')?.invalid && prodForm['controls'].shipping.get('period')?.dirty"
+              [class.is-valid]="prodForm['controls'].shipping.get('period')?.valid && prodForm['controls'].shipping.get('period')?.dirty"/> 
           </div>
         </div>
         <!-- shipping price starts -->
@@ -209,12 +209,12 @@
             <input type="number" class="form-control font-amazon-normal  font-1" placeholder="20$"
               formControlName="shipPrice" aria-label="max" aria-describedby="basic-addon1"
               (change)="updateTotalPrice(priceRef)"
-              [class.is-invalid]="shipForm.controls['shipPrice'].invalid&&shipForm.controls['shipPrice'].dirty"
-              [class.is-valid]="shipForm.controls['shipPrice'].valid&&shipForm.controls['shipPrice'].dirty" />
+              [class.is-invalid]="prodForm['controls'].shipping.get('shipPrice')?.invalid && prodForm['controls'].shipping.get('shipPrice')?.dirty"
+              [class.is-valid]="prodForm['controls'].shipping.get('shipPrice')?.valid && prodForm['controls'].shipping.get('shipPrice')?.dirty"/> 
           </div>
 
         </div>
-      </form>
+      </div>
       <!-- shipping ends -->
       <!-- Total price start -->
       <div class="row">
@@ -246,7 +246,7 @@
     <!-- submit button -->
     <div class="container d-flex justify-content-center  ">
       <button type="button" (click)="resetForm()" class="btn  mx-sm-2 mx-1  ">Cancel</button>
-      <button (click)="addProduct()" type="submit" [disabled]="(prodForm.invalid||prodForm.controls['shipping'].invalid)"
+      <button (click)="addProduct()" type="submit" [disabled]="prodForm.invalid"
         class="btn  mx-sm-2 mx-1">Safe and Finish</button>
     </div>
 

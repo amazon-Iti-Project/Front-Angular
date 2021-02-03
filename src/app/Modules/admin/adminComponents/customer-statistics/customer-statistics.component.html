@@ -5,58 +5,12 @@
                         <!-- Customers Section -->
                         <div class=" row">
                           <div class="col-12 ">
-                              <!--Customers tabs -->
-                              <div class="container-fluid">
-                                <ul class="nav nav-tabs font-amazon-bold " id="myTab" role="tablist">
-                                  <li class="nav-item " role="presentation">
-                                    <a class="nav-link active px-1" id="customerDet-tab" data-toggle="tab" href="#customerDet" role="tab" aria-controls="home" aria-selected="true">Details</a>
-                                  </li>
-                                  <li class="nav-item " role="presentation">
-                                    <a class="nav-link px-1" id="customerSumm-tab" data-toggle="tab" href="#customerSumm" role="tab" aria-controls="profile" aria-selected="false">Summary</a>
-                                  </li>
-                                  <li class="nav-item " role="presentation">
-                                    <a class="nav-link px-1" id="customerExp-tab" data-toggle="tab" href="#customerExp" role="tab" aria-controls="contact" aria-selected="false">Expected</a>
-                                  </li>
-                                </ul>
-                                <!-- Customer tabs content -->
+                                <!-- Customer tabs container -->
                                 <div class="tab-content py-1" id="customerTabsContent">
+                                <!-- Customer  details tap -->
                                   <div class="tab-pane fade show active overflow-auto" id="customerDet" role="tabpanel" aria-labelledby="home-tab">
                                        <!-- Customers table -->
-                              <table class="table font-amazon-normal table-hover min-content">
-                                <thead class="font-amazon-bold">
-                                    <tr>
-                                        <th scope="col">Id </th>
-                                        <th scope="col">CustmorName</th>
-                                        <th scope="col"># Ordered</th>
-                                        <th scope="col">Total Price<span>&nbsp;</span><span class="fas fa-dollar-sign"></span></th>
-                                        <th scope="col">Delivered %</th>
-                                        <th scope="col">Cancelled %</th>
-                                        <th scope="col">Avg.site rate</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- row1 -->
-                                    <tr>
-                                        <th class="font-amazon-normal" scope="row">1</th>
-                                        <td>Jone Adames</td>
-                                        <td>500</td>
-                                        <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
-                                        <td>80<span>&nbsp%&nbsp</span><span class="fas fa-check-circle text-success font-3"></span></td>
-                                        <td>20<span>&nbsp%&nbsp</span><span class="fas fa-times-circle text-danger font-3"></span></td>
-                                        <td>5.0</td>
-                                    </tr>
-                                    <!-- row2  -->
-                                    <tr>
-                                        <th class="font-amazon-normal" scope="row">1</th>
-                                        <td>Joe bradly</td>
-                                        <td>500</td>
-                                        <td>500<span>&nbsp</span><span class="fas fa-dollar-sign"></span></td>
-                                        <td>80<span>&nbsp%&nbsp</span><span class="fas fa-check-circle text-success font-3"></span></td>
-                                        <td>20<span>&nbsp%&nbsp</span><span class="fas fa-times-circle text-danger font-3"></span></td>
-                                        <td>4.0</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                       <app-customer-details></app-customer-details>
                             <!--Customer summary tap -->
                                   </div>
                                   <div class="tab-pane fade show py-1" id="customerSumm" role="tabpanel" aria-labelledby="customerSumm-tab">
@@ -67,4 +21,3 @@
                                 </div>
                               </div>
                           </div>
-                      </div>
