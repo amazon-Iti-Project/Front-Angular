@@ -1,0 +1,126 @@
+
+
+.title{
+	margin-left: 15px;
+	margin-bottom: 25px;
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #e83f33
+}
+a, a:active, a:link, a:visited {
+    text-decoration: none;
+    color: #0e87eb;
+}
+
+.text{
+	color:rgb(0, 0, 0);
+  size: 30px;
+  text-align: center;
+	margin-left: 2px;
+}
+
+ul, ol {
+	padding: 0;
+	margin: 0 0 10px 25px
+}
+ul ul, ul ol, ol ol, ol ul {
+	margin-bottom: 0
+}
+ul.unstyled, ol.unstyled {
+	margin-left: 0;
+	list-style: none
+}
+ul.inline, ol.inline {
+	margin-left: 0;
+	list-style: none
+}
+ul.inline>li, ol.inline>li {
+	display: inline-block;
+*display:inline;
+	padding-right: 5px;
+	padding-left: 5px;
+*zoom:1
+}
+ul ul, ol ul {
+	list-style-type: circle
+}
+
+.product-overview-tab {
+	margin-top: 12px;
+	margin-bottom: 5px;
+}
+.product-tab-inner {
+  padding: 0px;
+}
+
+.product-tabs {
+	line-height: normal;
+	margin: 0;
+	outline: none;
+	padding: 0;
+	position: relative;
+	z-index: 1;
+	text-align: left;
+	width: 100%;
+	margin-bottom: 25px;
+}
+.product-tabs li a {
+	border-bottom:  1px solid rgb(110, 97, 97);
+	color: black;
+  margin-right: 25px;
+  padding: 20px;
+  font-size: 25px;
+  margin-bottom: 50px;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 15px;
+	font-weight: 600;
+	transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s, background-position 300ms ease-in-out 0s;
+	padding: 5 20px;
+	letter-spacing: 0.5px;
+}
+.product-tabs li.active a {
+	border: 1px solid #E67A25;
+	background: #000;
+	color: #000
+}
+.nav-tabs.product-tabs>li>a {
+  line-height: 1.42857143;
+  border-bottom: 1px solid #E67A25;
+
+  padding: 3px 10px;
+	background: #fff;
+	text-transform: uppercase;
+}
+
+
+.product-overview-tab .form-area {
+	margin: 15px 0 0
+}
+.product-overview-tab .form-area .form-element input, textarea {
+	background: rgb(199, 58, 58) none repeat scroll 0 0;
+	border: 1px solid #e5e5e5;
+	padding: 5px;
+	width: 60%;
+	height: 34px
+}
+.product-overview-tab .form-area .form-element textarea {
+	height: 100px;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	padding: 5px;
+	border-radius: 3px
+}
+.product-overview-tab .buttons-set {
+	border: none;
+	border-top: 1px solid #e5e5e5;
+	margin: 20px 0 0;
+	padding: 8px 0 0;
+	text-align: right
+}
+
+

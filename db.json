@@ -8,8 +8,8 @@
       "brand": "1",
       "discount": 50,
       "shipping": {
-        "period": 2,
-        "shipPrice": 20
+      "period": 2,
+      "shipPrice": 20
       },
       "fee": {
         "admin": 1,
@@ -95,6 +95,7 @@
       "id": 1,
       "customer": 1,
       "status": 1,
+      "shipmentPrice":5,
       "payment": 1,
       "address": "123 test street USA",
       "orderShip": 10,

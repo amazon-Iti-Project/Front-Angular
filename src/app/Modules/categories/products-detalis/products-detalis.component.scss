@@ -3,7 +3,10 @@
   font-family: Arial, Helvetica, sans-serif;
   font-weight: inherit;
 }
-
+.quantity{
+  border: 1px solid lightgray;
+  padding: 10px;
+}
 
 .mainphoto {
   position: relative;
@@ -115,8 +118,10 @@ border: 1px solid lightgray;
 }
 
 .rating {
-	color: #999;
-  font-size: 12px;
+  justify-content: space-between;
+
+  color: #999;
+  font-size: 20px;
 }
 .rating .fa-star {
 	color: #FC0
@@ -127,8 +132,14 @@ border: 1px solid lightgray;
 
 
 }
+.av{
+  margin-left: 550px;
+
+
+
+}
 .availability.in-stock span {
-  	color: #fff;
+    color: #fff;
   	background-color: #5cb85c;
   	padding: 5px 12px;
   	font-size: 12px;
@@ -331,15 +342,15 @@ h2.saider-bar-title {
 	float: left
 }
 button.button.pro-add-to-cart {
-	background: #5cb85c;
+	background: #f2c010;
 	color: #fff;
 	padding: 7px 22px;
 	border: 1px white solid;
 }
 button.button.pro-add-to-cart:hover {
 	background: white;
-	border: 1px #5cb85c  solid;
-  color: #5cb85c;
+	border: 1px #f2c010  solid;
+  color: #000;
   font-weight: 300;
 }
 button.button.pro-add-to-cart span {
@@ -395,29 +406,7 @@ button.button.pro-add-to-cart span i {
 .product-tab-inner {
 	padding: 0px;
 }
-// .pro-tags {
-// 	font-size: 13px;
-// 	line-height: 18px;
-// 	color: #333;
-// 	font-weight: 300;
-// 	margin-top: 6px;
-// 	margin-bottom: 10px;
-// }
-// .pro-tags .pro-tags-title {
-// 	display: inline-block;
-// 	position: relative;
-// 	top: 1px;
-// }
-// .pro-tags a {
-// 	color: #808080;
-// }
-// .pro-tags-title {
-// 	font-size: 14px;
-// 	color: #333;
-// 	line-height: 18px;
-// 	font-weight: 600;
-// 	margin-bottom: 7px;
-// }
+
 .share-box {
 	border-top: 1px solid #e5e5e5;
 	border-bottom: 1px solid #e5e5e5;

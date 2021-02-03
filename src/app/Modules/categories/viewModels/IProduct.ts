@@ -11,5 +11,6 @@ export interface IProduct{
     img :string,
     about : string,
     title:string,
+    color:string,
     subtitle:string
 }

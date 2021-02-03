@@ -4,7 +4,7 @@
   <div class="row">
     <div class=" col-xs-12 col-sm-5 col-lg-4 col-md-5">
       <div class="mainphoto">
-        <img src="../../../../assets/products/product-1.jpg" alt="Snow" style="width:100%;">
+        <img src="{{prd?.image}}" alt="Snow" style="width:100%;">
         <div class="top-left">Sale</div>
       </div>
     </div>
@@ -13,15 +13,14 @@
           <h1>{{prd?.name}}</h1>
         </div>
         <div class="price-box">
-          <p class="special-price"> <span class="price-label">Special Price</span> <span class="price"> $329.99 </span> </p>
+          <p class="special-price"> <span class="price-label">Special Price</span> <span class="price"> {{prd?.price |currency}} </span> </p>
           <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> $359.99 </span> </p>
         </div>
         <div class="avaliable">
-          <div class="ratings">
-            <div class="rating"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> </div>
-             <p class="availability in-stock pull-right " >Availability: <span>In Stock</span></p>
-          </div>
+          <div class="rating special-price"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> </div>
+          <p class="availability in-stock pull-right  special-price av"  >Availability: <span>In Stock</span></p>
         </div>
+
         <div class="short-description">
           <h2>Quick Overview</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.
@@ -37,20 +36,15 @@
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
               </ul>
             </div>
+            <p> {{prd.color}}</p>
+
           </div>
           <div class="size-area">
             <h2 class="saider-bar-title">Size</h2>
             <div class="size">
-              <ul>
-                <li><a href="#">S</a></li>
-                <li><a href="#">L</a></li>
-                <li><a href="#">M</a></li>
-                <li><a href="#">XL</a></li>
-                <li><a href="#">XXL</a></li>
-              </ul>
+            <p>{{prd?.size}}</p>
             </div>
           </div>
         </div>
@@ -59,9 +53,7 @@
             <div class="cart-plus-minus">
               <label for="qty">Quantity:</label>
               <div class="numbers-row">
-                <div onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 0 ) result.value--;return false;" class="dec qtybutton"><i class="fa fa-minus">&nbsp;</i></div>
-                <input type="text" class="qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
-                <div onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="inc qtybutton"><i class="fa fa-plus">&nbsp;</i></div>
+               <p class="quantity">{{prd?.quantity}}</p>
               </div>
             </div>
             <button class="button pro-add-to-cart" title="Add to Cart" type="button"><span><i class="fa fa-shopping-basket"></i> Add to Cart</span></button>

@@ -7,10 +7,10 @@ export interface Iorder{
     products:Iproduct[]; // products id
     user:number; // user id
     status:DELIVERY_STATE;
-    payment:Ipayment; // paymentId >> object 
-    address:string;     
+    payment:Ipayment; // paymentId >> object
+    address:string;
     orderShip:number;   // $
-    orderPrice:number;  // $
+    orderPrice:number;
     // orderPeriod:number; // biggest of products shipping
     // date:string;
 
@@ -27,6 +27,6 @@ export interface IorderdProducts{
     id:number;
     productId:number;
     orderId:number;
-    
+
 }
 

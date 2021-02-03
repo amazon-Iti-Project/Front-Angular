@@ -1,1 +1,46 @@
-<p>payment works!</p>
+
+
+  <div class="product-overview-tab">
+    <h3 class="title"> Your Payment</h3>
+    <div class="container">
+          <div class="product-tab-inner">
+            <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
+              <li id="trans"> <a href="#Trasnaction" data-toggle="tab">Transaction</a> </li>
+            </ul>
+
+        <div id="Trasnaction">
+          <div class="container">
+            <p class="title"> Use this page to view specific Transactions of interest of you. </p>
+            <br>
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>#</th>
+                    <th>Order Date</th>
+                    <th>Transaction Type </th>
+                    <th>Delivered Date</th>
+                    <th>Order Price</th>
+                    <th>Shipment fees</th>
+                    <th>Transactional total </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ord?.id}}</td>
+                    <td>{{ord?.orderDate |date}}</td>
+                    <td>Order Payment</td>
+                    <td>{{ord?.deliveredDate |date}}</td>
+                    <td>{{ord?.orderPrice |currency}}</td>
+                    <td>{{ord?.orderShip | currency}}</td>
+                    <td>{{calc(ord?.orderPrice,ord?.orderShip) | currency}}</td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>

@@ -1,3 +1,4 @@
+import { PaymentComponent } from './../orders/payment/payment.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsDetalisComponent } from './products-detalis/products-detalis.component';
@@ -7,9 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DepartmentComponent } from './components/department/department.component';
 
 const routes: Routes = [
-  { path: 'product', component:ProductsDetalisComponent  },
+  { path: 'product', component:PaymentComponent  },
   // this is product id path
-  { path: 'product/:pId', component:ProductsDetalisComponent  },
+  { path: 'product/:pId', component:PaymentComponent  },
   {path:'',component:AllDepartmentsComponent},
   {path:':depName',component:DepartmentComponent}
 ]
