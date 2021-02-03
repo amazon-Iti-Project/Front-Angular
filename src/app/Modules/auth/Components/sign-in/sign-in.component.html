@@ -6,14 +6,22 @@
 
         </div>
         <div class="d-flex justify-content-center" >
-            <form action="" class="p-5 m-auto " id="signUp-Form" style="width: 40%;" >
+            <form [formGroup]="loginForm" action="" class="p-5 m-auto " id="signUp-Form" style="width: 40%;" >
                <p class="h1">Sign-In</p>
                 <div class="form-group">
-                  <label class="my-2" for="name">Email or mobile phone number</label>
-                  <input type="email" class="form-control" id="Email"  name="Email">
+                  <label class="my-2"  for="name">Email or mobile phone number</label>
+                  <input type="email"formControlName="username"  class="form-control" id="Email"  name="Email"
+                  [class.is-invalid]="loginForm.controls['username'].invalid&&loginForm.controls['username'].dirty"
+                  [class.is-valid]="loginForm.controls['username'].valid&&loginForm.controls['username'].dirty" />
                 </div>
+                <div class="form-group">
+                    <label class="my-2"   for="name">password</label>
+                    <input type="email"formControlName="password" class="form-control" id="password"  name="password"
+                    [class.is-invalid]="loginForm.controls['password'].invalid&&loginForm.controls['password'].dirty"
+                    [class.is-valid]="loginForm.controls['password'].valid&&loginForm.controls['password'].dirty" />
+                  </div>
             
-                <button type="button" class="btn btn-warning" style="width: 100%;">Continue</button>
+                <button type="button" (click)="login()" class="btn btn-warning" style="width: 100%;">Continue</button>
                 <p class="my-2">By continuing, you agree to Amazon's </p> <p>Conditions of Use and <a href="#">Privacy Notice.</a> </p>
                 <hr>
                 <p class="my-4"><a href="#">Need help?</a> </p>

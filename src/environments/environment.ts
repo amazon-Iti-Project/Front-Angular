@@ -12,6 +12,7 @@ export const environment = {
   fees:'fees',
   payment:'payments',
   orders:'orders',
+  users:'users'
   // API_URL:"http://localhost:3000"
 };
 

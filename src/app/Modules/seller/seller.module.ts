@@ -9,10 +9,13 @@ import { SellerAddProductComponent } from './sellerComponents/seller-add-product
 import { SellerHomeBodyComponent } from './sellerComponents/seller-home-body/seller-home-body.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from '../customer/components/not-found/not-found.component';
 
 const routes:Routes = [
   {path:'home',component:SellerHomeComponent},
   {path:'add',component:SellerAddProductComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: "**", component:NotFoundComponent  }
 ]
 
 @NgModule({

@@ -38,7 +38,7 @@ export class CartComponent implements OnInit {
       response => {this.currentUser = response
       console.log(response)
       console.log(this.currentUser)
-      this.currentUser.cart.forEach( id => {
+      this.currentUser.cart?.forEach( id => {
         console.log(id)
         this.prodService.getProductById(id).subscribe(
           response => {this.cartItems.push(response)

@@ -9,11 +9,11 @@
                 <p class="h1">Create account</p>
                 <div class="form-group">
                     <label class="my-2" for="name">Your name</label>
-                    <input  formControlName="Name" required type="text" class="form-control" name="name">
+                    <input  formControlName="name" required type="text" class="form-control" name="name">
                 </div>
                 <div class="form-group">
                     <label class="my-2" for="email">Email</label>
-                    <input formControlName="Email" required type="Email" class="form-control" name="Email">
+                    <input formControlName="username" required type="Email" class="form-control" name="Email">
                 </div>
                 <div class="form-group">
                     <label class="my-2" for="pwd">Password</label>
@@ -27,7 +27,7 @@
                 <div class="form-group form-check">
 
                 </div>
-                <button [disabled]="loginFrm.invalid" [routerLink]="['/home']" type="submit" class="btn btn-warning" style="width: 100%;">Create your amazon
+                <button [disabled]="loginFrm.invalid"  type="submit" class="btn btn-warning" style="width: 100%;">Create your amazon
                     account </button>
                 <p class="my-2">By creating an account, you agree to Amazon's <a href="#">Conditions of Use </a>
                     Conditions of Use and <a href="#">Privacy Notice.</a> </p>
