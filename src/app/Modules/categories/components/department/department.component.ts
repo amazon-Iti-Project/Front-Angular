@@ -24,6 +24,10 @@ export class DepartmentComponent implements OnInit {
     //     error => { console.log(error); }
     //   )
     // });
+    this.productService.getAllProducts().subscribe(
+      response => this.productsList = response,
+      error => console.log(error)
+    )
   }
 
 }
