@@ -9,17 +9,16 @@
                 <div id="price-title"><span>Price</span></div>
             </div>
             <!-- single cart item -->
+            <ng-container *ngFor="let product of cartItems">
             <div class="container border-top cart-item">
                 <div id="menu-check">
                     <input type="checkbox" checked="true" aria-label="Checkbox for following text input">
                 </div>
                 <div class="cart-img m-3">
-                    <img class="img-fluid" src="images/im1.jpeg">
+                    <img class="img-fluid" src={{product.image}}>
                 </div>
                 <div class="cart-cont">
-                    <a class="cart-title">Soundance Laptop Stand, Aluminum Computer Riser, Ergonomic
-                        Laptops Elevator for Desk, Metal Holder Compatible with 10 to 15.6 Inches Notebook Computer,
-                        Rose Gold </a>
+                    <a class="cart-title">{{product.name}}</a>
                     <br>
                     <span class="status"> In Stock</span>
                     <br>
@@ -60,12 +59,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="pricing">$<span name="price-tag">3.99</span></div>
+                <div class="pricing">$<span name="price-tag">{{product.price}}</span></div>
             </div>
+            </ng-container>
             <hr>
             <!-- total price -->
             <div id="main-total-price">
-                $<span name="total-price-tag">0.00</span>
+                $<span name="total-price-tag">{{totalPrice}}</span>
             </div>
         </div>
         <!-- end main menu -->
@@ -75,8 +75,8 @@
             <!-- subtotal menu box -->
             <div class="row bg-white details-box py-3 justify-content-around">
                 <div>
-                    Subtotal(<span>9</span> items):
-                    <strong>$<span name="total-price-tag">70.93</span></strong>
+                    Subtotal(<span>{{cartItems.length}}</span> items):
+                    <strong>$<span name="total-price-tag">{{totalPrice}}</span></strong>
                 </div>
                 <div>
                     <input type="checkbox" class="mx-2 my-1">This order contains a gift

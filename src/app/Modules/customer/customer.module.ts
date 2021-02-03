@@ -18,7 +18,6 @@ const routes:Routes = [
   {
     path: '', component: HomeComponent, children: [
       { path: "home", component: HomeBodyComponent },
-      {path:'cart',component:CartComponent}, //delete it from here after testing
       { path: 'category', loadChildren: () => import('../categories/categories.module').then(module => module.CategoriesModule) },
       { path: 'departments', loadChildren: () => import('src/app/Modules/categories/categories.module').then(m => m.CategoriesModule) },
       { 

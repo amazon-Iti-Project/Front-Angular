@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart/cart.service';
+import { ProductService } from 'src/app/services/product/product.service';
+import { Iproduct } from 'src/app/viewModel/IProduct';
+import { Iuser } from 'src/app/viewModel/Iuser';
 
 @Component({
   selector: 'app-cart',
@@ -7,10 +11,51 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  userId = 1; // git it from service
+  currentUser : Iuser | null =null;
+  cartItems : Iproduct[] = [];
+  totalPrice = 0;
+  constructor(private cartService : CartService,private prodService : ProductService) { }
 
   ngOnInit(): void {
+    this.getUser()
+    console.log("ngOnInit")
+    console.log(this.currentUser)
+    // this.currentUser?.cart.forEach( id => {
+    //   console.log(id)
+    //   this.prodService.getProductById(id).subscribe(
+    //     response => {this.cartItems.push(response)
+    //       console.log(response)
+    //       console.log(this.cartItems) },
+    //     error => console.log(error)
+    //   )
+    // });
+    console.log("end")
+
   }
+  getUser(){
+    this.cartService.getUser(this.userId).subscribe(
+      response => {this.currentUser = response
+      console.log(response)
+      console.log(this.currentUser)
+      this.currentUser.cart.forEach( id => {
+        console.log(id)
+        this.prodService.getProductById(id).subscribe(
+          response => {this.cartItems.push(response)
+            console.log(response)
+            console.log(this.cartItems)
+            this.totalPrice += response.price
+          },
+          error => console.log(error)
+        )
+      });},
+      error => console.log(error)
+    )
+  }
+
+
+
+
   deSelectAll(){
     // var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     // for( var i in checkboxes){

@@ -1,0 +1,45 @@
+.main{
+    font-family: Arial,sans-serif;
+    padding: 0%;
+    margin: auto;
+}
+#head-img {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* margin-right: 4px; */
+}
+#head-img img{
+    padding-left: 9px;
+}
+h1{
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #333;
+    padding-top: 20px;
+    margin-bottom: 14px;
+}
+p{
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+label span{
+    font-size: 13px;
+    font-weight: 700;
+}
+a > span{
+    color: rgb(8, 130, 179);
+}
+#final-btn{
+    background-color: #F4D079;
+    border: 1px solid black;
+}
+footer p{
+    color: #888;
+    text-align: center;
+    font-size: 12px;
+}
+#days{
+    padding-left: 20px;
+}
+// country dropdown list
