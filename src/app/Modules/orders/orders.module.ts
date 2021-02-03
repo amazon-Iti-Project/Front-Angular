@@ -19,6 +19,7 @@ import { CanceledOrderComponent } from './Components/canceled-order/canceled-ord
 import { DigitalOrdersComponent } from './Components/digital-orders/digital-orders.component';
 import { CanceledListComponent } from './Components/canceled-list/canceled-list.component';
 import { FormsModule } from '@angular/forms';
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 
 
 
@@ -35,6 +36,7 @@ import { FormsModule } from '@angular/forms';
     CanceledOrderComponent,
     DigitalOrdersComponent,
     CanceledListComponent,
+    ShippingFormComponent,
   ],
   imports: [
     CommonModule,
