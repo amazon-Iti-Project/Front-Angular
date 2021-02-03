@@ -150,7 +150,7 @@ export class SellerAddProductComponent implements OnInit {
   }
 resetForm():void{
   this.prodForm.reset();
-  // this.shipForm.reset();
+  this.router.navigate(['/seller/home'])
 }
   
 }

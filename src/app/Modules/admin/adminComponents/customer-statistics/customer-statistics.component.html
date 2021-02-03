@@ -1,23 +1,25 @@
-<p>customer-statisticscs works!</p>
-   <!-- page content2 Customers -->
-        <!-- layout -->
-                    <!-- page Container -->
-                        <!-- Customers Section -->
-                        <div class=" row">
-                          <div class="col-12 ">
-                                <!-- Customer tabs container -->
-                                <div class="tab-content py-1" id="customerTabsContent">
-                                <!-- Customer  details tap -->
-                                  <div class="tab-pane fade show active overflow-auto" id="customerDet" role="tabpanel" aria-labelledby="home-tab">
-                                       <!-- Customers table -->
-                                       <app-customer-details></app-customer-details>
-                            <!--Customer summary tap -->
-                                  </div>
-                                  <div class="tab-pane fade show py-1" id="customerSumm" role="tabpanel" aria-labelledby="customerSumm-tab">
-                                    <canvas class="my-4 w-100" id="customerSummChart"></canvas>
-        
-                                  </div>
-                                  <div class="tab-pane fade py-1" id="customerExp" role="tabpanel" aria-labelledby="customerExp-tab"></div>
-                                </div>
-                              </div>
-                          </div>
+<!-- page content2 Customers -->
+<!-- layout -->
+<!-- page Container -->
+<!-- Customers Section -->
+<div class=" row">
+  <div class="col-12 ">
+    <!-- Customer tabs container -->
+    <div class="container-fluid">
+        <app-customer-taps></app-customer-taps>
+      <div class="tab-content py-1" id="customerTabsContent">
+        <!-- Customer  details tap -->
+        <div class="tab-pane fade show active overflow-auto" id="customerDet" role="tabpanel"
+          aria-labelledby="home-tab">
+          <!-- Customers table -->
+          <app-customer-details></app-customer-details>
+        </div>
+        <!--Customer summary tap -->
+        <div class="tab-pane fade  py-1" id="customerSumm" role="tabpanel" aria-labelledby="customerSumm-tab">
+          <app-customer-summary></app-customer-summary>
+        </div>
+        <div class="tab-pane fade py-1" id="customerExp" role="tabpanel" aria-labelledby="customerExp-tab"></div>
+      </div>
+    </div>
+  </div>
+</div>

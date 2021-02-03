@@ -202,7 +202,7 @@
                         <img class="img-fluid" src={{item.img}}>
                     </div>
                     <div class=" col-9 comp-details">
-                        <a href="#">
+                        <a [routerLink]="['/category/product']" routerLinkActive="router-link-active" >
                             <span>{{item.name}}</span>
                         </a><br>
                         <div id="review-card" class="mt-2">

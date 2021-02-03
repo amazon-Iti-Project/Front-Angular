@@ -13,6 +13,7 @@ import { OrdersHomeComponent } from '../orders/Components/orders-home/orders-hom
 import { SignInComponent } from '../auth/Components/sign-in/sign-in.component';
 import { SignUpComponent } from '../auth/Components/sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ShippingFormComponent } from '../orders/shipping-form/shipping-form.component';
 
 
 const routes:Routes = [
@@ -26,6 +27,7 @@ const routes:Routes = [
         component: OrdersHomeComponent,
         loadChildren:  () => import('src/app/Modules/orders/orders.module').then(m => m.OrdersModule)
       },
+      { path: 'cart', component:CartComponent},
       { path: 'SignIn', component:SignInComponent},
       { path: 'SignUp', component:SignUpComponent},
       { path: '', redirectTo: 'home', pathMatch: 'full' },

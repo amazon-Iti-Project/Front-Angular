@@ -1,7 +1,7 @@
 <!-- Nav Bar -->
 <nav class="navbar navbar-expand-md navbar-dark navBg p-0 pl-2 pr-2 nav-height text-center">
   <!-- nav Logo -->
-  <a class="navbar-brand nav-hover" href="index.html">
+  <a class="navbar-brand nav-hover" [routerLink]="['/']"  >
     <img class="navbar-logo" src="../../../assets/Logo/Amazon-Emblem.png">
     <!-- <p class="fab fa-amazon h1 p-0 icon-text-color nav-hover "></p> -->
   </a>
@@ -60,7 +60,7 @@
         <div class="dropdown pl-1 min-content">
           <div class=" dropdown-toggle text-light " id="langbtn" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            <img src="../../../assets/languages logos/US-United-States-Flag-icon.png" class="imgSize_3 p-1">
+           <a><img src="../../../assets/languages logos/US-United-States-Flag-icon.png" class="imgSize_3 p-1"></a> 
           </div>
           <!-- lang menu -->
           <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton ">
@@ -72,7 +72,7 @@
               <a class="dropdown-item font-amazon-normal" href="#">Something else here</a>
               <!-- //  -->
               <div class="dropdown-item  custom-control custom-radio">
-                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
                 <label class="custom-control-label font-amazon-normal" for="customRadio1">English-En</label>
               </div>
               <div class="dropdown-item custom-control custom-radio">
@@ -88,8 +88,8 @@
         <!-- account and List -->
         <div id="accountList" class="dropdown nav-link min-content " href="#">
           <div class=" pl-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <p class="font-amazon-normal font-0">Hello,guest</p>
-            <p class="dropdown-toggle  font-amazon-bold font-1">Account & Lists</p>
+           <a><p class="font-amazon-normal font-0">Hello,guest</p>
+            <p class="dropdown-toggle  font-amazon-bold font-1">Account & Lists</p></a> 
           </div>
           <!-- account dropdown menu -->
           <!-- test -->
@@ -156,10 +156,12 @@
       </li>
       <li class="nav-item active nav-hover">
         <!-- cart -->
+        <a class="nav-link" [routerLink]="['/cart']">
         <div class="d-flex ">
-          <a href="cart.html"><span class="fas fa-shopping-cart text-light h2 "></span></a>
-          <a href="cart.html" class="badge font-1 text-warning">1</a>
+          <a [routerLink]="['/cart']" ><span class="fas fa-shopping-cart text-light h2 "></span></a>
+          <a [routerLink]="['/cart']" class="badge font-1 text-warning">1</a>
         </div>
+        </a>
       </li>
     </ul>
   </div>

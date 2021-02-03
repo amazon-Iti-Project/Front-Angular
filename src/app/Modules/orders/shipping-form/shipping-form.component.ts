@@ -55,7 +55,7 @@ export class ShippingFormComponent implements OnInit {
       response => { this.user= response },
       error => console.log(error)
     );
-    this.user?.cart.forEach( id => {
+    this.user?.cart?.forEach( id => {
       console.log(id)
       this.prodService.getProductById(id).subscribe(
         response => {

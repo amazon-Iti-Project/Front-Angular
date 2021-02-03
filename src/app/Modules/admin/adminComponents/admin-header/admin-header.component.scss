@@ -14,6 +14,8 @@
       height:46px;
       background-color: #131921;
     }
+    
+    .nav-height{min-height: 3.25em;}
 
     // set dropdown list text in nav 
    nav div.input-group-prepend:not(.fas) ,nav button.btn:not(.fas)  ,nav a.dropdown-item:not(.fas){
@@ -43,6 +45,9 @@
     .nav-tabs .nav-link:hover {
         border: 1px white solid;
         border-radius: 1px;
+    }
+    .nav-tabs{
+      border: 1px transparent solid;
     }
 
     .filter-bg{background-color:#37475A; }
