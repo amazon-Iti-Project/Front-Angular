@@ -199,10 +199,10 @@
             <ng-container *ngFor="let item of productsList">
                 <div class="row component my-3 pb-5 border-bottom">
                     <div class=" col-3 comp-img">
-                        <img class="img-fluid" src={{item.img}}>
+                        <img class="img-fluid" src={{item.image}} />
                     </div>
                     <div class=" col-9 comp-details">
-                        <a [routerLink]="['/category/product/1']" routerLinkActive="router-link-active" >
+                        <a [routerLink]= "'/category/product/1'">
                             <span>{{item.name}}</span>
                         </a><br>
                         <div id="review-card" class="mt-2">
@@ -215,16 +215,16 @@
                             fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                        </svg><span style="font-size: 14px;">{{item.rating}}</span>
+                        </svg><span style="font-size: 14px;">{{item.rate}}</span>
                             </a>
                         </div>
                         <div class="mt-2">
                             <span>
                             <sup class="sign">$</sup>
-                            <span class="total">{{item.currentPrice}}</span>
-                            <sup class="power">{{item.cents}}</sup>
+                            <span class="total">{{item.price}}</span>
+                            <!-- <sup class="power">{{item.cents}}</sup> -->
                             </span>
-                            <span class="old-price">${{item.oldPrice}}</span>
+                            <!-- <span class="old-price">${{item.oldPrice}}</span> -->
                         </div>
                         <div class="shipping-to" *ngIf="item.shippingLabel">
                             <small>Ships to Egypt</small>
@@ -245,9 +245,9 @@
             <div class="row component my-3 pb-3 border-bottom">
                 <ng-container *ngFor="let item of productsList">
                 <div class="col-3">
-                    <strong><span>"laptops"</span></strong><br>
+                    <strong><span>{{depName}}</span></strong><br>
                     <div class="mt-4 comp-img">
-                        <img class="img-fluid" src={{item.img}}>
+                        <img class="img-fluid" src={{item.image}}>
                     </div>
                     <div class="comp-details mt-5">
                         <a href="#">
@@ -262,22 +262,22 @@
                             fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                        </svg><span style="font-size: 14px;">{{item.rating}}</span>
+                        </svg><span style="font-size: 14px;">{{item.rate}}</span>
                     </a><br>
                     <div class="mt-2">
                         <span>
                             <sup class="sign">$</sup>
-                            <span class="total">{{item.currentPrice}}</span>
-                            <sup class="power">{{item.cents}}</sup>
+                            <span class="total">{{item.price}}</span>
+                            <!-- <sup class="power">{{item.cents}}</sup> -->
                         </span>
-                        <span class="old-price">${{item.oldPrice}}</span>
+                        <!-- <span class="old-price">${{item.oldPrice}}</span> -->
                     </div>
                 </div>
                 </ng-container>
             </div>
         </div>
         <!-- recommendation section -->
-        <div>
+        <div *ngIf="depName == 'Laptops'" >
             <div class="row component my-3 align-items-center">
                 <img src="../../../../../assets/images/geek-icon.jpg" id="geek-icon">
                 <div class="pl-2">
@@ -309,10 +309,10 @@
                 </div>
                 <ng-container *ngFor="let item of productsList">
                 <div class="col-3 ">
-                    <strong><span class="geek-head">{{item.title}}</span></strong><br>
-                    <small>{{item.subtitle}}</small>
+                    <!-- <strong><span class="geek-head">{{item.title}}</span></strong><br> -->
+                    <!-- <small>{{item.subtitle}}</small> -->
                     <div class="mt-4 comp-img">
-                        <img class="img-fluid rec-img" src={{item.img}}>
+                        <img class="img-fluid rec-img" src={{item.image}}>
                     </div>
                     <div class="comp-details mt-5">
                         <a href="#">
@@ -327,15 +327,15 @@
                             fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                        </svg><span style="font-size: 14px;">{{item.rating}}</span>
+                        </svg><span style="font-size: 14px;">{{item.rate}}</span>
                     </a><br>
                     <div class="mt-2">
                         <span>
-                            <sup class="sign">$</sup><span class="total">{{item.currentPrice}}</span><sup
-                                class="power">{{item.cents}}</sup>
+                            <sup class="sign">$</sup><span class="total">{{item.price}}</span>
+                            <!-- <sup class="power">{{item.cents}}</sup> -->
                         </span>
                     </div>
-                    <p class="my-3">{{item.about}}</p>
+                    <p class="my-3">{{item.description}}</p>
                 </div>
                 </ng-container>
             </div>
@@ -344,20 +344,17 @@
             </div>
         </div>
         <!-- side menu -->
-        <div class="col-1 sticky-top d-sm-none d-md-block" id="side-menu">
+        <div *ngIf="currentUser" class="col-1 sticky-top d-sm-none d-md-block" id="side-menu">
             <span> Subtotal</span><br>
-            <strong class="price-tag">$<span>20.23</span></strong>
+            <strong class="price-tag">$<span>{{totalPrice}}</span></strong>
             <div class="cart-items w-90 mt-3">
-        <div>
-            <a href="#">
-                <img class="img-fluid mt-4" src="images/lap-img.jpg">
-            </a>
-        </div>
-        <div>
-            <a href="#">
-                <img class="img-fluid mt-4" src="images/glasses.jpg">
-            </a>
-        </div>
+                <ng-container *ngFor="let item of cartItems">
+                    <div>
+                        <a routerLink="/cart">
+                            <img class="img-fluid mt-4" src={{item.image}}>
+                        </a>
+                    </div>
+                </ng-container>
             </div>
         </div>
     </div>

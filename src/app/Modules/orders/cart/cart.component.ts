@@ -11,7 +11,7 @@ import { Iuser } from 'src/app/viewModel/Iuser';
 })
 export class CartComponent implements OnInit {
 
-  userId = 1; // git it from service
+  userId = 2; // get it from service
   currentUser : Iuser | null =null;
   cartItems : Iproduct[] = [];
   totalPrice = 0;
@@ -19,36 +19,20 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser()
-    console.log("ngOnInit")
-    console.log(this.currentUser)
-    // this.currentUser?.cart.forEach( id => {
-    //   console.log(id)
-    //   this.prodService.getProductById(id).subscribe(
-    //     response => {this.cartItems.push(response)
-    //       console.log(response)
-    //       console.log(this.cartItems) },
-    //     error => console.log(error)
-    //   )
-    // });
-    console.log("end")
-
   }
   getUser(){
     this.cartService.getUser(this.userId).subscribe(
-      response => {this.currentUser = response
-      console.log(response)
-      console.log(this.currentUser)
-      this.currentUser.cart?.forEach( id => {
-        console.log(id)
-        this.prodService.getProductById(id).subscribe(
-          response => {this.cartItems.push(response)
-            console.log(response)
-            console.log(this.cartItems)
-            this.totalPrice += response.price
-          },
-          error => console.log(error)
-        )
-      });},
+      response => {
+        this.currentUser = response
+        this.currentUser.cart.forEach( id => {
+          this.prodService.getProductById(id).subscribe(
+            response => {
+              this.cartItems.push(response)
+              this.totalPrice += response.price
+            },
+            error => console.log(error)
+          )
+        });},
       error => console.log(error)
     )
   }
@@ -57,9 +41,11 @@ export class CartComponent implements OnInit {
 
 
   deSelectAll(){
-    // var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    // for( var i in checkboxes){
-    //     checkboxes[i].removeAttribute("checked");
+    console.log('pressed!')
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for( var i in checkboxes){
+        checkboxes[i].removeAttribute("checked");
+    }
     }
 
 calcTotalPrice(){

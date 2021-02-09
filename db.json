@@ -2,6 +2,7 @@
   "products": [
     {
       "name": "DigitalCamera",
+      "categoryName": "laptops",
       "price": 120,
       "quantity": 80,
       "category": "1",
@@ -23,6 +24,7 @@
     },
     {
       "name": "Tv 24inch",
+      "categoryName": "laptops",
       "price": 100,
       "quantity": 15,
       "category": "1",
@@ -45,6 +47,7 @@
     },
     {
       "name": "asdads",
+      "categoryName": "laptops",
       "price": 1111,
       "quantity": 15,
       "category": "1",
@@ -117,13 +120,23 @@
       "username": "kamaltoken",
       "password": "123456",
       "id": 1,
-      "token": "e428071a-cf40-76b7-a3b3-0db1dac700a7"
+      "token": "e428071a-cf40-76b7-a3b3-0db1dac700a7",
+      "cart": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "username": "ahmed",
       "password": "123456",
       "id": 2,
-      "token": "684a359c-da5b-1c01-8c51-1991fc8c2fb6"
+      "token": "684a359c-da5b-1c01-8c51-1991fc8c2fb6",
+      "cart": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "name": "11111",
@@ -131,7 +144,8 @@
       "Password": "11111",
       "rePassword": "11111",
       "id": 3,
-      "token": "a5ad489e-1bb6-ed5e-c458-b030f806e86c"
+      "token": "a5ad489e-1bb6-ed5e-c458-b030f806e86c",
+      "cart": []
     },
     {
       "name": "KAMAL KORNEY MOHAMED",
@@ -139,7 +153,8 @@
       "Password": "1111121",
       "rePassword": "121212",
       "id": 4,
-      "token": "9c65c796-9df3-f96d-c610-41435b368c74"
+      "token": "9c65c796-9df3-f96d-c610-41435b368c74",
+      "cart":[]
     }
   ],
   "orders": [
@@ -345,17 +360,6 @@
       "id": 1
     }
   ],
-  "customers": [
-    {
-      "user": 1,
-      "cart": [
-        1,
-        2,
-        3
-      ],
-      "id": 1
-    }
-  ],
   "sellers": [
     {
       "user": 1,
@@ -468,31 +472,46 @@
       "about": "This laptop is simply powerful and portable and delivers exceptional performance for everyday com...",
       "title": "Innovative Features",
       "subtitle": "Be ahead"
+    },
+    {
+      "id": 4,
+      "categoryName": "tablets",
+      "name": "Acer Swift 3 Intel Evo Thin & Light Laptop, 14' Full HD, Intel Core i7-1165G7, Intel Iris Xe Graphics, 8GB LPDDR4X, 256GB NVMe SSD, Wi-Fi 6, Fingerprint Reader, Back-lit KB, SF314-59-75QC",
+      "rating": 30,
+      "currentPrice": 10.53,
+      "cents": 99,
+      "oldPrice": 12.77,
+      "stock": 5,
+      "shippingLabel": true,
+      "img": "https://m.media-amazon.com/images/I/61LHj2XV1wL._AC_UY218_.jpg",
+      "about": "This laptop is simply powerful and portable and delivers exceptional performance for everyday com...",
+      "title": "Top Pick Recommendation",
+      "subtitle": "Making your life easier"
     }
   ],
-  "Salmacategories": [
+  "categoriesCollection": [
     {
       "title": "Computers & Accessories",
       "data": [
         {
-          "id": 1,
+          "id": 10,
           "name": "External Hard Drives",
-          "img": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/91S1naupylL_harddrive._CB403556433_.jpg"
+          "image": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/91S1naupylL_harddrive._CB403556433_.jpg"
         },
         {
-          "id": 2,
+          "id": 11,
           "name": "Laptops",
-          "img": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/258726044.jpg"
+          "image": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/258726044.jpg"
         },
         {
-          "id": 3,
+          "id": 12,
           "name": "Tablets",
-          "img": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/tablet.jpg"
+          "image": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/tablet.jpg"
         },
         {
-          "id": 4,
+          "id": 13,
           "name": "Internal State Drives",
-          "img": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/61se5nkFVkL._CB403556432_.jpg"
+          "image": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/61se5nkFVkL._CB403556432_.jpg"
         }
       ]
     },
@@ -500,24 +519,24 @@
       "title": "Mobile Phones & Accessories",
       "data": [
         {
-          "id": 5,
+          "id": 14,
           "name": "Mobile Phones",
-          "img": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/385336660.jpg"
+          "image": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/385336660.jpg"
         },
         {
-          "id": 6,
+          "id": 15,
           "name": "Fitness GPS",
-          "img": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/71q48i0pGcL_gps.jpg"
+          "image": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/71q48i0pGcL_gps.jpg"
         },
         {
-          "id": 7,
+          "id": 16,
           "name": "Cases",
-          "img": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/61Rrv-bvdhL.jpg"
+          "image": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/61Rrv-bvdhL.jpg"
         },
         {
-          "id": 8,
+          "id": 17,
           "name": "Smart Watches",
-          "img": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/71NWRdNUfYL_smartwatch.jpg"
+          "image": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Events/2020/PrimeDay/LandingPages/71NWRdNUfYL_smartwatch.jpg"
         }
       ]
     },
@@ -525,24 +544,24 @@
       "title": "Set The Table",
       "data": [
         {
-          "id": 9,
+          "id": 18,
           "name": "Tablecloths",
-          "img": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/March/Fuji_Passover_Tablecloth2._CB422372530_.jpg"
+          "image": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/March/Fuji_Passover_Tablecloth2._CB422372530_.jpg"
         },
         {
-          "id": 10,
+          "id": 19,
           "name": "Cutlery",
-          "img": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/March/Fuji_Passover_Cutlery_v3._CB422560501_.jpg"
+          "image": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/March/Fuji_Passover_Cutlery_v3._CB422560501_.jpg"
         },
         {
-          "id": 11,
+          "id": 20,
           "name": "Napkins",
-          "img": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/March/Fuji_Passover_Napkins_v2._CB422559805_.jpg"
+          "image": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/March/Fuji_Passover_Napkins_v2._CB422559805_.jpg"
         },
         {
-          "id": 12,
+          "id": 21,
           "name": "Dinnerware",
-          "img": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/March/Fuji_Passover_Dinnerware_v2._CB422559827_.jpg"
+          "image": "https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/March/Fuji_Passover_Dinnerware_v2._CB422559827_.jpg"
         }
       ]
     }
