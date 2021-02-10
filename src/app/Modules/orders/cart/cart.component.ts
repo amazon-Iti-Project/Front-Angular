@@ -11,9 +11,10 @@ import { Iuser } from 'src/app/viewModel/Iuser';
 })
 export class CartComponent implements OnInit {
 
-  userId = 2; // get it from service
+  userId = 4; // get it from service
   currentUser : Iuser | null =null;
   cartItems : Iproduct[] = [];
+  selectedProdCount = 1;
   totalPrice = 0;
   constructor(private cartService : CartService,private prodService : ProductService) { }
 
@@ -36,33 +37,24 @@ export class CartComponent implements OnInit {
       error => console.log(error)
     )
   }
-
-
-
-
   deSelectAll(){
     console.log('pressed!')
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     for( var i in checkboxes){
         checkboxes[i].removeAttribute("checked");
     }
-    }
-
-calcTotalPrice(){
-  // var total=0.0;
-  // var prices = document.getElementsByName("price-tag");
-  // var totalTag = document.getElementsByName("total-price-tag");
-  // for(var i=0;i<prices.length;i++){
-  //     total += parseFloat(prices[i].innerText);
-  // }
-  // for(var i=0;i<totalTag.length;i++){
-  //     totalTag[i].innerHTML = total;
-  // }
   }
-
-// $(".dropdown-item").click(function(){
-//     var selected_val = $(this).attr("value");
-//     $("#drop-val").html(selected_val);
-// });
+  //it must be for all elements array ?? & it must affect product price and total price
+  changeItemCount(product:Iproduct,val:number){
+    this.selectedProdCount = val;
+  }
+  //must be deleted from json also
+  deleteItem(prod : Iproduct){
+    this.cartItems.splice(this.cartItems.indexOf(prod), 1);
+    this.totalPrice -= prod.price;
+  }
+  saveLater(prod:Iproduct){
+    //transparent background
+  }
 
 }

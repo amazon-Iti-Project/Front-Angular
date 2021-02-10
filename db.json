@@ -1,6 +1,34 @@
 {
   "products": [
     {
+      "id": 10,
+      "categoryName": "laptops",
+      "name": "Acer Swift 3 Intel Evo Thin & Light Laptop, 14' Full HD, Intel Core i7-1165G7, Intel Iris Xe Graphics, 8GB LPDDR4X, 256GB NVMe SSD, Wi-Fi 6, Fingerprint Reader, Back-lit KB, SF314-59-75QC",
+      "rating": 30,
+      "price": 148,
+      "cents": 99,
+      "oldPrice": 12.77,
+      "quantity": 5,
+      "category": "1",
+      "shippingLabel": true,
+      "image": "https://m.media-amazon.com/images/I/61LHj2XV1wL._AC_UY218_.jpg",
+      "about": "This laptop is simply powerful and portable and delivers exceptional performance for everyday com...",
+      "title": "Top Pick Recommendation",
+      "subtitle": "Making your life easier",
+      "discount": 50,
+      "shipping": {
+      "period": 2,
+      "shipPrice": 20
+      },
+      "fee": {
+        "admin": 1,
+        "category": 1
+      },
+      "size": "medium",
+      "color": "red",
+      "tags": []
+    },
+    {
       "name": "DigitalCamera",
       "categoryName": "laptops",
       "price": 120,
@@ -154,7 +182,7 @@
       "rePassword": "121212",
       "id": 4,
       "token": "9c65c796-9df3-f96d-c610-41435b368c74",
-      "cart":[]
+      "cart":[1,10]
     }
   ],
   "orders": [
