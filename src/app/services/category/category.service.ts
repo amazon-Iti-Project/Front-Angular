@@ -8,7 +8,6 @@ import { Icategory } from 'src/app/viewModel/Icategory';
   providedIn: 'root'
 })
 export class CategoryService {
-  categoryList:Icategory[]=[];
   constructor(private http:HttpClient) { }
 
   getAllCategories():Observable<Icategory[]>{

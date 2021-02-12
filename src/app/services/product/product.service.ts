@@ -17,10 +17,28 @@ export class ProductService {
     return test;
   }
 
+  getProductsByCategoryId(catId:number):Observable<Iproduct[]>{
+    let products = this.http.get<Iproduct[]>(`${environment.API_BASE_URL}/${environment.products}?category=${catId}`)
+    return products;
+  }
+
+  getProductsByBrandId(brandId:number):Observable<Iproduct[]>{
+    let products = this.http.get<Iproduct[]>(`${environment.API_BASE_URL}/${environment.products}?brand=${brandId}`)
+    return products;
+  }
+
   getProductById(id: number): Observable<Iproduct> {
     let test = this.http.get<Iproduct>(`${environment.API_BASE_URL}/${environment.products}/${id}`)
     console.log(test)
     return test;
+  }
+
+
+  getListOfProductsById(productsId:number[]):Observable<Iproduct[]>{
+    let query = productsId.map(id =>`id=${id}` )
+    let reqQuery = query.join('&');
+    let products = this.http.get<Iproduct[]>(`${environment.API_BASE_URL}/${environment.products}?${reqQuery}`)
+    return products
   }
 
   addNewProduct(prod: Iproduct): Observable<Iproduct> {
@@ -34,6 +52,8 @@ export class ProductService {
     };
     return this.http.post<Iproduct>(`${environment.API_BASE_URL}/${environment.products}`, prod, httpOptions);
   }
+
+
 
   deleteProduct(prodId: number): Observable<Iproduct> {
     let prod = this.http.delete<Iproduct>(`${environment.API_BASE_URL}/${environment.products}/${prodId}`)

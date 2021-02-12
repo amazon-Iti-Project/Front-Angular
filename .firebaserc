@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "data-837bd": {
+      "hosting": {
+        "AmazonProject": [
+          "data-837bd"
+        ]
+      }
+    }
+  }
+}

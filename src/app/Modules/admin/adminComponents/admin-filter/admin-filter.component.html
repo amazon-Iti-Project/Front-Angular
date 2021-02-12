@@ -3,24 +3,15 @@
         <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 row align-content-start">
             <p class="font-amazon-bold col-12">Department</p>
             <ul class="custom-control custom-checkbox col-12">
-                <li>
-                    <input type="checkbox" class="custom-control-input" id="dep1">
-                    <label class="custom-control-label " for="dep1" >
-                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Department1</p>
+                <li [hidden]="department.id>filterView.department" *ngFor="let department of departments; index as sn;"
+                    (click)="updateDepFiltList({department:department})"  >
+                    <input type="checkbox" class="custom-control-input" id="department{{department.id}}">
+                    <label class="custom-control-label " for="department{{department.id}}" >
+                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" >{{department.name}}</p>
                     </label>
                 </li>
-                <li>
-                    <input type="checkbox" class="custom-control-input" id="dep2">
-                    <label class=" custom-control-label " for="dep2" >
-                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Department2</p>
-                    </label>
-                </li>
-                <li>
-                    <input type="checkbox" class="custom-control-input" id="dep3">
-                    <label class="custom-control-label " for="dep3" >
-                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Department3</p>
-                    </label>
-                </li>
+                <li [hidden]="(departments.length<=3)" #depshowmoreRef class="py-2 font-amazon-bold text-left" (click)="showMoreDepList(depshowmoreRef,depshowlessRef,'department')">see more&nbsp;<i class="fas fa-chevron-down font-0"></i></li>
+                <li #depshowlessRef class="py-2 font-amazon-bold text-left d-none" (click)="showLessDepList(depshowmoreRef,depshowlessRef)">see less&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-up font-0"></i></li>
             </ul>
         </div>
     
@@ -28,24 +19,16 @@
         <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 row align-content-start">
             <p class="font-amazon-bold col-12">Brand</p>
             <ul class="custom-control custom-checkbox col-12">
-                <li>
-                    <input type="checkbox" class="custom-control-input" id="brand1">
-                    <label class="custom-control-label " for="brand1" onclick="makebold(this,event)">
-                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Brand1</p>
+                <li [hidden]="brand.id>filterView.brand" *ngFor="let brand of brands; index as sn;"
+                    (click)="updateDepFiltList({brand:brand})" >
+                    <input type="checkbox" class="custom-control-input" id="brand{{brand.id}}">
+                    <label class="custom-control-label " for="brand{{brand.id}}" >
+                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" >{{brand.name}}</p>
                     </label>
                 </li>
-                <li>
-                    <input type="checkbox" class="custom-control-input" id="brand2">
-                    <label class=" custom-control-label " for="brand2" onclick="makebold(this,event)">
-                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Brand2</p>
-                    </label>
-                </li>
-                <li>
-                    <input type="checkbox" class="custom-control-input" id="brand3">
-                    <label class="custom-control-label " for="brand3" onclick="makebold(this,event)">
-                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Brand3</p>
-                    </label>
-                </li>
+                <li [hidden]="(departments.length<=3)" #brandShowmoreRef class="py-2 font-amazon-bold text-left" (click)="showMoreDepList(brandShowmoreRef,brandShowlessRef,'brand')">see more&nbsp;<i class="fas fa-chevron-down font-0"></i></li>
+                <li #brandShowlessRef class="py-2 font-amazon-bold text-left d-none" (click)="showLessDepList(brandShowmoreRef,brandShowlessRef)">see less&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-up font-0"></i></li>
+
             </ul>
         </div>
         <!-- filter Deliver State -->
@@ -54,14 +37,14 @@
             <ul class="custom-control custom-checkbox col-12">
                 <li>
                     <input type="checkbox" class="custom-control-input" id="delievered">
-                    <label class="custom-control-label " for="delievered" onclick="makebold(this,event)">
-                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Delievered</p>
+                    <label class="custom-control-label " for="delievered" >
+                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" >Delievered</p>
                     </label>
                 </li>
                 <li>
                     <input type="checkbox" class="custom-control-input" id="cancelled">
-                    <label class=" custom-control-label " for="cancelled" onclick="makebold(this,event)">
-                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" data-value=0>Cancelled</p>
+                    <label class=" custom-control-label " for="cancelled" >
+                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" >Cancelled</p>
                     </label>
                 </li>
 
@@ -108,7 +91,7 @@
                   <i class="far fa-star"></i> -->
                       <!-- <i class="fas fa-star-half"></i> -->
                       <!-- <i class="far fa-star-half"></i> -->
-                      <i class="far fa-star " data-value=0></i>
+                      <i class="far fa-star " ></i>
                       <i class="far fa-star" data-value=1></i>
                       <i class="far fa-star" data-value=2></i>
                       <i class="far fa-star" data-value=3></i>

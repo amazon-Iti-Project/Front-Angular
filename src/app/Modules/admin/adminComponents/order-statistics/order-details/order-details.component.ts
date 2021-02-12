@@ -19,4 +19,8 @@ export class OrderDetailsComponent implements OnInit {
     })
   }
 
+  navToOrder(order:Iorder):void{
+
+  }
+
 }

@@ -7,7 +7,7 @@
   <!-- Nav Bar -->
   <!-- nav list -->
   <nav class="bg-nav-addproduct ">
-    <div class="nav nav-tabs font-amazon-bold  " id="nav-tab" role="tablist">
+    <div class="nav nav-tabs font-amazon-bold justify-content-between justify-content-sm-start " id="nav-tab" role="tablist">
       <a class="nav-link active py-3 " id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
         aria-controls="nav-home" aria-selected="true">Vital info</a>
 
@@ -18,16 +18,19 @@
         aria-controls="nav-profile" aria-selected="false">offer</a>
     </div>
   </nav>
+
   <!-- taps content container -->
-  <form [formGroup]="prodForm" class="tab-content p-1 p-md-5 font-amazon-normal" id="nav-tabContent">
+  <form [formGroup]="prodForm" class="tab-content p-1 p-md-4 font-amazon-normal" id="nav-tabContent">
     <!-- tap1 product detail -->
     <div class="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
       <!-- product form -->
-      <div class="form-row ">
+      <div class="row form-group ">
         <!-- product id input and choose -->
-        <div class="col-12 form-group d-flex justify-content-between p-0 row">
-          <div class="d-flex col ">
-            <label class="min-content pr-2 align-self-center " for="prodId">category</label>
+        <div class="col-12 form-group d-flex justify-content-between  px-0  mx-0 row" >
+         
+            <label class="col-sm-2 col-12  align-self-center text-sm-right  my-2" for="catId"><span>category</span></label>
+
+            <div class="d-flex col ">
             <!-- <input type="text" class="form-control" id="prodId"> -->
             <select (change)="getFee()" formControlName="category" name="category" class="custom-select" id="catId"
               required [class.is-invalid]="prodForm.controls['category'].invalid&&prodForm.controls['category'].touched"
@@ -37,46 +40,71 @@
               <option *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</option>
             </select>
           </div>
-          <div class="d-flex col ">
-            <label class="min-content pr-2 align-self-center " for="prodId">brand</label>
+          
+            <label class="col-sm-2 col-12  align-self-center text-sm-right  my-2 " for="brandId"><span>brand</span></label>
+
+            <div class="d-flex col  ">
             <select formControlName="brand" class="custom-select" name="brand" id="brandId" required
               [class.is-invalid]="prodForm.controls['brand'].invalid&&prodForm.controls['brand'].touched"
               [class.is-valid]="prodForm.controls['brand'].valid&&prodForm.controls['brand'].touched">
 
-              <option selected disabled value="">select brand</option>
+              <option  disabled value="" selected>select brand</option>
               <option *ngFor="let brand of brands" [value]="brand.id">{{brand.name}}</option>
             </select>
           </div>
 
         </div>
         <!-- product Name -->
-        <div class="col-12 form-group row p-0 ">
-          <div class="col-12 d-flex justify-content-between ">
-            <label class="min-content pr-2 align-self-center " for="pId">Product Name</label>
-            <input formControlName="name" type="text" class="form-control" id="prodId"
-              placeholder="ex.C50-Digital Camera" autocomplete="off"
-              [class.is-invalid]="prodForm.controls['name'].invalid&&prodForm.controls['name'].dirty"
-              [class.is-valid]="prodForm.controls['name'].valid&&prodForm.controls['name'].dirty" />
-          </div>
-          <div class="d-flex w-100  my-2 px-3 justify-content-end">
-            <small [hidden]="(prodForm.controls['name'].valid||prodForm.controls['name'].pristine) "
-              class="text-muted font-0">min 1</small>
-          </div>
-        </div>
+            <div class=" col  ">
+              <div class="row">
+
+            <label class="col-sm-4 col-12 align-self-center  text-sm-right my-2" for="pId"><span>Product Name</span></label>
+            <div class="col">
+            <input formControlName="name" type="text" class="form-control " id="prodId" placeholder="ex.C50-Digital Camera"
+                autocomplete="off" [class.is-invalid]="prodForm.controls['name'].invalid&&prodForm.controls['name'].dirty"
+                [class.is-valid]="prodForm.controls['name'].valid&&prodForm.controls['name'].dirty" />
+              </div>
+               <!-- divider -->
+                <div class="w-100 "></div>
+              <!-- hint for product name -->
+              <div class="text-sm-right col ">
+                <small [hidden]="(prodForm.controls['name'].valid||prodForm.controls['name'].pristine) "
+                  class=" text-muted  text-end font-0">min 5 char.</small>
+              </div>
+            </div>
+            </div>
+                 <!-- product description -->
+                 <div class="col-sm col-12">
+                   <div class="row">
+                    <label class="col-sm-4 col-12  my-2 align-self-center text-sm-right" for="pId"><span>Description</span></label>
+
+                    <div class=" col ">
+                    <input formControlName="description" type="text" class="form-control" id="prodDesc"
+                      placeholder="write product description" autocomplete="off"
+                      [class.is-invalid]="prodForm.controls['description'].invalid&&prodForm.controls['description'].dirty"
+                      [class.is-valid]="prodForm.controls['description'].valid&&prodForm.controls['description'].dirty" />
+                  </div>
+                   </div>
+                 </div>
+            <!-- divider -->
+            <div class="w-100 form-group"></div>
+      
         <!-- product color -->
-        <div class="col-12 form-group d-flex justify-content-between p-1">
-          <label class="min-content pr-2 align-self-center " for="prodId">Color</label>
-          <input formControlName="color" type="text" class="form-control" id="pcolor"
+          <label class="col-sm-2 col-12 align-self-center my-2 text-sm-right" for="prodId">Color</label>
+          <div class="col ">
+          <input formControlName="color" type="text" class="form-control" id="pcolor "placeholder="color"
             [class.is-invalid]="prodForm.controls['color'].invalid&&prodForm.controls['color'].dirty"
             [class.is-valid]="prodForm.controls['color'].valid&&prodForm.controls['color'].dirty" />
-
+          </div>
           <!-- product size -->
-          <label class="min-content mx-2 pr-2 align-self-center " for="prodId">size</label>
+          <label class="col-sm-2 col-12  align-self-center my-2 text-sm-right" for="prodId">size</label>
+
+          <div class="col  ">
           <input formControlName="size" type="text" class="form-control" id="psize" placeholder="ex.smallxLarge"
             [class.is-invalid]="prodForm.controls['size'].invalid&&prodForm.controls['size'].dirty"
             [class.is-valid]="prodForm.controls['size'].valid&&prodForm.controls['size'].dirty" />
-
-        </div>
+          </div>
+       
       </div>
 
     </div>
@@ -85,21 +113,21 @@
     <!-- tap2 product image -->
     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
       <!-- <div class="input-group mb-3 justify-content-center"> -->
-      <div class="alert d-flex mb-3 justify-content-between  align-items-center">
+      <div class="alert form-group  row justify-content-between  align-items-center">
 
         <!-- input -->
-        <div class="custom-file w-50">
-          <input type="file" (change)="onSeleImg($event)" class="custom-file-input " id="inputGroupFile02">
+        <div class="col custom-file ">
+          <input #selecImgRef type="file" (change)="onSeleImg($event)" class="custom-file-input " id="inputGroupFile02">
           <label class="custom-file-label font-amazon-normal" for="inputGroupFile02"
             aria-describedby="inputGroupFileAddon02">Choose file</label>
         </div>
 
         <!-- image -->
-        <div class="w-25">
-          <img class="img-fluid card-img-top  border my-3" [src]="prodForm.controls['image'].value"
+        <div class=" col-lg-4 col-md col-12">
+          <img (click)="onSelectImg(selecImgRef)" class="img-fluid card-img-top  border my-3" [src]="prodForm.controls['image'].value"
             *ngIf="prodForm.controls['image'].value; else elseBlock">
           <ng-template #elseBlock>
-            <img class="img-fluid card-img-top border my-3" src="../../../../assets/seller/add/uploadProduct.png">
+            <img (click)="onSelectImg(selecImgRef)" class="img-fluid card-img-top border my-3" src="../../../../assets/seller/add/uploadProduct.png">
           </ng-template>
         </div>
         <!-- img ends -->
@@ -112,24 +140,23 @@
       <div class="row ">
         <!-- price starts-->
         <div class="input-group mb-3 col row  align-items-center">
-          <label class="  col-sm-auto col-12 mb-sm-0 mb-1 ">Price</label>
+          <label class="  col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">Price</label>
           <div class="col d-flex">
             <div class="input-group-prepend ">
               <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">$</span>
             </div>
             <!-- price -->
             <input type="number" (change)="updateTotalPrice(priceRef)"
-              class="form-control font-amazon-normal font-1 mr-2" placeholder="Price" formControlName="price"
+              class="form-control font-amazon-normal font-1 " placeholder="Price" formControlName="price"
               aria-label="min" aria-describedby="basic-addon1" min="0"
               [class.is-invalid]="prodForm.controls['price'].invalid&&prodForm.controls['price'].dirty"
               [class.is-valid]="prodForm.controls['price'].valid&&prodForm.controls['price'].dirty" />
-
           </div>
         </div>
         <!-- price ends -->
         <!-- discount starts -->
         <div class="input-group mb-3 col row align-items-center">
-          <label class="col-sm-auto col-12 mb-sm-0 mb-1">discount</label>
+          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">discount</label>
           <div class="col d-flex">
             <div class="input-group-prepend">
               <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">%</span>
@@ -150,7 +177,7 @@
       <div class="row mb-3">
         <div class="col row  align-items-center">
           <!-- fees starts -->
-          <label class=" col-sm-auto col-12 mb-sm-0 mb-1 ">fees</label>
+          <label class=" col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">fees</label>
           <div class="input-group -3 col "formGroupName="fee">
             <div class="input-group-prepend">
               <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">%</span>
@@ -163,7 +190,7 @@
         </div>
         <div class="col row align-items-center">
           <!-- quantity starts -->
-          <label class="col-sm-auto col-12 mb-sm-0 mb-1">Quantity</label>
+          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">Quantity</label>
           <div class="input-group  col">
             <div class="input-group-prepend">
               <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">#</span>
@@ -184,7 +211,7 @@
       <div formGroupName="shipping" class="row mb-3">
         <div class="input-group row  col align-items-center">
           <!-- shipping period -->
-          <label class="col-sm-auto col-12 mb-sm-0 mb-1">Shipping Period</label>
+          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">Shipping Period</label>
           <div class="col d-flex">
             <div class="input-group-prepend ">
               <span class="input-group-text px-1 font-amazon-bold font-1 " id="basic-addon1 ">days</span>
@@ -199,7 +226,7 @@
         <!-- shipping price starts -->
         <div class="input-group row  col align-items-center">
 
-          <label class="col-sm-auto col-12 mb-sm-0 mb-1">Shipping Price</label>
+          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">Shipping Price</label>
 
           <div class="col  d-flex">
             <div class="input-group-prepend">
@@ -218,11 +245,11 @@
       <!-- shipping ends -->
       <!-- Total price start -->
       <div class="row">
+        <div class=" col-6 row align-items-center p-0 m-0 ">
 
-        <div class=" col row align-items-center p-0 m-0 ">
-          <label class="col-sm-auto col-12 mb-sm-0 mb-1 ">return Price</label>
+          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right ">return Price</label>
 
-          <div class="col-auto d-flex px-0">
+          <div class="col d-flex ">
             <div class="input-group-prepend">
               <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">$</span>
             </div>
@@ -234,8 +261,8 @@
         <!-- break  div -->
         <div class="w-100"></div>
         <!-- small starts -->
-        <div  class=" col row  mb-3">
-          <small class="form-text text-muted font-0 col-auto text-end ">after discount & fees</small>
+        <div  class=" col-6 text-sm-right  mb-3 ">
+          <small class="form-text text-muted font-0   ">after discount & fees</small>
         </div>
         <!-- small ends -->
       </div>
@@ -244,7 +271,7 @@
     <!-- tap3 ends -->
 
     <!-- submit button -->
-    <div class="container d-flex justify-content-center  ">
+    <div class="container row justify-content-center mt-2 ">
       <button type="button" (click)="resetForm()" class="btn  mx-sm-2 mx-1  ">Cancel</button>
       <button (click)="addProduct()" type="submit" [disabled]="prodForm.invalid"
         class="btn  mx-sm-2 mx-1">Safe and Finish</button>
