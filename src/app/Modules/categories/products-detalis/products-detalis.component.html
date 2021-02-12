@@ -29,16 +29,9 @@
         <div class="product-color-size-area">
           <div class="color-area">
             <h2 class="saider-bar-title">Color</h2>
-            <div class="color">
-              <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-              </ul>
-            </div>
-            <p> {{prd?.color}}</p>
+              <select class="form-control"  (change)="onChange($event.target?.value)" [ngStyle]="{'background-color':selectedColor}">
+    <option class="i" *ngFor="let color of colors" [value]="color?.value" [ngStyle]="{'background-color':color.value}"> {{color.name}}</option>
+  </select>
 
           </div>
           <div class="size-area">
@@ -61,8 +54,8 @@
         </div>
         <div class="product-cart-option">
           <ul>
-            <li><a href="#"><i class="fa fa-heart-o"></i><span>Add to Wishlist</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i><span>Add to Compare</span></a></li>
+            <li><i class="fa fa-heart-o"></i><span>Add to Wishlist</span></li>
+            <li><i class="fa fa-link"></i><span>Add to Compare</span></li>
             <li><a href="#"><i class="fa fa-envelope"></i><span>Email to a Friend</span></a></li>
           </ul>
         </div>

@@ -1,3 +1,4 @@
+import { Colors } from './../../../enums/colors';
 import { ProductService } from './../../../services/product/product.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
@@ -13,8 +14,9 @@ import{Location} from '@angular/common'
 
 export class ProductsDetalisComponent implements OnInit {
   prd:Iproduct|null=null;
-  // this is passed Id >>> 
+  // this is passed Id >>>
   prdID:number=1;
+
 
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -40,5 +42,39 @@ export class ProductsDetalisComponent implements OnInit {
      console.log(this.prdID);
      console.log(this.prd);
     }
+    selectedColor = '';
+
+    colors = [
+       {
+
+        name: 'Silver',
+        value: '#C0C0C0'
+      },
+      {
+
+        name: 'Black',
+        value: '#000'
+      },
+
+      {
+
+        name: 'Yellow',
+        value: '#ffff05'
+      },
+      {
+        name: 'Red',
+        value: '#ff3300'
+      },
+      {
+        name: 'Navy',
+        value: '#3f729b'
+      }
+    ];
+
+    onChange(value:any){
+      this.selectedColor = value;
+    }
+
+
 
 }

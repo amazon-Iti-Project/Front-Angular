@@ -11,7 +11,7 @@
 .mainphoto {
   position: relative;
   text-align: center;
-  margin-top: 15px;
+  margin-top: 20px;
 border: 1px solid lightgray;
 }
 
@@ -186,7 +186,7 @@ h2.saider-bar-title {
   	margin-bottom: 18px;
     overflow: hidden;
   }
-  .color ul li {
+  .color select li {
   	border: 0 none;
   	float: left;
   	margin-right: 5px
@@ -203,21 +203,13 @@ h2.saider-bar-title {
   	border: 1px solid #e5e5e5;
   	border-radius: 3px;
   }
-  .color ul li:nth-child(2) a {
-  	background: #e32b00
-  }
-  .color ul li:nth-child(3) a {
-  	background: #ff9000
-  }
-  .color ul li:nth-child(4) a {
-  	background: #8BC44A
-  }
-  .color ul li:nth-child(5) a {
-  	background: #10b9b9
-  }
-  .color ul li:nth-child(6) a {
-  	background: #FFFFFF
-  }
+ .i{
+   color: white;
+   background-color: white;
+ }
+ .i::selection{
+   color: blue;
+ }
   .size-area {
   	margin-bottom: 8px;
   	overflow: hidden
