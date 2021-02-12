@@ -25,6 +25,7 @@ export class CategoryDetailsComponent implements OnInit {
   }
 
   getAllCategories(): void {
+    console.log('inside getAll Cat')
     // get all categories
     this.catServ.getAllCategories().subscribe(res => {
       this.categories = res;
@@ -33,7 +34,7 @@ export class CategoryDetailsComponent implements OnInit {
           this.prodServ.getProductsByCategoryId(cat.id).subscribe(res => {
             let adminCat = { categoty: cat, products: res }
             this.adminCategories.push(adminCat);
-          })
+          },err=>alert(err))
 
         }
         console.log(this.adminCategories)

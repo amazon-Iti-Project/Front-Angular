@@ -193,7 +193,7 @@
     },
     {
       "name": "Toshiba",
-      "image": "https://lh3.googleusercontent.com/proxy/bpD3D_cNU2FJDNm8AzZEzadhGkBrknARitARbY3SSugsq2STLKDs64kRolCpYGiUM88KLJDU7nss64531x3sgLfbsJ99B6cZlCEHoG-5C9B0hsfWJ1WJiK00Rto",
+      "image": "https://www.electrony.net/media/2010/02/toshiba-logo-red.jpg",
       "id": 3
     },
     {
@@ -245,7 +245,6 @@
       "Password": "1111121",
       "rePassword": "121212",
       "id": 4,
-<<<<<<< HEAD
       "token": "9c65c796-9df3-f96d-c610-41435b368c74"
     },
     {
@@ -275,10 +274,6 @@
         1,
         3
       ]
-=======
-      "token": "9c65c796-9df3-f96d-c610-41435b368c74",
-      "cart":[1,10]
->>>>>>> c017ab3473b121c6b3028af445d1931d9069857b
     }
   ],
   "orders": [
