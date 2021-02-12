@@ -32,6 +32,11 @@ export class UserService {
     .pipe(map(users=> users[0] ))
   }
 
+  getUserById(user:Iuser):Observable<Iuser>{
+    return this.http.get<Iuser>(`${environment.API_BASE_URL}/${environment.users}/${user.id}`)
+    
+  }
+
   //2- if a user create a token in local storage
   createTokenbyUserId(user:Iuser):string{
     let token: string = Guid.create().toString();
@@ -54,7 +59,7 @@ export class UserService {
 
   }
 
-  //4- to get user token
+  //4- to get user token //1- in any page to get current user use this method first
   isUserSignedIn(): string|undefined {
     let token = localStorage.getItem('UserToken')
     if (token) {
@@ -65,10 +70,32 @@ export class UserService {
     }
   }
 
-//5- if user get user by token
+//5- if user get user by token  // 2- in any page if user logged use this method
   getUserByToken(token:string):Observable<Iuser>{
     return this.http.get<Iuser[]>(`${environment.API_BASE_URL}/${environment.users}?token=${token}`)
     .pipe(map(users=> users[0] ))
+  }
+
+  // add to cart 
+  // steps to add to cart
+  // 1- get the user and on click add to cart send user and productId tp addTpCart method
+  addToCart(user:Iuser,productId:number):Observable<Iuser>{
+    user.cart?.push(productId)
+      const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+        //,'Accept':' */*'
+        //,'Authorization': 'my-auth-token'
+      })
+    };
+    return this.http.patch<Iuser>(`${environment.API_BASE_URL}/${environment.users}/${user.id}`,{ cart:user.cart }, httpOptions)
+
+  }
+
+  getUserCart(user: Iuser): Observable<number[]> {
+    return this.http.get<Iuser>(`${environment.API_BASE_URL}/${environment.users}/${user.id}`)
+      .pipe(map(user => user.cart ? user.cart : []))
+
   }
 
   

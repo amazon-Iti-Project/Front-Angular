@@ -23,14 +23,14 @@ export class BrandService {
     return test;
   }
 
-  addNewBrand(category:Ibrand):Observable<Ibrand>{
-    console.log("recieved Product: ",category)
+  addNewBrand(brand:Ibrand):Observable<Ibrand>{
+    console.log("recieved Product: ",brand)
     const httpOptions = {headers: new HttpHeaders({
       'Content-Type': 'application/json'
       //,'Accept':' */*'
       //,'Authorization': 'my-auth-token'
         })};
-        return this.http.post<Ibrand>(`${environment.API_BASE_URL}/${environment.brands}`,category, httpOptions);
+        return this.http.post<Ibrand>(`${environment.API_BASE_URL}/${environment.brands}`,brand, httpOptions);
   }
 
 deleteBrand(brandId:number):Observable<Ibrand>{

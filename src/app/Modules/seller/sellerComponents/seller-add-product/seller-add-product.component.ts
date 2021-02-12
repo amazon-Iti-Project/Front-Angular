@@ -9,6 +9,8 @@ import { Ibrand } from 'src/app/viewModel/Ibrand';
 import { BrandService } from './../../../../services/brand/brand.service';
 import { ShippingService } from './../../../../services/shipping/shipping.service';
 import { FeeService } from './../../../../services/feeService/fee.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-seller-add-product',
@@ -22,7 +24,7 @@ export class SellerAddProductComponent implements OnInit {
   categories: Icategory[] = [];
   brands: Ibrand[] = [];
   constructor(private fb: FormBuilder, private catServ: CategoryService,private brandSer:BrandService, private proServ: ProductService
-    , private router: Router,private shipService:ShippingService,private feeServ:FeeService) { }
+    , private router: Router,private shipService:ShippingService,private feeServ:FeeService,private storage: AngularFireStorage) { }
 
 
   ngOnInit(): void {
@@ -63,11 +65,18 @@ export class SellerAddProductComponent implements OnInit {
       color: ['', Validators.required],
       image: [, Validators.required],
       tags: [[], ],
+      description:['',Validators.required]
 
     })
 
     console.log(this.prodForm.controls['fee'].get('fee'))
 
+  }
+
+        // selectImg by image
+  onSelectImg(selectElement:any):void{
+    // console.log('clicked on image: ',selectElement.nativeElement)
+    selectElement.click();
   }
 
         // selectImg by input
@@ -94,11 +103,31 @@ export class SellerAddProductComponent implements OnInit {
     // file local url
     let url = e.target?.result;
     // to add to formgroup control when added an img
-    this.prodForm.controls['image'].setValue(url);
+    this.uploadImage(file,file.name);
     
   };
+  // start to read data and trigger on load event
   // return file or a blob
   reader.readAsDataURL(file);
+}
+
+// upload image in storage and get url
+ uploadImage(file:File,name:string):void{
+  console.log(file)
+      // init storage
+  let imagesRef = this.storage.storage.ref().child('images');
+  var uploadTask = imagesRef.child(name).put(file).then((snapshot)=>{
+  return imagesRef.child(name).getDownloadURL();
+})
+.then((url)=>{
+    // `url` is the download URL for 'images/stars.jpg'
+console.log("img url is ",url)
+    this.prodForm.controls['image'].setValue(url);
+})
+.catch((e)=>console.log("error uploading image"));
+
+// better reference from codelabs
+// https://developers.google.com/codelabs/building-a-web-app-with-angular-and-firebase#10
 }
 
 // on select category

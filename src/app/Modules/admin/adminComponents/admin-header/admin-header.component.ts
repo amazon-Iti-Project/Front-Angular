@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product/product.service';
+import { AdminCategoryService } from './../admin-categories/admin-category.service';
 
 @Component({
   selector: 'app-admin-header',
@@ -8,9 +9,10 @@ import { ProductService } from 'src/app/services/product/product.service';
 })
 export class AdminHeaderComponent implements OnInit {
 
-  constructor(private productServ:ProductService) { }
+  constructor(private productServ:ProductService,) { }
 
   ngOnInit(): void {
+    
   }
 
   // on click product link

@@ -1,7 +1,7 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidebarComponent } from './adminComponents/sidebar/sidebar.component';
+import { AdminFilterComponent  } from './adminComponents/admin-filter/admin-filter.component';
 import { AdminHomeComponent } from './admin-home.component';
 import { AdminHeaderComponent } from './adminComponents/admin-header/admin-header.component';
 import { DashboardComponent } from './adminComponents/dashboard/dashboard.component';
@@ -27,6 +27,14 @@ import { SellerSummaryComponent } from './adminComponents/seller-statistics/sell
 import { SellerExpectedComponent } from './adminComponents/seller-statistics/seller-expected/seller-expected.component';
 import { SellerTapsComponent } from './adminComponents/seller-statistics/seller-taps/seller-taps.component';
 import { CustomerTapsComponent } from './adminComponents/customer-statistics/customer-taps/customer-taps.component';
+import { AdminCategoriesComponent } from './adminComponents/admin-categories/admin-categories.component';
+import { AdminBrandsComponent } from './adminComponents/admin-brands/admin-brands.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CategoryDetailsComponent } from './adminComponents/admin-categories/category-details/category-details.component';
+import { CategoryModalComponent } from './adminComponents/admin-categories/category-modal/category-modal.component';
+import { BrandDetailsComponent } from './adminComponents/admin-brands/brand-details/brand-details.component';
+import { BrandModalComponent } from './adminComponents/admin-brands/brand-modal/brand-modal.component';
+import { AdminBrandService } from './adminComponents/admin-brands/admin-brand.service';
 
 const routes: Routes = [
   {
@@ -36,6 +44,8 @@ const routes: Routes = [
       { path: 'customers', component: CustomerStatisticsComponent },
       { path: 'sellers', component: SellerStatisticsComponent },
       { path: 'orders', component: OrderStatisticsComponent },
+      { path: 'brands', component: AdminBrandsComponent },
+      { path: 'categories', component: AdminCategoriesComponent },
       { path: 'earings', component: EaringsStatisticsComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: "**", component: NotFoundComponent }
@@ -46,8 +56,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AdminHeaderComponent,
-    SidebarComponent,
     AdminHomeComponent,
+    AdminFilterComponent,
     ProductStatisticsComponent,
     OrderStatisticsComponent,
     CustomerStatisticsComponent,
@@ -69,13 +79,26 @@ const routes: Routes = [
     SellerSummaryComponent,
     SellerExpectedComponent,
     SellerTapsComponent,
-    CustomerTapsComponent
+    CustomerTapsComponent,
+    AdminCategoriesComponent,
+    AdminBrandsComponent,
+    CategoryDetailsComponent,
+    CategoryModalComponent,
+    BrandDetailsComponent,
+    BrandModalComponent
   ],
   imports: [
-  CommonModule,
     RouterModule.forChild(routes),
     // RouterModule
+    ReactiveFormsModule,
+    CommonModule,
+
   ],
+  
   // exports: [RouterModule],
+
+  // this provide seperate service instance for module and it`s components
+  providers: [AdminBrandService],
+
 })
 export class AdminModule { }

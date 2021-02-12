@@ -3,34 +3,33 @@
 <!-- home-body -->
 <!-- items container -->
  <!-- <div class="container position-relative item-container mx-0  "> -->
-    <div class="container-fluid ">
+    <div class="container-fluid home-body-bg">
         <!-- row -->
-        <div class="row mx-0  ">
+        <div class="row   ">
           <!-- col -->
-          <div class="col-lg-3 col-md-4 col-sm-6 p-2 ">
-            <div class="bg-white p-2  row h-100  ">
+          <div class="col-lg-3 col-md-4 col-sm-6 row m-0 p-2 ">
+            <div class="bg-white p-2 col row m-0 ">
               <p class="col-12 h5 font-amazon-bold">Recently Viewed</p>
-              <div class="col-12  p-0  align-self-end">
-                <a class="d-block p-2 test-container">
-                <img src="../../../../../assets/home-body/item-01.jpg" class="img-fluid">
+              <div class="col-12  ">
+                <a class="d-flex p-2 img-home-container justify-content-center align-items-start">
+                <img src="../../../../../assets/home-body/item-02.jpg" class=" img-fluid img-home ">
                 </a>
               </div>
               <a class="font-0 text-info align-self-end  py-1 font-amazon-normal">Shop now</a>
             </div>
-    
           </div>
       
           <!-- col -->
           <!-- modified to be a link -->
-          <div class="col-lg-3 col-md-4 col-sm-6 p-2" >
-            <div class="bg-white p-2">
-              <p class="h5 font-amazon-bold">Shop top categories</p>
-              <div class=" d-flex align-items-center">
-                <a class="d-block test-container" [routerLink]="['/category']" routerLinkActive="" >
-                  <img src="../../../../../assets/home-body/04.jpg" class="test ">
+          <div class="col-lg-3 col-md-4 col-sm-6   row m-0 p-2" >
+            <div class="bg-white p-2 col row m-0 ">
+              <p class="col-12 h5 font-amazon-bold">Shop top categories</p>
+              <div class="col-12  ">
+                <a class="d-flex  justify-content-center align-items-start img-home-container" [routerLink]="['/category']" routerLinkActive="" >
+                  <img src="../../../../../assets/home-body/06.jpg" class="img-fluid  img-home ">
                 </a>
               </div>
-              <a class="font-0 text-info  py-1 font-amazon-normal"[routerLink]="['/category']" routerLinkActive="">Shop now</a>
+              <a class="font-0 text-info align-self-end py-1 font-amazon-normal"[routerLink]="['/category']" routerLinkActive="">Shop now</a>
             </div>
           </div>
         </div>
