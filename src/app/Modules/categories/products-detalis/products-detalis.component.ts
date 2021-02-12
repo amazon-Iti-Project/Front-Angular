@@ -20,12 +20,9 @@ export class ProductsDetalisComponent implements OnInit {
   // this is passed Id >>>
   prdID:number=1;
 
-<<<<<<< HEAD
 
-=======
   // current user
   user:Iuser|undefined
->>>>>>> 56acb9d026eeb646ca92b4a45d9c93f026bc2c01
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
     private pService:ProductService,
@@ -56,42 +53,40 @@ export class ProductsDetalisComponent implements OnInit {
     if(userToken){
       this.userServ.getUserByToken(userToken).subscribe(res=>this.user=res,err=>alert(err))
     }
-<<<<<<< HEAD
-    selectedColor = '';
+  }
 
-    colors = [
-       {
 
-        name: 'Silver',
-        value: '#C0C0C0'
-      },
-      {
+  selectedColor = '';
 
-        name: 'Black',
-        value: '#000'
-      },
+  colors = [
+     {
 
-      {
+      name: 'Silver',
+      value: '#C0C0C0'
+    },
+    {
 
-        name: 'Yellow',
-        value: '#ffff05'
-      },
-      {
-        name: 'Red',
-        value: '#ff3300'
-      },
-      {
-        name: 'Navy',
-        value: '#3f729b'
-      }
-    ];
+      name: 'Black',
+      value: '#000'
+    },
 
-    onChange(value:any){
-      this.selectedColor = value;
+    {
+
+      name: 'Yellow',
+      value: '#ffff05'
+    },
+    {
+      name: 'Red',
+      value: '#ff3300'
+    },
+    {
+      name: 'Navy',
+      value: '#3f729b'
     }
+  ];
 
-
-=======
+  onChange(value:any){
+    this.selectedColor = value;
   }
 
   addtoCart():void{
@@ -103,6 +98,5 @@ export class ProductsDetalisComponent implements OnInit {
       },err=>alert(err))
     }else alert("you must login First..")
   }
->>>>>>> 56acb9d026eeb646ca92b4a45d9c93f026bc2c01
 
 }
