@@ -52,40 +52,43 @@ export class ProductsDetalisComponent implements OnInit {
     if(userToken){
       this.userServ.getUserByToken(userToken).subscribe(res=>this.user=res,err=>alert(err))
     }
-    // selectedColor = '';
-
-    // colors = [
-    //    {
-
-    //     name: 'Silver',
-    //     value: '#C0C0C0'
-    //   },
-    //   {
-
-    //     name: 'Black',
-    //     value: '#000'
-    //   },
-
-    //   {
-
-    //     name: 'Yellow',
-    //     value: '#ffff05'
-    //   },
-    //   {
-    //     name: 'Red',
-    //     value: '#ff3300'
-    //   },
-    //   {
-    //     name: 'Navy',
-    //     value: '#3f729b'
-    //   }
-    // ];
-
-    // onChange(value:any){
-    //   this.selectedColor = value;
-    // }
+  }
 
 
+  selectedColor = '';
+
+  colors = [
+     {
+
+      name: 'Silver',
+      value: '#C0C0C0'
+    },
+    {
+
+      name: 'Black',
+      value: '#000'
+    },
+
+    {
+
+      name: 'Yellow',
+      value: '#ffff05'
+    },
+    {
+      name: 'Red',
+      value: '#ff3300'
+    },
+    {
+      name: 'Navy',
+      value: '#3f729b'
+    }
+  ];
+
+  onChange(target:EventTarget|null){
+    
+    const  ele:HTMLSelectElement=  target as HTMLSelectElement;
+    console.log("valye",ele.value)
+    this.selectedColor = ele.value;
   }
 
   addtoCart():void{

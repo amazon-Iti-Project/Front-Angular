@@ -29,9 +29,10 @@
         <div class="product-color-size-area">
           <div class="color-area">
             <h2 class="saider-bar-title">Color</h2>
-              <select class="form-control"  (change)="onChange($event.target?.value)" [ngStyle]="{'background-color':selectedColor}">
-    <option class="i" *ngFor="let color of colors" [value]="color?.value" [ngStyle]="{'background-color':color.value}"> {{color.name}}</option>
-  </select>
+              <select class="form-control" (change)="onChange($event.target)" [ngStyle]="{'background-color':selectedColor}">
+                <option class="i" *ngFor="let color of colors" [value]="color?.value" [ngStyle]="{'background-color':color.value}">
+                  {{color.name}}</option>
+              </select>
 
           </div>
           <div class="size-area">
