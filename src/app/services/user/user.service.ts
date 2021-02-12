@@ -59,7 +59,7 @@ export class UserService {
 
   }
 
-  //4- to get user token
+  //4- to get user token //1- in any page to get current user use this method first
   isUserSignedIn(): string|undefined {
     let token = localStorage.getItem('UserToken')
     if (token) {
@@ -70,7 +70,7 @@ export class UserService {
     }
   }
 
-//5- if user get user by token
+//5- if user get user by token  // 2- in any page if user logged use this method
   getUserByToken(token:string):Observable<Iuser>{
     return this.http.get<Iuser[]>(`${environment.API_BASE_URL}/${environment.users}?token=${token}`)
     .pipe(map(users=> users[0] ))
