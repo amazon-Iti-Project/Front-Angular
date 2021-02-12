@@ -1,3 +1,4 @@
+import { Iproduct } from './../../viewModel/IProduct';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
@@ -35,5 +36,13 @@ export class CategoryService {
 deleteCategory(catId:number):Observable<Icategory>{
   let cat = this.http.delete<Icategory>(`${environment.API_BASE_URL}/${environment.categories}/${catId}`)
     return cat
+}
+addToCart(prd: Iproduct){
+  const httpOptions = {headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+    // ,'Authorization': 'my-auth-token'
+      })};
+
+  return this.http.post(`${environment.API_BASE_URL}/Cart`, prd, httpOptions);
 }
 }

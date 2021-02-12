@@ -1,3 +1,4 @@
+import { Colors } from './../../../enums/colors';
 import { ProductService } from './../../../services/product/product.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
@@ -16,7 +17,7 @@ import { UserService } from './../../../services/user/user.service';
 
 export class ProductsDetalisComponent implements OnInit {
   prd:Iproduct|null=null;
-  // this is passed Id >>> 
+  // this is passed Id >>>
   prdID:number=1;
 
   // current user
@@ -51,6 +52,40 @@ export class ProductsDetalisComponent implements OnInit {
     if(userToken){
       this.userServ.getUserByToken(userToken).subscribe(res=>this.user=res,err=>alert(err))
     }
+    // selectedColor = '';
+
+    // colors = [
+    //    {
+
+    //     name: 'Silver',
+    //     value: '#C0C0C0'
+    //   },
+    //   {
+
+    //     name: 'Black',
+    //     value: '#000'
+    //   },
+
+    //   {
+
+    //     name: 'Yellow',
+    //     value: '#ffff05'
+    //   },
+    //   {
+    //     name: 'Red',
+    //     value: '#ff3300'
+    //   },
+    //   {
+    //     name: 'Navy',
+    //     value: '#3f729b'
+    //   }
+    // ];
+
+    // onChange(value:any){
+    //   this.selectedColor = value;
+    // }
+
+
   }
 
   addtoCart():void{
