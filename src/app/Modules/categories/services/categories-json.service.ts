@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ICategory } from '../viewModels/ICategory';
+import { ICategoryCollection } from '../viewModels/ICategoryCollection';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class CategoriesJSONService {
 
   constructor(private httpClient : HttpClient) { }
-  getAllCategories() : Observable<ICategory[]>{
-    return this.httpClient.get<ICategory[]>(`${environment.API_BASE_URL}/Salmacategories`);
+  getAllCategories() : Observable<ICategoryCollection[]>{
+    return this.httpClient.get<ICategoryCollection[]>(`${environment.API_BASE_URL}/categoriesCollection`);
   }
 }

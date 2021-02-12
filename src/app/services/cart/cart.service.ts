@@ -11,7 +11,7 @@ export class CartService {
 
   constructor(private http:HttpClient) { }
   getUser(userID:number):Observable<Iuser>{
-    let customer = this.http.get<Iuser>(`${environment.API_BASE_URL}/customers?id=${userID}`)
+    let customer = this.http.get<Iuser>(`${environment.API_BASE_URL}/users/${userID}`)
     return customer;
   }
 

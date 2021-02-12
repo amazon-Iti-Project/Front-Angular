@@ -33,10 +33,17 @@ export class AdminFilterComponent implements OnInit {
 
     // console.log(e.target)
   }
-  showLessDepList(showmore:any,showless:any):void{
-    this.filterView.department = 3;
+  showLessDepList(showmore:any,showless:any,key:string):void{
+
+    if(key === 'department'){
+      this.filterView.department = 3;
+
+    }else{
+      this.filterView.brand = 3;
+    }
     showless.classList.add("d-none")
     showmore.classList.remove("d-none")
+
     // console.log(e.target)
   }
 

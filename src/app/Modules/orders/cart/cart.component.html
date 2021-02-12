@@ -1,5 +1,5 @@
 <div class="big-pic">
-    <div class="row justify-content-around w-100 my-4">
+    <div class="row justify-content-around w-100 ">
         <!-- start the main cart menu items -->
         <div class="col-9 bg-white p-3">
             <!-- main menu header -->
@@ -9,7 +9,7 @@
                 <div id="price-title"><span>Price</span></div>
             </div>
             <!-- single cart item -->
-            <ng-container *ngFor="let product of cartItems">
+            <ng-container *ngFor="let product of cartItems" id="PRODUCT">
             <div class="container border-top cart-item">
                 <div id="menu-check">
                     <input type="checkbox" checked="true" aria-label="Checkbox for following text input">
@@ -31,28 +31,28 @@
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle p-2" type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Qty: <span id="drop-val">1</span>
+                                    Qty: <span id="drop-val">{{selectedProdCount}}</span>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" value="0" href="#">0 (Delete)</a>
-                                    <a class="dropdown-item" value="1" href="#">1</a>
-                                    <a class="dropdown-item" value="2" href="#">2</a>
-                                    <a class="dropdown-item" value="3" href="#">3</a>
-                                    <a class="dropdown-item" value="4" href="#">4</a>
-                                    <a class="dropdown-item" value="5" href="#">5</a>
-                                    <a class="dropdown-item" value="6" href="#">6</a>
-                                    <a class="dropdown-item" value="7" href="#">7</a>
-                                    <a class="dropdown-item" value="8" href="#">8</a>
-                                    <a class="dropdown-item" value="9" href="#">9</a>
-                                    <a class="dropdown-item" value="+10" href="#">+10</a>
+                                    <a class="dropdown-item" value="0" (click)="changeItemCount(product,0)">0 (Delete)</a>
+                                    <a class="dropdown-item" value="1" (click)="changeItemCount(product,1)">1</a>
+                                    <a class="dropdown-item" value="2" (click)="changeItemCount(product,2)">2</a>
+                                    <a class="dropdown-item" value="3" (click)="changeItemCount(product,3)">3</a>
+                                    <a class="dropdown-item" value="4" (click)="changeItemCount(product,4)">4</a>
+                                    <a class="dropdown-item" value="5" (click)="changeItemCount(product,5)">5</a>
+                                    <a class="dropdown-item" value="6" (click)="changeItemCount(product,6)">6</a>
+                                    <a class="dropdown-item" value="7" (click)="changeItemCount(product,7)">7</a>
+                                    <a class="dropdown-item" value="8" (click)="changeItemCount(product,8)">8</a>
+                                    <a class="dropdown-item" value="9" (click)="changeItemCount(product,9)">9</a>
+                                    <a class="dropdown-item" value="+10" (click)="changeItemCount(product,10)">+10</a>
                                 </div>
                             </div>
                         </div>
                         <div class="cart-info-item mr-3 border-right">
-                            <a href="#">Delete</a>
+                            <a href="javascript:void(0);" (click)="deleteItem(product)">Delete</a>
                         </div>
                         <div class="cart-info-item mr-3 border-right">
-                            <a href="#">Save for later</a>
+                            <a href="javascript:void(0);" (click)="saveLater(product)">Save for later</a>
                         </div>
                         <div class="cart-info-item mr-3">
                             <a href="#">Compare with similar items</a>
@@ -61,6 +61,11 @@
                 </div>
                 <div class="pricing">$<span name="price-tag">{{product.price}}</span></div>
             </div>
+            </ng-container>
+            <ng-container *ngIf="cartItems.length == 0">
+                <div class="text-center">
+                    <h1> No items in your cart!</h1>
+                </div>
             </ng-container>
             <hr>
             <!-- total price -->
@@ -83,7 +88,8 @@
                 </div>
                 <div>
                     <button type="button" class="btn btn-warning px-3 my-3"
-                        onclick="location.href='shipping.html'">Proceed to checkout</button>
+                        onclick="location.href='shipping.html'"
+                        [disabled]="cartItems.length == 0">Proceed to checkout</button>
                 </div>
             </div>
             <!-- recommendation card box -->
@@ -94,7 +100,7 @@
                     </h5>
                     <!-- single recom-item div -->
                     <div class="card-box mt-4 w-100">
-                        <img class="img-fluid" src="images/im1.jpeg">
+                        <img class="img-fluid" src="assets/images/bluelightglasses.jpeg">
                         <div class="ml-1">
                             <a href="#">BlueLight Blocking</a>
                             <!-- start Rating bar code -->

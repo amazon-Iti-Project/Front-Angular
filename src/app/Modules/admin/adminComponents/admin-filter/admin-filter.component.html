@@ -11,7 +11,7 @@
                     </label>
                 </li>
                 <li [hidden]="(departments.length<=3)" #depshowmoreRef class="py-2 font-amazon-bold text-left" (click)="showMoreDepList(depshowmoreRef,depshowlessRef,'department')">see more&nbsp;<i class="fas fa-chevron-down font-0"></i></li>
-                <li #depshowlessRef class="py-2 font-amazon-bold text-left d-none" (click)="showLessDepList(depshowmoreRef,depshowlessRef)">see less&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-up font-0"></i></li>
+                <li #depshowlessRef class="py-2 font-amazon-bold text-left d-none" (click)="showLessDepList(depshowmoreRef,depshowlessRef,'department')">see less&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-up font-0"></i></li>
             </ul>
         </div>
     
@@ -27,7 +27,7 @@
                     </label>
                 </li>
                 <li [hidden]="(departments.length<=3)" #brandShowmoreRef class="py-2 font-amazon-bold text-left" (click)="showMoreDepList(brandShowmoreRef,brandShowlessRef,'brand')">see more&nbsp;<i class="fas fa-chevron-down font-0"></i></li>
-                <li #brandShowlessRef class="py-2 font-amazon-bold text-left d-none" (click)="showLessDepList(brandShowmoreRef,brandShowlessRef)">see less&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-up font-0"></i></li>
+                <li #brandShowlessRef class="py-2 font-amazon-bold text-left d-none" (click)="showLessDepList(brandShowmoreRef,brandShowlessRef,'brand')">see less&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-up font-0"></i></li>
 
             </ul>
         </div>

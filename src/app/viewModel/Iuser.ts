@@ -12,5 +12,5 @@
     token?:string;
     address?:string;
     phone?:string;
-    cart?:number[];
+    cart:number[];
 }

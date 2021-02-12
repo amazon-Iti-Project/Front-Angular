@@ -18,6 +18,12 @@ export interface Iproduct{
   brand:number;
   category:number; // category id
   rate:number;  // rate id
+  ///////// from IProduct //////
+  categoryName? :string,
+  // cents : number,
+  // oldPrice : number,
+  stock? : number,
+  shippingLabel? : boolean
 }
 
 export interface adminIproduct{

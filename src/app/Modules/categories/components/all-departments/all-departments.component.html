@@ -54,7 +54,7 @@
                                 <ng-container *ngFor="let item of cat.data">
                                     <div class="col-3 sec-details">
                                         <a [routerLink]="'/departments/'+item.name">
-                                            <img class="img-fluid" src={{item.img}}> 
+                                            <img class="img-fluid" src={{item.image}}> 
                                         </a>
                                         <div class="sub-title px-2">
                                             <span>{{item.name}}</span>
@@ -67,20 +67,17 @@
                 </div>
             </div>
         </div>
-        <div class="col-1 sticky-top d-sm-none d-md-block" id="side-menu">
+        <div *ngIf="currentUser" class="col-1 sticky-top d-sm-none d-md-block" id="side-menu">
             <span> Subtotal</span><br>
-            <strong class="price-tag">$<span>20.23</span></strong>
+            <strong class="price-tag">$<span>{{totalPrice}}</span></strong>
             <div class="cart-items w-90 mt-3">
-                <div>
-                    <a href="#">
-                        <img class="img-fluid mt-4" src="images/lap-img.jpg">
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <img class="img-fluid mt-4" src="images/glasses.jpg">
-                    </a>
-                </div>
+                <ng-container *ngFor="let item of cartItems">
+                    <div>
+                        <a routerLink="/cart">
+                            <img class="img-fluid mt-4" src={{item.image}}>
+                        </a>
+                    </div>
+                </ng-container>
             </div>
         </div>
     </div>

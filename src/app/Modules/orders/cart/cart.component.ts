@@ -11,72 +11,50 @@ import { Iuser } from 'src/app/viewModel/Iuser';
 })
 export class CartComponent implements OnInit {
 
-  userId = 1; // git it from service
+  userId = 4; // get it from service
   currentUser : Iuser | null =null;
   cartItems : Iproduct[] = [];
+  selectedProdCount = 1;
   totalPrice = 0;
   constructor(private cartService : CartService,private prodService : ProductService) { }
 
   ngOnInit(): void {
     this.getUser()
-    console.log("ngOnInit")
-    console.log(this.currentUser)
-    // this.currentUser?.cart.forEach( id => {
-    //   console.log(id)
-    //   this.prodService.getProductById(id).subscribe(
-    //     response => {this.cartItems.push(response)
-    //       console.log(response)
-    //       console.log(this.cartItems) },
-    //     error => console.log(error)
-    //   )
-    // });
-    console.log("end")
-
   }
   getUser(){
     this.cartService.getUser(this.userId).subscribe(
-      response => {this.currentUser = response
-      console.log(response)
-      console.log(this.currentUser)
-      this.currentUser.cart?.forEach( id => {
-        console.log(id)
-        this.prodService.getProductById(id).subscribe(
-          response => {this.cartItems.push(response)
-            console.log(response)
-            console.log(this.cartItems)
-            this.totalPrice += response.price
-          },
-          error => console.log(error)
-        )
-      });},
+      response => {
+        this.currentUser = response
+        this.currentUser.cart.forEach( id => {
+          this.prodService.getProductById(id).subscribe(
+            response => {
+              this.cartItems.push(response)
+              this.totalPrice += response.price
+            },
+            error => console.log(error)
+          )
+        });},
       error => console.log(error)
     )
   }
-
-
-
-
   deSelectAll(){
-    // var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    // for( var i in checkboxes){
-    //     checkboxes[i].removeAttribute("checked");
+    console.log('pressed!')
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for( var i in checkboxes){
+        checkboxes[i].removeAttribute("checked");
     }
-
-calcTotalPrice(){
-  // var total=0.0;
-  // var prices = document.getElementsByName("price-tag");
-  // var totalTag = document.getElementsByName("total-price-tag");
-  // for(var i=0;i<prices.length;i++){
-  //     total += parseFloat(prices[i].innerText);
-  // }
-  // for(var i=0;i<totalTag.length;i++){
-  //     totalTag[i].innerHTML = total;
-  // }
   }
-
-// $(".dropdown-item").click(function(){
-//     var selected_val = $(this).attr("value");
-//     $("#drop-val").html(selected_val);
-// });
+  //it must be for all elements array ?? & it must affect product price and total price
+  changeItemCount(product:Iproduct,val:number){
+    this.selectedProdCount = val;
+  }
+  //must be deleted from json also
+  deleteItem(prod : Iproduct){
+    this.cartItems.splice(this.cartItems.indexOf(prod), 1);
+    this.totalPrice -= prod.price;
+  }
+  saveLater(prod:Iproduct){
+    //transparent background
+  }
 
 }
