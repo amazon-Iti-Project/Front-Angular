@@ -6,13 +6,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AdminAuthComponent } from './adminComponents/admin-auth/admin-auth.component';
 import { AdminHomeAuthenticatedModule } from './adminComponents/admin-home-authenticated/admin-home-authenticated.module';
 import { NotFoundComponent } from 'src/app/appComponent/not-found/not-found.component';
+import { AdminGuard } from 'src/app/guards/admin.guard';
 
 const routes: Routes = [
   {
     path: '' ,component: AdminHomeComponent, children: [
       { path: 'auth', component: AdminAuthComponent },
-  { path: 'home', loadChildren: () => import('./adminComponents/admin-home-authenticated/admin-home-authenticated.module').then(module => AdminHomeAuthenticatedModule ) },
-
+  { path: 'home', loadChildren: () => import('./adminComponents/admin-home-authenticated/admin-home-authenticated.module')
+  .then(module => AdminHomeAuthenticatedModule ),canActivate:[AdminGuard] },
       { path: '', redirectTo: 'auth', pathMatch: 'full' },
       { path: "**", component: NotFoundComponent }
     ]

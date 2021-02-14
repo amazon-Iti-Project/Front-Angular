@@ -292,6 +292,15 @@
       ]
     }
   ],
+  "admins": [
+    {
+      "name": "kamal",
+      "username": "kamaltoken",
+      "password": "123456",
+      "id": 1,
+      "token": "85a06e34-bce3-0c17-46be-3da09de4e9ae"
+    }
+  ],
   "orders": [
     {
       "id": 1,

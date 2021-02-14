@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Iuser } from 'src/app/viewModel/Iuser';
-import { UserService } from './../../../../services/user/user.service';
 import { Router,  } from '@angular/router';
+import { AdminService } from 'src/app/services/admin/admin.service';
 
 @Component({
   selector: 'app-admin-auth',
@@ -12,7 +11,7 @@ import { Router,  } from '@angular/router';
 export class AdminAuthComponent implements OnInit {
   loginForm: FormGroup = this.fb.group({})
 
-  constructor(private fb: FormBuilder,private userServ:UserService,private router:Router) {
+  constructor(private fb: FormBuilder,private adminServ:AdminService,private router:Router) {
    }
 
   ngOnInit(): void {
@@ -27,29 +26,29 @@ export class AdminAuthComponent implements OnInit {
 // on click login
   login():void{
    
-    this.userServ.getUserByNameAndPassword(this.loginForm.value).subscribe(res=>{
+    this.adminServ.getAdminByNameAndPassword(this.loginForm.value).subscribe(res=>{
       console.log('success',res)
       if(res){
       console.log('success',res)
-        let token = this.userServ.createTokenbyUserId(res)
-        this.userServ.updateUserToken(res,token).subscribe(res=>
+        let token = this.adminServ.createTokenbyAdminId(res)
+        this.adminServ.updateAdminToken(res,token).subscribe(res=>
           {
             console.log(res)
-            this.router.navigate(['/'])
+            this.router.navigate(['/admin/home'])
             .then(res => { console.log(res) })
             .catch(err => console.log(err))
           },err=>console.log(err))
-      }else alert('Not a user please Register')
+      }else alert('Not a Admin please Register')
      
     }
      ,
     err=>console.log("failed"))
   }
 
-  // to get user
-  getUser():void{
-    let token = this.userServ.isUserSignedIn()
-    if(token) this.userServ.getUserByToken(token).subscribe(res=>console.log(res))
+  // to get Admin
+  getAdmin():void{
+    let token = this.adminServ.isAdminSignedIn()
+    if(token) this.adminServ.getAdminByToken(token).subscribe(res=>console.log(res))
     else console.log('not logged in ')
 
   }
