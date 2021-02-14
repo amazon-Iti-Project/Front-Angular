@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   isSideBarOpen:boolean = false;
-  constructor() { }
+  
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+    
    
     
   }

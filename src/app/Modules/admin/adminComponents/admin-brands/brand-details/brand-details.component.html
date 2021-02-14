@@ -10,8 +10,11 @@
         </tr>
 
     </thead>
-    <tbody>
+</table>
+<div class="height-45 overflow-auto">
 
+<table class="table font-amazon-normal table-hover min-content ">
+    <tbody >
         <!-- row1 -->
         <tr (click)="navToOrder(brand)" *ngFor ="let brand of adminbrands ; index as sn;  ">
             <th class="font-amazon-normal align-middle" scope="row">{{sn+1}}</th>
@@ -22,3 +25,4 @@
         </tr>
     </tbody>
 </table>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BrandService } from 'src/app/services/brand/brand.service';
 import { AdminBrandService } from '../admin-brand.service';
@@ -13,7 +14,7 @@ export class BrandModalComponent implements OnInit {
   imgName: string | undefined
   brandForm: FormGroup = this.fb.group({})
   constructor(private fb: FormBuilder,private brandServ:BrandService,
-    private adminServ:AdminBrandService) { }
+    private adminServ:AdminBrandService,private storage: AngularFireStorage) { }
 
   ngOnInit(): void {
       console.log('Brand details')
@@ -61,6 +62,25 @@ export class BrandModalComponent implements OnInit {
       // return file or a blob
       reader.readAsDataURL(file);
     }
+
+  // upload image in storage and get url
+  uploadImage(file: File, name: string): void {
+    console.log(file)
+    // init storage
+    let imagesRef = this.storage.storage.ref().child('images');
+    var uploadTask = imagesRef.child(name).put(file).then((snapshot) => {
+      return imagesRef.child(name).getDownloadURL();
+    })
+      .then((url) => {
+        // `url` is the download URL for 'images/stars.jpg'
+        console.log("img url is ", url)
+        this.brandForm.controls['image'].setValue(url);
+      })
+      .catch((e) => console.log("error uploading image"));
+
+    // better reference from codelabs
+    // https://developers.google.com/codelabs/building-a-web-app-with-angular-and-firebase#10
+  }
   
     addNewCategory():void{
       this.brandServ.addNewBrand(this.brandForm.value).subscribe(res=> {

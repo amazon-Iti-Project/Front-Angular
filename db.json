@@ -33,8 +33,8 @@
       "categoryName": "laptops",
       "price": 120,
       "quantity": 80,
-      "category": "1",
-      "brand": "1",
+      "category": "3",
+      "brand": "2",
       "discount": 50,
       "shipping": {
         "period": 2,
@@ -57,7 +57,7 @@
       "price": 100,
       "quantity": 15,
       "category": "1",
-      "brand": "1",
+      "brand": "5",
       "discount": 20,
       "shipping": {
         "period": 3,
@@ -78,8 +78,8 @@
       "name": "audio Video Capture Cards",
       "price": 250,
       "quantity": 15,
-      "category": "1",
-      "brand": "1",
+      "category": "4",
+      "brand": "3",
       "discount": 22,
       "description": "MeiYin Audio Video Capture Cards HDMI to USB HDMI Video Capture, Full HD 1080P USB 2.0",
       "shipping": {
@@ -101,8 +101,8 @@
       "name": "C16-80",
       "price": 130,
       "quantity": 15,
-      "category": "1",
-      "brand": "1",
+      "category": "2",
+      "brand": "2",
       "discount": 20,
       "shipping": {
         "period": 3,
@@ -209,10 +209,11 @@
   ],
   "users": [
     {
+      "name": "kamal",
       "username": "kamaltoken",
       "password": "123456",
       "id": 1,
-      "token": "e428071a-cf40-76b7-a3b3-0db1dac700a7",
+      "token": null,
       "cart": [
         1,
         2,
@@ -231,48 +232,63 @@
       ]
     },
     {
-      "name": "11111",
+      "name": "habeba",
       "username": "kamal.korney@gmail.com",
-      "Password": "11111",
-      "rePassword": "11111",
+      "password": "11111",
       "id": 3,
       "token": "a5ad489e-1bb6-ed5e-c458-b030f806e86c",
       "cart": []
     },
     {
-      "name": "KAMAL KORNEY MOHAMED",
+      "name": "Emad",
       "username": "kamal.korney@gmail.com",
-      "Password": "1111121",
-      "rePassword": "121212",
+      "password": "1111121",
       "id": 4,
-      "token": "9c65c796-9df3-f96d-c610-41435b368c74"
+      "token": null
     },
     {
-      "name": "kamal",
+      "name": "Abanoub",
       "username": "kamal@gmail.com",
-      "Password": "123456789",
-      "rePassword": "123456789",
+      "password": "123456789",
       "id": 5,
       "token": "1a367bd7-2fd6-86b7-75c6-42f863463c88"
     },
     {
       "name": "kamal1",
       "username": "kamal@gamil.com",
-      "Password": "123456",
-      "rePassword": "123456",
+      "password": "123456",
       "id": 6,
       "token": "43acf914-6d57-53ca-2ded-3448e47d397f"
     },
     {
       "name": "kamal1",
       "username": "kamal@gamil.com",
-      "Password": "123456",
-      "rePassword": "123456",
+      "password": "123456",
       "id": 7,
       "token": "cde30910-f768-e169-8db0-8479da17e1d6",
       "cart": [
         1,
         3
+      ]
+    },
+    {
+      "name": "kamal7",
+      "username": "kamal@mail.com",
+      "password": "123456",
+      "repassword": "123456",
+      "id": 8,
+      "token": null
+    },
+    {
+      "name": "kamal8",
+      "username": "kamal@m.com",
+      "password": "123456",
+      "repassword": "123456",
+      "id": 9,
+      "token": "d4002e5e-9902-b4be-8f5f-6d3b2eb126fc",
+      "cart": [
+        1,
+        5
       ]
     }
   ],

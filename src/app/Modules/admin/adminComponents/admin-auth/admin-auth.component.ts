@@ -5,11 +5,11 @@ import { UserService } from './../../../../services/user/user.service';
 import { Router,  } from '@angular/router';
 
 @Component({
-  selector: 'app-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss']
+  selector: 'app-admin-auth',
+  templateUrl: './admin-auth.component.html',
+  styleUrls: ['./admin-auth.component.scss']
 })
-export class SignInComponent implements OnInit {
+export class AdminAuthComponent implements OnInit {
   loginForm: FormGroup = this.fb.group({})
 
   constructor(private fb: FormBuilder,private userServ:UserService,private router:Router) {
@@ -53,8 +53,4 @@ export class SignInComponent implements OnInit {
     else console.log('not logged in ')
 
   }
-
-  
-  
-
 }

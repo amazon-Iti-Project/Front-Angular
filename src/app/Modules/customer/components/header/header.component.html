@@ -15,7 +15,7 @@
     <ul class="navbar-nav ">
       <li class="nav-item active nav-hover">
         <!-- location -->
-        <a class="nav-link" href="#">
+        <a class="nav-link" [routerLink]="['/']">
           <div class="d-flex flex-nowrap align-items-end">
             <span class="fas fa-map-marker-alt"></span>
             <div class="pl-1 pr-1 ">
@@ -38,9 +38,9 @@
               <button class="btn btn-light input-group-text dropdown-toggle text-dark font-1"
                 data-toggle="dropdown">All</button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" [routerLink]="['/']">Action</a>
+                <a class="dropdown-item" [routerLink]="['/']">Another action</a>
+                <a class="dropdown-item" [routerLink]="['/']">Something else here</a>
               </div>
             </div>
             <!-- search input -->
@@ -55,21 +55,21 @@
     </form>
     <!-- list2 start -->
     <ul class="navbar-nav  ">
-      <li class="nav-item nav-hover">
+      <li class="nav-item nav-hover m-auto">
         <!-- Language -->
         <div class="dropdown pl-1 min-content">
           <div class=" dropdown-toggle text-light " id="langbtn" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-           <a><img src="../../../assets/languages logos/US-United-States-Flag-icon.png" class="imgSize_3 p-1"></a> 
+           <a><img src="../../../assets/languages logos/US-United-States-Flag-icon.svg" class="imgSize_3 p-1"></a> 
           </div>
           <!-- lang menu -->
           <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton ">
             <div class="container">
-              <p class="dropdown-item font-amazon-normal" href="#"><span>Change Language</span>
+              <p class="dropdown-item font-amazon-normal" [routerLink]="['/']"><span>Change Language</span>
                 <span class="font-1 text-info font-amazon-normal">learn more</span>
               </p>
-              <a class="dropdown-item font-amazon-normal" href="#">Another action</a>
-              <a class="dropdown-item font-amazon-normal" href="#">Something else here</a>
+              <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Another action</a>
+              <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Something else here</a>
               <!-- //  -->
               <div class="dropdown-item  custom-control custom-radio">
                 <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
@@ -84,11 +84,11 @@
           </div>
         </div>
       </li>
-      <li class="nav-item active nav-hover">
+      <li class="nav-item active nav-hover  m-auto">
         <!-- account and List -->
-        <div id="accountList" class="dropdown nav-link min-content " href="#">
+        <div id="accountList" class="dropdown nav-link min-content " >
           <div class=" pl-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <a><p class="font-amazon-normal font-0">Hello,guest</p>
+           <a><p class="font-amazon-normal text-left font-0">Hello {{user? user.name:'Guest'}}</p>
             <p class="dropdown-toggle  font-amazon-bold font-1">Account & Lists</p></a> 
           </div>
           <!-- account dropdown menu -->
@@ -102,13 +102,16 @@
                   <p class="h6 font-amazon-bold px-4 py-1">Your Lists</p>
                   <ul class=" font-0 text-muted">
                     <li>
-                      <a class="dropdown-item  font-amazon-normal " href="#">Shopping List</a>
+                      <a class="dropdown-item  font-amazon-normal " [routerLink]="['/']">Shopping List</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" href="#">Create a List</a>
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Create a List</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" href="#">Find a List</a>
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Find a List</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item font-amazon-normal" *ngIf="user" [routerLink]="['/category/payment']">Your Payment</a>
                     </li>
                   </ul>
                 </div>
@@ -117,26 +120,29 @@
                   <p class="h6 font-amazon-bold">Your Account</p>
                   <ul class="text-left font-0 text-muted">
                     <li>
-                      <a class="dropdown-item  font-amazon-normal" href="#">Account</a>
+                      <a class="dropdown-item  font-amazon-normal" *ngIf="user" [routerLink]="['/']">Account</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" href="#">music Libarary</a>
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">music Libarary</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/Orders/list']">Orders</a>
+                      <a class="dropdown-item font-amazon-normal" *ngIf="user" [routerLink]="['/Orders/list']">Orders</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" href="#">Browse History</a>
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Browse History</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" href="#">recommendations</a>
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">recommendations</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" href="#">switch accounts</a>
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">switch accounts</a>
                     </li>
-                    <li>
-                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/SignUp']">Sign up</a>
+                    <li  *ngIf="!user; else logoutRef">
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/auth/signup']">Sign up</a>
                     </li>
+                    <ng-template  #logoutRef>
+                      <a class="dropdown-item font-amazon-normal" (click)="logout()">Log out</a>
+                    </ng-template>
                   </ul>
                 </div>
               </div>
@@ -145,7 +151,7 @@
           </div>
         </div>
       </li>
-      <li class="nav-item active nav-hover">
+      <li class="nav-item active nav-hover m-auto">
         <!-- return and Order -->
         <a class="nav-link" [routerLink]="['/Orders/list']">
           <div class="pl-1">
@@ -154,12 +160,12 @@
           </div>
         </a>
       </li>
-      <li class="nav-item active nav-hover">
+      <li class="nav-item active nav-hover  m-auto">
         <!-- cart -->
         <a class="nav-link" [routerLink]="['/cart']">
         <div class="d-flex ">
           <a [routerLink]="['/cart']" ><span class="fas fa-shopping-cart text-light h2 "></span></a>
-          <a [routerLink]="['/cart']" class="badge font-1 text-warning">1</a>
+          <a [routerLink]="['/cart']" class="badge font-1 text-warning">{{user?.cart? user?.cart?.length :0}}</a>
         </div>
         </a>
       </li>

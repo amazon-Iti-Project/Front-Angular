@@ -115,7 +115,7 @@ export class UserService {
         //,'Authorization': 'my-auth-token'
       })
     };
-     return this.http.patch<Iuser[]>(`${environment.API_BASE_URL}/${environment.users}/${user}`,{ token: null }, httpOptions)
+     return this.http.patch<Iuser[]>(`${environment.API_BASE_URL}/${environment.users}/${user.id}`,{ token: null }, httpOptions)
         .pipe(map(users => users[0]))
   }
 
