@@ -11,6 +11,8 @@ import { ShippingService } from './../../../../services/shipping/shipping.servic
 import { FeeService } from './../../../../services/feeService/fee.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { UserService } from './../../../../services/user/user.service';
+import { Iuser } from 'src/app/viewModel/Iuser';
 
 @Component({
   selector: 'app-seller-add-product',
@@ -18,13 +20,14 @@ import { AngularFireStorage } from '@angular/fire/storage';
   styleUrls: ['./seller-add-product.component.scss']
 })
 export class SellerAddProductComponent implements OnInit {
+  user:Iuser|undefined
   imgName: string | undefined
   prodForm: FormGroup = this.fb.group({})
   subscription: Subscription[] = [];
   categories: Icategory[] = [];
   brands: Ibrand[] = [];
   constructor(private fb: FormBuilder, private catServ: CategoryService,private brandSer:BrandService, private proServ: ProductService
-    , private router: Router,private shipService:ShippingService,private feeServ:FeeService,private storage: AngularFireStorage) { }
+    , private router: Router,private shipService:ShippingService,private feeServ:FeeService,private storage: AngularFireStorage,private userServ:UserService) { }
 
 
   ngOnInit(): void {
@@ -65,12 +68,25 @@ export class SellerAddProductComponent implements OnInit {
       color: ['', Validators.required],
       image: [, Validators.required],
       tags: [[], ],
-      description:['',Validators.required]
+      description:['',Validators.required],
+      seller:['',Validators.required]
 
     })
 
     console.log(this.prodForm.controls['fee'].get('fee'))
 
+    // get current user
+    this.getCurrentUser();
+  }
+
+  getCurrentUser():void{
+    let token = this.userServ.isUserSignedIn()
+    if(token)
+    this.userServ.getUserByToken(token).subscribe(res=>this.user=res,err=>alert(err))
+    else{
+      alert('please Log in')
+      this.router.navigate(['/home'])
+    }
   }
 
         // selectImg by image

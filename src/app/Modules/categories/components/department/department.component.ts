@@ -38,8 +38,8 @@ export class DepartmentComponent implements OnInit {
     //   response => this.productsList = response,
     //   error => console.log(error)
     // )
-    let token = this.userService.isUserSignedIn()
-    // let token = "e428071a-cf40-76b7-a3b3-0db1dac700a7"
+    // let token = this.userService.isUserSignedIn()
+    let token = "e428071a-cf40-76b7-a3b3-0db1dac700a7"
     if(token){
       this.userService.getUserByToken(token).subscribe(
         response => {

@@ -1,11 +1,51 @@
-<p>dashboard works!</p>
-       <!-- page  Dashboard  -->
-    <!-- layout -->
-      <div class="row ">
-          <p>this is dash board</p>
-          </div>
 
-    
-     
-   
-  
+<div class="row alert alert-secondary  btn-secondary  btn-secondary">
+  <div class="col"><span>Total Brands</span></div>
+  <div class="col-8  text-right"><span>{{brandsNumber}}</span></div>
+</div>
+<div class="row alert alert-secondary  btn-secondary">
+  <div class="col"><span>Total Categories</span></div>
+  <div class="col-8  text-right"><span>{{categorysNumber}}</span></div>
+</div>
+<div class="row alert alert-secondary  btn-secondary">
+  <div class="col"><span>Total Products</span></div>
+  <div class="col-8  text-right  text-right"><span>{{productsNumber}}</span></div>
+</div>
+<div class="row alert alert-secondary  btn-secondary">
+  <div class="col"><span>Total Product Value</span></div>
+  <div class="col-8  text-right"><span>{{productsValue}}</span></div>
+</div>
+<div class="row alert alert-secondary  btn-secondary">
+  <div class="col"><span>Total Earings</span></div>
+  <div class="col-8  text-right"><span>{{earings}}</span></div>
+</div>
+<div class="row alert alert-secondary  btn-secondary">
+  <div class="col"><span>Total users</span></div>
+  <div class="col-8  text-right"><span>{{users}}</span></div>
+</div>
+
+<!-- <table class="table font-amazon-normal table-hover min-content">
+  <thead class="font-amazon-bold thead-dark text-capitalize">
+      <tr>
+          <th scope="col">serial </th>
+          <th scope="col"> Total Brands </th>
+          <th scope="col"> Total Categories </th>
+          <th scope="col"> Total Products</th>
+          <th scope="col"> Total Product Value</th>
+          <th scope="col"> Total Earings</th>
+      </tr>
+
+  </thead>
+</table>
+<div class="height-45 overflow-auto">
+<table class="table font-amazon-normal table-hover min-content">
+  <tbody>
+
+    -- row1 --
+      <tr (click)="navToOrder(cat)" *ngFor ="let cat of adminCategories ; index as sn;  ">
+          <th class="font-amazon-normal align-middle" scope="row">{{sn+1}}</th>
+          <td class="align-middle">{{cat.categoty.name}}</td>
+      </tr>
+  </tbody>
+</table>
+</div> -->

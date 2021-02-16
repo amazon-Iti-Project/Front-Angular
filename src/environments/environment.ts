@@ -13,6 +13,7 @@ export const environment = {
   payment:'payments',
   orders:'orders',
   users:'users',
+  admins:'admins',
   // API_URL:"http://localhost:3000"
    firebaseConfig : {
     apiKey: "AIzaSyA1tktEttdFlfRb5A6FBz-tzVd1NIm5rvw",

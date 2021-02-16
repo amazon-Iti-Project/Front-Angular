@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Iuser } from 'src/app/viewModel/Iuser';
 import { UserService } from './../../../../services/user/user.service';
-import { Router, Routes } from '@angular/router';
+import { Router,  } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -28,13 +28,14 @@ export class SignInComponent implements OnInit {
   login():void{
    
     this.userServ.getUserByNameAndPassword(this.loginForm.value).subscribe(res=>{
+      console.log('success',res)
       if(res){
       console.log('success',res)
         let token = this.userServ.createTokenbyUserId(res)
         this.userServ.updateUserToken(res,token).subscribe(res=>
           {
             console.log(res)
-            this.router.navigate(['/home'])
+            this.router.navigate(['/'])
             .then(res => { console.log(res) })
             .catch(err => console.log(err))
           },err=>console.log(err))
