@@ -54,8 +54,8 @@ export class ShippingFormComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    let token = "e428071a-cf40-76b7-a3b3-0db1dac700a7";
-    // let token = this.userService.isUserSignedIn()
+    // let token = "e428071a-cf40-76b7-a3b3-0db1dac700a7";
+    let token = this.userService.isUserSignedIn()
     if(token){
       this.userService.getUserByToken(token).subscribe(
         response => {
@@ -120,7 +120,6 @@ export class ShippingFormComponent implements OnInit {
       orderDate: this.today.toString(), 
       canCancelledUntil: this.today.setDate(this.today.getDate()+3).toString()
     }
-    console.log('in order');
     this.orderService.addNewOrder(order).subscribe(
       response =>{
         console.log(response)
