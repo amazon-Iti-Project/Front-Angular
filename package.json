@@ -30,6 +30,8 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@ng-bootstrap/ng-bootstrap": "^9.0.2",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.5.0",
     "firebase": "^7.0 || ^8.0",
