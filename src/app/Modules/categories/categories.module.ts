@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AllDepartmentsComponent } from './components/all-departments/all-departments.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DepartmentComponent } from './components/department/department.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   { path: 'payment', component:PaymentComponent  },
@@ -20,7 +21,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule
   ],
   exports: [RouterModule],
   bootstrap: [AllDepartmentsComponent]

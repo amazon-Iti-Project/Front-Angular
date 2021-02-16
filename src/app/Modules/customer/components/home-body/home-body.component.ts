@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateConfigService } from 'src/app/services/translate-config.service';
 
 @Component({
   selector: 'app-home-body',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeBodyComponent implements OnInit {
 
-  constructor() { }
+  constructor( 
+    // private translateConfigService:TranslateConfigService,
+    ) { }
 
   ngOnInit(): void {
   }

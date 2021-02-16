@@ -132,6 +132,9 @@ $font:amazon-font,Arial, Helvetica, sans-serif;
   cursor: pointer;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @media only screen and (min-width: 768px) {
   .height-5{height: 5vh!important;}
   .height-10{height: 10vh!important;}
