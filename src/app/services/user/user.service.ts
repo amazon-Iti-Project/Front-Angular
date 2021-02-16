@@ -14,6 +14,10 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
+  getAllUsers():Observable<Iuser[]>{
+    return this.http.get<Iuser[]>(`${environment.API_BASE_URL}/${environment.users}`);
+  }
+
   addNewUser(user: Iuser): Observable<Iuser> {
     console.log("recieved Product: ", user)
     const httpOptions = {
@@ -115,7 +119,7 @@ export class UserService {
         //,'Authorization': 'my-auth-token'
       })
     };
-     return this.http.patch<Iuser[]>(`${environment.API_BASE_URL}/${environment.users}/${user}`,{ token: null }, httpOptions)
+     return this.http.patch<Iuser[]>(`${environment.API_BASE_URL}/${environment.users}/${user.id}`,{ token: null }, httpOptions)
         .pipe(map(users => users[0]))
   }
 

@@ -51,7 +51,7 @@
                         <section class="my-2">
                             <h2 class="title my-2"><strong>{{cat.title}}</strong></h2>
                             <div class="row py-4">
-                                <ng-container *ngFor="let item of cat.data">
+                                <ng-container *ngFor ="let item of cat.data">
                                     <div class="col-3 sec-details">
                                         <a [routerLink]="'/departments/'+item.name">
                                             <img class="img-fluid" src={{item.image}}> 
@@ -71,7 +71,7 @@
             <span> Subtotal</span><br>
             <strong class="price-tag">$<span>{{totalPrice}}</span></strong>
             <div class="cart-items w-90 mt-3">
-                <ng-container *ngFor="let item of cartItems">
+                <ng-container *ngFor ="let item of cartItems">
                     <div>
                         <a routerLink="/cart">
                             <img class="img-fluid mt-4" src={{item.image}}>

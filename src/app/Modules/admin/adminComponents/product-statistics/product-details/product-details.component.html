@@ -1,3 +1,4 @@
+<div class="height-45 overflow-auto">
 <table class="table font-amazon-normal table-hover min-content">
     <thead class="font-amazon-bold thead-dark text-capitalize">
       <tr>
@@ -18,8 +19,7 @@
       </tr>
 
     </thead>
-    <tbody>
-     
+  <tbody>
       <!-- row1 -->
       <tr *ngFor="let prod of filteredList ; index as sn;  "> 
         <th class="font-amazon-normal align-middle" scope="row">{{sn+1}}</th>
@@ -34,3 +34,4 @@
       </tr>
     </tbody>
   </table>
+</div>

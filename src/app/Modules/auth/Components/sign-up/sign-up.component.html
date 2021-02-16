@@ -4,35 +4,49 @@
             <img src="../../../../../assets/Amazon-Logo.png" style="width:150px">
 
         </div>
-        <div class="d-flex justify-content-center">
-            <form [formGroup]="loginFrm" (ngSubmit)="login()" class="p-5 m-auto " style="width: 40%;">
-                <p class="h1">Create account</p>
+        <div class="row justify-content-center">
+            <form [formGroup]="loginFrm" (ngSubmit)="login()" class="col col-md-8 col-lg-6 col-sm-10 p-sm-5 p-1 m-auto " >
+                <p class="h1 text-center">Create account</p>
                 <div class="form-group">
                     <label class="my-2" for="name">Your name</label>
-                    <input  formControlName="name" required type="text" class="form-control" name="name">
+                    <input  formControlName="name" required type="text" class="form-control" name="name"
+                    [class.is-invalid]="loginFrm.controls['name'].invalid&&loginFrm.controls['name'].dirty"
+                    [class.is-valid]="loginFrm.controls['name'].valid&&loginFrm.controls['name'].dirty" />
+
                 </div>
                 <div class="form-group">
                     <label class="my-2" for="email">Email</label>
-                    <input formControlName="username" required type="Email" class="form-control" name="Email">
+                    <input formControlName="username" required type="Email" class="form-control" name="Email"
+                    [class.is-invalid]="loginFrm.controls['username'].invalid&&loginFrm.controls['username'].dirty"
+                    [class.is-valid]="loginFrm.controls['username'].valid&&loginFrm.controls['username'].dirty" />
+
                 </div>
                 <div class="form-group">
                     <label class="my-2" for="pwd">Password</label>
-                    <input formControlName="Password" type="password" required class="form-control" placeholder="At least 8 character"
-                        name="pswd">
+                    <input formControlName="password" type="password" required class="form-control" placeholder="At least 8 character"name="pswd"
+                        [class.is-invalid]="loginFrm.controls['password'].invalid&&loginFrm.controls['password'].dirty"
+                        [class.is-valid]="loginFrm.controls['password'].valid&&loginFrm.controls['password'].dirty" />
+    
                 </div>
                 <div class="form-group">
                     <label class="my-2" for="pwd">Re-enter password</label>
-                    <input formControlName="rePassword" type="password" required class="form-control" id="rePwd" name="rePwd">
+                    <input formControlName="repassword" type="password" required class="form-control" id="rePwd" name="rePwd"
+                    [class.is-invalid]="(loginFrm.controls['repassword'].invalid||(loginFrm.errors?true:false)) && loginFrm.controls['repassword'].dirty"
+                    [class.is-valid]="loginFrm.controls['repassword'].valid&&loginFrm.controls['repassword'].dirty&&!loginFrm.errors"
+                    />
+                    <p class="text-right" [hidden]="loginFrm.controls['repassword'].pristine || loginFrm.errors?false:true">
+                        <small  class="text-muted font-0 ">password must match</small>
+                    </p>
                 </div>
                 <div class="form-group form-check">
 
                 </div>
                 <button [disabled]="loginFrm.invalid"  type="submit" class="btn btn-warning" style="width: 100%;">Create your amazon
                     account </button>
-                <p class="my-2">By creating an account, you agree to Amazon's <a href="#">Conditions of Use </a>
-                    Conditions of Use and <a href="#">Privacy Notice.</a> </p>
+                <p class="my-2">By creating an account, you agree to Amazon's <a >Conditions of Use </a>
+                    Conditions of Use and <a >Privacy Notice.</a> </p>
                 <hr>
-                <p>Already have an account? <a href="#" [routerLink]="['/SignIn']">Sign-In</a> </p>
+                <p>Already have an account? <a  [routerLink]="['/auth/signin']">Sign-In</a> </p>
             </form>
         </div>
     </div>

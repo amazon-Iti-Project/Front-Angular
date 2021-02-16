@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { AdminModule } from './admin-app.module';
 import { BehaviorSubject } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { AdminHomeAuthenticatedModule } from './adminComponents/admin-home-authenticated/admin-home-authenticated.module';
 
 @Injectable({
-  providedIn: AdminModule
+  providedIn: AdminHomeAuthenticatedModule
 })
 export class AdminModuleService {
 

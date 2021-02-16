@@ -24,6 +24,7 @@ export interface Iproduct{
   // oldPrice : number,
   stock? : number,
   shippingLabel? : boolean
+  seller:number // userId
 }
 
 export interface adminIproduct{
