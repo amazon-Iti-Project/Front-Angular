@@ -1,3 +1,4 @@
+import { TranslateConfigService } from './../../services/translate-config.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private translateConfigService:TranslateConfigService) { }
 
   ngOnInit(): void {
   }
 
+  changLang(type:string){
+    this.translateConfigService.changeLanguage(type);
+    console.log("Arabic");
+
+  }
 }

@@ -1,3 +1,4 @@
+import { TranslateConfigService } from './../../../services/translate-config.service';
 import { Colors } from './../../../enums/colors';
 import { ProductService } from './../../../services/product/product.service';
 import { Component, OnInit } from '@angular/core';
@@ -23,9 +24,10 @@ export class ProductsDetalisComponent implements OnInit {
   // current user
   user:Iuser|undefined
   constructor(private activatedRoute: ActivatedRoute,
+    private translateConfigService:TranslateConfigService,
     private router: Router,
     private pService:ProductService,
-    private location: Location,private userServ:UserService) { }
+    private location: Location,private userServ:UserService,) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
@@ -54,6 +56,11 @@ export class ProductsDetalisComponent implements OnInit {
     }
   }
 
+  changLang(type:string){
+    this.translateConfigService.changeLanguage(type);
+    console.log("Arabic");
+
+  }
 
   selectedColor = '';
 
@@ -85,7 +92,7 @@ export class ProductsDetalisComponent implements OnInit {
   ];
 
   onChange(target:EventTarget|null){
-    
+
     const  ele:HTMLSelectElement=  target as HTMLSelectElement;
     console.log("valye",ele.value)
     this.selectedColor = ele.value;

@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
@@ -22,8 +23,8 @@ const routes:Routes = [
       { path: "home", component: HomeBodyComponent },
       { path: 'category', loadChildren: () => import('../categories/categories.module').then(module => module.CategoriesModule) },
       { path: 'departments', loadChildren: () => import('src/app/Modules/categories/categories.module').then(m => m.CategoriesModule) },
-      { 
-        path: 'Orders', 
+      {
+        path: 'Orders',
         component: OrdersHomeComponent,
         loadChildren:  () => import('src/app/Modules/orders/orders.module').then(m => m.OrdersModule)
       },
@@ -46,7 +47,8 @@ const routes:Routes = [
     CarouselComponent,
     HomeBodyComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    TranslateModule
   ],
   imports: [
 CommonModule,
