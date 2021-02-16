@@ -11,7 +11,6 @@ import { PackageTrackComponent } from './Components/package-track/package-track.
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 
 const ordersRoutes: Routes = [
-    { path: 'shippingDetails', component:ShippingFormComponent},
     { path: 'list', component: OrdersListComponent },
     { path: "cancelledorders/:oID", component: CanceledOrderComponent },
     { path: "cancelledList", component: CanceledListComponent },

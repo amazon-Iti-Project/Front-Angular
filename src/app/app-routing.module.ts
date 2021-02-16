@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './Modules/customer/components/not-found/not-found.component';
+import { ShippingFormComponent } from './Modules/orders/shipping-form/shipping-form.component';
 
 const routes: Routes = [
   // { path: 'home', component:HomeComponent  },
   // { path: 'aboutus', component:  },
+  { path: 'shippingDetails', component:ShippingFormComponent},
   { path: 'seller', loadChildren: () => import('./Modules/seller/seller.module').then(module => module.SellerModule) },
   { path: 'admin', loadChildren: () => import('./Modules/admin/admin-app.module').then(module => module.AdminModule) },
   { path: 'auth', loadChildren: () => import('./Modules/auth/auth.module').then(module => module.AuthModule) },

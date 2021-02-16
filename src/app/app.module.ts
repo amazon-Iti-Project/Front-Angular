@@ -10,8 +10,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
 import { environment } from 'src/environments/environment';
+// import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // by abanoub
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -39,7 +40,10 @@ import { environment } from 'src/environments/environment';
     // firebase init neeed 2 module 
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    // for displaying countries
+    // MatSelectCountryModule.forRoot('en'),
+    // BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

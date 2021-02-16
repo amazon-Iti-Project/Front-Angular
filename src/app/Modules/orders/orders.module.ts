@@ -18,7 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CanceledOrderComponent } from './Components/canceled-order/canceled-order.component';
 import { DigitalOrdersComponent } from './Components/digital-orders/digital-orders.component';
 import { CanceledListComponent } from './Components/canceled-list/canceled-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 
 
@@ -43,7 +43,8 @@ import { ShippingFormComponent } from './shipping-form/shipping-form.component';
     NgbModule,
     OrdersRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [OrdersService]
 })
