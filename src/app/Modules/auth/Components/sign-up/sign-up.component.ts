@@ -31,7 +31,7 @@ this.loginFrm.controls['password'].setValidators([Validators.required,Validators
 
 
 this.loginFrm.controls['password'].valueChanges.subscribe(res=>{
-  console.log( this.loginFrm.errors? this.loginFrm.errors.noMatching :false)
+  console.log("matching", this.loginFrm.errors? this.loginFrm.errors.noMatching :false)
   console.log( this.loginFrm.invalid)
 })
     

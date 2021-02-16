@@ -1,4 +1,5 @@
-<table class="table font-amazon-normal table-hover min-content">
+<div class="height-45 overflow-auto">
+<table class="table font-amazon-normal table-hover min-content ">
     <thead class="font-amazon-bold thead-dark text-capitalize">
         <tr>
             <th scope="col">serial </th>
@@ -10,10 +11,7 @@
         </tr>
 
     </thead>
-</table>
-<div class="height-45 overflow-auto">
 
-<table class="table font-amazon-normal table-hover min-content ">
     <tbody >
         <!-- row1 -->
         <tr (click)="navToOrder(brand)" *ngFor ="let brand of adminbrands ; index as sn;  ">

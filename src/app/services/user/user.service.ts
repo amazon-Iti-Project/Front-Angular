@@ -14,6 +14,10 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
+  getAllUsers():Observable<Iuser[]>{
+    return this.http.get<Iuser[]>(`${environment.API_BASE_URL}/${environment.users}`);
+  }
+
   addNewUser(user: Iuser): Observable<Iuser> {
     console.log("recieved Product: ", user)
     const httpOptions = {

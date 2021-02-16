@@ -26,9 +26,9 @@ export function forbiddenRePasswordValidator(rePassword: AbstractControl): Valid
 
 export const passwordMatch: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     // console.log(control)
-    const password = control.get('Password');
+    const password = control.get('password');
     const repassword = control.get('repassword');
-    // console.log(password==repassword)
+    // console.log("match2",password?.value,repassword?.value)
   
     return password && repassword && password.value !== repassword.value ? { noMatching: true } : null;
   };

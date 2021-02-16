@@ -31,10 +31,12 @@
                 <div class="form-group">
                     <label class="my-2" for="pwd">Re-enter password</label>
                     <input formControlName="repassword" type="password" required class="form-control" id="rePwd" name="rePwd"
-                    [class.is-invalid]="loginFrm.controls['repassword'].invalid&&loginFrm.controls['repassword'].dirty||(loginFrm.errors?loginFrm.errors.noMatching :false)"
+                    [class.is-invalid]="(loginFrm.controls['repassword'].invalid||(loginFrm.errors?true:false)) && loginFrm.controls['repassword'].dirty"
                     [class.is-valid]="loginFrm.controls['repassword'].valid&&loginFrm.controls['repassword'].dirty&&!loginFrm.errors"
                     />
-
+                    <p class="text-right" [hidden]="loginFrm.controls['repassword'].pristine || loginFrm.errors?false:true">
+                        <small  class="text-muted font-0 ">password must match</small>
+                    </p>
                 </div>
                 <div class="form-group form-check">
 
