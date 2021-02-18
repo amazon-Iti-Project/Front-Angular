@@ -1,10 +1,11 @@
 
 {
-"Product" :{
-  "overview": "تفاصيل المنتج"
+"PRODUCT" :{
+  "OVER": "تفاصيل المنتج"
 },
-"home": {
-  "recently_viewed":"Recently Viewed"
+
+"HOME": {
+  "TEST": "Kamal En"
 }
 
 }

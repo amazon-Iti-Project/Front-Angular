@@ -10,6 +10,7 @@ import { SellerHomeBodyComponent } from './sellerComponents/seller-home-body/sel
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from '../customer/components/not-found/not-found.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes:Routes = [
   {path:'home',component:SellerHomeComponent},
@@ -27,13 +28,14 @@ const routes:Routes = [
     SellerAddProductComponent,
     SellerHomeBodyComponent],
   imports: [
-    CommonModule,
+  CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
     //have service to use Http requests for apis 
     HttpClientModule,
     // for reactive forms
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule
 
   ]
 })

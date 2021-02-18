@@ -24,21 +24,22 @@ export class CartComponent implements OnInit {
     private cartService : CartService) { }
 
   ngOnInit(): void {
-    let token = "e428071a-cf40-76b7-a3b3-0db1dac700a7"
-    // let token = this.userService.isUserSignedIn()
+    // let token = "e428071a-cf40-76b7-a3b3-0db1dac700a7"
+    let token = this.userService.isUserSignedIn()
     if(token){
       this.userService.getUserByToken(token).subscribe(
         response => {
           this.currentUser = response
           this.prodService.getListOfProductsById(response.cart).subscribe(
             result => {
+              console.log(this.cartItems)
               this.cartItems = result
               this.totalPrice = this.cartService.getTotalPrice(this.cartItems)
             },
-            error => console.log(error)
+            error => alert("error: "+error)
           );
         },
-        error => console.log(error)
+        error => console.log("error: "+error)
       )
     }
   }

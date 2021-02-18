@@ -12,7 +12,7 @@ import { CartComponent } from '../orders/cart/cart.component';
 import { OrdersHomeComponent } from '../orders/Components/orders-home/orders-home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShippingFormComponent } from '../orders/shipping-form/shipping-form.component';
-// import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 const routes:Routes = [
@@ -48,7 +48,8 @@ CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule,
-    // TranslateModule
+
+    TranslateModule
 
   ]
 })

@@ -14,21 +14,27 @@ import { environment } from 'src/environments/environment';
 
 //Localaization 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {  TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { SharedModule } from './shared/shared.module';
+
 // import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // by abanoub
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 //For Translate
-export function rootLoaderFactory(http:HttpClient){
-  return new TranslateHttpLoader(http,'assets/locale.', '.json')
-}
+// export function rootLoaderFactory(http:HttpClient){
+//   return new TranslateHttpLoader(http,'assets/locale.', '.json')
+// }
+
+
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     //font awesome Module
@@ -50,6 +56,10 @@ export function rootLoaderFactory(http:HttpClient){
     // for displaying countries
     // MatSelectCountryModule.forRoot('en'),
     // BrowserAnimationsModule
+    
+   
+    SharedModule 
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,7 +7,8 @@ import { AdminAuthComponent } from './adminComponents/admin-auth/admin-auth.comp
 import { AdminHomeAuthenticatedModule } from './adminComponents/admin-home-authenticated/admin-home-authenticated.module';
 import { NotFoundComponent } from 'src/app/appComponent/not-found/not-found.component';
 import { AdminGuard } from 'src/app/guards/admin.guard';
-
+import { TranslateModule } from '@ngx-translate/core';
+console.log("admin")
 const routes: Routes = [
   {
     path: '' ,component: AdminHomeComponent, children: [
@@ -31,6 +32,8 @@ const routes: Routes = [
     // RouterModule
     ReactiveFormsModule,
     CommonModule,
+    TranslateModule,
+
 
   ],
   

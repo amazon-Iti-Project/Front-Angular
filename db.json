@@ -215,11 +215,13 @@
       "username": "kamaltoken",
       "password": "123456",
       "id": 1,
-      "token": null,
+      "token": "aea407a0-7f44-fcd0-c325-b1b3cbbe7711",
       "cart": [
         1,
         2,
         3,
+        1,
+        1,
         1
       ]
     },

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { LocalizationService } from 'src/app/services/localization/localization.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,14 @@ import { filter } from 'rxjs/operators';
 export class HomeComponent implements OnInit {
   isSideBarOpen:boolean = false;
   
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+    private localServ:LocalizationService,
+    public translate:TranslateService
+    ) { 
+
+
+    this.translate.use(this.localServ.getLanguage());
+  }
 
   ngOnInit(): void {
     

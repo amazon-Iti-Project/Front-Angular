@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateConfigService } from 'src/app/services/translate-config.service';
+import { TranslateService } from '@ngx-translate/core';
+// import { TranslateConfigService } from 'src/app/services/translate-config.service';
+import { LocalizationService } from './../../../../services/localization/localization.service';
 
 @Component({
   selector: 'app-home-body',
@@ -10,7 +12,18 @@ export class HomeBodyComponent implements OnInit {
 
   constructor( 
     // private translateConfigService:TranslateConfigService,
-    ) { }
+    // private localServ:LocalizationService,
+    // public translate:TranslateService
+    ) { 
+      // translate.addLangs(["en", "ar"]);
+      // translate.setDefaultLang("en");
+  
+      // const browserLang = translate.getBrowserLang();
+      // console.log("lang:",browserLang)
+      // translate.use(browserLang.match(/en|ar/) ? browserLang : "en");
+      
+      // this.translate.use(this.localServ.getLanguage());
+    }
 
   ngOnInit(): void {
   }
