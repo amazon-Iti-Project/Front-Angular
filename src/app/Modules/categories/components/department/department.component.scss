@@ -9,6 +9,7 @@
     padding-top: 10px;
     height: 100%;
     border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
     position: sticky;
   }
   #side-menu span{
@@ -40,6 +41,7 @@
     color: black;
     font-size: 11px;
     right: 20px;
+    left: 20px;
     top: 10px;
     margin-top: 10px;
     margin-right: 80px;
@@ -48,11 +50,13 @@
   
   .left-menu {
     border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
     font-size: 14px;
   }
   
   .side-links {
     padding-left: 10px;
+    padding-right: 10px;
   }
   
   .left-menu a {
@@ -145,7 +149,6 @@
     font-size: 13px;
     text-decoration: line-through;
     color: grey;
-    margin-left: 2px;
   }
   
   .shipping-to {
@@ -192,6 +195,7 @@
   
   .flag-title {
     padding-left: 10px;
+    padding-right: 10px;
     font-size: 18px;
   }
   

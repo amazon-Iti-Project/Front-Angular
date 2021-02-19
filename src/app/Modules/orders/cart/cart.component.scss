@@ -23,7 +23,8 @@ a:hover {
 #price-title {
     text-align: right;
     color: #565959;
-    float: right;
+    // float: right;
+    float: inline-start;
 }
 
 .cart-item {
@@ -63,6 +64,8 @@ a:hover {
 
 .cart-info-item {
     padding-right: 10px;
+    padding-left: 10px;
+    margin-inline-end: 7px;
 }
 
 #dropdownMenuButton {
@@ -73,7 +76,7 @@ a:hover {
 
 .pricing {
     margin-top: 10px;
-    margin-left: 50px;
+    margin-inline-start: 70px;
     color: black;
     font-size: 20px;
     font-weight: bold;
@@ -126,6 +129,7 @@ a:hover {
     display: flex;
     align-items: center;
 }
+//need to be rtl also
 #main-total-price{
     float: right;
     color: black;
