@@ -24,7 +24,7 @@ export class CartComponent implements OnInit {
     private cartService : CartService) { }
 
   ngOnInit(): void {
-    // let token = "e428071a-cf40-76b7-a3b3-0db1dac700a7"
+    // let token = "aea407a0-7f44-fcd0-c325-b1b3cbbe7711"
     let token = this.userService.isUserSignedIn()
     if(token){
       this.userService.getUserByToken(token).subscribe(

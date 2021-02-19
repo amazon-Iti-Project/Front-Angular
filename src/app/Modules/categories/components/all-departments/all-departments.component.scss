@@ -17,6 +17,7 @@
     padding-top: 10px;
     height: 100%;
     border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
     position: sticky;
   }
   #side-menu span{
@@ -30,10 +31,12 @@
   }
   .left-menu {
     border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
   }
   
   .side-links {
-    padding-left: 10px;
+    // padding-left: 10px;
+    padding-inline-start: 10px;
   }
   
   .left-menu a {
