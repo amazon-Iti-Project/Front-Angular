@@ -16,7 +16,7 @@ import { environment } from 'src/environments/environment';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {  TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SharedModule } from './shared/shared.module';
-
+console.log("app Module")
 // import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // by abanoub
@@ -58,8 +58,7 @@ import { SharedModule } from './shared/shared.module';
     // BrowserAnimationsModule
     
    
-    SharedModule 
-
+    SharedModule ,
   ],
   providers: [],
   bootstrap: [AppComponent]

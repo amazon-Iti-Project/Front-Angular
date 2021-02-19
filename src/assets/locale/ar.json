@@ -1,5 +1,13 @@
 {
-  "HOME": {
-    "TEST": "Kamal Ar"
+  "direction":"ltr",
+  "home": {
+    "recentlyViewed": "ما زرته مؤخرا",
+    "shopNow": "تسوق الان",
+    "shopTopCategories": "تسوق المجموعات الاعلى مبيعا"
+  },
+  "homeFooter": {
+    "RecentlyViewed": "Recently Viewed",
+    "ShopNow": "Shop now",
+    "ShopTopCategories": "Shop top categories"
   }
 }

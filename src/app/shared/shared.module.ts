@@ -11,10 +11,11 @@ import { HttpClient } from '@angular/common/http';
 // translate http loader for  json files
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LocalizationService } from '../services/localization/localization.service';
-// factory function that load json file
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, 'assets/locale/', '.json');
-}
+import { LanguageLoader } from '../services/localization/loader';
+// // factory function that load json file
+// export function HttpLoaderFactory(http: HttpClient) {
+//   return new TranslateHttpLoader(http, 'assets/locale/', '.json');
+// }
 
 console.log("child shared:")
 
@@ -25,7 +26,7 @@ console.log("child shared:")
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (HttpLoaderFactory),
+        useFactory: (LanguageLoader.httpLoaderFactory),
         deps: [HttpClient]
       },
       isolate: true,
@@ -33,6 +34,7 @@ console.log("child shared:")
   ],
   exports:[
     TranslateModule,
+    
   ]
 })
 export class SharedModule {

@@ -14,12 +14,10 @@ export class HomeComponent implements OnInit {
   isSideBarOpen:boolean = false;
   
   constructor(private router:Router,
-    private localServ:LocalizationService,
-    public translate:TranslateService
+    // private localServ: LocalizationService,
+    // public translate: TranslateService
     ) { 
-
-
-    this.translate.use(this.localServ.getLanguage());
+      // this.translate.use(this.localServ.getLanguage());
   }
 
   ngOnInit(): void {

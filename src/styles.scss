@@ -33,6 +33,9 @@ $font:amazon-font,Arial, Helvetica, sans-serif;
 
     font-weight: 100 ;
   }
+  body{
+    text-align: unset; // 3
+  }
 
   .font-amazon-normal{
     font-family:amazon-font ;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router,  } from '@angular/router';
 import { AdminService } from 'src/app/services/admin/admin.service';
@@ -8,11 +8,14 @@ import { AdminService } from 'src/app/services/admin/admin.service';
   templateUrl: './admin-auth.component.html',
   styleUrls: ['./admin-auth.component.scss']
 })
-export class AdminAuthComponent implements OnInit {
+export class AdminAuthComponent implements OnInit,AfterViewInit {
   loginForm: FormGroup = this.fb.group({})
 
   constructor(private fb: FormBuilder,private adminServ:AdminService,private router:Router) {
    }
+  ngAfterViewInit(): void {
+    console.log("after admin  auth init")
+  }
 
   ngOnInit(): void {
    
