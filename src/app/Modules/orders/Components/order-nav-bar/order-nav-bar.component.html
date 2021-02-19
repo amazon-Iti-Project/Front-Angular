@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class=" col-12 d-flex align-items-center p-0 ">
-            <h1 class="col-sm-2 col-6 p-0 my-4" style="font-size: 35px;"> Your Orders</h1>
+            <h1 class="col-sm-2 col-6 p-0 my-4" style="font-size: 35px;">{{ 'orderHeader.yourOrders' | translate }}</h1>
             <!-- <div class="col-sm-10 col-6 d-flex justify-content-end">
                 <div class="form-group has-search d-flex justify-content-center  m-0">
                     <div class="mr-2">
@@ -13,11 +13,11 @@
             </div> -->
         </div>
         <div class="ordLst col-12 col-sm-12 d-flex">
-            <span class="px-3" routerLinkActive="ordersSlct" [routerLink]="['/Orders/list']"><a href="javascript:void(0)">Orders</a></span>
-            <span class="px-3" routerLinkActive="ordersSlct" [routerLink]="['/Orders/Archive']"><a href="javascript:void(0)">Buy Again</a></span>
-            <span class="px-3" routerLinkActive="ordersSlct" [routerLink]="['/Orders/DigitalOrders']"><a href="javascript:void(0)">Digital Orders</a></span>
+            <span class="px-3" routerLinkActive="ordersSlct" [routerLink]="['/Orders/list']"><a href="javascript:void(0)">{{ 'orderHeader.orders' | translate }}</a></span>
+            <span class="px-3" routerLinkActive="ordersSlct" [routerLink]="['/Orders/Archive']"><a href="javascript:void(0)">{{ 'orderHeader.buyAgain' | translate }}</a></span>
+            <span class="px-3" routerLinkActive="ordersSlct" [routerLink]="['/Orders/DigitalOrders']"><a href="javascript:void(0)">{{ 'orderHeader.digitalOrders' | translate }}</a></span>
             <!-- <span class="px-3" routerLinkActive="ordersSlct"><a href="#">Digital Orders</a></span> -->
-            <span class="px-3" routerLinkActive="ordersSlct"><a href="javascript:void(0)" [routerLink]="['/Orders/cancelledList']">Cancelled Orders</a></span>
+            <span class="px-3" routerLinkActive="ordersSlct"><a href="javascript:void(0)" [routerLink]="['/Orders/cancelledList']">{{ 'orderHeader.cancelledOrders' | translate }}</a></span>
         </div>
     </div>
 </div>

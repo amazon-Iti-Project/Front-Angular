@@ -21,6 +21,7 @@ import { CanceledListComponent } from './Components/canceled-list/canceled-list.
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -46,7 +47,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    TranslateModule
 
   ],
   providers: [OrdersService]

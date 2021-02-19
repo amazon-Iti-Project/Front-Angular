@@ -9,5 +9,62 @@
     "RecentlyViewed": "Recently Viewed",
     "ShopNow": "Shop now",
     "ShopTopCategories": "Shop top categories"
+  },
+
+
+
+  "orderHeader": {
+    "yourOrders": "مشترياتك",
+    "orders": "الطلبات",
+    "buyAgain": "اشتري مرة اخري",
+    "buyAgainBdyO": " لا توجد عناصر موصى بها لك لشرائها مرة أخرى في هذا الوقت عد الي ",
+    "buyAgainBdyLink": "مشترياتك",
+    "buyAgainBdyT": "للعناصر التي اشتريتها مسبقًا.",
+    "digitalOrders": "الطلبات الرقمية",
+    "digitalOrdersbdy": "لم تقدم أي طلبات في الأشهر الستة الماضية.",
+    "digitalOrdersLink": "عد الي مشترياتك",
+    "cancelledOrders": "الطلبات الملغاة",
+    "cancelledOrdersbdy": "لم يتم العثور على أي طلبات ملغاة خلال الستة أشهر الماضية",
+    "cancelledOrdersLink": "اعرض مشترياتك",
+    "ordersPlaced": " طلبات تمت في ",
+    "DateFilterOptionOne": "الاشهر الثلاثة الماضية",
+    "DateFilterOptionTwo": "اخر 30 يوما",
+    "searchBar": "البحث ضمن كافة الطلبات"
+  },
+  "orderbody": {
+    "ordersPlaced": "طلبات تمت في",
+    "total": "الاجمالي",
+    "orderStatus": "الحالة",
+    "Eligablity": "صالح للاسترجاع حتي",
+    "searchBar": "البحث ضمن كافةالطلبات",
+    "trackPackage": "تتبع الطرد",
+    "requestCancellation": "طلب الغاء",
+    "returnOrder": "اعادة او استبدال الطلب",
+    "shareGift": "مشاركة هدية",
+    "writeReview": "كتابة مراجعة",
+    "archiveOrder": "اضافة الي الارشيف"
+  },
+  "deliveringPackage": {
+    "ordered": " تم الطلب في",
+    "previouslyExpected": "كان من المتوقع وصوله",
+    "shipped": "تم الشحن",
+    "outForDelivery": "في الخارج للتوصيل",
+    "arriving": "يصل في",
+    "addresInfo": "عنوان الوصول"
+  },
+  "requestCancellation": {
+    "requestCancellationModal": "طلب الغاء",
+    "cancelModalBody": "سيتم إلغاء جميع العناصر المعروضة في الصورة ولا يمكن إرجاعها مرة أخرى. سيكون لديك أيضًا خيار رفض التسليم عند عتبة الباب إذا كنت لا ترغب في الإلغاء الآن",
+    "cancel": "الرجوع",
+    "ok": "موافق",
+    "cancelAlert": "طلب الغاء قيد التنفيذ !",
+    "alertInfo": "لقد طلبنا من شركة النقل إلغاء هذه الحزمة وسنخبرك عندما نعلم المزيد"
+  },
+  "deliveredPackage": {
+    "deliveredIn": " تم الوصول في ",
+    "addressInfo": "عنوان الوصول"
+  },
+  "signUp":{
+
   }
 }
