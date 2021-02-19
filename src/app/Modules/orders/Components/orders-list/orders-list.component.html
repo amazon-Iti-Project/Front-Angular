@@ -5,15 +5,27 @@
 <div class="container">
     <div class="row">
         <div class="d-flex align-items-center m-4 col-12">
-            <span class="mr-1">{{ getFilteredOrders().length }}</span>
-            <span class="mr-1">orders placed in</span>
-            <select [(ngModel)]="filterValue">
-                <option [value]="1">Last 30 days</option>
-                <option [value]="2">Past 3 months</option>
-            </select>
+            <div class=" col-6">
+                <span class="mr-1">{{ getFilteredOrders().length }}</span>
+                <span class="mr-1">orders placed in</span>
+                <select [(ngModel)]="filterValue">
+                    <option [value]="1">Last 30 days</option>
+                    <option [value]="2">Past 3 months</option>
+                </select>
+            </div>
+
+            <div class=" col-6 d-flex justify-content-end">
+                <div class="form-group has-search d-flex justify-content-center  m-0">
+                    <div class="mr-2">
+                        <span class="fa fa-search form-control-feedback"></span>
+                        <input type="text" class="form-control" placeholder="Search all orders" [(ngModel)]="filterTerm">
+                    </div>
+                    <!-- <button class=" btn btn-secondary btn-sm">Search orders</button> -->
+                </div>
+            </div>
         </div>
 
-        <app-order-card class="form-group" *ngFor="let order of getFilteredOrders()" [model]="order" ></app-order-card>
+        <app-order-card class="form-group" *ngFor="let order of getFilteredOrders() | filter:filterTerm" [model]="order" ></app-order-card>
         <!-- <div class="loading" *ngIf="loading">
             Loading Work
         </div> -->

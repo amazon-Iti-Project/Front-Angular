@@ -20,6 +20,7 @@ import { DigitalOrdersComponent } from './Components/digital-orders/digital-orde
 import { CanceledListComponent } from './Components/canceled-list/canceled-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -44,7 +45,9 @@ import { ShippingFormComponent } from './shipping-form/shipping-form.component';
     OrdersRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
+
   ],
   providers: [OrdersService]
 })
