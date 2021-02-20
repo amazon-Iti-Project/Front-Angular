@@ -3,48 +3,48 @@
         <img src="assets/images/amazon-full.gif">
     </div>
     <div>
-        <h1>Select a shipping address</h1>
-        <p>Please enter a shipping address for this order. Please also indicate whether your billing address is the same as the shipping address entered. When finished, click the "Continue" button.  Or, if you're sending items to more than one address, click the "Add another address" button to enter additional addresses.</p>
+        <h1>{{shippingForm.selectAddress | translate}}</h1>
+        <p>{{shippingForm.addressTips | translate}}</p>
     </div>
     <hr>
     <div class="col-6">
-        <h1>Add a new address</h1>
+        <h1>{{shippingForm.addAddress | translate}}</h1>
         <form [formGroup]="orderForm" (ngSubmit)="submitOrder()">
-            <label class="mt-2"><span>Country/Region</span></label><br>
+            <label class="mt-2"><span>{{shippingForm.country | translate}}</span></label><br>
             <select class="selectpicker countrypicker form-control" data-default="DE" formControlName="country">
 
             </select>
-            <label class="mt-2"><span>Full name (First and Last name)</span></label><br>
+            <label class="mt-2"><span>{{shippingForm.fullName | translate}}</span></label><br>
             <input class="form-control" type="text" formControlName="name">
             <div *ngIf="orderForm.get('name')?.invalid && orderForm.get('name')?.touched" class="alert alert-danger" role="alert">
-                Name is required!
+                {{shippingForm.requiredF | translate}}!
             </div>
-            <label class="mt-2"><span>Address line 1</span></label><br>
+            <label class="mt-2"><span>{{shippingForm.address1 | translate}}</span></label><br>
             <input class="form-control" formControlName="address1" type="text" placeholder="Street address, P.O.box, company name, c/o">
             <div *ngIf="orderForm.get('address1')?.invalid && orderForm.get('address1')?.touched" class="alert alert-danger" role="alert">
-                Please add at length 10 characters!
+                {{shippingForm.lengthMustBe10 | translate}}!
             </div>
-            <label class="mt-2"><span>Address line 2</span></label><br>
+            <label class="mt-2"><span>{{shippingForm.address2 | translate}}</span></label><br>
             <input class="form-control" type="text" formControlName="address2" placeholder="Apartment, suite, unit, building, floor, etc.">
             <div *ngIf="orderForm.get('address2')?.invalid && orderForm.get('address2')?.touched" class="alert alert-danger" role="alert">
-                Please add at length 10 characters!
+                {{shippingForm.lengthMustBe10 | translate}}
             </div>
-            <label class="mt-2"><span>City</span></label><br>
+            <label class="mt-2"><span>{{shippingForm.city | translate}}</span></label><br>
             <input class="form-control" type="text" formControlName="city">
             <div *ngIf="orderForm.get('city')?.invalid && orderForm.get('city')?.touched" class="alert alert-danger" role="alert">
-                Please enter your city!
+                {{shippingForm.enterCity | translate}}!
             </div>
-            <label class="mt-2"><span>State / Province / Region</span></label><br>
+            <label class="mt-2"><span>{{shippingForm.state | translate}}</span></label><br>
             <input class="form-control" type="text" formControlName="state">
-            <label class="mt-2"><span>Zip Code</span></label><br>
+            <label class="mt-2"><span>{{shippingForm.zipCode | translate}}</span></label><br>
             <input class="form-control" type="text" formControlName="zipCode">
             <div *ngIf="orderForm.get('zipCode')?.invalid && orderForm.get('zipCode')?.touched" class="alert alert-danger" role="alert">
-                Zip code must be 5 or 9 characters length!
+                {{shippingForm.zipLength | translate}}!
             </div>
-            <label class="mt-2"><span>Phone number</span></label><br>
+            <label class="mt-2"><span>{{shippingForm.phone | translate}}</span></label><br>
             <input class="form-control" type="text" formControlName="phone" >
-            <small>May be used to assist delivery</small>
-        <h3 class="mt-3">Add delivery instructions (optional)</h3>
+            <small>{{shippingForm.mayAssist | translate}}</small>
+        <!-- <h3 class="mt-3">Add delivery instructions (optional)</h3>
         <label class="mt-1"><span>Do we need additional instructions to find this address?</span></label><br>
         <textarea class="form-control" rows="4" placeholder="Provide details such as building description, a nearby landmark, or other navigation instructions"></textarea>
         <label class="mt-1"><span>Do we need a security code or a call box number to access this building?</span></label>
@@ -60,73 +60,28 @@
             <span>I can receive packages on</span><br><br>
             <input type="checkbox" checked class=""> <span class="mr-5">Saturday</span>
             <input type="checkbox" checked> Sunday
-        </div>
+        </div> -->
         <div class="mb-5"></div>
-        <input type="checkbox" checked> Use as my default address.
+        <input type="checkbox" checked>{{shippingForm.defaultAddress | translate}} .
         <div class="border-top mt-3">
-            <label class="mt-3"><span>Make sure your address is correct</span></label><br>
-            <small>If the address contains typos or other errors, your package may be undeliverable.</small><br>
+            <label class="mt-3"><span>{{shippingForm.correctAddress | translate}}</span></label><br>
+            <small>{{shippingForm.deliveryNote | translate}}.</small><br>
             <a href="https://www.amazon.com/gp/help/customer/display.html/ref=chk_addrpop_genhelp_sec?ie=UTF8&nodeId=3285251">
-                <span>Tips for entering addresses</span>
+                <span>{{shippingForm.addressNote | translate}}</span>
             </a>
             <span class="mx-2"> | </span>
             <a href="https://www.amazon.com/gp/help/customer/display.html/ref=chk_addrpop_apohelp_sec?ie=UTF8&nodeId=201117610">
                 <span>APO/FPO address tips</span>
             </a><br>
             <button type="submit" class="btn btn-warning my-5"  id="final-btn" [disabled]="orderForm.invalid">
-                Add Address</button>
+                {{shippingForm.addressBTN | translate}}</button>
 
         </div>
     </form>
     </div>
     <footer>
         <hr class="w-50 ">
-        <p>Do you have a gift card or promotional code? We’ll ask you to enter your claim code when it’s time to pay.</p>
-        <p><a href="#">Conditions of Use</a> | <a href="#">Privacy Notice</a> © 1996-2020, Amazon.com, Inc.</p>
+        <p>{{cart.askForPromo | translate}}.</p>
+        <p><a href="#">{{shippingForm.conditionsOfUse | translate}}</a> | <a href="#">{{shippingForm.privacyNote | translate}}</a> © 1996-2020, Amazon.com, Inc.</p>
     </footer>
 </div>
-
-
-<!-- <div class="container">
-    <br>
-    <form (ngSubmit)="addNewProduct()" [formGroup]="insertForm">
-        <div class="form-group">
-          <label>Name</label>
-          <input type="text" id="name" class="form-control" formControlName="name" required>
-            <div *ngIf="insertForm.get('name')?.invalid && insertForm.get('name')?.touched" class="alert alert-danger" role="alert">
-              Product name must be at least 5 characters!
-            </div>
-        </div>
-        <div class="form-group">
-          <label>Id</label>
-          <input type="number" class="form-control" formControlName="id" name="productId" required>
-          <div *ngIf="insertForm.get('id')?.invalid && insertForm.get('id')?.touched" class="alert alert-danger" role="alert">
-            ProductID must be more than 10!</div>
-        </div>
-        <div class="form-group">
-            <label>Price</label>
-            <input type="number" class="form-control" formControlName="price" name="productPrice" required>
-            <div class="alert alert-danger" *ngIf="insertForm.get('price')?.invalid && insertForm.get('price')?.touched" role="alert">
-              Product price must be at least 1$</div>
-          
-          </div>
-          <div class="form-group">
-            <label>Quantity</label>
-            <input type="number" class="form-control" formControlName="quantity" name="productQ" required>
-            <div class="alert alert-danger" *ngIf="insertForm.get('quantity')?.invalid && insertForm.get('quantity')?.touched" role="alert">
-              Product quantity can't be zero</div>
-          </div>
-          <div class="form-group">
-            <label for="my-select">Select Category</label>
-            <select id="my-select" class="form-control" name="categoryMenu"
-            formControlName="categoryId">
-                <option *ngFor="let cat of categoryList" value="{{cat.id}}">
-                    {{cat.name}}
-                </option>
-            </select>
-            </div><br><br>
-          <button class="btn btn-primary" type="submit" [disabled]="insertForm.invalid">
-            Add Product</button>
-      </form>
-<br>
-</div> -->
