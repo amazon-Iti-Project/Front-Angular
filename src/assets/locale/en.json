@@ -86,5 +86,31 @@
   "deliveredPackage": {
     "deliveredIn": "Delivered in",
     "addressInfo": "Address info"
+  },
+  "signUp":{
+    "createAccount": "Create account",
+    "yourName": "Your name",
+    "email": "Email",
+    "password": "Password",
+    "atLeast": "At least 8 character",
+    "RePassword": "Re-enter password",
+    "pwdMatch": "password must match",
+    "createAcc": "Create your amazon aacount",
+    "useRules": "By creating an account, you agree to Amazon's ",
+    "useRulesLink": "Conditions of Use and Privacy Notice",
+    "haveAcc": "Already have an account?",
+    "signInLink": "Sign-In"
+
+  },
+  "signIn":{
+    "signIn": "Sign-In",
+    "EmailOrMob": "Email or mobile phone number",
+    "password": "Password",
+    "continue": "Continue",
+    "useRules": "By continuing, you agree to Amazon's ",
+    "privacyNotice": "Conditions of Use and Privacy Notice.",
+    "needHelp": "Need help?",
+    "newInAmazon": "New to Amazon?",
+    "createAccount": "Create your Amazon account"
   }
 }
