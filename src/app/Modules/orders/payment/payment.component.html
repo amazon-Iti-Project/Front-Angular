@@ -17,20 +17,20 @@
                 <thead class="thead-dark">
                   <tr>
                     <th>#</th>
-                    <th>Order Date</th>
-                    <th>Transaction Type </th>
-                    <th>Delivered Date</th>
-                    <th>Order Price</th>
-                    <th>Shipment fees</th>
-                    <th>Transactional total </th>
+                    <th> {{ 'PAYMENT.orderdate' |  translate }}Order Date</th>
+                    <th>  {{ 'PAYMENT.transactiontype' | translate }}Transaction Type </th>
+                    <th>  {{ 'PAYMENT.delivereddate' | translate }}Delivered Date</th>
+                    <th>  {{ 'PAYMENT.orderprice' | translate }}Order Price</th>
+                    <th>  {{ 'PAYMENT.shipmentfees' | translate }}Shipment fees</th>
+                    <th>  {{ 'PAYMENT.transactionaltotal' | translate }}Transactional total </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>{{ord?.id}}</td>
-                    <td>{{ord?.orderDate |date}}</td>
+                    <td>{{ord?.orderDate | date}}</td>
                     <td>{{ord?.payment?.payment}}</td>
-                    <td>{{ord?.deliveredDate |date}}</td>
+                    <td>{{ord?.deliveredDate | date}}</td>
                     <td>{{ord?.orderPrice |currency}}</td>
                     <td>{{ord?.orderShip | currency}}</td>
                     <td>{{calc(ord?.orderPrice,ord?.orderShip) | currency}}</td>

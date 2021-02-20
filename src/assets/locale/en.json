@@ -116,7 +116,105 @@
   "addressBTN":"Add Address",
   "conditionsOfUse":"Conditions of Use",
   "privacyNote":"Privacy Notice"
-}
+},
+"PRODUCT" :{
+  "avaliable":"Avaliable",
+    "size":"Size",
+    "quantity":"Quantity",
+    "addtocart":"Add To Cart",
+    "wish":"Add To Wishlist",
+    "compare":"Add to Compare",
+    "email":"Email to a Friend",
+     "share":"Share in social media"
 
-}
 
+
+},
+
+ "PAYMENT" :{
+  "orderdate":"Order Date",
+  "transactiontype":"Trasaction Type",
+  "delivereddate":"Deleverd Date",
+  "orderprice":"Order Price",
+  "shipmentfees":"Shipment Fees",
+  "transactionaltotal":"Transactional Total"
+
+},
+  "orderHeader": {
+    "yourOrders": "Your Orders",
+    "orders": "Orders",
+    "buyAgain": "Buy Again",
+    "buyAgainBdyO": "There are no recommended items for you to buy again at this time. Check",
+    "buyAgainBdyLink": "Your Orders",
+    "buyAgainBdyT": "for items you previously purchased.",
+    "digitalOrders": "Digital Orders",
+    "digitalOrdersbdy": "You have not placed any orders in past 6 months. ",
+    "digitalOrdersLink": "View orders in 2021 ",
+    "cancelledOrders": "Cancelled Orders",
+    "cancelledOrdersbdy": "We aren't finding any cancelled orders (for orders placed in the last 6 months).",
+    "cancelledOrdersLink": "View all orders",
+    "ordersPlaced": "orders placed in",
+    "DateFilterOptionOne": "Past 3 months",
+    "DateFilterOptionTwo": "Last 30 days",
+    "searchBar": "Search all orders"
+  },
+  "orderbody": {
+    "ordersPlaced": "Orders placed in",
+    "total": "Total",
+    "orderStatus": "Status",
+    "Eligablity": "Eligable for return until",
+    "searchBar": "Search all orders",
+    "trackPackage": "Track Package",
+    "requestCancellation": "request cancellation",
+    "returnOrder": "Return or repalce items",
+    "shareGift": "Share gift receipt",
+    "writeReview": "Write a product review",
+    "archiveOrder": "Archive order"
+  },
+  "deliveringPackage": {
+    "ordered": "Ordered",
+    "previouslyExpected": "Previously expected",
+    "shipped": "Shipped",
+    "outForDelivery": "Out for delivery",
+    "arriving": "Arriving",
+    "addresInfo": "Address info"
+  },
+  "requestCancellation": {
+    "requestCancellationModal": "request cancellation",
+    "cancelModalBody": "All items shown in the image will be cancelled and cannot be reverted back. You will also have the option to refuse the delivery at doorstep if you do not wish to cancel now.",
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "cancelAlert": "Cancel request pending!",
+    "alertInfo": "We've requested the carrier to cancel this package.We'll let you know as we learn more."
+  },
+  "deliveredPackage": {
+    "deliveredIn": "Delivered in",
+    "addressInfo": "Address info"
+  },
+  "signUp":{
+    "createAccount": "Create account",
+    "yourName": "Your name",
+    "email": "Email",
+    "password": "Password",
+    "atLeast": "At least 8 character",
+    "RePassword": "Re-enter password",
+    "pwdMatch": "password must match",
+    "createAcc": "Create your amazon aacount",
+    "useRules": "By creating an account, you agree to Amazon's ",
+    "useRulesLink": "Conditions of Use and Privacy Notice",
+    "haveAcc": "Already have an account?",
+    "signInLink": "Sign-In"
+
+  },
+  "signIn":{
+    "signIn": "Sign-In",
+    "EmailOrMob": "Email or mobile phone number",
+    "password": "Password",
+    "continue": "Continue",
+    "useRules": "By continuing, you agree to Amazon's ",
+    "privacyNotice": "Conditions of Use and Privacy Notice.",
+    "needHelp": "Need help?",
+    "newInAmazon": "New to Amazon?",
+    "createAccount": "Create your Amazon account"
+  }
+}
