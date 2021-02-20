@@ -13,6 +13,16 @@
 
 
 },
+
+ "PAYMENT" :{
+  "orderdate":"Order Date",
+  "transactiontype":"Trasaction Type",
+  "delivereddate":"Deleverd Date",
+  "orderprice":"Order Price",
+  "shipmentfees":"Shipment Fees",
+  "transactionaltotal":"Transactional Total"
+
+},
   "home": {
     "recentlyViewed": "Recently Viewed",
     "shopNow": "Shop now",

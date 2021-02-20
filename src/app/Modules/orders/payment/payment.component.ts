@@ -35,7 +35,7 @@ export class PaymentComponent implements OnInit {
             }
           )
         }
-       
+
 
       })
 
@@ -48,7 +48,7 @@ export class PaymentComponent implements OnInit {
         this.total=x+y;
         return this.total;
       }else return ''
-      
+
 
 
     }

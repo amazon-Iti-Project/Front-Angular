@@ -12,6 +12,16 @@
   "share":"شارك"
 
 },
+
+ "PAYMENT" :{
+  "orderdate":"تاريخ الشراء",
+  "transactiontype":"نوع العمليه",
+  "delivereddate":"تاريخ التوصيل",
+  "orderprice":"ثمن المنتح",
+  "shipmentfees":"مصاريف الشحن",
+  "transactionaltotal":"المجموع"
+
+},
   "HOME": {
     "TEST": "Kamal Ar"
   }
