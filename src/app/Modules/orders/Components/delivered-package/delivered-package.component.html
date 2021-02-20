@@ -11,18 +11,18 @@
                     </div>
                     <div>
                         <div style="font-weight:bold ;" class="mb-1"></div>
-                        <p><b>Delivered in </b>{{order.deliveredDate |date}}</p>
-                        <h6>At {{order.address}}</h6>
+                        <p><b>{{ 'deliveredPackage.deliveredIn' | translate }}</b>{{order.deliveredDate |date}}</p>
+                        <h6> {{order.address}}</h6>
                     </div>
 
                 </div>
                 <div class="add-box m-3 p-3 col-12">
-                    <div style="font-weight:bold ;" class="mb-2">Address info</div>
+                    <div style="font-weight:bold ;" class="mb-2">{{ 'deliveredPackage.addressInfo' | translate }}</div>
                     <div> {{order.address}}
                     </div>
-                    <div>
+                    <!-- <div>
                         Reiciendis ipsam consequatur
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-6" >

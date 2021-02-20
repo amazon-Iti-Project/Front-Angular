@@ -39,6 +39,6 @@ export class LocalizationService {
 
     // default language
     private getDefaultLanguage() {
-      return "en";
+      return "ar";
     }
 }

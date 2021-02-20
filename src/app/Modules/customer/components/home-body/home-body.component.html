@@ -1,22 +1,28 @@
 <!-- carousel -->
-<h2>{{ 'HOME.TEST' | translate }}Kamal</h2>
 <app-carousel></app-carousel>
 <!-- home-body -->
 <!-- items container -->
  <!-- <div class="container position-relative item-container mx-0  "> -->
     <div class="container-fluid home-body-bg">
         <!-- row -->
+
         <div class="row   ">
           <!-- col -->
           <div class="col-lg-3 col-md-4 col-sm-6 row m-0 p-2 ">
             <div class="bg-white p-2 col row m-0 ">
-              <p class="col-12 h5 font-amazon-bold" >Recently Viewed</p>
+              <div style="width:400px;" class="bg-info">
+                <p  >انا كمال</p>
+                <p  style="direction: rtl;">انا كمال</p>
+                <p dir="ltr">iam kamal</p>
+              </div>
+              <!-- [ngClass]="{'text-right':{{'direction'| translate}} ==='rtl'}" -->
+              <p class="col-12 h5 font-amazon-bold"    >{{ 'home.recentlyViewed' | translate }}</p>
               <div class="col-12  ">
                 <a class="d-flex p-2 img-home-container justify-content-center align-items-start">
                 <img src="../../../../../assets/home-body/item-02.jpg" class=" img-fluid img-home ">
                 </a>
               </div>
-              <a class="font-0 text-info align-self-end  py-1 font-amazon-normal">Shop now</a>
+              <a class="font-0 text-info align-self-end  py-1 font-amazon-normal">{{'home.shopNow'|translate}}</a>
             </div>
           </div>
 
