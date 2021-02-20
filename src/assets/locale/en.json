@@ -1,7 +1,17 @@
 
 {
 "PRODUCT" :{
-  "OVER": "تفاصيل المنتج"
+  "avaliable":"Avaliable",
+    "size":"Size",
+    "quantity":"Quantity",
+    "addtocart":"Add To Cart",
+    "wish":"Add To Wishlist",
+    "compare":"Add to Compare",
+    "email":"Email to a Friend",
+     "share":"Share in social media"
+
+
+
 },
 
 "HOME": {
