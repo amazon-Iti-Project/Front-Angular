@@ -1,33 +1,26 @@
 {
-
-
-  "PRODUCT" :{
-  "avaliable":"متوفر",
-  "size":"الحجم",
-  "quantity":"الكميه المتوفره",
-  "addtocart":"اضف الي العربه",
-  "wish":"اضف الي المفضله",
-  "compare":"قارن المنتجات",
-  "email":"شارك عبر البريد الالكتروني",
-  "share":"شارك"
-
-},
-
- "PAYMENT" :{
-  "orderdate":"تاريخ الشراء",
-  "transactiontype":"نوع العمليه",
-  "delivereddate":"تاريخ التوصيل",
-  "orderprice":"ثمن المنتح",
-  "shipmentfees":"مصاريف الشحن",
-  "transactionaltotal":"المجموع"
-
-},
+  "direction":"ltr",
+  "PRODUCT": {
+    "avaliable": "متوفر",
+    "size": "الحجم",
+    "quantity": "الكميه المتوفره",
+    "addtocart": "اضف الي العربه",
+    "wish": "اضف الي المفضله",
+    "compare": "قارن المنتجات",
+    "email": "شارك عبر البريد الالكتروني",
+    "share": "شارك"
+  },
+  "PAYMENT": {
+    "orderdate": "تاريخ الشراء",
+    "transactiontype": "نوع العمليه",
+    "delivereddate": "تاريخ التوصيل",
+    "orderprice": "ثمن المنتح",
+    "shipmentfees": "مصاريف الشحن",
+    "transactionaltotal": "المجموع"
+  },
   "HOME": {
     "TEST": "Kamal Ar"
-  }
-
-}
-  "direction":"ltr",
+  },
   "home": {
     "recentlyViewed": "ما زرته مؤخرا",
     "shopNow": "تسوق الان",
@@ -38,9 +31,6 @@
     "ShopNow": "Shop now",
     "ShopTopCategories": "Shop top categories"
   },
-
-
-
   "orderHeader": {
     "yourOrders": "مشترياتك",
     "orders": "الطلبات",
@@ -92,7 +82,7 @@
     "deliveredIn": " تم الوصول في ",
     "addressInfo": "عنوان الوصول"
   },
-  "signUp":{
+  "signUp": {
     "createAccount": "انشاء حساب",
     "yourName": "اسمك",
     "email": "البريد الالكتروني",
@@ -105,9 +95,8 @@
     "useRulesLink": "شروط الاستخدام وإشعار الخصوصية",
     "haveAcc": "هل لديك حساب بالفعل؟ ",
     "signInLink": "تسجيل الدخول"
-
   },
-  "signIn":{
+  "signIn": {
     "signIn": "تسجيل الدخول",
     "EmailOrMob": "البريد الالكتروني او رقم الهاتف المحمول",
     "password": "كلمة السر",
