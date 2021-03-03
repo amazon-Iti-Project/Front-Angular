@@ -10,9 +10,9 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss',
-  '../assets/bootstrap/css/bootstrap.min.css',
-  '../assets/css/style-rtl.css',
-  '../assets/bootstrap/css/bootstrap.rtl.css'
+  // '../assets/bootstrap/css/bootstrap.min.css',
+  // '../assets/css/style-rtl.css',
+  // '../assets/bootstrap/css/bootstrap.rtl.css'
   ]
 })
 
