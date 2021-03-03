@@ -29,6 +29,7 @@ export class LocalizationService {
     // get user language
     getLanguage() {
       let lang: string|null|undefined = localStorage.getItem("lang");
+      console.log(lang)
       // alert(`GetLanguage ${lang}`)
       if (lang == "" || lang == null || lang == undefined) {
         return this.getDefaultLanguage();
@@ -39,6 +40,6 @@ export class LocalizationService {
 
     // default language
     private getDefaultLanguage() {
-      return "ar";
+      return "en";
     }
 }

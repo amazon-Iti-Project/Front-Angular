@@ -19,8 +19,8 @@
           <div class="d-flex flex-nowrap align-items-end">
             <span class="fas fa-map-marker-alt"></span>
             <div class="pl-1 pr-1 ">
-              <p class=" text-white-50 font-0 fit-content font-amazon-normal">Deliver to</p>
-              <p class="font-weight- font-2 font-amazon-bold"> Egypt</p>
+              <p class=" text-white-50 font-0 fit-content font-amazon-normal">{{'homeHeader.deliver'|translate}}</p>
+              <p class="font-weight- font-2 font-amazon-bold"> {{'homeHeader.country'|translate}}</p>
             </div>
           </div>
         </a>
@@ -36,15 +36,13 @@
             <div class="input-group-prepend">
               <!-- all dropdown Menu -->
               <button class="btn btn-light input-group-text dropdown-toggle text-dark font-1"
-                data-toggle="dropdown">All</button>
+                data-toggle="dropdown">{{'homeHeader.all'|translate}}</button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" [routerLink]="['/']">Action</a>
-                <a class="dropdown-item" [routerLink]="['/']">Another action</a>
-                <a class="dropdown-item" [routerLink]="['/']">Something else here</a>
               </div>
             </div>
             <!-- search input -->
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="search">
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="{{'homeHeader.search'|translate}}">
             <!-- search icon -->
             <div class="input-group-append">
               <button class="btn btn-outline-warning input-group-text icon-color fas fa-search"></button>
@@ -64,22 +62,25 @@
           </div>
           <!-- lang menu -->
           <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton ">
-            <div class="container">
-              <p class="dropdown-item font-amazon-normal" [routerLink]="['/']"><span>Change Language</span>
-                <span class="font-1 text-info font-amazon-normal">learn more</span>
+            <div class="container ">
+              <p class="dropdown-item font-amazon-normal" [routerLink]="['/']"><span>{{'homeHeader.changeLanguage'|translate}}</span>
+                <span class="font-1 text-info font-amazon-normal">&nbsp;{{'homeHeader.learnMore'|translate}}</span>
               </p>
               <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Another action</a>
               <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Something else here</a>
               <!-- //  -->
-              <div class="dropdown-item  custom-control custom-radio">
+              <div  data-display="static"  class="dropdown-item  custom-control custom-radio">
                 <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
-                <label class="custom-control-label font-amazon-normal" for="customRadio1">English-En</label>
+                <label class="custom-control-label font-amazon-normal" for="customRadio1">{{'homeHeader.english'|translate}}</label>
               </div>
-              <div class="dropdown-item custom-control custom-radio">
+              <div #arRef  class="dropdown-item custom-control custom-radio">
                 <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label font-amazon-normal" for="customRadio2">Arabic-Ar</label>
+                <label class="custom-control-label font-amazon-normal" for="customRadio2">{{'homeHeader.arabic'|translate}}</label>
               </div>
             </div>
+            <div class="dropdown-divider"></div>
+            <a #safeRef (click)="onChangeLang($event,arRef)"  class="dropdown-item font-amazon-normal text-center" [routerLink]="['/']"><span class="btn btn-outline-info ">Safe</span></a>
+
             <!-- // -->
           </div>
         </div>
@@ -88,8 +89,8 @@
         <!-- account and List -->
         <div id="accountList" class="dropdown nav-link min-content " >
           <div class=" pl-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <a><p class="font-amazon-normal text-left font-0">Hello {{user? user.name:'Guest'}}</p>
-            <p class="dropdown-toggle  font-amazon-bold font-1">Account & Lists</p></a> 
+           <a><p class="font-amazon-normal text-left font-0">{{'homeHeader.hello'|translate}} {{user? user.name:'Guest'}}</p>
+            <p class="dropdown-toggle  font-amazon-bold font-1">{{'homeHeader.accountAndLists'|translate}}</p></a> 
           </div>
           <!-- account dropdown menu -->
           <!-- test -->
@@ -99,49 +100,49 @@
             <div class="container">
               <div class="row min-content ">
                 <div class="col text-left">
-                  <p class="h6 font-amazon-bold px-4 py-1">Your Lists</p>
+                  <p class="h6 font-amazon-bold px-4 py-1">{{'homeHeader.yourLists'|translate}}</p>
                   <ul class=" font-0 text-muted">
                     <li>
-                      <a class="dropdown-item  font-amazon-normal " [routerLink]="['/']">Shopping List</a>
+                      <a class="dropdown-item  font-amazon-normal " [routerLink]="['/']">{{'homeHeader.shoppingList'|translate}}</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Create a List</a>
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">{{'homeHeader.createAList'|translate}}</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Find a List</a>
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">{{'homeHeader.findAList'|translate}}</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" *ngIf="user" [routerLink]="['/category/payment']">Your Payment</a>
+                      <a class="dropdown-item font-amazon-normal" *ngIf="user" [routerLink]="['/category/payment']">{{'homeHeader.yourPayment'|translate}}</a>
                     </li>
                   </ul>
                 </div>
 
                 <div class="col text-center">
-                  <p class="h6 font-amazon-bold">Your Account</p>
+                  <p class="h6 font-amazon-bold">{{'homeHeader.yourAccount'|translate}}</p>
                   <ul class="text-left font-0 text-muted">
                     <li>
-                      <a class="dropdown-item  font-amazon-normal" *ngIf="user" [routerLink]="['/']">Account</a>
+                      <a class="dropdown-item  font-amazon-normal" *ngIf="user" [routerLink]="['/']">{{'homeHeader.account'|translate}}</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">music Libarary</a>
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">{{'homeHeader.musicLibrary'|translate}}</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" *ngIf="user" [routerLink]="['/Orders/list']">Orders</a>
+                      <a class="dropdown-item font-amazon-normal" *ngIf="user" [routerLink]="['/Orders/list']">{{'homeHeader.orders'|translate}}</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Browse History</a>
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">{{'homeHeader.browseHistory'|translate}}</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">recommendations</a>
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">{{'homeHeader.reommendations'|translate}}</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">switch accounts</a>
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">{{'homeHeader.switchAccount'|translate}}</a>
                     </li>
                     <li  *ngIf="!user; else logoutRef">
-                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/auth/signup']">Sign up</a>
+                      <a class="dropdown-item font-amazon-normal" [routerLink]="['/auth/signup']">{{'homeHeader.signUp'|translate}}</a>
                     </li>
                     <ng-template  #logoutRef>
-                      <a class="dropdown-item font-amazon-normal" (click)="logout()">Log out</a>
+                      <a class="dropdown-item font-amazon-normal" (click)="logout()">{{'homeHeader.logOut'|translate}}</a>
                     </ng-template>
                   </ul>
                 </div>
@@ -155,8 +156,8 @@
         <!-- return and Order -->
         <a class="nav-link" [routerLink]="['/Orders/list']">
           <div class="pl-1">
-            <p class="font-amazon-normal  font-0">Return</p>
-            <p class=" font-amazon-bold font-1 min-content">& Order</p>
+            <p class="font-amazon-normal  font-0">{{'homeHeader.return'|translate}}</p>
+            <p class=" font-amazon-bold font-1 min-content">{{'homeHeader.andOrder'|translate}}</p>
           </div>
         </a>
       </li>
@@ -184,32 +185,32 @@
         <!-- All menus -->
         <a class="nav-link  d-flex align-items-end cursor-pointer" id="sidebtn">
           <span class="fas fa-bars h4 m-0 text-white "></span>
-          <span class="font-2 px-1 text-white ">All</span>
+          <span class="font-2 px-1 text-white ">{{'homeHeader.all'|translate}}</span>
         </a>
       </li>
       <li class="nav-item nav-hover">
         <a class="nav-link" [routerLink]="['']">
-          <span class="text-white">Today`s Deals</span>
+          <span class="text-white">{{'homeHeader.todaysDeals'|translate}}</span>
         </a>
       </li>
       <li class="nav-item nav-hover">
         <a class="nav-link" [routerLink]="['']">
-          <span class="text-white">Customer Service</span>
+          <span class="text-white">{{'homeHeader.customerService'|translate}}</span>
         </a>
       </li>
       <li class="nav-item nav-hover">
         <a class="nav-link" [routerLink]="['']">
-          <span class="text-white">Buy Again</span>
+          <span class="text-white">{{'homeHeader.buyAgain'|translate}}</span>
         </a>
       </li>
       <li class="nav-item nav-hover">
         <a class="nav-link" [routerLink]="['']">
-          <span class="text-white">Gift Cards</span>
+          <span class="text-white">{{'homeHeader.giftCards'|translate}}</span>
         </a>
       </li>
       <li class="nav-item nav-hover">
         <a class="nav-link " [routerLink]="'/seller/home'" routerLinkActive="active">
-          <span class="text-white">Sell</span>
+          <span class="text-white">{{'homeHeader.sell'|translate}}</span>
         </a>
       </li>
     </ul>

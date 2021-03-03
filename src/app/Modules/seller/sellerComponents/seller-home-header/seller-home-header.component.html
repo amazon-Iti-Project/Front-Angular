@@ -14,40 +14,38 @@
         <!-- collapsive nav  -->
         <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav font-amazon-bold font-1 ">
-
-              
                 <li class="nav-item active">
-                    <a class="nav-link" [routerLink]="['/seller/home']" routerLinkActive="router-link-active" >Catalog</a>
+                    <a class="nav-link" [routerLink]="['/seller/home']" routerLinkActive="router-link-active" >  {{'sellerHeader.catalog'|translate}}</a>
                 </li>
                 <li class="nav-item">
                     <div class="btn-group ">
                         <a class="nav-link " data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false" href="">Inventory</a>
+                            aria-expanded="false" href="">{{'sellerHeader.inventory'|translate}}</a>
                         <div class="dropdown-menu ">
-                            <a class="dropdown-item font-amazon-normal" [routerLink]="['/seller/add']" routerLinkActive="router-link-active" >Add product</a>
-                            <a class="dropdown-item font-amazon-normal" href="#">Sell grobally</a>
-                            <a class="dropdown-item font-amazon-normal" href="#">Manage Inventory</a>
+                            <a class="dropdown-item font-amazon-normal" [routerLink]="['/seller/add']" routerLinkActive="router-link-active" >{{'sellerHeader.addProduct'|translate}}</a>
+                            <a class="dropdown-item font-amazon-normal" href="#">{{'sellerHeader.sellGrobally'|translate}}</a>
+                            <a class="dropdown-item font-amazon-normal" href="#">{{'sellerHeader.manageInventory'|translate}}</a>
                         </div>
                     </div>
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="#">{{'sellerHeader.pricing'|translate}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Orders</a>
+                    <a class="nav-link" href="#">{{'sellerHeader.orders'|translate}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Advertising</a>
+                    <a class="nav-link" href="#">{{'sellerHeader.advertising'|translate}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">StoreFront</a>
+                    <a class="nav-link min-content" href="#">{{'sellerHeader.storeFront'|translate}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Reports</a>
+                    <a class="nav-link" href="#">{{'sellerHeader.reports'|translate}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Performance</a>
+                    <a class="nav-link" href="#">{{'sellerHeader.performance'|translate}}</a>
                 </li>
             </ul>
         </div>

@@ -2,8 +2,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserService } from 'src/app/services/user/user.service';
 import { Iuser } from 'src/app/viewModel/Iuser';
 import { NavigationStart, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { fromEvent, Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-header',
@@ -18,8 +19,10 @@ export class HeaderComponent implements OnInit {
   @Output() allBtnChecked:EventEmitter<boolean> = new EventEmitter<boolean>();
   user:Iuser|undefined
   currentUrl:string = '/'
-  constructor(private userServ:UserService,private router:Router) { }
-
+  constructor(private userServ:UserService,private router:Router) {
+ 
+   }
+  
   ngOnInit(): void {
 
     console.log("onInit home header")
@@ -79,5 +82,16 @@ export class HeaderComponent implements OnInit {
         
       } );
   }
+  onChangeLang(e:Event,el:HTMLElement){
+    // $('asd')
+      console.log(e)
+      console.log(el.getAttribute("data-offset"))
+
+      const source =fromEvent(el, 'show.bs.tab')
+      .subscribe((e) => console.log(e));
+      
+
+  }
+ 
 
 }

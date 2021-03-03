@@ -9,13 +9,13 @@
   <nav class="bg-nav-addproduct ">
     <div class="nav nav-tabs font-amazon-bold justify-content-between justify-content-sm-start " id="nav-tab" role="tablist">
       <a class="nav-link active py-3 " id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-        aria-controls="nav-home" aria-selected="true">Vital info</a>
+        aria-controls="nav-home" aria-selected="true">{{'sellerAdd.vitalInfo'|translate}}</a>
 
       <a class="nav-link py-3" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-        aria-controls="nav-profile" aria-selected="false">Image</a>
+        aria-controls="nav-profile" aria-selected="false">{{'sellerAdd.image'|translate}}</a>
 
       <a class="nav-link py-3" id="nav-profile-tab" data-toggle="tab" href="#nav-contact" role="tab"
-        aria-controls="nav-profile" aria-selected="false">offer</a>
+        aria-controls="nav-profile" aria-selected="false">{{'sellerAdd.offer'|translate}}</a>
     </div>
   </nav>
 
@@ -28,7 +28,7 @@
         <!-- product id input and choose -->
         <div class="col-12 form-group d-flex justify-content-between  px-0  mx-0 row" >
          
-            <label class="col-sm-2 col-12  align-self-center text-sm-right  my-2" for="catId"><span>category</span></label>
+            <label class="col-sm-2 col-12  align-self-center text-sm-right  my-2" for="catId"><span>{{'sellerAdd.category'|translate}}</span></label>
 
             <div class="d-flex col ">
             <!-- <input type="text" class="form-control" id="prodId"> -->
@@ -36,19 +36,19 @@
               required [class.is-invalid]="prodForm.controls['category'].invalid&&prodForm.controls['category'].touched"
               [class.is-valid]="prodForm.controls['category'].valid&&prodForm.controls['category'].touched">
 
-              <option selected disabled value="">select category</option>
+              <option selected disabled value="">{{'sellerAdd.selectCategory'|translate}}</option>
               <option *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</option>
             </select>
           </div>
           
-            <label class="col-sm-2 col-12  align-self-center text-sm-right  my-2 " for="brandId"><span>brand</span></label>
+            <label class="col-sm-2 col-12  align-self-center text-sm-right  my-2 " for="brandId"><span>{{'sellerAdd.brand'|translate}}</span></label>
 
             <div class="d-flex col  ">
             <select formControlName="brand" class="custom-select" name="brand" id="brandId" required
               [class.is-invalid]="prodForm.controls['brand'].invalid&&prodForm.controls['brand'].touched"
               [class.is-valid]="prodForm.controls['brand'].valid&&prodForm.controls['brand'].touched">
 
-              <option  disabled value="" selected>select brand</option>
+              <option  disabled value="" selected>{{'sellerAdd.selectBrand'|translate}}</option>
               <option *ngFor="let brand of brands" [value]="brand.id">{{brand.name}}</option>
             </select>
           </div>
@@ -58,9 +58,9 @@
             <div class=" col  ">
               <div class="row">
 
-            <label class="col-sm-4 col-12 align-self-center  text-sm-right my-2" for="pId"><span>Product Name</span></label>
+            <label class="col-sm-4 col-12 align-self-center  text-sm-right my-2" for="pId"><span>{{'sellerAdd.productName'|translate}}</span></label>
             <div class="col">
-            <input formControlName="name" type="text" class="form-control " id="prodId" placeholder="ex.C50-Digital Camera"
+            <input formControlName="name" type="text" class="form-control " id="prodId" placeholder="{{'sellerAdd.productNameExample'|translate}}"
                 autocomplete="off" [class.is-invalid]="prodForm.controls['name'].invalid&&prodForm.controls['name'].dirty"
                 [class.is-valid]="prodForm.controls['name'].valid&&prodForm.controls['name'].dirty" />
               </div>
@@ -69,18 +69,18 @@
               <!-- hint for product name -->
               <div class="text-sm-right col ">
                 <small [hidden]="(prodForm.controls['name'].valid||prodForm.controls['name'].pristine) "
-                  class=" text-muted  text-end font-0">min 5 char.</small>
+                  class=" text-muted  text-end font-0">{{'sellerAdd.min5Char'|translate}}</small>
               </div>
             </div>
             </div>
                  <!-- product description -->
                  <div class="col-sm col-12">
                    <div class="row">
-                    <label class="col-sm-4 col-12  my-2 align-self-center text-sm-right" for="pId"><span>Description</span></label>
+                    <label class="col-sm-4 col-12  my-2 align-self-center text-sm-right" for="pId"><span>{{'sellerAdd.description'|translate}}</span></label>
 
                     <div class=" col ">
                     <input formControlName="description" type="text" class="form-control" id="prodDesc"
-                      placeholder="write product description" autocomplete="off"
+                      placeholder="{{'sellerAdd.productDescriptionPlaceHolder'|translate}}" autocomplete="off"
                       [class.is-invalid]="prodForm.controls['description'].invalid&&prodForm.controls['description'].dirty"
                       [class.is-valid]="prodForm.controls['description'].valid&&prodForm.controls['description'].dirty" />
                   </div>
@@ -90,17 +90,17 @@
             <div class="w-100 form-group"></div>
       
         <!-- product color -->
-          <label class="col-sm-2 col-12 align-self-center my-2 text-sm-right" for="prodId">Color</label>
+          <label class="col-sm-2 col-12 align-self-center my-2 text-sm-right" for="prodId">{{'sellerAdd.color'|translate}}</label>
           <div class="col ">
-          <input formControlName="color" type="text" class="form-control" id="pcolor "placeholder="color"
+          <input formControlName="color" type="text" class="form-control" id="pcolor "placeholder="{{'sellerAdd.colorPlaceHolder'|translate}}"
             [class.is-invalid]="prodForm.controls['color'].invalid&&prodForm.controls['color'].dirty"
             [class.is-valid]="prodForm.controls['color'].valid&&prodForm.controls['color'].dirty" />
           </div>
           <!-- product size -->
-          <label class="col-sm-2 col-12  align-self-center my-2 text-sm-right" for="prodId">size</label>
+          <label class="col-sm-2 col-12  align-self-center my-2 text-sm-right" for="prodId">{{'sellerAdd.size'|translate}}</label>
 
           <div class="col  ">
-          <input formControlName="size" type="text" class="form-control" id="psize" placeholder="ex.smallxLarge"
+          <input formControlName="size" type="text" class="form-control" id="psize" placeholder="{{'sellerAdd.sizePlaceHolder'|translate}}"
             [class.is-invalid]="prodForm.controls['size'].invalid&&prodForm.controls['size'].dirty"
             [class.is-valid]="prodForm.controls['size'].valid&&prodForm.controls['size'].dirty" />
           </div>
@@ -119,7 +119,7 @@
         <div class="col custom-file ">
           <input #selecImgRef type="file" (change)="onSeleImg($event)" class="custom-file-input " id="inputGroupFile02">
           <label class="custom-file-label font-amazon-normal" for="inputGroupFile02"
-            aria-describedby="inputGroupFileAddon02">Choose file</label>
+            aria-describedby="inputGroupFileAddon02">{{'sellerAdd.chooseFile'|translate}}</label>
         </div>
 
         <!-- image -->
@@ -140,14 +140,14 @@
       <div class="row ">
         <!-- price starts-->
         <div class="input-group mb-3 col row  align-items-center">
-          <label class="  col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">Price</label>
+          <label class="  col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">{{'sellerAdd.price'|translate}}</label>
           <div class="col d-flex">
             <div class="input-group-prepend ">
               <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">$</span>
             </div>
             <!-- price -->
             <input type="number" (change)="updateTotalPrice(priceRef)"
-              class="form-control font-amazon-normal font-1 " placeholder="Price" formControlName="price"
+              class="form-control font-amazon-normal font-1 " placeholder="{{'sellerAdd.pricePlaceHolder'|translate}}" formControlName="price"
               aria-label="min" aria-describedby="basic-addon1" min="0"
               [class.is-invalid]="prodForm.controls['price'].invalid&&prodForm.controls['price'].dirty"
               [class.is-valid]="prodForm.controls['price'].valid&&prodForm.controls['price'].dirty" />
@@ -156,7 +156,7 @@
         <!-- price ends -->
         <!-- discount starts -->
         <div class="input-group mb-3 col row align-items-center">
-          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">discount</label>
+          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">{{'sellerAdd.discount'|translate}}</label>
           <div class="col d-flex">
             <div class="input-group-prepend">
               <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">%</span>
@@ -177,7 +177,7 @@
       <div class="row mb-3">
         <div class="col row  align-items-center">
           <!-- fees starts -->
-          <label class=" col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">fees</label>
+          <label class=" col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">{{'sellerAdd.fees'|translate}}</label>
           <div class="input-group -3 col "formGroupName="fee">
             <div class="input-group-prepend">
               <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">%</span>
@@ -190,13 +190,13 @@
         </div>
         <div class="col row align-items-center">
           <!-- quantity starts -->
-          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">Quantity</label>
+          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">{{'sellerAdd.quantity'|translate}}</label>
           <div class="input-group  col">
             <div class="input-group-prepend">
               <span class="input-group-text px-1 font-amazon-bold font-1" id="basic-addon1 ">#</span>
             </div>
             <!-- quantity -->
-            <input type="number" class="form-control font-amazon-normal font-1" placeholder="Quantity"
+            <input type="number" class="form-control font-amazon-normal font-1" placeholder="{{'sellerAdd.quantityPlaceHolder'|translate}}"
               formControlName="quantity" aria-label="max" aria-describedby="basic-addon1"
               [class.is-invalid]="prodForm.controls['quantity'].invalid&&prodForm.controls['quantity'].dirty"
               [class.is-valid]="prodForm.controls['quantity'].valid&&prodForm.controls['quantity'].dirty" />
@@ -211,13 +211,13 @@
       <div formGroupName="shipping" class="row mb-3">
         <div class="input-group row  col align-items-center">
           <!-- shipping period -->
-          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">Shipping Period</label>
+          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">{{'sellerAdd.shippingPeriod'|translate}}</label>
           <div class="col d-flex">
             <div class="input-group-prepend ">
-              <span class="input-group-text px-1 font-amazon-bold font-1 " id="basic-addon1 ">days</span>
+              <span class="input-group-text px-1 font-amazon-bold font-1 " id="basic-addon1 ">{{'sellerAdd.days'|translate}}</span>
             </div>
 
-            <input type="number" class="form-control font-amazon-normal  font-1" placeholder="2 days"
+            <input type="number" class="form-control font-amazon-normal  font-1" placeholder="{{'sellerAdd.shippingDaysPlaceHolder'|translate}}"
               formControlName="period" aria-label="max" aria-describedby="basic-addon1"
               [class.is-invalid]="prodForm['controls'].shipping.get('period')?.invalid && prodForm['controls'].shipping.get('period')?.dirty"
               [class.is-valid]="prodForm['controls'].shipping.get('period')?.valid && prodForm['controls'].shipping.get('period')?.dirty"/> 
@@ -226,7 +226,7 @@
         <!-- shipping price starts -->
         <div class="input-group row  col align-items-center">
 
-          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">Shipping Price</label>
+          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right">{{'sellerAdd.shippingPrice'|translate}}</label>
 
           <div class="col  d-flex">
             <div class="input-group-prepend">
@@ -247,7 +247,7 @@
       <div class="row">
         <div class=" col-6 row align-items-center p-0 m-0 ">
 
-          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right ">return Price</label>
+          <label class="col-sm-4 col-12 mb-sm-0 mb-1 text-sm-right ">{{'sellerAdd.returnPrice'|translate}}</label>
 
           <div class="col d-flex ">
             <div class="input-group-prepend">
@@ -262,7 +262,7 @@
         <div class="w-100"></div>
         <!-- small starts -->
         <div  class=" col-6 text-sm-right  mb-3 ">
-          <small class="form-text text-muted font-0   ">after discount & fees</small>
+          <small class="form-text text-muted font-0   ">{{'sellerAdd.afterDiscountAndFees'|translate}}</small>
         </div>
         <!-- small ends -->
       </div>
@@ -272,9 +272,9 @@
 
     <!-- submit button -->
     <div class="container row justify-content-center mt-2 ">
-      <button type="button" (click)="resetForm()" class="btn  mx-sm-2 mx-1  ">Cancel</button>
+      <button type="button" (click)="resetForm()" class="btn  mx-sm-2 mx-1  ">{{'sellerAdd.cancel'|translate}}</button>
       <button (click)="addProduct()" type="submit" [disabled]="prodForm.invalid"
-        class="btn  mx-sm-2 mx-1">Safe and Finish</button>
+        class="btn  mx-sm-2 mx-1">{{'sellerAdd.safeAndFinish'|translate}}</button>
     </div>
 
   </form>

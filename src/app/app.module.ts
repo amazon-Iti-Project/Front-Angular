@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {  TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SharedModule } from './shared/shared.module';
+import { LanguageDirectionDirective } from './directives/language-direction.directive';
 console.log("app Module")
 // import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,6 +33,7 @@ console.log("app Module")
 @NgModule({
   declarations: [
     AppComponent,
+    LanguageDirectionDirective,
   ],
   imports: [
   BrowserModule,

@@ -1,7 +1,7 @@
     <!-- side bar For Filtration -->
         <!-- filter Department -->
         <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 row align-content-start">
-            <p class="font-amazon-bold col-12">Department</p>
+            <p class="font-amazon-bold col-12">{{'adminFilter.department'|translate}}</p>
             <ul class="custom-control custom-checkbox col-12">
                 <li [hidden]="department.id>filterView.department" *ngFor="let department of departments; index as sn;"
                     (click)="updateDepFiltList({department:department})"  >
@@ -10,14 +10,18 @@
                         <p class="font-amazon-normal pt-1 myid hover-txt-orange" >{{department.name}}</p>
                     </label>
                 </li>
-                <li [hidden]="(departments.length<=3)" #depshowmoreRef class="py-2 font-amazon-bold text-left" (click)="showMoreDepList(depshowmoreRef,depshowlessRef,'department')">see more&nbsp;<i class="fas fa-chevron-down font-0"></i></li>
-                <li #depshowlessRef class="py-2 font-amazon-bold text-left d-none" (click)="showLessDepList(depshowmoreRef,depshowlessRef,'department')">see less&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-up font-0"></i></li>
+                <li [hidden]="(departments.length<=3)" #depshowmoreRef class="py-2 font-amazon-bold text-left" 
+                (click)="showMoreDepList(depshowmoreRef,depshowlessRef,'department')">
+                {{'adminFilter.seeMore'|translate}}&nbsp;<i class="fas fa-chevron-down font-0"></i></li>
+                <li #depshowlessRef class="py-2 font-amazon-bold text-left d-none" 
+                (click)="showLessDepList(depshowmoreRef,depshowlessRef,'department')">
+                {{'adminFilter.seeLess'|translate}}&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-up font-0"></i></li>
             </ul>
         </div>
     
         <!-- filter brand -->
         <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 row align-content-start">
-            <p class="font-amazon-bold col-12">Brand</p>
+            <p class="font-amazon-bold col-12">{{'adminFilter.brand'|translate}}</p>
             <ul class="custom-control custom-checkbox col-12">
                 <li [hidden]="brand.id>filterView.brand" *ngFor="let brand of brands; index as sn;"
                     (click)="updateDepFiltList({brand:brand})" >
@@ -26,25 +30,29 @@
                         <p class="font-amazon-normal pt-1 myid hover-txt-orange" >{{brand.name}}</p>
                     </label>
                 </li>
-                <li [hidden]="(departments.length<=3)" #brandShowmoreRef class="py-2 font-amazon-bold text-left" (click)="showMoreDepList(brandShowmoreRef,brandShowlessRef,'brand')">see more&nbsp;<i class="fas fa-chevron-down font-0"></i></li>
-                <li #brandShowlessRef class="py-2 font-amazon-bold text-left d-none" (click)="showLessDepList(brandShowmoreRef,brandShowlessRef,'brand')">see less&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-up font-0"></i></li>
+                <li [hidden]="(departments.length<=3)" #brandShowmoreRef class="py-2 font-amazon-bold text-left"
+                 (click)="showMoreDepList(brandShowmoreRef,brandShowlessRef,'brand')">
+                 {{'adminFilter.seeMore'|translate}}&nbsp;<i class="fas fa-chevron-down font-0"></i></li>
+                <li #brandShowlessRef class="py-2 font-amazon-bold text-left d-none" 
+                (click)="showLessDepList(brandShowmoreRef,brandShowlessRef,'brand')">
+                {{'adminFilter.seeLess'|translate}}&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-chevron-up font-0"></i></li>
 
             </ul>
         </div>
         <!-- filter Deliver State -->
         <div class="col-md-12 col-sm col-4 m-0 px-0 py-1 row align-content-start">
-            <p class="font-amazon-bold col-12">Deliever State</p>
+            <p class="font-amazon-bold col-12">{{'adminFilter.delieverState'|translate}}</p>
             <ul class="custom-control custom-checkbox col-12">
                 <li>
                     <input type="checkbox" class="custom-control-input" id="delievered">
                     <label class="custom-control-label " for="delievered" >
-                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" >Delievered</p>
+                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" >{{'adminFilter.delievered'|translate}}</p>
                     </label>
                 </li>
                 <li>
                     <input type="checkbox" class="custom-control-input" id="cancelled">
                     <label class=" custom-control-label " for="cancelled" >
-                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" >Cancelled</p>
+                        <p class="font-amazon-normal pt-1 myid hover-txt-orange" >{{'adminFilter.cancelled'|translate}}</p>
                     </label>
                 </li>
 
@@ -52,7 +60,7 @@
         </div>
             <!-- filter Price -->
             <div class="col-md-12 col-sm col-6 m-0 px-0 py-1 align-content-start">
-              <p class="font-amazon-bold py-2">Price</p>
+              <p class="font-amazon-bold py-2">{{'adminFilter.price'|translate}}</p>
               <ul>
                   <li class="d-flex flex-column ">
                       <div class="input-group mb-3">
@@ -60,7 +68,7 @@
                               <span class="input-group-text px-1 font-amazon-bold font-1"
                                   id="basic-addon1 ">$</span>
                           </div>
-                          <input type="text" class="form-control font-amazon-normal font-1" placeholder="min"
+                          <input type="text" class="form-control font-amazon-normal font-1" placeholder="{{'adminFilter.min'|translate}}"
                               aria-label="min" aria-describedby="basic-addon1">
                       </div>
                       <div class="input-group mb-3">
@@ -68,12 +76,12 @@
                               <span class="input-group-text px-1 font-amazon-bold font-1"
                                   id="basic-addon1">$</span>
                           </div>
-                          <input type="text" class="form-control font-amazon-normal font-1" placeholder="max"
+                          <input type="text" class="form-control font-amazon-normal font-1" placeholder="{{'adminFilter.max'|translate}}"
                               aria-label="max" aria-describedby="basic-addon1">
                       </div>
                       <div class="">
                           <button type="button"
-                              class="btn btn-outline-secondary px-1  font-amazon-bold font-1">Go</button>
+                              class="btn btn-outline-secondary px-1  font-amazon-bold font-1">{{'adminFilter.go'|translate}}</button>
                       </div>
 
                   </li>
@@ -82,7 +90,7 @@
           <!-- filter avg rate -->
           <div class="col-md-12 col-sm col-6 text-center px-0 py-1 d-flex flex-column justify-content-center ">
             
-              <p class="font-amazon-bold py-1">Minimum Average Rate</p>
+              <p class="font-amazon-bold py-1">{{'adminFilter.minimumAverageRate'|translate}}</p>
               <ul>
                   <li class="text-warning p-2" onclick="filterRate(this,event)">
                       <!-- <i class="fas fa-star"></i>

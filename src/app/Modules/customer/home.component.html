@@ -2,6 +2,10 @@
 <app-header (allBtnChecked)="onCheckAllBtn($event)" ></app-header>
 <!-- sidebar -->
 <app-sidebar [isOpen]="isSideBarOpen" (sideBarClosed)="closeSideBar($event)" ></app-sidebar>
+
+<!-- <div [appLanguageDirection]="'en'">
+</div> -->
 <router-outlet></router-outlet>
+
 <!-- footer -->
-<app-footer></app-footer> 
+<app-footer ></app-footer> 

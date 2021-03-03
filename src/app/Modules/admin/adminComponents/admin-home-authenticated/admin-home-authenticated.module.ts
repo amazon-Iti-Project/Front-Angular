@@ -36,6 +36,8 @@ import { CategoryModalComponent } from '../admin-categories/category-modal/categ
 import { CategoryDetailsComponent } from '../admin-categories/category-details/category-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminBrandService } from '../admin-brands/admin-brand.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes: Routes = [
   {
@@ -91,10 +93,12 @@ const routes: Routes = [
 
   ],
   imports: [
-  RouterModule.forChild(routes),
+RouterModule.forChild(routes),
     // RouterModule
     ReactiveFormsModule,
     CommonModule,
+    TranslateModule,
+
   ],
   
   // this provide seperate service instance for module and it`s components

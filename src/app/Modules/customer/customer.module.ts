@@ -48,7 +48,7 @@ CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule,
-
+    // for translate pipe and directives
     TranslateModule
 
   ]

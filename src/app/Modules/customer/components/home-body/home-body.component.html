@@ -10,11 +10,6 @@
           <!-- col -->
           <div class="col-lg-3 col-md-4 col-sm-6 row m-0 p-2 ">
             <div class="bg-white p-2 col row m-0 ">
-              <div style="width:400px;" class="bg-info">
-                <p  >انا كمال</p>
-                <p  style="direction: rtl;">انا كمال</p>
-                <p dir="ltr">iam kamal</p>
-              </div>
               <!-- [ngClass]="{'text-right':{{'direction'| translate}} ==='rtl'}" -->
               <p class="col-12 h5 font-amazon-bold"    >{{ 'home.recentlyViewed' | translate }}</p>
               <div class="col-12  ">
@@ -30,13 +25,13 @@
           <!-- modified to be a link -->
           <div class="col-lg-3 col-md-4 col-sm-6   row m-0 p-2" >
             <div class="bg-white p-2 col row m-0 ">
-              <p class="col-12 h5 font-amazon-bold">Shop top categories</p>
+              <p class="col-12 h5 font-amazon-bold">{{ 'home.shopTopCategories' | translate }}</p>
               <div class="col-12  ">
                 <a class="d-flex  justify-content-center align-items-start img-home-container" [routerLink]="['/category']" routerLinkActive="" >
                   <img src="../../../../../assets/home-body/06.jpg" class="img-fluid  img-home ">
                 </a>
               </div>
-              <a class="font-0 text-info align-self-end py-1 font-amazon-normal"[routerLink]="['/category']" routerLinkActive="">Shop now</a>
+              <a class="font-0 text-info align-self-end py-1 font-amazon-normal"[routerLink]="['/category']" routerLinkActive="">{{'home.shopNow'|translate}}</a>
             </div>
           </div>
         </div>

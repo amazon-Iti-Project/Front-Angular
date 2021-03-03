@@ -8,6 +8,7 @@ import { AdminHomeAuthenticatedModule } from './adminComponents/admin-home-authe
 import { NotFoundComponent } from 'src/app/appComponent/not-found/not-found.component';
 import { AdminGuard } from 'src/app/guards/admin.guard';
 import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from 'src/app/shared/shared.module';
 console.log("admin")
 const routes: Routes = [
   {
