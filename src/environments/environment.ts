@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_BASE_URL:'https://fierce-mountain-42224.herokuapp.com',
+  API_BASE_URL:'https://amazon-api-jsonserver.herokuapp.com',
   brands:'brands',
   categories:'categories',
   products:'products',

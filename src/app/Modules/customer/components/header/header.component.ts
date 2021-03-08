@@ -5,6 +5,7 @@ import { NavigationStart, Router } from '@angular/router';
 import { fromEvent, Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { $ } from 'protractor';
+import { LocalizationService } from './../../../../services/localization/localization.service';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +20,7 @@ export class HeaderComponent implements OnInit {
   @Output() allBtnChecked:EventEmitter<boolean> = new EventEmitter<boolean>();
   user:Iuser|undefined
   currentUrl:string = '/'
-  constructor(private userServ:UserService,private router:Router) {
+  constructor(private userServ:UserService,private router:Router,private localServ:LocalizationService) {
  
    }
   
@@ -91,6 +92,11 @@ export class HeaderComponent implements OnInit {
       .subscribe((e) => console.log(e));
       
 
+  }
+
+  changeLang(lang:string):void{
+    this.localServ.changeSelectedLanguage(lang);
+    // console.log("event",lang)
   }
  
 

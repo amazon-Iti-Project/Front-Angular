@@ -9,8 +9,8 @@ import { SellerAddProductComponent } from './sellerComponents/seller-add-product
 import { SellerHomeBodyComponent } from './sellerComponents/seller-home-body/seller-home-body.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NotFoundComponent } from '../customer/components/not-found/not-found.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { NotFoundComponent } from 'src/app/appComponent/not-found/not-found.component';
 
 const routes:Routes = [
   {path:'home',component:SellerHomeComponent},

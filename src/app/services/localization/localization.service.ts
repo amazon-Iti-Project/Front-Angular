@@ -1,12 +1,23 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocalizationService {
+  private langDataSubject:BehaviorSubject<string> = new BehaviorSubject(this.getLanguage());
+  // to can subscribe to the selected language
+  selectedLanguage:Observable<string> = this.langDataSubject.asObservable();
 
   constructor(public translate: TranslateService) {}
+
+// to change selected language 
+  changeSelectedLanguage(selectedLang: string):void {
+    this.langDataSubject.next(selectedLang)
+    // to set in local storage and use this language
+    this.setLanguage(selectedLang);
+  }
 
     setLanguage(lang: string) {
       // alert("set"+lang);
@@ -31,10 +42,10 @@ export class LocalizationService {
       let lang: string|null|undefined = localStorage.getItem("lang");
       console.log(lang)
       // alert(`GetLanguage ${lang}`)
-      if (lang == "" || lang == null || lang == undefined) {
-        return this.getDefaultLanguage();
+      if (lang == "ar"){
+        return lang;
       }
-      return lang;
+      return this.getDefaultLanguage();
     }
   
 
@@ -42,4 +53,5 @@ export class LocalizationService {
     private getDefaultLanguage() {
       return "en";
     }
+
 }

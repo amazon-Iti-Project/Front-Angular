@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'product/:pId', component:ProductsDetalisComponent  },
   {path:'',component:AllDepartmentsComponent},
   {path:':depName',component:DepartmentComponent}
+  // {path:':depId/:depName',component:DepartmentComponent}
 ]
 
 @NgModule({

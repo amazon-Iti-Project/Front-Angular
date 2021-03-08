@@ -4,7 +4,6 @@ import { ProductService } from 'src/app/services/product/product.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { Iproduct } from 'src/app/viewModel/IProduct';
 import { Iuser } from 'src/app/viewModel/Iuser';
-import { ProductsJsonService } from '../../services/products-json.service';
 
 @Component({
   selector: 'app-department',
@@ -19,17 +18,16 @@ export class DepartmentComponent implements OnInit {
   cartItems : Iproduct[] = [];
   totalPrice = 0.0;
   constructor(private activatedRoute : ActivatedRoute,
-    private productService : ProductsJsonService,
     private prodService : ProductService,
     private userService : UserService) { }
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe( param => {
       this.depName = param.get('depName');
-      this.productService.getProductsByCatName(this.depName?this.depName.toLowerCase():'')
+      this.prodService.getProductsByCatName(this.depName?this.depName.toLowerCase():'')
       .subscribe(
         response => { 
           this.productsList = response;
-          console.log(this.productsList);
+          console.log("products: ",this.productsList);
         },
         error => { console.log(error); }
       )

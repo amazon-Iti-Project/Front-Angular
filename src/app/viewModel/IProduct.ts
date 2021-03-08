@@ -10,6 +10,8 @@ export interface Iproduct{
   tags:string[];
   color:string;
   size:string;
+  subTitle:string;
+
   price:number;
   shipping:Ishipping; 
   fee:Ifee; 
@@ -25,6 +27,47 @@ export interface Iproduct{
   stock? : number,
   shippingLabel? : boolean
   seller:number // userId
+}
+
+export interface ITranslatedProduct{
+  id:number;
+  ar:IProductArabic
+  en:IProductEnglish
+  image:string|ArrayBuffer;
+  price:number;
+  shipping:Ishipping; 
+  fee:Ifee; 
+  discount:number;
+  quantity:number;
+  brand:number;
+  category:number; // category id
+  rate:number;  // rate id
+  ///////// from IProduct //////
+  categoryName? :string,
+  // cents : number,
+  // oldPrice : number,
+  stock? : number,
+  shippingLabel? : boolean
+  seller:number // userId
+
+}
+
+export interface IProductArabic{
+  name:string;
+  description?:string;
+  tags:string[];
+  color:string;
+  size:string;
+  subTitle:string;
+}
+export interface IProductEnglish{
+  name:string;
+  description?:string;
+  tags:string[];
+  color:string;
+  size:string;
+  subTitle:string;
+
 }
 
 export interface adminIproduct{
