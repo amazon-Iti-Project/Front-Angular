@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthHomeComponent } from './auth-home.component';
 import { NotFoundComponent } from 'src/app/appComponent/not-found/not-found.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -31,6 +32,8 @@ RouterModule.forChild(routes),
 // RouterModule
 ReactiveFormsModule,
 FormsModule,
+TranslateModule
+
 
   ]
 })

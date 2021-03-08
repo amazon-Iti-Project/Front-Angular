@@ -10,9 +10,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CartComponent } from '../orders/cart/cart.component';
 import { OrdersHomeComponent } from '../orders/Components/orders-home/orders-home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ShippingFormComponent } from '../orders/shipping-form/shipping-form.component';
-import { TranslateModule } from '@ngx-translate/core';
 import { NotFoundComponent } from 'src/app/appComponent/not-found/not-found.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 const routes:Routes = [
@@ -50,7 +49,7 @@ CommonModule,
     ReactiveFormsModule,
     // for translate pipe and directives
     TranslateModule
+  ],
 
-  ]
 })
 export class CustomerModule { }

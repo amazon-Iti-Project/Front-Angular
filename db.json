@@ -313,7 +313,7 @@
       "status": 1,
       "shipmentPrice": 5,
       "payment": 1,
-      "address": "123 test street USA",
+      "address": "234 West 42nd Street -New York USA 10036",
       "orderShip": 10,
       "orderPrice": 500,
       "dueDate": "2021-01-07",
@@ -335,7 +335,7 @@
       "customer": 1,
       "status": 1,
       "payment": 1,
-      "address": "123 test street USA",
+      "address": "1335 Avenue of the Americas - New York, USA, 10019",
       "orderShip": 10,
       "orderPrice": 200,
       "dueDate": "2021-01-07",
@@ -357,7 +357,7 @@
       "customer": 2,
       "status": 2,
       "payment": 1,
-      "address": "222 test street USA",
+      "address": "1335 Avenue of the Americas - New York, USA, 10019",
       "orderShip": 20,
       "orderPrice": 1000,
       "dueDate": "2021-02-07",
@@ -386,7 +386,7 @@
       "customer": 3,
       "status": 3,
       "payment": 1,
-      "address": "333 test street USA",
+      "address": "102 West 57th Street - New York, USA, 10019",
       "orderShip": 30,
       "orderPrice": 2000,
       "dueDate": "2021-03-07",
@@ -408,7 +408,7 @@
       "customer": 4,
       "status": 3,
       "payment": 1,
-      "address": "333 test street USA",
+      "address": "304 East 42nd Street -New York, USA, 10017",
       "orderShip": 30,
       "orderPrice": 50,
       "dueDate": "2021-04-22",
@@ -430,7 +430,7 @@
       "customer": 5,
       "status": 3,
       "payment": 1,
-      "address": "333 test street USA",
+      "address": "Gateway Center – Raymond Blvd Newark, New Jersey, USA, 07102-5107",
       "orderShip": 30,
       "orderPrice": 50,
       "dueDate": "2021-06-22",
@@ -446,362 +446,6 @@
           "image": "https://m.media-amazon.com/images/I/31bm-bLi36L._AC_SR160,160_.jpg"
         }
       ]
-    },
-    {
-      "id": 6,
-      "products": [
-        {
-          "name": "DigitalCamera",
-          "categoryName": "laptops",
-          "price": 120,
-          "quantity": 80,
-          "category": "1",
-          "brand": "1",
-          "discount": 50,
-          "shipping": {
-            "period": 2,
-            "shipPrice": 20
-          },
-          "fee": {
-            "admin": 1,
-            "category": 1,
-            "fee": 15
-          },
-          "size": "medium",
-          "color": "red",
-          "image": "https://shuttershopegypt.com/wp-content/uploads/2020/07/canon_eos_r6_mirrorless_digital_1594281159_1573881.png",
-          "tags": [],
-          "id": 1
-        },
-        {
-          "name": "Tv 24inch",
-          "categoryName": "laptops",
-          "price": 100,
-          "quantity": 15,
-          "category": "1",
-          "brand": "1",
-          "discount": 20,
-          "shipping": {
-            "period": 3,
-            "shipPrice": 23
-          },
-          "fee": {
-            "fee": 20,
-            "admin": 1,
-            "category": 1
-          },
-          "size": "32 inch",
-          "color": "black",
-          "image": "https://images.samsung.com/is/image/samsung/levant-uhd-tu8500-ua55tu8500uxtw-frontblack-229855928?$720_576_PNG$",
-          "tags": [],
-          "id": 2
-        },
-        {
-          "name": "audio Video Capture Cards",
-          "price": 250,
-          "quantity": 15,
-          "category": "1",
-          "brand": "1",
-          "discount": 22,
-          "description": "MeiYin Audio Video Capture Cards HDMI to USB HDMI Video Capture, Full HD 1080P USB 2.0",
-          "shipping": {
-            "period": 22,
-            "shipPrice": 16
-          },
-          "fee": {
-            "fee": 20,
-            "admin": 1,
-            "category": 1
-          },
-          "size": "asdasd",
-          "color": "asda",
-          "tags": [],
-          "image": "https://m.media-amazon.com/images/I/71lw+9N+7QL._AC_UY218_.jpg",
-          "id": 3
-        }
-      ],
-      "user": 1,
-      "status": 1,
-      "payment": {
-        "id": 1,
-        "type": 1,
-        "state": 1,
-        "date": "Sat Feb 13 2021 00:04:10 GMT+0200 (Eastern European Standard Time)",
-        "payment": 470
-      },
-      "address": "",
-      "orderShip": 59,
-      "orderPrice": 470,
-      "dueDate": "22",
-      "orderDate": "Sat Feb 13 2021 00:04:14 GMT+0200 (Eastern European Standard Time)",
-      "canCancelledUntil": "1613426654545"
-    },
-    {
-      "id": 7,
-      "products": [
-        {
-          "name": "DigitalCamera",
-          "categoryName": "laptops",
-          "price": 120,
-          "quantity": 80,
-          "category": "1",
-          "brand": "1",
-          "discount": 50,
-          "shipping": {
-            "period": 2,
-            "shipPrice": 20
-          },
-          "fee": {
-            "admin": 1,
-            "category": 1,
-            "fee": 15
-          },
-          "size": "medium",
-          "color": "red",
-          "image": "https://shuttershopegypt.com/wp-content/uploads/2020/07/canon_eos_r6_mirrorless_digital_1594281159_1573881.png",
-          "tags": [],
-          "id": 1
-        },
-        {
-          "name": "Tv 24inch",
-          "categoryName": "laptops",
-          "price": 100,
-          "quantity": 15,
-          "category": "1",
-          "brand": "1",
-          "discount": 20,
-          "shipping": {
-            "period": 3,
-            "shipPrice": 23
-          },
-          "fee": {
-            "fee": 20,
-            "admin": 1,
-            "category": 1
-          },
-          "size": "32 inch",
-          "color": "black",
-          "image": "https://images.samsung.com/is/image/samsung/levant-uhd-tu8500-ua55tu8500uxtw-frontblack-229855928?$720_576_PNG$",
-          "tags": [],
-          "id": 2
-        },
-        {
-          "name": "audio Video Capture Cards",
-          "price": 250,
-          "quantity": 15,
-          "category": "1",
-          "brand": "1",
-          "discount": 22,
-          "description": "MeiYin Audio Video Capture Cards HDMI to USB HDMI Video Capture, Full HD 1080P USB 2.0",
-          "shipping": {
-            "period": 22,
-            "shipPrice": 16
-          },
-          "fee": {
-            "fee": 20,
-            "admin": 1,
-            "category": 1
-          },
-          "size": "asdasd",
-          "color": "asda",
-          "tags": [],
-          "image": "https://m.media-amazon.com/images/I/71lw+9N+7QL._AC_UY218_.jpg",
-          "id": 3
-        }
-      ],
-      "user": 1,
-      "status": 1,
-      "payment": {
-        "id": 1,
-        "type": 1,
-        "state": 1,
-        "date": "Sun Feb 14 2021 22:01:07 GMT+0200 (Eastern European Standard Time)",
-        "payment": 470
-      },
-      "address": "",
-      "orderShip": 59,
-      "orderPrice": 470,
-      "dueDate": "22",
-      "orderDate": "Sun Feb 14 2021 22:01:07 GMT+0200 (Eastern European Standard Time)",
-      "canCancelledUntil": "1613592067130"
-    },
-    {
-      "id": 8,
-      "products": [
-        {
-          "name": "DigitalCamera",
-          "categoryName": "laptops",
-          "price": 120,
-          "quantity": 80,
-          "category": "1",
-          "brand": "1",
-          "discount": 50,
-          "shipping": {
-            "period": 2,
-            "shipPrice": 20
-          },
-          "fee": {
-            "admin": 1,
-            "category": 1,
-            "fee": 15
-          },
-          "size": "medium",
-          "color": "red",
-          "image": "https://shuttershopegypt.com/wp-content/uploads/2020/07/canon_eos_r6_mirrorless_digital_1594281159_1573881.png",
-          "tags": [],
-          "id": 1
-        },
-        {
-          "name": "Tv 24inch",
-          "categoryName": "laptops",
-          "price": 100,
-          "quantity": 15,
-          "category": "1",
-          "brand": "1",
-          "discount": 20,
-          "shipping": {
-            "period": 3,
-            "shipPrice": 23
-          },
-          "fee": {
-            "fee": 20,
-            "admin": 1,
-            "category": 1
-          },
-          "size": "32 inch",
-          "color": "black",
-          "image": "https://images.samsung.com/is/image/samsung/levant-uhd-tu8500-ua55tu8500uxtw-frontblack-229855928?$720_576_PNG$",
-          "tags": [],
-          "id": 2
-        },
-        {
-          "name": "audio Video Capture Cards",
-          "price": 250,
-          "quantity": 15,
-          "category": "1",
-          "brand": "1",
-          "discount": 22,
-          "description": "MeiYin Audio Video Capture Cards HDMI to USB HDMI Video Capture, Full HD 1080P USB 2.0",
-          "shipping": {
-            "period": 22,
-            "shipPrice": 16
-          },
-          "fee": {
-            "fee": 20,
-            "admin": 1,
-            "category": 1
-          },
-          "size": "asdasd",
-          "color": "asda",
-          "tags": [],
-          "image": "https://m.media-amazon.com/images/I/71lw+9N+7QL._AC_UY218_.jpg",
-          "id": 3
-        }
-      ],
-      "user": 1,
-      "status": 1,
-      "payment": {
-        "id": 1,
-        "type": 1,
-        "state": 1,
-        "date": "Sun Feb 14 2021 22:29:22 GMT+0200 (Eastern European Standard Time)",
-        "payment": 470
-      },
-      "address": "",
-      "orderShip": 59,
-      "orderPrice": 470,
-      "dueDate": "22",
-      "orderDate": "Sun Feb 14 2021 22:29:22 GMT+0200 (Eastern European Standard Time)",
-      "canCancelledUntil": "1613593762550"
-    },
-    {
-      "id": 9,
-      "products": [
-        {
-          "name": "DigitalCamera",
-          "categoryName": "laptops",
-          "price": 120,
-          "quantity": 80,
-          "category": "1",
-          "brand": "1",
-          "discount": 50,
-          "shipping": {
-            "period": 2,
-            "shipPrice": 20
-          },
-          "fee": {
-            "admin": 1,
-            "category": 1,
-            "fee": 15
-          },
-          "size": "medium",
-          "color": "red",
-          "image": "https://shuttershopegypt.com/wp-content/uploads/2020/07/canon_eos_r6_mirrorless_digital_1594281159_1573881.png",
-          "tags": [],
-          "id": 1
-        },
-        {
-          "name": "Tv 24inch",
-          "categoryName": "laptops",
-          "price": 100,
-          "quantity": 15,
-          "category": "1",
-          "brand": "1",
-          "discount": 20,
-          "shipping": {
-            "period": 3,
-            "shipPrice": 23
-          },
-          "fee": {
-            "fee": 20,
-            "admin": 1,
-            "category": 1
-          },
-          "size": "32 inch",
-          "color": "black",
-          "image": "https://images.samsung.com/is/image/samsung/levant-uhd-tu8500-ua55tu8500uxtw-frontblack-229855928?$720_576_PNG$",
-          "tags": [],
-          "id": 2
-        },
-        {
-          "name": "audio Video Capture Cards",
-          "price": 250,
-          "quantity": 15,
-          "category": "1",
-          "brand": "1",
-          "discount": 22,
-          "description": "MeiYin Audio Video Capture Cards HDMI to USB HDMI Video Capture, Full HD 1080P USB 2.0",
-          "shipping": {
-            "period": 22,
-            "shipPrice": 16
-          },
-          "fee": {
-            "fee": 20,
-            "admin": 1,
-            "category": 1
-          },
-          "size": "asdasd",
-          "color": "asda",
-          "tags": [],
-          "image": "https://m.media-amazon.com/images/I/71lw+9N+7QL._AC_UY218_.jpg",
-          "id": 3
-        }
-      ],
-      "user": 1,
-      "status": 1,
-      "payment": {
-        "id": 1,
-        "type": 1,
-        "state": 1,
-        "date": "Tue Feb 16 2021 20:21:03 GMT+0200 (Eastern European Standard Time)",
-        "payment": 470
-      },
-      "address": "alexandria",
-      "orderShip": 59,
-      "orderPrice": 470,
-      "dueDate": "22",
-      "orderDate": "Tue Feb 16 2021 20:21:03 GMT+0200 (Eastern European Standard Time)",
-      "canCancelledUntil": "1613758863654"
     }
   ],
   "payments": [

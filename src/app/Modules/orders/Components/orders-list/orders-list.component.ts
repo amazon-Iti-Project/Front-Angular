@@ -7,7 +7,8 @@ import { OrdersService } from '../../orders.service';
 
 @Component({
     selector: 'orders-list',
-    templateUrl: 'orders-list.component.html'
+    templateUrl: 'orders-list.component.html',
+    styleUrls: ['./orders-list.component.scss'],
 })
 
 export class OrdersListComponent implements OnInit {
@@ -19,7 +20,7 @@ export class OrdersListComponent implements OnInit {
     subscribtion: Subscription|null=null;
     filterValue: string = "2";
     ordersFiltered: Iorder[] = []
-
+    filterTerm: string ='';
     constructor( private ordersSvc: OrdersService,
         private productsSvc: ProductService) { }
  

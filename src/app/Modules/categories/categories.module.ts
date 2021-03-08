@@ -7,6 +7,7 @@ import { AllDepartmentsComponent } from './components/all-departments/all-depart
 import { HttpClientModule } from '@angular/common/http';
 import { DepartmentComponent } from './components/department/department.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes: Routes = [
   { path: 'payment', component:PaymentComponent  },
@@ -23,10 +24,10 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
-    TranslateModule
+    TranslateModule,
   ],
-  exports: [RouterModule],
-  bootstrap: [AllDepartmentsComponent]
+  // exports: [RouterModule],
+  // bootstrap: [AllDepartmentsComponent]
 })
 export class CategoriesModule {
 
