@@ -332,12 +332,12 @@
                     </div>
                     <!-- items component -->
                     <ng-container *ngFor="let item of productsList">
-                        <div class="row component my-3 pb-5 border-bottom"
+                        <div class="row component my-3 pb-5 border-bottom btn d-block"
                             [routerLink]="['/departments/product/'+item.id]" routerLinkActive="">
-                            <div class="col-m-6 col-8 col-md-3 comp-img">
+                            <div class="col-sm-8 col-6 col-md-3 comp-img">
                                 <img class="img-fluid" src={{item.image}} />
                             </div>
-                            <div class="col-m-6 col-4 col-md-9 comp-details">
+                            <div class="col-sm-4 col-6 col-md-9 comp-details">
                                 <a>
                                     <span>{{item.description}}</span>
                                 </a><br>
