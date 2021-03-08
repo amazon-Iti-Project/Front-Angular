@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NotFoundComponent } from './Modules/customer/components/not-found/not-found.component';
+import { NotFoundComponent } from './appComponent/not-found/not-found.component';
 import { ShippingFormComponent } from './Modules/orders/shipping-form/shipping-form.component';
 
 const routes: Routes = [

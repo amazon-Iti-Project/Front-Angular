@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeBodyComponent } from './components/home-body/home-body.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -11,7 +10,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CartComponent } from '../orders/cart/cart.component';
 import { OrdersHomeComponent } from '../orders/Components/orders-home/orders-home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ShippingFormComponent } from '../orders/shipping-form/shipping-form.component';
+import { NotFoundComponent } from 'src/app/appComponent/not-found/not-found.component';
 import { TranslateModule } from '@ngx-translate/core';
 
 
@@ -19,7 +18,7 @@ const routes:Routes = [
   {
     path: '', component: HomeComponent, children: [
       { path: "home", component: HomeBodyComponent },
-      { path: 'category', loadChildren: () => import('../categories/categories.module').then(module => module.CategoriesModule) },
+      // { path: 'category', loadChildren: () => import('../categories/categories.module').then(module => module.CategoriesModule) },
       { path: 'departments', loadChildren: () => import('src/app/Modules/categories/categories.module').then(m => m.CategoriesModule) },
       {
         path: 'Orders',
@@ -50,7 +49,7 @@ CommonModule,
     ReactiveFormsModule,
     // for translate pipe and directives
     TranslateModule
+  ],
 
-  ]
 })
 export class CustomerModule { }

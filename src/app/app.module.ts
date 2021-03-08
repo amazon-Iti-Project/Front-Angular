@@ -17,6 +17,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {  TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { SharedModule } from './shared/shared.module';
 import { LanguageDirectionDirective } from './directives/language-direction.directive';
+import { CommonModule } from '@angular/common';
 console.log("app Module")
 // import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,6 +37,7 @@ console.log("app Module")
     LanguageDirectionDirective,
   ],
   imports: [
+CommonModule,
   BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
@@ -52,9 +54,9 @@ console.log("app Module")
     // by abanoub to be checked
     NgbModule,
     // firebase init neeed 2 module
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
-    AngularFireStorageModule,
+    // AngularFireModule.initializeApp(environment.firebaseConfig),
+    // AngularFirestoreModule,
+    // AngularFireStorageModule,
     // for displaying countries
     // MatSelectCountryModule.forRoot('en'),
     // BrowserAnimationsModule

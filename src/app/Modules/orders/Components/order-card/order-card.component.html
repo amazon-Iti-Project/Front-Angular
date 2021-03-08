@@ -2,12 +2,12 @@
     <div class=" card-header d-flex">
         <div class="col-3" >
 
-            <div><b>ORDER PLACED</b></div>
+            <div><b>{{ 'orderbody.ordersPlaced' | translate }}</b></div>
             <div>{{ model.orderDate | date }}</div>
         </div>
         <div class="col-3">
             <div>
-                <div><b>TOTAL</b></div>
+                <div><b>{{ 'orderbody.total' | translate }}</b></div>
                 <div>{{ model.orderPrice | currency }}</div>
             </div>
         </div>
@@ -16,7 +16,7 @@
     <div class="card-body">
         <div>
             <!-- <h5 class="card-title m-0">{{ model.dueDate | date:'EEEE' }} </h5> -->
-            <p class="card-text" style="color:green;"><b>Status</b> : {{ getEnumName(model.status) }}  
+            <p class="card-text" style="color:green;"><b>{{ 'orderbody.orderStatus' | translate }}</b> : {{ getEnumName(model.status) }}  
                 <!-- {{ model.deliveredDate | date:'fullDate' }}  -->
             </p>
         </div>
@@ -29,7 +29,7 @@
                             <b class="font-weight-bold" >{{ product.name }}</b> - {{ product.description }}
                         </p>
                         <div style="color: black;">
-                           <b>Eligable for return until</b>  <span> {{model.canCancelledUntil}}</span>
+                           <b>{{ 'orderbody.Eligablity' | translate }}</b>  <span> {{model.canCancelledUntil}}</span>
                         </div>
                         <div class="my-2" style="color: red;"> {{ product.price | currency}}</div>
                     </div>
@@ -38,36 +38,33 @@
 
 
             <div class="col-3">
-                <button class="btn btn-warning mb-3" style="width: 100%;"[disabled]="canTrack(model.status)" (click)="target()">Track
-                    package</button>
+                <button class="btn btn-warning mb-3" style="width: 100%;"[disabled]="canTrack(model.status)" (click)="target()">{{ 'orderbody.trackPackage' | translate }}</button>
 
                 <button class="btn btn-secondary my-1" [disabled]="canCancel(model.status)"
-                 (click)="open(mymodal)" style="width: 100%;">Request cancellation
+                 (click)="open(mymodal)" style="width: 100%;">{{ 'orderbody.requestCancellation' | translate }}
                 </button>
                 <ng-template #mymodal let-modal>
                     <div class="modal-header bg-light">
-                        <h4 class="modal-title" id="modal-basic-title">Request cancellation</h4>
+                        <h4 class="modal-title" id="modal-basic-title">{{ 'requestCancellation.requestCancellationModal' | translate }}</h4>
                         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>All items shown in the image will be cancelled and cannot be reverted
-                            back. You will also have the option to refuse the delivery at doorstep
-                            if you do not wish to cancel now.</p>
+                        <p>{{ 'requestCancellation.cancelModalBody' | translate }}</p>
                     </div>
                     <div class="modal-footer bg-light">
                         <button type="button" class="btn btn-outline-dark"
-                            (click)="modal.close('Save click')">Cancel</button>
-                        <a class="btn btn-outline-dark" [routerLink]="['/Orders/cancelledorders/'+ model.id]"  (click)="modal.close('Save click')">Ok</a>
+                            (click)="modal.close('Save click')">{{ 'requestCancellation.cancel' | translate }}</button>
+                        <a class="btn btn-outline-dark" [routerLink]="['/Orders/cancelledorders/'+ model.id]"  (click)="modal.close('Save click')">{{ 'requestCancellation.ok' | translate }}</a>
                     </div>
                 </ng-template>
 
 
-                <button class="btn btn-secondary my-1" style="width: 100%;">Return or Replace items</button>
-                <button class="btn btn-secondary my-1" style="width: 100%;">Share gift receipt </button>
-                <button class="btn btn-secondary my-1" style="width: 100%;">Write a product review</button>
-                <button class="btn btn-secondary my-1" style="width: 100%;">Archive order</button>
+                <button class="btn btn-secondary my-1" style="width: 100%;">{{ 'orderbody.returnOrder' | translate }}</button>
+                <button class="btn btn-secondary my-1" style="width: 100%;">{{ 'orderbody.shareGift' | translate }}</button>
+                <button class="btn btn-secondary my-1" style="width: 100%;">{{ 'orderbody.writeReview' | translate }}</button>
+                <button class="btn btn-secondary my-1" style="width: 100%;">{{ 'orderbody.archiveOrder' | translate }}</button>
             </div>
 
 
@@ -75,13 +72,13 @@
 
     </div>
 </div>
-<div class="alert alert-success my-5" role="alert" style="display: none; width: 100%;">
-    <!-- <div class="d-flex align-items-center"> <i class="chkIcon fas fa-check mr-2"></i>
+<!-- <div class="alert alert-success my-5" role="alert" style="display: none; width: 100%;">
+    <div class="d-flex align-items-center"> <i class="chkIcon fas fa-check mr-2"></i>
         <h4 class="alepxs-heading">Your order has been archived</h4>
-    </div> -->
+    </div>
     <div>
         <p class="pl-4">Even thought it will no longer appear in Your orders , you can view it in Archived
             orders from Your account</p>
     </div>
 
-</div>
+</div> -->

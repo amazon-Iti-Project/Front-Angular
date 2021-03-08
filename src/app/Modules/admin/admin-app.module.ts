@@ -5,10 +5,10 @@ import { AdminHomeComponent } from './admin-home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminAuthComponent } from './adminComponents/admin-auth/admin-auth.component';
 import { AdminHomeAuthenticatedModule } from './adminComponents/admin-home-authenticated/admin-home-authenticated.module';
-import { NotFoundComponent } from 'src/app/appComponent/not-found/not-found.component';
 import { AdminGuard } from 'src/app/guards/admin.guard';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { NotFoundComponent } from 'src/app/appComponent/not-found/not-found.component';
 console.log("admin")
 const routes: Routes = [
   {

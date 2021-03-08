@@ -18,16 +18,16 @@
         </div>
         <div class="avaliable">
           <div class="rating special-price"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> </div>
-          <p class="availability in-stock pull-right  special-price av"  >Availability: <span>In Stock</span></p>
+          <p class="availability in-stock pull-right  special-price av"> {{ 'PRODUCT.avaliable' | translate }}Availability: <span>In Stock</span></p>
         </div>
 
         <div class="short-description" >
           <!-- <h2 translate>product.overview</h2> -->
           <h2 >product.overview</h2>
-          <button onclick="changLang('en')">English</button>
-          <button onclick="changLang('ar')">Arabic</button>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.
-          <p> Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.</p>
+
+          <p>
+          {{prd?.description}}
+          </p>
         </div>
         <div class="product-color-size-area">
           <div class="color-area">
@@ -39,7 +39,7 @@
 
           </div>
           <div class="size-area">
-            <h2 class="saider-bar-title">Size</h2>
+            <h2 class="saider-bar-title"> {{ 'PRODUCT.size' | translate }}Size</h2>
             <div class="size">
             <p>{{prd?.size}}</p>
             </div>
@@ -48,24 +48,24 @@
         <div class="product-variation">
           <form action="#" method="post">
             <div class="cart-plus-minus">
-              <label for="qty">Quantity:</label>
+              <label for="qty"> {{ 'PRODUCT.quantity' | translate }}Quantity:</label>
               <div class="numbers-row">
                <p class="quantity">{{prd?.quantity}}</p>
               </div>
             </div>
-            <button (click)="addtoCart()" class="button pro-add-to-cart" title="Add to Cart" type="button"><span><i class="fa fa-shopping-basket"></i> Add to Cart</span></button>
+            <button (click)="addtoCart()" class="button pro-add-to-cart" title="Add to Cart" type="button"><span><i class="fa fa-shopping-basket"></i> {{ 'PRODUCT.addtocart' | translate }} Add to Cart</span></button>
           </form>
         </div>
         <div class="product-cart-option">
           <ul>
-            <li><i class="fa fa-heart-o"></i><span>Add to Wishlist</span></li>
-            <li><i class="fa fa-link"></i><span>Add to Compare</span></li>
-            <li><a href="#"><i class="fa fa-envelope"></i><span>Email to a Friend</span></a></li>
+            <li><i class="fa fa-heart-o"></i><span> {{ 'PRODUCT.wish' | translate }}Add to Wishlist</span></li>
+            <li><i class="fa fa-link"></i><span> {{ 'PRODUCT.compare' | translate }}Add to Compare</span></li>
+            <li><a href="#"><i class="fa fa-envelope"></i><span>{{ 'PRODUCT.email' | translate }} Email to a Friend</span></a></li>
           </ul>
         </div>
 
         <div class="share-box">
-          <div class="titlee">Share in social media</div>
+          <div class="titlee"> {{ 'PRODUCT.share' | translate }}Share in social media</div>
           <div class="socials-box"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-youtube"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-instagram"></i></a> </div>
         </div>
 

@@ -2,7 +2,7 @@
 export interface Ifee {
     id:number
     fee:number;
-    admin:string;
+    admin:number;
     category:number;
 }
 

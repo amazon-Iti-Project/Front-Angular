@@ -10,8 +10,8 @@
             <div class="line ml-2"></div>
           </div>
           <div>
-            <div style="font-weight: bold;">Ordered {{ order.orderDate | date}}</div>
-            <h6>Previously expected {{order.dueDate}}</h6>
+            <div style="font-weight: bold;">{{ 'deliveringPackage.ordered' | translate }} {{ order.orderDate | date}}</div>
+            <h6>{{ 'deliveringPackage.previouslyExpected' | translate }} {{order.dueDate}}</h6>
           </div>
 
         </div>
@@ -22,7 +22,7 @@
             <div class="dshLn ml-2 mt-2"></div>
           </div>
           <div class="pkgLvl">
-            Shipped
+            {{ 'deliveringPackage.shipped' | translate }}
           </div>
 
         </div>
@@ -33,7 +33,7 @@
             <div class="dshLn ml-2 mt-2"></div>
           </div>
           <div class="pkgLvl">
-            Out for delivery
+            {{ 'deliveringPackage.outForDelivery' | translate }}
           </div>
 
         </div>
@@ -43,7 +43,7 @@
             </div>
           </div>
           <div class="pkgLvl">
-            Arriving {{order.deliveredDate | date}}
+            {{ 'deliveringPackage.arriving' | translate }} {{order.deliveredDate | date}}
           </div>
 
         </div>
@@ -60,12 +60,12 @@
 
     <div class="info-box d-flex mb-5">
       <div class="add-box m-3 p-3 col-12">
-        <div style="font-weight:bold ;" class="mb-2">Address info</div>
+        <div style="font-weight:bold ;" class="mb-2"> {{ 'deliveringPackage.addresInfo' | translate }} </div>
         <div> {{order.address}}
         </div>
-        <div>
+        <!-- <div>
           Reiciendis ipsam consequatur
-        </div>
+        </div> -->
       </div>
 
       <!-- <div class="add-box m-3 p-3 col-6">

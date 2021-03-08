@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Iadmin } from 'src/app/viewModel/Iadmin';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
 // init by npm i (guid-typescript --save) to generate an token
 import { Guid } from 'guid-typescript';
 import { first, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })

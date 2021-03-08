@@ -3,33 +3,35 @@
     <div class="row">
         <!-- main page that contain header and all details -->
         <div class="col-md-11 col-sm-12 px-0">
+            <!-- nab bar starts -->
             <nav class="shadow-sm result-details my-auto">
                 <p class="align-items-center my-auto">
-                1-16 of over 2,000 results for <span class="cat-name">"{{depName}}"</span>
+                {{'department.resultCount' | translate}} <span class="cat-name">"{{depName}}"</span>
                 </p>
                 <div class="dropdown">
                     <button class="btn btn-secondary filter-btn dropdown-toggle" type="button"
                     id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">Sort by: Featured
+                    aria-expanded="false">{{'department.sortBy' | translate}}: {{'department.featured' | translate}}
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Price: Low to High</a>
-                        <a class="dropdown-item" href="#">Price: High to Low</a>
-                        <a class="dropdown-item" href="#">Avg. Customer Review</a>
-                        <a class="dropdown-item" href="#">Newest Arrivals</a>
+                        <a class="dropdown-item" href="#">{{'department.price' | translate}}: {{'department.lowToHigh' | translate}}</a>
+                        <a class="dropdown-item" href="#">{{'department.price' | translate}}: {{'department.highToLow' | translate}}</a>
+                        <a class="dropdown-item" href="#">{{'department.customerReview' | translate}}</a>
+                        <a class="dropdown-item" href="#">{{'department.newArrivals' | translate}}</a>
                     </div>
                 </div>
             </nav>
-            <!-- main page components -->
+            <!-- nav bar ends -->
+            <!-- main page components starts-->
             <div class="row mt-4 w-100 mx-0">
-                <!-- left side menu for filtering -->
+                <!-- left side menu for filtering starts -->
                 <div class="col-2 left-menu">
         <div id="department" class="mb-3">
-            <strong><span class="heading">Department</span></strong><br>
-            <a href="#"><span>Computers & Tablets</span></a><br>
+            <strong><span class="heading">{{'department.sideMenuHeader' |translate}}</span></strong><br>
+            <a href="#"><span>{{'department.menuDep7' |translate}} & {{'department.tablets' |translate}}</span></a><br>
             <div class="side-links">
-                <a href="#"><span>Traditional Laptop Computers</span></a><br>
-                <a href="#"><span>2 in 1 Laptop Computers</span></a>
+                <a href="#"><span>{{'department.traditionalComputer' |translate}}</span></a><br>
+                <a href="#"><span>{{'department.twoInOne' |translate}}</span></a>
             </div>
             <a id="show-more-links" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -37,47 +39,44 @@
                     <path fill-rule="evenodd"
                         d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                 </svg>
-                <span>See All 7 Departments</span>
+                <span>{{'department.seeMoreDeps' |translate}}</span>
             </a>
         </div>
         <div id="reviews" class="mb-3">
-            <strong><span class="heading">Avg. Customer Review</span></strong><br>
+            <strong><span class="heading">{{'department.customerReview' |translate}}</span></strong><br>
             <a href="#">
                 <div class="rating mx-0">
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                         class="fas fa-star"></i><i class="far fa-star"></i>
-                    <span>& Up</span>
+                    <span>& {{'department.up' |translate}}</span>
                 </div>
             </a>
             <a href="#">
                 <div class="rating mx-0">
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                         class="far fa-star"></i><i class="far fa-star"></i>
-                    <span>& Up</span>
+                    <span>& {{'department.up' |translate}}</span>
                 </div>
             </a>
             <a href="#">
                 <div class="rating mx-0">
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i
                         class="far fa-star"></i><i class="far fa-star"></i>
-                    <span>& Up</span>
+                    <span>& {{'department.up' |translate}}</span>
                 </div>
             </a>
             <a href="#">
                 <div class="rating mx-0">
                     <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
                         class="far fa-star"></i><i class="far fa-star"></i>
-                    <span>& Up</span>
+                    <span>& {{'department.up' |translate}}</span>
                 </div>
             </a>
         </div>
         <div id="brand" class="mb-3">
-            <strong><span class="heading">Brand</span></strong><br>
+            <strong><span class="heading">{{'department.brand' |translate}}</span></strong><br>
 
-            <!-- add Brand when json is done -->
-             <!-- "brand" : ["HP", "Acer", "Lenovo", "ASUS", "Dell", "Microsoft", "Apple"] -->
-            
-            <!-- <ng-container *ngFor="let item of productsList.brand">
+                        <!-- <ng-container *ngFor="let item of productsList.brand">
                 <a href="#">
                     <input type="checkbox"> {{item}}
                 </a><br>
@@ -88,28 +87,28 @@
                     <path fill-rule="evenodd"
                         d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                 </svg>
-                <span>See more</span>
+                <span>{{'department.seeMore' |translate}}</span>
             </a>
         </div>
         <div id="price-filter" class="mb-3">
-            <strong><span class="heading">Price</span></strong><br>
+            <strong><span class="heading">{{'department.price' |translate}}</span></strong><br>
             <a href="#">
-                <span>Under $500</span>
+                <span>{{'department.under' |translate}} $500</span>
             </a><br>
             <a href="#">
-                <span>$500 to $600</span>
+                <span>$500 {{'department.to' |translate}} $600</span>
             </a><br>
             <a href="#">
-                <span>$600 to $700</span>
+                <span>$600 {{'department.to' |translate}} $700</span>
             </a><br>
             <a href="#">
-                <span>$700 to $800</span>
+                <span>$700 {{'department.to' |translate}} $800</span>
             </a><br>
             <a href="#">
-                <span>$800 to $1000</span>
+                <span>$800 {{'department.to' |translate}} $1000</span>
             </a><br>
             <a href="#">
-                <span>$1000 & Above</span>
+                <span>$1000 & {{'department.above' |translate}}</span>
             </a><br>
             <div class="row d-flex justify-content-around">
                 <div class="input-group my-3 total-grp">
@@ -124,11 +123,11 @@
                     </div>
                     <input type="text" class="form-control min-input" placeholder="Max">
                 </div>
-                <button type="button" class="btn btn-secondary go-btn my-3">Go</button>
+                <button type="button" class="btn btn-secondary go-btn my-3">{{'department.go' |translate}}</button>
             </div>
         </div>
         <div id="os" class="mb-3">
-            <strong><span class="heading">Computer Operating System</span></strong><br>
+            <strong><span class="heading">{{'department.computerOS' |translate}}</span></strong><br>
             <a href="#">
                 <span>Windows</span>
             </a><br>
@@ -143,7 +142,7 @@
             </a><br>
         </div>
         <div id="activity" class="mb-3">
-            <strong><span class="heading">Computer Activity Type</span></strong><br>
+            <strong><span class="heading">{{'department.computerActivityType' |translate}}</span></strong><br>
             <a href="#">
                 <input type="checkbox"> Gaming
             </a><br>
@@ -155,30 +154,30 @@
             </a><br>
         </div>
         <div id="disp-size" class="mb-3">
-            <strong><span class="heading">Laptop Display Size</span></strong><br>
+            <strong><span class="heading">{{'department.laptopSize' |translate}}</span></strong><br>
             <a href="#">
-                <input type="checkbox"> 17 Inches & Above
+                <input type="checkbox"> 17 {{'department.inches' |translate}} & {{'department.above' |translate}}
             </a><br>
             <a href="#">
-                <input type="checkbox"> 16 to 16.9 Inches
+                <input type="checkbox"> 16 {{'department.to' |translate}} 16.9 {{'department.inches' |translate}}
             </a><br>
             <a href="#">
-                <input type="checkbox"> 15 to 15.9 Inches
+                <input type="checkbox"> 15 {{'department.to' |translate}} 15.9 {{'department.inches' |translate}}
             </a><br>
             <a href="#">
-                <input type="checkbox"> 14 to 14.9 Inches
+                <input type="checkbox"> 14 {{'department.to' |translate}} 14.9 {{'department.inches' |translate}}
             </a><br>
             <a href="#">
-                <input type="checkbox"> 13 to 13.9 Inches
+                <input type="checkbox"> 13 {{'department.to' |translate}} 13.9 {{'department.inches' |translate}}
             </a><br>
             <a href="#">
-                <input type="checkbox"> 12 to 12.9 Inches
+                <input type="checkbox"> 12 {{'department.to' |translate}} 12.9 {{'department.inches' |translate}}
             </a><br>
             <a href="#">
-                <input type="checkbox"> 11 to 11.9 Inches
+                <input type="checkbox"> 11 {{'department.to' |translate}} 11.9 {{'department.inches' |translate}}
             </a><br>
             <a href="#">
-                <input type="checkbox"> 11 Inches & Under
+                <input type="checkbox"> 11 {{'department.inches' |translate}} & {{'department.under' |translate}}
             </a><br>
         </div>
                 </div>
@@ -191,7 +190,7 @@
                 </div>
                 <div class=" col-9 comp-head-details">
                     <a href="#">
-                    <span>{{depName}} For Your Lifestyle: Discover More</span>
+                    <span>{{depName}} {{'department.lifeStyleHeader' |translate}}</span>
                     </a>
                 </div>
             </div>
@@ -201,9 +200,10 @@
                     <div class=" col-3 comp-img">
                         <img class="img-fluid" src={{item.image}} />
                     </div>
-                    <div class=" col-9 comp-details">
-                        <a [routerLink]= "'/category/product/1'">
-                            <span>{{item.name}}</span>
+                    <div id="price-filter" class="mb-3">
+                        <strong><span class="heading">Price</span></strong><br>
+                        <a href="#">
+                            <span>Under $500</span>
                         </a><br>
                         <div id="review-card" class="mt-2">
                             <a id="show-more-links" href="#" data-toggle="tooltip" data-title="4 stars"
@@ -227,7 +227,7 @@
                             <!-- <span class="old-price">${{item.oldPrice}}</span> -->
                         </div>
                         <div class="shipping-to" *ngIf="item.shippingLabel">
-                            <small>Ships to Egypt</small>
+                            <small>{{'department.shipsToEgypt' |translate}}</small>
                         </div>
                     </div>
                 </div>
@@ -237,9 +237,9 @@
             <!-- flag & title -->
             <div class="row component my-3">
                 <div class="flag">
-                    <span>Amazon's <span class="org">Choice</span></span>
+                    <span>{{'department.amazons' |translate}}<span class="org">{{'department.choice' |translate}}</span></span>
                 </div>
-                <span class="flag-title">Customers shopped Amazon's Choice for…</span>
+                <span class="flag-title">{{'department.amazonChoice' |translate}}</span>
             </div>
             <!-- list items -->
             <div class="row component my-3 pb-3 border-bottom">
@@ -249,28 +249,44 @@
                     <div class="mt-4 comp-img">
                         <img class="img-fluid" src={{item.image}}>
                     </div>
-                    <div class="comp-details mt-5">
+                    <div id="activity" class="mb-3">
+                        <strong><span class="heading">Computer Activity Type</span></strong><br>
                         <a href="#">
-                            <span class="choice-font">{{item.name}}</span>
+                            <input type="checkbox"> Gaming
+                        </a><br>
+                        <a href="#">
+                            <input type="checkbox"> Business
+                        </a><br>
+                        <a href="#">
+                            <input type="checkbox"> Personal
                         </a><br>
                     </div>
-                    <a id="show-more-links" href="#">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star-half-alt"></i>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                            fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                        </svg><span style="font-size: 14px;">{{item.rate}}</span>
-                    </a><br>
-                    <div class="mt-2">
-                        <span>
-                            <sup class="sign">$</sup>
-                            <span class="total">{{item.price}}</span>
-                            <!-- <sup class="power">{{item.cents}}</sup> -->
-                        </span>
-                        <!-- <span class="old-price">${{item.oldPrice}}</span> -->
+                    <div id="disp-size" class="mb-3">
+                        <strong><span class="heading">Laptop Display Size</span></strong><br>
+                        <a href="#">
+                            <input type="checkbox"> 17 Inches & Above
+                        </a><br>
+                        <a href="#">
+                            <input type="checkbox"> 16 to 16.9 Inches
+                        </a><br>
+                        <a href="#">
+                            <input type="checkbox"> 15 to 15.9 Inches
+                        </a><br>
+                        <a href="#">
+                            <input type="checkbox"> 14 to 14.9 Inches
+                        </a><br>
+                        <a href="#">
+                            <input type="checkbox"> 13 to 13.9 Inches
+                        </a><br>
+                        <a href="#">
+                            <input type="checkbox"> 12 to 12.9 Inches
+                        </a><br>
+                        <a href="#">
+                            <input type="checkbox"> 11 to 11.9 Inches
+                        </a><br>
+                        <a href="#">
+                            <input type="checkbox"> 11 Inches & Under
+                        </a><br>
                     </div>
                 </div>
                 </ng-container>
@@ -281,14 +297,14 @@
             <div class="row component my-3 align-items-center">
                 <img src="../../../../../assets/images/geek-icon.jpg" id="geek-icon">
                 <div class="px-2">
-                    <span class="geek-head">Editorial recommendations</span><br>
-                    <span>By </span>
+                    <span class="geek-head">{{'department.editRecommend' |translate}}</span><br>
+                    <span>{{'department.by' |translate}}</span>
                     <a href="#">
-                        <span class="px-2">Geek</span>
+                        <span class="px-2">{{'department.geek' |translate}}</span>
                     </a>
                     <span>|</span>
                     <a href="#">
-                        <span class="px-2">Onsite Associates Program</span>
+                        <span class="px-2">{{'department.associatesProgram' |translate}}</span>
                         <i class="far fa-question-circle" style="color: gray;"></i>
                     </a>
                 </div>
@@ -314,38 +330,159 @@
                     <div class="mt-4 comp-img">
                         <img class="img-fluid rec-img" src={{item.image}}>
                     </div>
-                    <div class="comp-details mt-5">
-                        <a href="#">
-                            <span class="choice-font">{{item.name}}</span>
-                        </a><br>
+                    <!-- items component -->
+                    <ng-container *ngFor="let item of productsList">
+                        <div class="row component my-3 pb-5 border-bottom"
+                            [routerLink]="['/departments/product/'+item.id]" routerLinkActive="">
+                            <div class="col-m-6 col-8 col-md-3 comp-img">
+                                <img class="img-fluid" src={{item.image}} />
+                            </div>
+                            <div class="col-m-6 col-4 col-md-9 comp-details">
+                                <a>
+                                    <span>{{item.description}}</span>
+                                </a><br>
+                                <div id="review-card" class="mt-2">
+                                    <a id="show-more-links" data-toggle="tooltip" data-title="4 stars"
+                                        data-placement="bottom">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="far fa-star"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                        </svg><span style="font-size: 14px;">{{item.rate}}</span>
+                                    </a>
+                                </div>
+                                <div class="mt-2">
+                                    <span>
+                                        <sup class="sign">$</sup>
+                                        <span class="total">{{item.price}}</span>
+                                        <!-- <sup class="power">{{item.cents}}</sup> -->
+                                    </span>
+                                    <!-- <span class="old-price">${{item.oldPrice}}</span> -->
+                                </div>
+                                <div class="shipping-to" *ngIf="item.shippingLabel">
+                                    <small>Ships to Egypt</small>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <!-- amazon's choice section -->
+                    <div>
+                        <!-- flag & title -->
+                        <div class="row component my-3">
+                            <div class="flag">
+                                <span>Amazon's <span class="org">Choice</span></span>
+                            </div>
+                            <span class="flag-title">Customers shopped Amazon's Choice for…</span>
+                        </div>
+                        <!-- list items -->
+                        <div class="row component my-3 pb-3 border-bottom">
+                            <ng-container *ngFor="let item of productsList">
+                                <div class="col-3">
+                                    <strong><span>{{depName}}</span></strong><br>
+                                    <div class="mt-4 comp-img">
+                                        <img class="img-fluid" src={{item.image}}>
+                                    </div>
+                                    <div class="comp-details mt-5">
+                                        <a href="#">
+                                            <span class="choice-font">{{item.name}}</span>
+                                        </a><br>
+                                    </div>
+                                    <a id="show-more-links" href="#">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star-half-alt"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                        </svg><span style="font-size: 14px;">{{item.rate}}</span>
+                                    </a><br>
+                                    <div class="mt-2">
+                                        <span>
+                                            <sup class="sign">$</sup>
+                                            <span class="total">{{item.price}}</span>
+                                            <!-- <sup class="power">{{item.cents}}</sup> -->
+                                        </span>
+                                        <!-- <span class="old-price">${{item.oldPrice}}</span> -->
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
                     </div>
-                    <a id="show-more-links" href="#">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star-half-alt"></i>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                            fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                        </svg><span style="font-size: 14px;">{{item.rate}}</span>
-                    </a><br>
-                    <div class="mt-2">
-                        <span>
-                            <sup class="sign">$</sup><span class="total">{{item.price}}</span>
-                            <!-- <sup class="power">{{item.cents}}</sup> -->
-                        </span>
+                    <!-- recommendation section -->
+                    <div *ngIf="depName == 'Laptops'">
+                        <div class="row component my-3 align-items-center">
+                            <img src="../../../../../assets/images/geek-icon.jpg" id="geek-icon">
+                            <div class="px-2">
+                                <span class="geek-head">Editorial recommendations</span><br>
+                                <span>By </span>
+                                <a href="#">
+                                    <span class="px-2">Geek</span>
+                                </a>
+                                <span>|</span>
+                                <a href="#">
+                                    <span class="px-2">Onsite Associates Program</span>
+                                    <i class="far fa-question-circle" style="color: gray;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row component my-3 border-bottom">
+                            <div class="col-3">
+                                <span class="geek-head">Best Laptops</span><br>
+                                <small>Aug 12, 2020 - 5 Recommendations</small><br>
+                                <p class="py-4">Laptops are popular because of how they offer the winning
+                                    combination of durability, power and impressive design. And of course, there are
+                                    plenty of user-friendly laptops out there that don't compromise on performance.
+                                    The best laptops not only last a long time but offer powerful components inside
+                                    an elegant design. Whether you want a powerful laptop for graphics work or
+                                    crunching numbers or a relatively basic one for simpler tasks.</p>
+                                <a href="#">
+                                    <span>Read full article</span>
+                                </a>
+                            </div>
+                            <ng-container *ngFor="let item of productsList">
+                                <div class="col-3 ">
+                                    <!-- <strong><span class="geek-head">{{item.title}}</span></strong><br> -->
+                                    <!-- <small>{{item.subtitle}}</small> -->
+                                    <div class="mt-4 comp-img">
+                                        <img class="img-fluid rec-img" src={{item.image}}>
+                                    </div>
+                                    <div class="comp-details mt-5">
+                                        <a href="#">
+                                            <span class="choice-font">{{item.name}}</span>
+                                        </a><br>
+                                    </div>
+                                    <a id="show-more-links" href="#">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star-half-alt"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                        </svg><span style="font-size: 14px;">{{item.rate}}</span>
+                                    </a><br>
+                                    <div class="mt-2">
+                                        <span>
+                                            <sup class="sign">$</sup><span class="total">{{item.price}}</span>
+                                            <!-- <sup class="power">{{item.cents}}</sup> -->
+                                        </span>
+                                    </div>
+                                    <p class="my-3">{{item.description}}</p>
+                                </div>
+                            </ng-container>
+                        </div>
                     </div>
-                    <p class="my-3">{{item.description}}</p>
                 </div>
                 </ng-container>
             </div>
         </div>
-                </div>
-            </div>
-        </div>
         <!-- side menu -->
         <div *ngIf="currentUser" class="col-1 sticky-top d-sm-none d-md-block" id="side-menu">
-            <span> Subtotal</span><br>
+            <span>{{'department.subTotal' | translate}}</span><br>
             <strong class="price-tag">$<span>{{totalPrice}}</span></strong>
             <div class="cart-items w-90 mt-3">
                 <ng-container *ngFor="let item of cartItems">
