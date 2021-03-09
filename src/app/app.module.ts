@@ -54,9 +54,9 @@ CommonModule,
     // by abanoub to be checked
     NgbModule,
     // firebase init neeed 2 module
-    // AngularFireModule.initializeApp(environment.firebaseConfig),
-    // AngularFirestoreModule,
-    // AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     // for displaying countries
     // MatSelectCountryModule.forRoot('en'),
     // BrowserAnimationsModule

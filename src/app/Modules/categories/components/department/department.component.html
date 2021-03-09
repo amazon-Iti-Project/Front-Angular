@@ -334,12 +334,12 @@
                     <ng-container *ngFor="let item of productsList">
                         <div class="row component my-3 pb-5 border-bottom btn d-block"
                             [routerLink]="['/departments/product/'+item.id]" routerLinkActive="">
-                            <div class="col-sm-8 col-6 col-md-3 comp-img">
+                            <div class=" col-12 col-md-12 comp-img">
                                 <img class="img-fluid" src={{item.image}} />
                             </div>
-                            <div class="col-sm-4 col-6 col-md-9 comp-details">
+                            <div class=" col-12 col-md-12 comp-details">
                                 <a>
-                                    <span>{{item.description}}</span>
+                                    <span >{{item.name}}</span>
                                 </a><br>
                                 <div id="review-card" class="mt-2">
                                     <a id="show-more-links" data-toggle="tooltip" data-title="4 stars"
@@ -380,14 +380,14 @@
                         <!-- list items -->
                         <div class="row component my-3 pb-3 border-bottom">
                             <ng-container *ngFor="let item of productsList">
-                                <div class="col-3">
+                                <div class="col-12">
                                     <strong><span>{{depName}}</span></strong><br>
                                     <div class="mt-4 comp-img">
                                         <img class="img-fluid" src={{item.image}}>
                                     </div>
                                     <div class="comp-details mt-5">
                                         <a href="#">
-                                            <span class="choice-font">{{item.name}}</span>
+                                            <span class="choice-font text-danger">{{item.name}}</span>
                                         </a><br>
                                     </div>
                                     <a id="show-more-links" href="#">
@@ -430,7 +430,7 @@
                             </div>
                         </div>
                         <div class="row component my-3 border-bottom">
-                            <div class="col-3">
+                            <div class="col-12">
                                 <span class="geek-head">Best Laptops</span><br>
                                 <small>Aug 12, 2020 - 5 Recommendations</small><br>
                                 <p class="py-4">Laptops are popular because of how they offer the winning
