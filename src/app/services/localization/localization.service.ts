@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -10,13 +11,17 @@ export class LocalizationService {
   // to can subscribe to the selected language
   selectedLanguage:Observable<string> = this.langDataSubject.asObservable();
 
-  constructor(public translate: TranslateService) {}
+  constructor(public translate: TranslateService,private router:Router) {}
 
 // to change selected language 
   changeSelectedLanguage(selectedLang: string):void {
     this.langDataSubject.next(selectedLang)
     // to set in local storage and use this language
     this.setLanguage(selectedLang);
+    let currUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currUrl]);
+  }); 
   }
 
     setLanguage(lang: string) {

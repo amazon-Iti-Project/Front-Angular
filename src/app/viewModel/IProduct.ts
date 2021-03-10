@@ -11,7 +11,7 @@ export interface Iproduct{
   color:string;
   size:string;
   subTitle:string;
-
+  about?:String;
   price:number;
   shipping:Ishipping; 
   fee:Ifee; 

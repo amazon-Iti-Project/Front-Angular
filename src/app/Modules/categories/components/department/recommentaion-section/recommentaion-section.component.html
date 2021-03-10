@@ -1,0 +1,124 @@
+<!-- recommendation section -->
+<div *ngIf="depName == 'Laptops'" >
+    <div class="row component my-3 align-items-center">
+        <img src="../../../../../assets/images/geek-icon.jpg" id="geek-icon">
+        <div class="px-2">
+            <span class="geek-head">{{'department.editRecommend' |translate}}</span><br>
+            <span>{{'department.by' |translate}}</span>
+            <a >
+                <span class="px-2">{{'department.geek' |translate}}</span>
+            </a>
+            <span>|</span>
+            <a >
+                <span class="px-2">{{'department.associatesProgram' |translate}}</span>
+                <i class="far fa-question-circle" style="color: gray;"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="row component my-3 border-bottom">
+        <div class="col-3">
+            <span class="geek-head">Best Laptops</span><br>
+            <small>Aug 12, 2020 - 5 Recommendations</small><br>
+            <p class="py-4">Laptops are popular because of how they offer the winning
+                combination of durability, power and impressive design. And of course, there are
+                plenty of user-friendly laptops out there that don't compromise on performance.
+                The best laptops not only last a long time but offer powerful components inside
+                an elegant design. Whether you want a powerful laptop for graphics work or
+                crunching numbers or a relatively basic one for simpler tasks.</p>
+            <a >
+                <span>Read full article</span>
+            </a>
+        </div>
+
+        <ng-container *ngFor="let item of productsList">
+        <div class="col-3 ">
+            <!-- <strong><span class="geek-head">{{item.title}}</span></strong><br> -->
+            <!-- <small>{{item.subtitle}}</small> -->
+            <div class="mt-4 comp-img">
+                <img class="img-fluid rec-img" src={{item.image}}>
+            </div>
+            <!-- amazon's choice section -->
+                <!-- flag & title -->
+                <div class="row component my-3">
+                    <div class="flag">
+                        <span>Amazon's <span class="org">Choice</span></span>
+                    </div>
+                    <span class="flag-title">Customers shopped Amazon's Choice for…</span>
+                </div>
+        </div>
+        </ng-container>
+           <!-- items component -->
+           <ng-container *ngFor="let item of productsList">
+            <div class="row component my-3 pb-5 border-bottom btn d-block"
+                [routerLink]="['/departments/product/'+item.id]" routerLinkActive="">
+                <div class=" col-12 col-md-12 comp-img">
+                    <img class="img-fluid" src={{item.image}} />
+                </div>
+                <div class=" col-12 col-md-12 comp-details">
+                    <a>
+                        <span >{{item.name}}</span>
+                    </a><br>
+                    <div id="review-card" class="mt-2">
+                        <a id="show-more-links" data-toggle="tooltip" data-title="4 stars"
+                            data-placement="bottom">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="far fa-star"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg><span style="font-size: 14px;">{{item.rate}}</span>
+                        </a>
+                    </div>
+                    <div class="mt-2">
+                        <span>
+                            <sup class="sign">$</sup>
+                            <span class="total">{{item.price}}</span>
+                            <!-- <sup class="power">{{item.cents}}</sup> -->
+                        </span>
+                        <!-- <span class="old-price">${{item.oldPrice}}</span> -->
+                    </div>
+                    <div class="shipping-to" *ngIf="item.shippingLabel">
+                        <small>Ships to Egypt</small>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+          <!-- list items -->
+          <div class="row component my-3 pb-3 border-bottom">
+            <ng-container *ngFor="let item of productsList">
+                <div class="col-12">
+                    <strong><span>{{depName}}</span></strong><br>
+                    <div class="mt-4 comp-img">
+                        <img class="img-fluid" src={{item.image}}>
+                    </div>
+                    <div class="comp-details mt-5">
+                        <a >
+                            <span class="choice-font ">{{item.name}}</span>
+                        </a><br>
+                    </div>
+                    <a id="show-more-links" >
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star-half-alt"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                        </svg><span style="font-size: 14px;">{{item.rate}}</span>
+                    </a><br>
+                    <div class="mt-2">
+                        <span>
+                            <sup class="sign">$</sup>
+                            <span class="total">{{item.price}}</span>
+                            <!-- <sup class="power">{{item.cents}}</sup> -->
+                        </span>
+                        <!-- <span class="old-price">${{item.oldPrice}}</span> -->
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

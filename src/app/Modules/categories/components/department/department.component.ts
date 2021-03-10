@@ -1,9 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product/product.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { Iproduct } from 'src/app/viewModel/IProduct';
 import { Iuser } from 'src/app/viewModel/Iuser';
+
+interface DepartmentComModel {
+  depName?: string;
+  productsList?: Iproduct[];
+  currentUser?: Iuser | undefined;
+  cartItems?: Iproduct[];
+  totalPrice?: number;
+}
 
 @Component({
   selector: 'app-department',
@@ -11,46 +19,60 @@ import { Iuser } from 'src/app/viewModel/Iuser';
   styleUrls: ['./department.component.scss']
 })
 export class DepartmentComponent implements OnInit {
+  departmentCompModel:DepartmentComModel={};
 
-  depName : string | null =null;
-  productsList: Iproduct[] | null = [];
-  currentUser : Iuser | undefined = undefined;
-  cartItems : Iproduct[] = [];
-  totalPrice = 0.0;
-  constructor(private activatedRoute : ActivatedRoute,
-    private prodService : ProductService,
-    private userService : UserService) { }
+  constructor(private activatedRoute: ActivatedRoute,
+    private router:Router,
+    private prodService: ProductService,
+    private userService: UserService) { }
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe( param => {
-      this.depName = param.get('depName');
-      this.prodService.getProductsByCatName(this.depName?this.depName.toLowerCase():'')
-      .subscribe(
-        response => { 
-          this.productsList = response;
-          console.log("products: ",this.productsList);
-        },
-        error => { console.log(error); }
-      )
+    console.log("on Init department")
+    this.departmentCompModel.totalPrice=0;
+    let currUrl = this.router.url;
+    console.log(currUrl)
+    this.activatedRoute.paramMap.subscribe(param => {
+      let paramName = param.get('depName');
+      this.departmentCompModel.depName = paramName ? paramName:undefined;
+      this.prodService.getProductsByCatName(this.departmentCompModel.depName ? this.departmentCompModel.depName.toLowerCase() : '')
+        .subscribe(
+          response => {
+            this.departmentCompModel.productsList = response;
+            console.log("products: ", this.departmentCompModel.productsList);
+          },
+          error => { console.log(error); }
+        )
     });
     // this.productService.getAllProducts().subscribe(
     //   response => this.productsList = response,
     //   error => console.log(error)
     // )
-    // let token = this.userService.isUserSignedIn()
-    let token = "aea407a0-7f44-fcd0-c325-b1b3cbbe7711"
-    if(token){
+    let token = this.userService.isUserSignedIn()
+    if (token) {
       this.userService.getUserByToken(token).subscribe(
         response => {
-          this.currentUser = response
-          this.currentUser.cart.forEach( id => {
-            this.prodService.getProductById(id).subscribe(
-              response => {
-                this.cartItems.push(response)
-                this.totalPrice += response.price
-              },
-              error => console.log(error)
-            )
-          });
+          console.log("user",response)
+          this.departmentCompModel.currentUser = response
+
+          this.prodService.getListOfProductsById(this.departmentCompModel.currentUser?.cart)
+          .subscribe(
+            (carts)=>{
+              this.departmentCompModel.cartItems = carts
+              if(this.departmentCompModel.totalPrice)
+                for(let prod of carts){
+                  this.departmentCompModel.totalPrice += prod.price
+                  }
+              }
+          )
+          // this.departmentCompModel.currentUser.cart.forEach(id => {
+          //   this.prodService.getProductById(id).subscribe(
+          //     response => {
+          //       this.departmentCompModel.cartItems?.push(response)
+          //       if(this.departmentCompModel.totalPrice)
+          //       this.departmentCompModel.totalPrice += response.price
+          //     },
+          //     error => console.log(error)
+          //   )
+          // });
         },
         error => console.log(error)
       )

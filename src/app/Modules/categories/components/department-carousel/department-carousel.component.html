@@ -1,0 +1,42 @@
+<div class="container">
+        <!-- flag & title -->
+        <div class="row component my-3">
+            <div class="flag">
+                <span>{{'department.amazons' |translate}}<span class="org">{{'department.choice' |translate}}</span></span>
+            </div>
+            <span class="flag-title">{{'department.amazonChoice' |translate}}</span>
+        </div>
+    <div class="row nowrap justify-content-md-center justify-content-center  position-relative">
+        <ng-container *ngFor="let item of carouselList; index as sn;">
+            <!-- <div class="col-md-4 col-12 ">
+            </div> -->
+
+            <div class="card mx-2" style="width: 15rem;">
+                <div class="overflow-hidden img-container">
+                    <img [src]="item.image" class="" alt="..." style="height: 100%;width: 100%;">
+                </div>
+                <div class="card-header"><span class="badge badge-warning">{{depName}}</span></div>
+                <div class="card-body">
+                    <a  [routerLink]="['/departments/product/'+item.id]" routerLinkActive=""  >
+                    <h5 class="card-title">{{item.name}}</h5>
+                    </a>
+                    <p class="card-text">{{item.about}}</p>
+
+                </div>
+                <!-- amazon's choice section -->
+                <!-- <div id="disp-size" class="mb-3 card-footer"></div> -->
+                
+            </div>
+        </ng-container>
+        <div class="carousel-previous d-flex align-items-center">
+            <a (click)="onClickPrevious()" class="bg-secondary  rounded-circle p-3 text-white"><i class="fas fa-chevron-left"></i></a>
+        </div>
+        <div class="carousel-next d-flex align-items-center">
+          <a (click)="onClickNext()" class="bg-secondary  rounded-circle p-3 text-white"><i class="fas fa-chevron-right"></i></a>
+          </div>
+       
+    </div>
+
+</div>
+<!-- carousel ends -->
+

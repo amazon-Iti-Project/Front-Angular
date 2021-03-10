@@ -1,0 +1,89 @@
+<!-- first row1 item (heading) -->
+<div class="row main-head my-3 border-bottom align-items-center">
+    <!-- img col part starts-->
+    <div class="col-sm-4 col-md-3 col-6 main-img pb-2">
+        <img class="img-fluid" src="assets/images/main-lap.jpg">
+    </div>
+    <!-- img col part ends-->
+    <!-- details col part starts-->
+    <div class="col-sm-8 col-md-9 col-6 comp-head-details text-right">
+        <a>
+            <span>{{depName}} {{'department.lifeStyleHeader' |translate}}</span>
+        </a>
+    </div>
+    <!-- details col part starts-->
+</div>
+<!-- first item (heading) ends -->
+
+<ng-container *ngFor="let item of productsList;index as sn;">
+    <!-- items row2 component  starts-->
+<div class=" container-fluid btn" [routerLink]="['/departments/product/'+item.id]" routerLinkActive="" >
+    <div class="alert row component   border-bottom align-items-center ">
+        <!-- img col part starts-->
+        <div class=" col-sm-4 col-md-3 col-12 ">
+            <img class="img-fluid" src={{item.image}} />
+        </div>
+        <!-- img col part ends-->
+
+        <!-- details col part starts-->
+        <div class="col-sm-8 col-md-9 col mb-3">
+            <div class="row nowrap align-items-center justify-content-center">
+                <div id="price-filter" class=" col-auto ">
+                    <strong><span class="heading">Price</span></strong><br>
+                    <a href="#">
+                        <span>Under $500</span>
+                    </a><br>
+                    <div id="review-card" class="mt-2">
+                        <a id="show-more-links" href="#" data-toggle="tooltip" data-title="4 stars" data-placement="bottom">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="far fa-star"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg><span style="font-size: 14px;">{{item.rate}}</span>
+                        </a>
+                    </div>
+                    <div class="mt-2">
+                        <span>
+                            <sup class="sign">$</sup>
+                            <span class="total">{{item.price}}</span>
+                            <!-- <sup class="power">{{item.cents}}</sup> -->
+                        </span>
+                        <!-- <span class="old-price">${{item.oldPrice}}</span> -->
+                    </div>
+                    <div class="shipping-to" *ngIf="item.shippingLabel">
+                        <small>{{'department.shipsToEgypt' |translate}}</small>
+                    </div>
+                </div>
+                <div class="col">
+                    <p class="h5 ">{{item.description}}</p>
+                </div>
+            </div>
+        </div>
+       
+       
+        <!-- details col part ends -->
+    </div>
+    <!-- items row2 component  ends-->
+
+      
+</div>
+
+
+</ng-container>
+
+
+  <p>
+    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      Link with href
+    </a>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Button with data-target
+    </button>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+    </div>
+  </div>

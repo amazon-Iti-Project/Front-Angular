@@ -1,0 +1,15 @@
+
+<!-- side menu -->
+<div *ngIf="currentUser" class="col-1 sticky-top d-sm-none d-md-block" id="side-menu">
+    <span>{{'department.subTotal' | translate}}</span><br>
+    <strong class="price-tag">$<span>{{totalPrice}}</span></strong>
+    <div class="cart-items w-90 mt-3">
+        <ng-container *ngFor="let item of cartItems">
+            <div>
+                <a routerLink="/cart">
+                    <img class="img-fluid mt-4" [src]="item.image">
+                </a>
+            </div>
+        </ng-container>
+    </div>
+</div>

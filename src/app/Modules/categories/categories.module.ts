@@ -8,6 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { DepartmentComponent } from './components/department/department.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { DepartmentFilterComponent } from './components/department-filter/department-filter.component';
+import { DepartmentCarouselComponent } from './components/department-carousel/department-carousel.component';
+import { DepartmentBodyComponent } from './components/department-body/department-body.component';
+import { DepartmentFooterComponent } from './components/department-footer/department-footer.component';
+import { RecommentaionSectionComponent } from './components/department/recommentaion-section/recommentaion-section.component';
 
 const routes: Routes = [
   { path: 'payment', component:PaymentComponent  },
@@ -19,7 +24,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [ProductsDetalisComponent,AllDepartmentsComponent, DepartmentComponent],
+  declarations: [ProductsDetalisComponent,AllDepartmentsComponent, DepartmentComponent, DepartmentFilterComponent, DepartmentCarouselComponent, DepartmentBodyComponent, DepartmentFooterComponent, RecommentaionSectionComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
