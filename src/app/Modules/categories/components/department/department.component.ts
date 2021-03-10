@@ -61,7 +61,7 @@ export class DepartmentComponent implements OnInit {
                 for(let prod of carts){
                   this.departmentCompModel.totalPrice += prod.price
                   }
-              }
+                }
           )
           // this.departmentCompModel.currentUser.cart.forEach(id => {
           //   this.prodService.getProductById(id).subscribe(
