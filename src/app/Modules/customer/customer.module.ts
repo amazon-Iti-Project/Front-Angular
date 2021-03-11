@@ -12,6 +12,7 @@ import { OrdersHomeComponent } from '../orders/Components/orders-home/orders-hom
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from 'src/app/appComponent/not-found/not-found.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { UserGuard } from 'src/app/guards/user.guard';
 
 
 const routes:Routes = [
@@ -23,7 +24,8 @@ const routes:Routes = [
       {
         path: 'Orders',
         component: OrdersHomeComponent,
-        loadChildren:  () => import('src/app/Modules/orders/orders.module').then(m => m.OrdersModule)
+        loadChildren:  () => import('src/app/Modules/orders/orders.module').then(m => m.OrdersModule),
+        canActivate:[UserGuard]
       },
       { path: 'cart', component:CartComponent},
       { path: '', redirectTo: 'home', pathMatch: 'full' },

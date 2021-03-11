@@ -12,7 +12,8 @@
         <form [formGroup]="orderForm" (ngSubmit)="submitOrder()">
             <label class="mt-2"><span>{{'shippingForm.country' | translate}}</span></label><br>
             <select class="selectpicker countrypicker form-control" data-default="DE" formControlName="country">
-
+                <option>{{'shippingForm.egypt' | translate}}</option>
+                <option>{{'shippingForm.usa' | translate}}</option>
             </select>
             <label class="mt-2"><span>{{'shippingForm.fullName' | translate}}</span></label><br>
             <input class="form-control" type="text" formControlName="name">
@@ -42,7 +43,7 @@
                 {{'shippingForm.zipLength' | translate}}!
             </div>
             <label class="mt-2"><span>{{'shippingForm.phone' | translate}}</span></label><br>
-            <input class="form-control" type="text" formControlName="phone" >
+            <input class="form-control" (onchange)="getFormValue()" type="text" formControlName="phone" >
             <small>{{'shippingForm.mayAssist' | translate}}</small>
         <!-- <h3 class="mt-3">Add delivery instructions (optional)</h3>
         <label class="mt-1"><span>Do we need additional instructions to find this address?</span></label><br>

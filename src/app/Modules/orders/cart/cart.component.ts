@@ -5,19 +5,23 @@ import { ProductService } from 'src/app/services/product/product.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { Iproduct } from 'src/app/viewModel/IProduct';
 import { Iuser } from 'src/app/viewModel/Iuser';
-import { ProductSummaryComponent } from '../../admin/adminComponents/product-statistics/product-summary/product-summary.component';
-
+import { Observable } from 'rxjs';
+export interface ISelectedItem{
+  product:Iproduct,
+  orderCount:number
+}
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
+
 export class CartComponent implements OnInit {
 
   // userId = 4; // get it from service
   currentUser : Iuser | null =null;
-  cartItems : Iproduct[] = [];
-  selectedProdCount = 1;
+  cartItems : ISelectedItem[]=[];
+  
   totalPrice = 0;
   constructor(private prodService : ProductService,
     private router : Router,private userService : UserService,
@@ -32,8 +36,13 @@ export class CartComponent implements OnInit {
           this.currentUser = response
           this.prodService.getListOfProductsById(response.cart).subscribe(
             result => {
+              let cartProducts = result.map((item)=>{
+               let prod:ISelectedItem={product:item,orderCount:1}
+               return prod
+              });
               console.log(this.cartItems)
-              this.cartItems = result
+              this.cartItems = cartProducts;
+              this.cartService.selectedItems = this.cartItems;
               this.totalPrice = this.cartService.getTotalPrice(this.cartItems)
             },
             error => alert("error: "+error)
@@ -50,19 +59,28 @@ export class CartComponent implements OnInit {
     //     checkboxes[i].removeAttribute("checked");
     // }
   }
+
   //it must be for all elements array ?? & it must affect product price and total price
-  changeItemCount(product:Iproduct,val:number){
-    this.selectedProdCount = val;
+  changeItemCount(product:ISelectedItem,val:number){
+    product.orderCount = val;
+    this.totalPrice = this.cartService.getTotalPrice(this.cartItems)
+
   }
   //must be deleted from json also
-  deleteItem(prod : Iproduct){
+  deleteItem(prod : ISelectedItem){
+   let userRes =  confirm("are you sure you want to remove this product")
+   if(userRes){
     let num = this.cartItems.indexOf(prod);
     // this.currentUser?.cart.splice(num, 1);
     this.cartItems.splice(num, 1);
-    this.totalPrice -= prod.price;
-    console.log()
+    this.totalPrice -= (prod.product.price*prod.orderCount);
+    let userCart:number[] = this.cartItems.map(item=>item.product.id)
+    if(this.currentUser)
+    this.cartService.updateUserCart(this.currentUser,userCart).subscribe(console.log);
+   }
+    
   }
-  saveLater(prod:Iproduct){
+  saveLater(prod:ISelectedItem){
     //transparent background
   }
   proceedToCheckout(){

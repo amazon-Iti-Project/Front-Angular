@@ -6,6 +6,8 @@ export interface Iproduct{
   id:number;
   name:string;
   image:string|ArrayBuffer;
+  ar:IProductArabic
+  en:IProductEnglish
   description?:string;
   tags:string[];
   color:string;
@@ -30,6 +32,29 @@ export interface Iproduct{
 }
 
 export interface ITranslatedProduct{
+  id:number;
+  ar:IProductArabic
+  en:IProductEnglish
+  image:string|ArrayBuffer;
+  price:number;
+  shipping:Ishipping; 
+  fee:Ifee; 
+  discount:number;
+  quantity:number;
+  brand:number;
+  category:number; // category id
+  rate:number;  // rate id
+  ///////// from IProduct //////
+  categoryName? :string,
+  // cents : number,
+  // oldPrice : number,
+  stock? : number,
+  shippingLabel? : boolean
+  seller:number // userId
+
+}
+
+export interface ITranslatedOrderdProduct{
   id:number;
   ar:IProductArabic
   en:IProductEnglish

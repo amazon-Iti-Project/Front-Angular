@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundComponent } from './appComponent/not-found/not-found.component';
 import { ShippingFormComponent } from './Modules/orders/shipping-form/shipping-form.component';
+import { UserGuard } from 'src/app/guards/user.guard';
 
 const routes: Routes = [
-  { path: 'shippingDetails', component:ShippingFormComponent},
-  { path: 'seller', loadChildren: () => import('./Modules/seller/seller.module').then(module => module.SellerModule) },
-  { path: 'admin', loadChildren: () => import('./Modules/admin/admin-app.module').then(module => module.AdminModule) },
+  { path: 'shippingDetails', component:ShippingFormComponent,canActivate:[UserGuard]},
+  { path: 'seller', loadChildren: () => import('./Modules/seller/seller.module').then(module => module.SellerModule),canActivate:[UserGuard]  },
+  { path: 'admin', loadChildren: () => import('./Modules/admin/admin-app.module').then(module => module.AdminModule), },
   { path: 'auth', loadChildren: () => import('./Modules/auth/auth.module').then(module => module.AuthModule) },
   { path: '', loadChildren: () => import('./Modules/customer/customer.module').then(module => module.CustomerModule)  },
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -23,6 +24,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }

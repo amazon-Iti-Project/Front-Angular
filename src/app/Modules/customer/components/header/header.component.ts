@@ -31,17 +31,23 @@ export class HeaderComponent implements OnInit {
         this.getCurrentUser();
     // check url for logout reload
     this.user?.cart.length
-    
 
   }
   getCurrentUser():void{
     let token = this.userServ.isUserSignedIn()
-    if(token)
+    if(token){
+    console.log(token)
     this.userServ.getUserByToken(token).subscribe(res=>{
-      this.user=res
-      console.log(this.user)
+      if(res){
+        this.user=res
+        console.log(res)
+        console.log(this.user)
+      }else{
+        this.userServ.logOutUser();
+      }
     }
       ,err=>alert(`error in get user:${err}`))
+    }
    
   }
 

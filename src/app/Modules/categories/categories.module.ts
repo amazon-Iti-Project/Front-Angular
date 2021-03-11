@@ -13,9 +13,10 @@ import { DepartmentCarouselComponent } from './components/department-carousel/de
 import { DepartmentBodyComponent } from './components/department-body/department-body.component';
 import { DepartmentFooterComponent } from './components/department-footer/department-footer.component';
 import { RecommentaionSectionComponent } from './components/department/recommentaion-section/recommentaion-section.component';
+import { UserGuard } from 'src/app/guards/user.guard';
 
 const routes: Routes = [
-  { path: 'payment', component:PaymentComponent  },
+  { path: 'payment', component:PaymentComponent,canActivate:[UserGuard]  },
   // this is product id path
   { path: 'product/:pId', component:ProductsDetalisComponent  },
   {path:'',component:AllDepartmentsComponent},
@@ -26,7 +27,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [ProductsDetalisComponent,AllDepartmentsComponent, DepartmentComponent, DepartmentFilterComponent, DepartmentCarouselComponent, DepartmentBodyComponent, DepartmentFooterComponent, RecommentaionSectionComponent],
   imports: [
-    CommonModule,
+  CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
     TranslateModule,

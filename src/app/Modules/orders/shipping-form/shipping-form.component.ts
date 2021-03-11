@@ -10,6 +10,7 @@ import { Iorder } from 'src/app/viewModel/Iorder';
 import { Ipayment } from 'src/app/viewModel/Ipayment';
 import { Iproduct } from 'src/app/viewModel/IProduct';
 import { Iuser } from 'src/app/viewModel/Iuser';
+import { ISelectedItem } from 'src/app/Modules/orders/cart/cart.component';
 
 @Component({
   selector: 'app-shipping-form',
@@ -18,10 +19,9 @@ import { Iuser } from 'src/app/viewModel/Iuser';
 })
 
 export class ShippingFormComponent implements OnInit {
-
   lastID = 0;
   user : Iuser | undefined =undefined;
-  cartItems: Iproduct[] = [];
+  cartItems: ISelectedItem[] = [];
   totalPrice=0;
   orderPayment : Ipayment | undefined = undefined;
   today = new Date();
@@ -60,21 +60,23 @@ export class ShippingFormComponent implements OnInit {
       this.userService.getUserByToken(token).subscribe(
         response => {
           this.user = response
-          this.prodService.getListOfProductsById(this.user.cart).subscribe(
-            response => {
-              this.cartItems = response
-              this.totalPrice = this.cartService.getTotalPrice(response)
-              this.orderPayment= {
-                id: 1, //init.
-                type:1,
-                state:1,
-                date: this.today.toString(),
-                payment : this.totalPrice
-              }
-              this.paymentService.addNewPayment(this.orderPayment)
-            },
-            error => console.log(error)
-          );
+        {  // this.prodService.getListOfProductsById(this.user.cart).subscribe(
+          //   response => {
+          //     this.cartItems = response
+          //     this.totalPrice = this.cartService.totalCartPrice
+          //     this.orderPayment= {
+          //       id: 1, //init.
+          //       type:1,
+          //       state:1,
+          //       date: this.today.toString(),
+          //       payment : this.totalPrice
+          //     }
+          //     this.paymentService.addNewPayment(this.orderPayment)
+          //   },
+          //   error => console.log(error)
+          // );
+        }
+          this.cartService.selectedItems
           console.log(this.user)
         },
         error => console.log(error)
@@ -92,24 +94,32 @@ export class ShippingFormComponent implements OnInit {
       },
       error => console.log(error)
     );
+    this.orderForm.valueChanges.subscribe(console.log)
   }
-  getTotalShipment(allProducts : Iproduct[]) : number{
+
+
+  getTotalShipment(allProducts : ISelectedItem[]) : number{
     let ship = 0;
-    allProducts.forEach(prod => ship += prod.shipping.shipPrice)
+    allProducts.forEach(prod => ship += prod.product.shipping.shipPrice)
     return ship;
   }
-  getShippingDuration(allProducts : Iproduct[]) : number {
+  getShippingDuration(allProducts : ISelectedItem[]) : number {
     let max = 0;
     allProducts.forEach(prod => {
-      if(prod.shipping.period > max)
-        max = prod.shipping.period;
+      if(prod.product.shipping.period > max)
+        max = prod.product.shipping.period;
     })
     return max;
   }
   submitOrder() {
+    let products = this.cartItems.map(item=>{
+     let prod =  item.product
+     prod.quantity =  item.orderCount
+     return prod;
+    })
     let order: Iorder = {
       id: this.lastID+1,
-      products: this.cartItems ,
+      products: products ,
       user: this.user?.id!,
       status: 1,
       payment: this.orderPayment!,
@@ -127,5 +137,10 @@ export class ShippingFormComponent implements OnInit {
       },
       error => console.log(error)
     )
+  }
+
+  getFormValue():void{
+    console.log(this.orderForm.valid)
+    
   }
 }

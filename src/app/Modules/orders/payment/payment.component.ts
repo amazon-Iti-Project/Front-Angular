@@ -14,7 +14,7 @@ import { Iuser } from './../../../viewModel/Iuser';
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
-  ord:Iorder|null=null;
+  orders:Iorder[]|undefined;
   // this is passed Id >>>
   user:Iuser|undefined;
   total:number=1;
@@ -27,20 +27,13 @@ export class PaymentComponent implements OnInit {
     ngOnInit(): void {
       this.activatedRoute.paramMap.subscribe((params:ParamMap)=>{
         this.getUser();
-        if(this.user&&this.user.id){
-          this.oService.getOrderbyCustomerId(this.user.id).subscribe(
-            (res)=>{
-              console.log(res)
-              this.ord=res;
-            }
-          )
-        }
+
 
 
       })
 
      console.log(this.user);
-     console.log(this.ord);
+     console.log(this.orders);
     }
 
     calc(x:number|undefined , y:number|undefined){
@@ -59,6 +52,14 @@ export class PaymentComponent implements OnInit {
     if(token) this.userServ.getUserByToken(token).subscribe(res=>{
       console.log(res)
       this.user = res;
+      if(this.user&&this.user.id){
+        this.oService.getOrdersByCustomerId(this.user.id).subscribe(
+          (res)=>{
+            console.log(res)
+            this.orders=res;
+          }
+        )
+      }
     })
     else console.log('not logged in ')
 

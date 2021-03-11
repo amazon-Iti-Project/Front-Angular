@@ -1,9 +1,12 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { OrderService } from 'src/app/services/order/order.service';
 import { ProductService } from 'src/app/services/product/product.service';
 import { Iorder } from 'src/app/viewModel/Iorder';
 import { Iproduct } from 'src/app/viewModel/IProduct';
-import { OrdersService } from '../../orders.service';
+import { Iuser } from 'src/app/viewModel/Iuser';
+import { UserService } from './../../../../services/user/user.service';
 
 @Component({
     selector: 'orders-list',
@@ -21,25 +24,46 @@ export class OrdersListComponent implements OnInit {
     filterValue: string = "2";
     ordersFiltered: Iorder[] = []
     filterTerm: string ='';
-    constructor( private ordersSvc: OrdersService,
+    currentUser:Iuser|undefined;
+    constructor( private ordersSvc: OrderService,
+        private userServ:UserService,
         private productsSvc: ProductService) { }
  
     
     ngOnInit(): void {
+        this.getUser();
+
+    }
+
+    getUser():void{
+        let token = this.userServ.isUserSignedIn();
+        console.log("token:",token)
+        if(token)
+        this.userServ.getUserByToken(token)
+        .subscribe(res =>{
+            this.currentUser = res;
+            console.log(this.currentUser)
         this.getOrders();
+        });
     }
 
     getOrders() {
         // this.ordersSvc.getOrders().subscribe(res => {
         //     this.ordersList = res;
         //     this.loading = false;
-        // })        
-        let cusId = localStorage.getItem("customerId") as string;
-        this.subscribtion = this.ordersSvc.getOrders(cusId).subscribe((response) => {
-            this.ordersList = response;
-        },
-            (err) => { console.log(err) }
-        );
+        // })    
+        console.log("ordrUser: ",this.currentUser)    
+        if(this.currentUser && this.currentUser.id){
+            console.log("get order have user: ")
+            this.subscribtion = this.ordersSvc.getOrdersByCustomerId(this.currentUser.id).subscribe((response) => {
+                this.ordersList = response;
+            },
+                (err) => { console.log(err) }
+            );
+        }else{
+            console.log("getOrders have no user: ")
+
+        }
     }
 
     getFilteredOrders() {

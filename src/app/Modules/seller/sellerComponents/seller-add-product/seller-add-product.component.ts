@@ -69,11 +69,11 @@ export class SellerAddProductComponent implements OnInit {
       image: [, Validators.required],
       tags: [[], ],
       description:['',Validators.required],
-      seller:['',Validators.required]
+      seller:[this.user?.id,Validators.required]
 
     })
 
-    console.log(this.prodForm.controls['fee'].get('fee'))
+    console.log(this.prodForm.valueChanges.subscribe(console.log))
 
     // get current user
     this.getCurrentUser();
@@ -82,7 +82,10 @@ export class SellerAddProductComponent implements OnInit {
   getCurrentUser():void{
     let token = this.userServ.isUserSignedIn()
     if(token)
-    this.userServ.getUserByToken(token).subscribe(res=>this.user=res,err=>alert(err))
+    this.userServ.getUserByToken(token).subscribe(res=>{
+      this.user=res;
+      this.prodForm.controls['seller'].setValue(this.user.id) 
+    },err=>alert(err))
     else{
       alert('please Log in')
       this.router.navigate(['/home'])

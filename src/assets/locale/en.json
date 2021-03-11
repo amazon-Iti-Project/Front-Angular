@@ -283,7 +283,9 @@
   "addressNote":"Tips for entering addresses",
   "addressBTN":"Add Address",
   "conditionsOfUse":"Conditions of Use",
-  "privacyNote":"Privacy Notice"
+  "privacyNote":"Privacy Notice",
+  "egypt":"Egypt",
+  "usa":"USA"
 },
 "PRODUCT" :{
   "avaliable":"Avaliable",

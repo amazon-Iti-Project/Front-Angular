@@ -15,12 +15,13 @@
                     <input type="checkbox" checked="true" aria-label="Checkbox for following text input">
                 </div>
                 <div class="cart-img m-3">
-                    <img class="img-fluid" src={{product.image}}>
+                    <img class="img-fluid" src={{product.product.image}}>
                 </div>
                 <div class="cart-cont">
-                    <a class="cart-title">{{product.name}}</a>
+                    <a class="cart-title">{{product.product.name}}</a>
                     <br>
                     <span class="status">{{'cart.inStock' | translate}}</span>
+                    <span class="status">{{product.product.quantity}}</span>
                     <br>
                     <div class="gift-mark">
                         <input type="checkbox" style="margin-inline-end: 7px;">
@@ -31,7 +32,7 @@
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle p-2" type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{'cart.qty' | translate}}: <span id="drop-val">{{selectedProdCount}}</span>
+                                    {{'cart.qty' | translate}}: <span id="drop-val">{{product.orderCount}}</span>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" value="0" (click)="changeItemCount(product,0)">0 ({{'cart.delete' | translate}})</a>
@@ -59,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="pricing">$<span name="price-tag">{{product.price}}</span></div>
+                <div class="pricing">$<span name="price-tag">{{product.product.price*product.orderCount}}</span></div>
             </div>
             </ng-container>
             <ng-container *ngIf="cartItems.length == 0">

@@ -19,20 +19,20 @@ interface DepartmentComModel {
   styleUrls: ['./department.component.scss']
 })
 export class DepartmentComponent implements OnInit {
-  departmentCompModel:DepartmentComModel={};
+  departmentCompModel: DepartmentComModel = {};
 
   constructor(private activatedRoute: ActivatedRoute,
-    private router:Router,
+    private router: Router,
     private prodService: ProductService,
     private userService: UserService) { }
   ngOnInit(): void {
     console.log("on Init department")
-    this.departmentCompModel.totalPrice=0;
+    this.departmentCompModel.totalPrice = 0;
     let currUrl = this.router.url;
     console.log(currUrl)
     this.activatedRoute.paramMap.subscribe(param => {
       let paramName = param.get('depName');
-      this.departmentCompModel.depName = paramName ? paramName:undefined;
+      this.departmentCompModel.depName = paramName ? paramName : undefined;
       this.prodService.getProductsByCatName(this.departmentCompModel.depName ? this.departmentCompModel.depName.toLowerCase() : '')
         .subscribe(
           response => {
@@ -50,32 +50,32 @@ export class DepartmentComponent implements OnInit {
     if (token) {
       this.userService.getUserByToken(token).subscribe(
         response => {
-          console.log("user",response)
+          console.log("user", response)
           this.departmentCompModel.currentUser = response
 
           this.prodService.getListOfProductsById(this.departmentCompModel.currentUser?.cart)
-          .subscribe(
-            (carts)=>{
-              this.departmentCompModel.cartItems = carts
-              if(this.departmentCompModel.totalPrice)
-                for(let prod of carts){
-                  this.departmentCompModel.totalPrice += prod.price
+            .subscribe(
+              (carts) => {
+                this.departmentCompModel.cartItems = carts
+                if (this.departmentCompModel.totalPrice)
+                  for (let prod of carts) {
+                    this.departmentCompModel.totalPrice += prod.price
                   }
-                }
-          )
-          // this.departmentCompModel.currentUser.cart.forEach(id => {
-          //   this.prodService.getProductById(id).subscribe(
-          //     response => {
-          //       this.departmentCompModel.cartItems?.push(response)
-          //       if(this.departmentCompModel.totalPrice)
-          //       this.departmentCompModel.totalPrice += response.price
-          //     },
-          //     error => console.log(error)
-          //   )
-          // });
-        },
-        error => console.log(error)
-      )
+                // this.departmentCompModel.currentUser.cart.forEach(id => {
+                //   this.prodService.getProductById(id).subscribe(
+                //     response => {
+                //       this.departmentCompModel.cartItems?.push(response)
+                //       if(this.departmentCompModel.totalPrice)
+                //       this.departmentCompModel.totalPrice += response.price
+                //     },
+                //     error => console.log(error)
+                //   )
+                // });
+              },
+              error => console.log(error)
+            )
+        }
+      );
     }
   }
 }

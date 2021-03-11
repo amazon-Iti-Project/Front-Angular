@@ -13,7 +13,6 @@ import { OrdersListComponent } from './Components/orders-list/orders-list.compon
 import { OrdersRoutingModule } from './orders-routing.modules';
 import { ArchivedOrderComponent } from './Components/archived-order/archived-order.component';
 import { OrderCardComponent } from './Components/order-card/order-card.component';
-import { OrdersService } from './orders.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CanceledOrderComponent } from './Components/canceled-order/canceled-order.component';
 import { DigitalOrdersComponent } from './Components/digital-orders/digital-orders.component';
@@ -51,6 +50,6 @@ import { TranslateModule } from '@ngx-translate/core';
     TranslateModule
 
   ],
-  providers: [OrdersService]
+  providers: []
 })
 export class OrdersModule { }

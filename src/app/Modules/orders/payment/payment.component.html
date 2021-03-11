@@ -25,15 +25,15 @@
                     <th>  {{ 'PAYMENT.transactionaltotal' | translate }}Transactional total </th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody *ngFor="let item of orders">
                   <tr>
-                    <td>{{ord?.id}}</td>
-                    <td>{{ord?.orderDate | date}}</td>
-                    <td>{{ord?.payment?.payment}}</td>
-                    <td>{{ord?.deliveredDate | date}}</td>
-                    <td>{{ord?.orderPrice |currency}}</td>
-                    <td>{{ord?.orderShip | currency}}</td>
-                    <td>{{calc(ord?.orderPrice,ord?.orderShip) | currency}}</td>
+                    <td>{{item?.id}}</td>
+                    <td>{{item?.orderDate | date}}</td>
+                    <td>{{item?.payment?.payment}}</td>
+                    <td>{{item?.deliveredDate | date}}</td>
+                    <td>{{item?.orderPrice |currency}}</td>
+                    <td>{{item?.orderShip | currency}}</td>
+                    <td>{{calc(item?.orderPrice,item?.orderShip) | currency}}</td>
                   </tr>
                 </tbody>
 

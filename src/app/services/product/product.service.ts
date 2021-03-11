@@ -22,16 +22,16 @@ export class ProductService {
       (products)=> products.map(
         (product)=>{
          let  {ar,en,...prod} = product;
-          let parsedProduct;
+          let parsedProduct:Iproduct;
           if(lang == 'ar')
-          parsedProduct= {...prod,...ar}
+          parsedProduct= {...prod,...ar,ar,en}
           else
-          parsedProduct= {...prod,...en}
+          parsedProduct= {...prod,...en,ar,en}
           console.log(parsedProduct);
             return parsedProduct;
         }
       )
-    ))
+    ));
     console.log(test)
     return test;
   }
@@ -43,11 +43,11 @@ export class ProductService {
       (products)=> products.map(
         (product)=>{
          let  {ar,en,...prod} = product;
-          let parsedProduct;
+          let parsedProduct:Iproduct;
           if(lang == 'ar')
-          parsedProduct= {...prod,...ar}
+          parsedProduct= {...prod,...ar,ar,en}
           else
-          parsedProduct= {...prod,...en}
+          parsedProduct= {...prod,...en,ar,en}
           console.log(parsedProduct);
             return parsedProduct;
         }
@@ -64,11 +64,11 @@ export class ProductService {
       (products)=> products.map(
         (product)=>{
          let  {ar,en,...prod} = product;
-          let parsedProduct;
+          let parsedProduct:Iproduct;
           if(lang == 'ar')
-          parsedProduct= {...prod,...ar}
+          parsedProduct= {...prod,...ar,ar,en}
           else
-          parsedProduct= {...prod,...en}
+          parsedProduct= {...prod,...en,ar,en}
           console.log(parsedProduct);
             return parsedProduct;
         }
@@ -85,11 +85,11 @@ export class ProductService {
     .pipe(map(
         (product)=>{
          let  {ar,en,...prod} = product;
-          let parsedProduct;
+          let parsedProduct:Iproduct;
           if(lang == 'ar')
-          parsedProduct= {...prod,...ar}
+          parsedProduct= {...prod,...ar,ar,en}
           else
-          parsedProduct= {...prod,...en}
+          parsedProduct= {...prod,...en,ar,en}
           console.log(parsedProduct);
             return parsedProduct;
         }
@@ -109,11 +109,11 @@ export class ProductService {
       (products)=> products.map(
         (product)=>{
          let  {ar,en,...prod} = product;
-          let parsedProduct;
+          let parsedProduct:Iproduct;
           if(lang == 'ar')
-          parsedProduct= {...prod,...ar}
+          parsedProduct= {...prod,...ar,ar,en}
           else
-          parsedProduct= {...prod,...en}
+          parsedProduct= {...prod,...en,ar,en}
           console.log(parsedProduct);
             return parsedProduct;
         }
@@ -131,11 +131,11 @@ export class ProductService {
       (products)=> products.map(
         (product)=>{
          let  {ar,en,...prod} = product;
-          let parsedProduct;
+          let parsedProduct:Iproduct;
           if(lang == 'ar')
-          parsedProduct= {...prod,...ar}
+          parsedProduct= {...prod,...ar,ar,en}
           else
-          parsedProduct= {...prod,...en}
+          parsedProduct= {...prod,...en,ar,en}
           console.log(parsedProduct);
             return parsedProduct;
         }
