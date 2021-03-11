@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { LocalizationService } from 'src/app/services/localization/localization.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,13 +13,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class SidebarComponent implements OnInit {
   @Input() isOpen:boolean = false;
   @Output() sideBarClosed:EventEmitter<boolean> = new EventEmitter<boolean>();
+  lang:String|undefined
 
-  constructor() { }
+  constructor(private localizationServ:LocalizationService) { }
 
   ngOnInit(): void {
-    this.loadExternalStyles("./sidebar.component.scss").then(
-      ()=>console.log("loaded side bar")
+    // this.loadExternalStyles("./sidebar.component.scss").then(
+    //   ()=>console.log("loaded side bar")
+    // )
+    this.localizationServ.selectedLanguage.subscribe(res=>
+      this.lang = res
     )
+    
   }
 
   closeSideBar(){

@@ -1,67 +1,76 @@
 <div class="big-pic">
-    <div class="row justify-content-around w-100 ">
+    <div class="row  mx-0  ">
         <!-- start the main cart menu items -->
-        <div class="col-9 bg-white p-3">
+        <div class="col-12 col-sm-7 col-md-8 bg-white px-0">
             <!-- main menu header -->
             <div class="container">
                 <h1>{{'cart.shoppingCart' | translate}}</h1>
-                <a href="#" onclick="deSelectAll()">{{'cart.deselectAll' | translate}}</a>
-                <div id="price-title"><span>{{'department.price' | translate}}</span></div>
+                <a (onclick)="deSelectAll()">{{'cart.deselectAll' | translate}}</a>
             </div>
             <!-- single cart item -->
             <ng-container *ngFor="let product of cartItems" id="PRODUCT">
-            <div class="container border-top cart-item">
-                <div id="menu-check">
-                    <input type="checkbox" checked="true" aria-label="Checkbox for following text input">
-                </div>
-                <div class="cart-img m-3">
-                    <img class="img-fluid" src={{product.product.image}}>
-                </div>
-                <div class="cart-cont">
-                    <a class="cart-title">{{product.product.name}}</a>
-                    <br>
-                    <span class="status">{{'cart.inStock' | translate}}</span>
-                    <span class="status">{{product.product.quantity}}</span>
-                    <br>
-                    <div class="gift-mark">
-                        <input type="checkbox" style="margin-inline-end: 7px;">
-                        <label>{{'cart.thisIsGift' | translate}} <a href="#">{{'cart.learnMore' | translate}}</a></label>
+                <div class="row  mx-0 my-4">
+                    <div class="col-auto border-right border-gray" id="menu-check">
+                        <input class="checkbox-size" type="checkbox" checked="true"
+                            aria-label="Checkbox for following text input">
                     </div>
-                    <div class="cart-info mt-2">
-                        <div class="cart-info-item  border-right">
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle p-2" type="button" id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{'cart.qty' | translate}}: <span id="drop-val">{{product.orderCount}}</span>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" value="0" (click)="changeItemCount(product,0)">0 ({{'cart.delete' | translate}})</a>
-                                    <a class="dropdown-item" value="1" (click)="changeItemCount(product,1)">1</a>
-                                    <a class="dropdown-item" value="2" (click)="changeItemCount(product,2)">2</a>
-                                    <a class="dropdown-item" value="3" (click)="changeItemCount(product,3)">3</a>
-                                    <a class="dropdown-item" value="4" (click)="changeItemCount(product,4)">4</a>
-                                    <a class="dropdown-item" value="5" (click)="changeItemCount(product,5)">5</a>
-                                    <a class="dropdown-item" value="6" (click)="changeItemCount(product,6)">6</a>
-                                    <a class="dropdown-item" value="7" (click)="changeItemCount(product,7)">7</a>
-                                    <a class="dropdown-item" value="8" (click)="changeItemCount(product,8)">8</a>
-                                    <a class="dropdown-item" value="9" (click)="changeItemCount(product,9)">9</a>
-                                    <a class="dropdown-item" value="+10" (click)="changeItemCount(product,10)">+10</a>
+                    <div class="col text-center">
+                        <img class="img-fluid" src={{product.product.image}}>
+                    </div>
+                    <div class="col-lg-7  col-12">
+                        <a class="cart-title" [routerLink]="['/departments/product/'+product.product.id]"
+                            routerLinkActive="router-link-active">{{product.product.name}}</a>
+                        <br>
+                        <span class="status">{{'cart.inStock' | translate}}</span>
+                        <span class="status">{{product.product.quantity}}</span>
+                        <br>
+                        <div class="gift-mark">
+                            <input type="checkbox" style="margin-inline-end: 7px;">
+                            <label>{{'cart.thisIsGift' | translate}} <a href="#">{{'cart.learnMore' |
+                                    translate}}</a></label>
+                        </div>
+                        <div class="cart-info mt-2">
+                            <div class="cart-info-item  border-right">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle p-2" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        {{'cart.qty' | translate}}: <span id="drop-val">{{product.orderCount}}</span>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" value="0" (click)="changeItemCount(product,0)">0
+                                            ({{'cart.delete' | translate}})</a>
+                                        <a class="dropdown-item" value="1" (click)="changeItemCount(product,1)">1</a>
+                                        <a class="dropdown-item" value="2" (click)="changeItemCount(product,2)">2</a>
+                                        <a class="dropdown-item" value="3" (click)="changeItemCount(product,3)">3</a>
+                                        <a class="dropdown-item" value="4" (click)="changeItemCount(product,4)">4</a>
+                                        <a class="dropdown-item" value="5" (click)="changeItemCount(product,5)">5</a>
+                                        <a class="dropdown-item" value="6" (click)="changeItemCount(product,6)">6</a>
+                                        <a class="dropdown-item" value="7" (click)="changeItemCount(product,7)">7</a>
+                                        <a class="dropdown-item" value="8" (click)="changeItemCount(product,8)">8</a>
+                                        <a class="dropdown-item" value="9" (click)="changeItemCount(product,9)">9</a>
+                                        <a class="dropdown-item" value="10" (click)="changeItemCount(product,10)">10</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="cart-info-item mx-1 border-right">
-                            <a href="javascript:void(0);" (click)="deleteItem(product)">{{'cart.delete' | translate}}</a>
-                        </div>
-                        <div class="cart-info-item mx-1 border-right">
-                            <a href="javascript:void(0);" (click)="saveLater(product)">{{'cart.saveForLater' | translate}}</a>
-                        </div>
-                        <div class="cart-info-item mx-1">
-                            <a href="#">{{'cart.compareWithSimilarItems' | translate}}</a>
+                            <div class="cart-info-item mx-1 border-right">
+                                <a href="javascript:void(0);" (click)="deleteItem(product)">{{'cart.delete' |
+                                    translate}}</a>
+                            </div>
+                            <div class="cart-info-item mx-1 border-right">
+                                <a href="javascript:void(0);" (click)="saveLater(product)">{{'cart.saveForLater' |
+                                    translate}}</a>
+                            </div>
+                            <div class="cart-info-item mx-1">
+                                <a href="#">{{'cart.compareWithSimilarItems' | translate}}</a>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-auto h5 border-left  border-gray">
+                        <p id="price-title"><span class="h6">{{'department.price' | translate}}</span></p>
+                        $<span name="price-tag">{{product.product.price*product.orderCount}}</span>
+                    </div>
                 </div>
-                <div class="pricing">$<span name="price-tag">{{product.product.price*product.orderCount}}</span></div>
-            </div>
             </ng-container>
             <ng-container *ngIf="cartItems.length == 0">
                 <div class="text-center">
@@ -71,64 +80,73 @@
             <hr>
             <!-- total price -->
             <div id="main-total-price">
-                $<span name="total-price-tag">{{totalPrice}}</span>
+                $<span class="p-3" name="total-price-tag">{{totalPrice}}</span>
             </div>
         </div>
         <!-- end main menu -->
 
         <!-- start right menu -->
-        <div class="col-lg-2 col-2 d-none d-sm-block">
-            <!-- subtotal menu box -->
-            <div class="row bg-white details-box py-3 justify-content-around">
-                <div>
-                    {{'department.subTotal' | translate}}(<span>{{cartItems.length}}</span> {{'cart.items' | translate}}):
-                    <strong>$<span name="total-price-tag">{{totalPrice}}</span></strong>
-                </div>
-                <div>
-                    <input type="checkbox" class="mx-2 my-1">{{'cart.giftOrder' | translate}}
-                </div>
-                <div>
-                    <button type="button" class="btn btn-warning px-3 my-3"
-                        (click)="proceedToCheckout()"
-                        [disabled]="cartItems.length == 0">{{'cart.proceedToCheckout' | translate}}</button>
-                </div>
-            </div>
-            <!-- recommendation card box -->
-            <div class="row card my-4 recom-box">
-                <div class="card-body w-100">
-                    <h5 class="card-title">
-                        {{'cart.relatedItems' | translate}}
-                    </h5>
-                    <!-- single recom-item div -->
-                    <div class="card-box mt-4 w-100">
-                        <img class="img-fluid" src="assets/images/bluelightglasses.jpeg">
-                        <div class="mx-1">
-                            <a href="#">BlueLight Blocking</a>
-                            <!-- start Rating bar code -->
-                            <div class="rating mx-0">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                <span>12,324</span>
-                            </div>
-                            <span class="recom-price">$19.99</span><br>
-                            <button class="btn btn-light border" type="button">
-                                <span style="font-size: 10px;">{{'cart.seeAllOptions' | translate}}</span></button>
+        <!-- d-none d-sm-block -->
+        <div class="col-12 col-sm-5 col-md-4 ">
+            <div class="row m-0   align-content-between">
+                <!-- subtotal menu box -->
+                <div class="col-12  mb-1 mx-0 p-2 bg-white">
+                    <div class="row  justify-content-around align-content-start">
+                        
+                        <div class="col-12 text-center">
+                            {{'department.subTotal' | translate}}(<span>{{cartItems.length}}</span> {{'cart.items' |
+                            translate}}):
+                            <strong>$<span name="total-price-tag">{{totalPrice}}</span></strong>
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="checkbox" class="mx-2 my-1">{{'cart.giftOrder' | translate}}
+                        </div>
+                        <div  class="col-12 text-center">
+                            <button type="button" class="btn btn-warning px-3 my-3" (click)="proceedToCheckout()"
+                                [disabled]="cartItems.length == 0">{{'cart.proceedToCheckout' | translate}}</button>
                         </div>
                     </div>
                 </div>
+                <!-- recommendation card box -->
+                <div class="col-12 mt-1  mx-0 ">
+                    <div class="row card">
+                    <div class="card-body w-100">
+                        <h5 class="card-title">
+                            {{'cart.relatedItems' | translate}}
+                        </h5>
+                        <!-- single recom-item div -->
+                        <div>
+                            <img class="img-fluid m-auto" src="assets/images/bluelightglasses.jpeg">
+                            <div class="mx-1 text-center">
+                                <a href="#">BlueLight Blocking</a>
+                                <!-- start Rating bar code -->
+                                <div class="rating mx-0 ">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    <span>12,324</span>
+                                </div>
+                                <span class="recom-price">$19.99</span><br>
+                                <button class="btn btn-light border" type="button">
+                                    <span style="font-size: 10px;">{{'cart.seeAllOptions' | translate}}</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
             </div>
+
         </div>
         <!-- end side menu -->
     </div>
     <!-- my prev. items history page -->
     <div class="row m-3">
-        <div class="col-9 bg-white p-3">
+        <div class="col-12 bg-white p-3">
             <div class="container">
                 <h1>{{'cart.yourItems' | translate}}</h1>
                 <!-- Dispaly page -->
             </div>
         </div>
-        <small class="col-9 mt-3 px-0">
+        <small class="col-12 mt-3 px-0">
             {{'cart.amazonNote' | translate}} <a href="#"> {{'cart.learnMore' | translate}}</a>
             <br>
             {{'cart.askForPromo' | translate}}

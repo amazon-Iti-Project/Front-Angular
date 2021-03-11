@@ -99,9 +99,10 @@ export class ProductService {
   }
 
 
-  getListOfProductsById(productsId:number[]):Observable<Iproduct[]>{
+  getListOfProductsById(productsId:number[]):Observable<Iproduct[]>|undefined{
     let lang: string = this.localeServ.getLanguage();
-
+    if(productsId.length>0){
+  
     let query = productsId.map(id =>`id=${id}` )
     let reqQuery = query.join('&');
     let products = this.http.get<ITranslatedProduct[]>(`${environment.API_BASE_URL}/${environment.products}?${reqQuery}`)
@@ -120,6 +121,10 @@ export class ProductService {
       )
     ));
     return products
+  }
+
+  return undefined;
+
   }
 
   // for salma

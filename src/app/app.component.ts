@@ -71,6 +71,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     console.log("language changed")
     let htmlTag = this.document.getElementsByTagName("html")[0] as HTMLHtmlElement;
     htmlTag.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    htmlTag.lang = lang ;
     this.changeCssFile(lang);
     //  window.location.reload();
 

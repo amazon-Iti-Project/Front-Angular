@@ -70,11 +70,11 @@
               <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Something else here</a>
               <!-- //  -->
               <div  data-display="static"  class="dropdown-item  custom-control custom-radio">
-                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" [checked]="lang=='en'">
                 <label (click)="changeLang('en')" class="custom-control-label font-amazon-normal" for="customRadio1">{{'homeHeader.english'|translate}}</label>
               </div>
               <div #arRef  class="dropdown-item custom-control custom-radio">
-                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input"[checked]="lang==='ar'">
                 <label (click)="changeLang('ar')" class="custom-control-label font-amazon-normal" for="customRadio2">{{'homeHeader.arabic'|translate}}</label>
               </div>
             </div>

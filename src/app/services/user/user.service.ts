@@ -84,7 +84,14 @@ export class UserService {
   // steps to add to cart
   // 1- get the user and on click add to cart send user and productId tp addTpCart method
   addToCart(user:Iuser,productId:number):Observable<Iuser>{
-    user.cart?.push(productId)
+    if(user.cart.includes(productId)){
+      alert("added before")
+      return new Observable<Iuser>(subscriber => {
+        subscriber.next(user);
+      });
+    } 
+    else{
+      user.cart?.push(productId)
       const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -93,6 +100,9 @@ export class UserService {
       })
     };
     return this.http.patch<Iuser>(`${environment.API_BASE_URL}/${environment.users}/${user.id}`,{ cart:user.cart }, httpOptions)
+
+    }
+    
 
   }
 

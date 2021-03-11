@@ -53,8 +53,7 @@ export class DepartmentComponent implements OnInit {
           console.log("user", response)
           this.departmentCompModel.currentUser = response
 
-          this.prodService.getListOfProductsById(this.departmentCompModel.currentUser?.cart)
-            .subscribe(
+          this.prodService.getListOfProductsById(this.departmentCompModel.currentUser?.cart)?.subscribe(
               (carts) => {
                 this.departmentCompModel.cartItems = carts
                 if (this.departmentCompModel.totalPrice)

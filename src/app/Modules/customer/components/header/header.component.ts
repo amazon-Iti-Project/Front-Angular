@@ -20,12 +20,13 @@ export class HeaderComponent implements OnInit {
   @Output() allBtnChecked:EventEmitter<boolean> = new EventEmitter<boolean>();
   user:Iuser|undefined
   currentUrl:string = '/'
+  lang:String|undefined;
   constructor(private userServ:UserService,private router:Router,private localServ:LocalizationService) {
  
    }
   
   ngOnInit(): void {
-
+    this.lang = this.localServ.getLanguage()
     console.log("onInit home header")
         // get current user
         this.getCurrentUser();

@@ -34,22 +34,25 @@ export class CartComponent implements OnInit {
       this.userService.getUserByToken(token).subscribe(
         response => {
           this.currentUser = response
-          this.prodService.getListOfProductsById(response.cart).subscribe(
-            result => {
-              let cartProducts = result.map((item)=>{
-               let prod:ISelectedItem={product:item,orderCount:1}
-               return prod
-              });
-              console.log(this.cartItems)
-              this.cartItems = cartProducts;
-              this.cartService.selectedItems = this.cartItems;
-              this.totalPrice = this.cartService.getTotalPrice(this.cartItems)
-            },
-            error => alert("error: "+error)
-          );
+          if(response && response.cart){
+            this.prodService.getListOfProductsById(response.cart)?.subscribe(
+              result => {
+                let cartProducts = result.map((item)=>{
+                 let prod:ISelectedItem={product:item,orderCount:1}
+                 return prod
+                });
+                console.log(this.cartItems)
+                this.cartItems = cartProducts;
+                this.cartService.selectedItems = this.cartItems;
+                this.totalPrice = this.cartService.getTotalPrice(this.cartItems)
+              },
+              error => alert("error: "+error)
+            );
+          }
+
         },
         error => console.log("error: "+error)
-      )
+      );
     }
   }
   deSelectAll(){

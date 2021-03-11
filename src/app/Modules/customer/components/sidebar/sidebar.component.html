@@ -4,7 +4,7 @@
     <div  class="side-bar-bg d-flex">
               this is side bar
         </div>
-        <div class="side-bar-container d-flex  vh-100">
+        <div  [lang]="lang" class=" d-flex  vh-100 side-bar-container"[ngStyle]="(lang==='en')?{'left': 0 }:{'right': 0}">
         
           <div class=" side-bar bg-white d-flex flex-column  ">
             <!-- side nav -->
