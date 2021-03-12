@@ -4,7 +4,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { LocalizationService } from 'src/app/services/localization/localization.service';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

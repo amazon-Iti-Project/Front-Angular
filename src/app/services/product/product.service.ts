@@ -148,6 +148,26 @@ export class ProductService {
     ));
   }
 
+  searchProductsByText(text : string) : Observable<Iproduct[]>{
+    let lang: string = this.localeServ.getLanguage();
+    return this.http.get<ITranslatedProduct[]>
+    (`${environment.API_BASE_URL}/products?q=${text}`)
+    .pipe(map(
+      (products)=> products.map(
+        (product)=>{
+         let  {ar,en,...prod} = product;
+          let parsedProduct:Iproduct;
+          if(lang == 'ar')
+          parsedProduct= {...prod,...ar,ar,en}
+          else
+          parsedProduct= {...prod,...en,ar,en}
+          console.log(parsedProduct);
+            return parsedProduct;
+        }
+      )
+    ));
+  }
+
   addNewProduct(prod: ITranslatedProduct): Observable<ITranslatedProduct> {
     console.log("recieved Product: ", prod)
     const httpOptions = {

@@ -19,7 +19,7 @@
                   <p class="h5 font-amazon-bold py-1">Shop by Department</p>
                   <!--  -->
                   <ul class="list-group list-group-flush">
-                    <li class="cursor-pointer list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <li  [routerLink]="['/departments']" routerLinkActive=""  class="cursor-pointer list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                       Electronics
                       <span class="fas fa-chevron-right"></span>
                     </li>
@@ -34,7 +34,7 @@
                     <!-- show more action -->
                     <li class="list-group-item list-group-item-action seeAll"
                     data-toggle="collapse" data-value=1 href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"
-                    onclick="toggleDisplayItem(this)">
+                    >
                       See All &nbsp;<span class="fas fa-chevron-down" ></span>
                     </li>
                          <!-- collabse list -->
@@ -45,23 +45,23 @@
                           <span class="fas fa-chevron-right"></span>
                       </li>
                       <li  class=" list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                        Smart Homes
+                        Laptops
                         <span class="fas fa-chevron-right"></span>
                     </li>
                     <li  class=" list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                      Smart Homes
+                      Beauty &  Fashion
                       <span class="fas fa-chevron-right"></span>
                   </li>
                   <li  class=" list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    Smart Homes
+                    Furniture
                     <span class="fas fa-chevron-right"></span>
                 </li>
                 <li  class=" list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                  Smart Homes
+                  music
                   <span class="fas fa-chevron-right"></span>
               </li>
               <li  class=" list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                Smart Homes
+                Books
                 <span class="fas fa-chevron-right"></span>
             </li>
             <!-- show less action -->
@@ -69,7 +69,7 @@
                     
                     <li class="list-group-item list-group-item-action   seeAll "
                     data-toggle="collapse" data-value=0 href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"
-                    onclick="toggleDisplayItem(this)"style="display: none;">
+                    style="display: none;">
                       See Less &nbsp<span class="fas fa-chevron-up" ></span>
                     </li>
                   </ul>
@@ -84,16 +84,22 @@
                     <li class="cursor-pointer list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                       Your Account
                     </li>
-                    <li class="cursor-pointer list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <li (click)="changeLang('en')" class="cursor-pointer list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                       English
+                    </li>
+                    <li (click)="changeLang('ar')" class="cursor-pointer list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                      العربية
                     </li>
                     <li class="cursor-pointer list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                       Help
-                     
                     </li>
-                    <li class="cursor-pointer list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                      Sign in
+                    <li class="cursor-pointer list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                      *ngIf="!user; else logoutRef">
+                      <span class="font-amazon-normal" [routerLink]="['/auth/signup']">{{'homeHeader.signUp'|translate}}</span>
                     </li>
+                    <ng-template  #logoutRef>
+                      <span class=" font-amazon-normal" (click)="logout()">{{'homeHeader.logOut'|translate}}</span>
+                    </ng-template>
                   </ul>
                   <!--  -->
                 </div>

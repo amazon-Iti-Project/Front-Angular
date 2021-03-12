@@ -1,0 +1,46 @@
+{
+    "home": [
+        {
+            "url": "../../../../../assets/home-body/01.jpg",
+            "title": "home.recentlyViewed",
+            "link":"/departments/product/1"
+            
+        },
+        {
+            "url": "../../../../../assets/home-body/02.jpg",
+            "title": "home.shopByCategory",
+            "link":"/departments/product/1"
+        },
+        {
+            "url": "../../../../../assets/home-body/03.jpg",
+            "title": "home.dealsAndPromotions",
+            "link":"/departments"
+
+        },
+        {
+            "url": "../../../../../assets/home-body/04.jpg",
+            "title": "home.amazonMusic",
+            "link":"/departments"
+        },
+        {
+            "url": "../../../../../assets/home-body/05.jpg",
+            "title": "home.amazonBasics",
+            "link":"/departments"
+        },
+        {
+            "url": "../../../../../assets/home-body/06.jpg",
+            "title": "home.electronics",
+            "link":"/departments"
+        },
+        {
+            "url": "../../../../../assets/home-body/07.jpg",
+            "title": "home.fashionAndBeauty",
+            "link":"/departments"
+        },
+        {
+            "url": "../../../../../assets/home-body/08.jpg",
+            "title": "home.shopTopCategories",
+            "link":"/departments"
+        }
+    ]
+}

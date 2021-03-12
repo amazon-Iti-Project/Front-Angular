@@ -5,6 +5,9 @@ export interface Icategory{
     id:number;
     name:string;
     image?:string|ArrayBuffer;
+    ar:IcategoryArabic;
+    en:IcategoryEnglish;
+
   }
 
   export interface ITranslatedCategory{

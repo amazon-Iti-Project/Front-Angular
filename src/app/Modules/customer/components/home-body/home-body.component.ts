@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 // import { TranslateConfigService } from 'src/app/services/translate-config.service';
 import { LocalizationService } from './../../../../services/localization/localization.service';
+import{home} from 'src/app/Modules/customer/home-elements.json';
 
 @Component({
   selector: 'app-home-body',
@@ -9,7 +10,7 @@ import { LocalizationService } from './../../../../services/localization/localiz
   styleUrls: ['./home-body.component.scss']
 })
 export class HomeBodyComponent implements OnInit {
-
+  listElements:any[] = home;
   constructor( 
     // private translateConfigService:TranslateConfigService,
     // private localServ:LocalizationService,
@@ -26,6 +27,8 @@ export class HomeBodyComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    console.log(home);
+
   }
 
 }

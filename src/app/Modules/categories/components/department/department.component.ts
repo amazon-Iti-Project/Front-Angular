@@ -31,16 +31,48 @@ export class DepartmentComponent implements OnInit {
     let currUrl = this.router.url;
     console.log(currUrl)
     this.activatedRoute.paramMap.subscribe(param => {
+      console.log("search")
       let paramName = param.get('depName');
-      this.departmentCompModel.depName = paramName ? paramName : undefined;
-      this.prodService.getProductsByCatName(this.departmentCompModel.depName ? this.departmentCompModel.depName.toLowerCase() : '')
-        .subscribe(
-          response => {
-            this.departmentCompModel.productsList = response;
-            console.log("products: ", this.departmentCompModel.productsList);
-          },
-          error => { console.log(error); }
-        )
+      let searchName = param.get('text');
+      if(paramName){
+        console.log("department request")
+        this.departmentCompModel.depName = paramName ? paramName : undefined;
+        this.prodService.getProductsByCatName(this.departmentCompModel.depName ? this.departmentCompModel.depName.toLowerCase() : '')
+          .subscribe(
+            response => {
+              this.departmentCompModel.productsList = response;
+              console.log("products: ", this.departmentCompModel.productsList);
+            },
+            error => { console.log(error); }
+          )
+      }
+      else if (searchName == 'all'){
+
+
+
+          console.log("search request")
+          this.departmentCompModel.depName = 'all'
+          this.prodService.getAllProducts()
+            .subscribe(
+              response => {
+                this.departmentCompModel.productsList = response;
+                console.log("products: ", this.departmentCompModel.productsList);
+              },
+              error => { console.log(error); }
+            )
+      }else if(searchName){
+        console.log("search request")
+        this.departmentCompModel.depName = searchName ? searchName : undefined;
+        this.prodService.searchProductsByText(searchName)
+          .subscribe(
+            response => {
+              this.departmentCompModel.productsList = response;
+              console.log("products: ", this.departmentCompModel.productsList);
+            },
+            error => { console.log(error); }
+          )
+      }
+   
     });
     // this.productService.getAllProducts().subscribe(
     //   response => this.productsList = response,

@@ -105,6 +105,14 @@ export class HeaderComponent implements OnInit {
     this.localServ.changeSelectedLanguage(lang);
     // console.log("event",lang)
   }
+
+  searchProducts(text:String):void{
+      console.log(text)
+      if(text !== '')
+      this.router.navigate(['departments/search/'+text])
+      else
+      this.router.navigate(['departments/search/'+'all'])
+  }
  
 
 }

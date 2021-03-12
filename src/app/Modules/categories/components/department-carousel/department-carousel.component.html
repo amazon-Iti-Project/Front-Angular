@@ -15,7 +15,7 @@
                 <div class="overflow-hidden img-container">
                     <img [src]="item.image" class="" alt="..." style="height: 100%;width: 100%;">
                 </div>
-                <div class="card-header"><span class="badge badge-warning">{{depName}}</span></div>
+                <div class="card-header"><span class="badge badge-warning">{{item.categoryName}}</span></div>
                 <div class="card-body">
                     <a  [routerLink]="['/departments/product/'+item.id]" routerLinkActive=""  >
                     <h5 class="card-title">{{item.name}}</h5>

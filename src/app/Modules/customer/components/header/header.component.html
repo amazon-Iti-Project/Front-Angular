@@ -1,15 +1,60 @@
 <!-- Nav Bar -->
-<nav class="navbar navbar-expand-md navbar-dark navBg p-0 pl-2 pr-2 nav-height text-center">
+<nav class="navbar navbar-expand-md navbar-dark navBg p-0 pl-2 pr-2 nav-height  justify-content-between text-center">
+    <!-- toggler button -->
+    <!-- data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+ -->
+ <div class="row m-0 justify-content-start">
+  <button (click)="sendEventToHome()" class="navbar-toggler" type="button" >
+    <span class="navbar-toggler-icon"></span>
+  </button>
   <!-- nav Logo -->
   <a class="navbar-brand nav-hover" [routerLink]="['/']"  >
     <img class="navbar-logo" src="../../../assets/Logo/Amazon-Emblem.png">
     <!-- <p class="fab fa-amazon h1 p-0 icon-text-color nav-hover "></p> -->
   </a>
-  <!-- toggler button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+ </div>
+
+  <!-- small List devices cart-->
+  <div class="d-md-none  justify-self-end" id="navbarSupportedContent">
+    <!-- list2 start -->
+    <ul class="navbar-nav  ">
+      <li class="nav-item active nav-hover  m-auto">
+        <!-- cart -->
+        <a class="nav-link" [routerLink]="['/cart']">
+        <div class="d-flex ">
+          <a [routerLink]="['/cart']" ><span class="fas fa-shopping-cart text-light h2 "></span></a>
+          <a [routerLink]="['/cart']" class="badge font-1 text-warning">{{user?.cart? user?.cart?.length :0}}</a>
+        </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+      <!-- search input -->
+      <form class="w-100  d-md-none">
+        <div class="form-row align-items-center">
+          <div class="col-auto w-100">
+            <label class="sr-only" for="inlineFormInputGroup">search</label>
+            <div class="input-group ">
+              <div class="input-group-prepend">
+                <!-- all dropdown Menu -->
+                <button class="btn btn-light input-group-text dropdown-toggle text-dark font-1"
+                  data-toggle="dropdown">{{'homeHeader.all'|translate}}</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" [routerLink]="['/']">department</a>
+                </div>
+              </div>
+              <!-- search input -->
+              <input #searchRef type="text" class="form-control" id="inlineFormInputGroup" placeholder="{{'homeHeader.search'|translate}}">
+              <!-- search icon -->
+              <div class="input-group-append">
+                <button (click)="searchProducts(searchRef.value)" class="btn btn-outline-warning input-group-text icon-color fas fa-search"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+  <!-- small list devices ends -->
   <div class="collapse navbar-collapse  justify-content-around" id="navbarSupportedContent">
     <!-- list start -->
     <ul class="navbar-nav ">
@@ -38,14 +83,14 @@
               <button class="btn btn-light input-group-text dropdown-toggle text-dark font-1"
                 data-toggle="dropdown">{{'homeHeader.all'|translate}}</button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" [routerLink]="['/']">Action</a>
+                <a class="dropdown-item" [routerLink]="['/']">department</a>
               </div>
             </div>
             <!-- search input -->
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="{{'homeHeader.search'|translate}}">
+            <input #searchRef type="text" class="form-control" id="inlineFormInputGroup" placeholder="{{'homeHeader.search'|translate}}">
             <!-- search icon -->
             <div class="input-group-append">
-              <button class="btn btn-outline-warning input-group-text icon-color fas fa-search"></button>
+              <button (click)="searchProducts(searchRef.value)" class="btn btn-outline-warning input-group-text icon-color fas fa-search"></button>
             </div>
           </div>
         </div>
@@ -56,7 +101,7 @@
       <li class="nav-item nav-hover m-auto">
         <!-- Language -->
         <div class="dropdown pl-1 min-content">
-          <div class=" dropdown-toggle text-light " id="langbtn" data-toggle="dropdown" aria-haspopup="true"
+          <div class=" dropdown-toggle text-light " id="langbtn"  data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
            <a><img src="../../../assets/languages logos/US-United-States-Flag-icon.svg" class="imgSize_3 p-1"></a> 
           </div>
@@ -112,7 +157,7 @@
                       <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">{{'homeHeader.findAList'|translate}}</a>
                     </li>
                     <li>
-                      <a class="dropdown-item font-amazon-normal" *ngIf="user" [routerLink]="['/category/payment']">{{'homeHeader.yourPayment'|translate}}</a>
+                      <a class="dropdown-item font-amazon-normal" *ngIf="user" [routerLink]="['/departments/payment']">{{'homeHeader.yourPayment'|translate}}</a>
                     </li>
                   </ul>
                 </div>
@@ -173,9 +218,6 @@
     </ul>
   </div>
 </nav>
-
-
-
 <!-- Nav Bar2 -->
 <nav class="navbar navbar-expand-md navbar-dark nav-2-Bg py-0 px-2 nav-height font-amazon-normal">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -208,6 +250,16 @@
           <span class="text-white">{{'homeHeader.giftCards'|translate}}</span>
         </a>
       </li>
+      <li class="nav-item nav-hover">
+        <a class="nav-link " [routerLink]="'/seller/home'" routerLinkActive="active">
+          <span class="text-white">{{'homeHeader.sell'|translate}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="d-md-none" id="navbarSupportedContent">
+    <!-- list1 start -->
+    <ul class="navbar-nav justify-content-start align-items-baseline ">
       <li class="nav-item nav-hover">
         <a class="nav-link " [routerLink]="'/seller/home'" routerLinkActive="active">
           <span class="text-white">{{'homeHeader.sell'|translate}}</span>

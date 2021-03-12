@@ -3,6 +3,8 @@ import { Iproduct } from './IProduct';
 export interface Ibrand{
     id:number;
     name:string;
+    ar:IBrandArabic;
+    en:IBrandEnglish;
     image?:string|ArrayBuffer;
   }
 

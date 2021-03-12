@@ -21,7 +21,14 @@
   "home": {
     "recentlyViewed": "ما زرته مؤخرا",
     "shopNow": "تسوق الان",
-    "shopTopCategories": "تسوق المجموعات الاعلى مبيعا"
+    "shopTopCategories": "تسوق المجموعات الاعلى مبيعا",
+    "shopByCategory":"تسوف حسب القسم",
+    "dealsAndPromotions":"الصفقات والعروض",
+    "gitFitAtHome":"كن لائقا من المنزل",
+    "amazonBasics":"اساسيات امازون",
+    "electronics":"الاجهزة الكهربائية",
+    "fashionAndBeauty":"الموضة  والجمال",
+    "amazonMusic":"موسيقى امازون"
   },
   "homeHeader": {
     "search": "ابحث",

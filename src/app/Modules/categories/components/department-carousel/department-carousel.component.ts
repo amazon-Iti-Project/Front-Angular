@@ -13,7 +13,7 @@ export class DepartmentCarouselComponent implements OnInit, OnChanges {
   carouselList: Iproduct[] | undefined = []
   index: number = 0;
   // length of carousel content
-  length: number = 2;
+  length: number = 4;
   constructor() { }
   ngOnChanges(changes: SimpleChanges): void {
 

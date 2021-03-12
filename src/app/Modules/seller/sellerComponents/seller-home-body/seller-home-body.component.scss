@@ -5,3 +5,14 @@ a:hover {
    a{
     color: black;
   }
+
+  .nav-pills .nav-link.active{
+    background-color:white;
+    color: black;
+    border-width: 2px 1px 1px 1px ;
+    border-color:   orange  lightgray lightgray lightgray;
+    border-style: solid;
+
+  }
+  .nav-pills .nav-link{
+  }
