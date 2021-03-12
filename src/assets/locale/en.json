@@ -426,9 +426,8 @@
     "salesSummart":"Orders",
     "orderdProductSales":"Orders",
     "units":"Orders",
-    "units":"Orders",
     "today":"Orders",
-    "week":"Orders",
+    "week":"Orders"
 
 
   }
