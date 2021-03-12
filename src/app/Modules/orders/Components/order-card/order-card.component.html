@@ -1,4 +1,4 @@
-<div class="card bg-light col-12 p-0">
+<div class="card bg-light  p-0">
     <div class=" card-header d-flex">
         <div class="col-3" >
 
@@ -13,18 +13,18 @@
         </div>
 
     </div>
-    <div class="card-body">
+    <div class="card-body info">
         <div>
             <!-- <h5 class="card-title m-0">{{ model.dueDate | date:'EEEE' }} </h5> -->
             <p class="card-text" style="color:green;"><b>{{ 'orderbody.orderStatus' | translate }}</b> : {{ getEnumName(model.status) }}  
                 <!-- {{ model.deliveredDate | date:'fullDate' }}  -->
             </p>
         </div>
-        <div class="d-flex p-4">
-            <div class="col-9">
-                <div class="mb-3 d-flex mb-5" *ngFor="let product of model.products">
+        <div class="d-flex p-4 ">
+            <div class="col-lg-9 col-md-8 ">
+                <div class="mb-3 d-flex mb-5 info" *ngFor="let product of model.products">
                     <img src={{product.image}} style="height: 150px; width: 150px;">
-                    <div class="pr-des px-3 ">
+                    <div class="pr-des px-3">
                         <p>
                             <b class="font-weight-bold" >{{ product.name }}</b> - {{ product.description }}
                         </p>
@@ -37,10 +37,10 @@
             </div>
 
 
-            <div class="col-3">
-                <button class="btn btn-warning mb-3" style="width: 100%;"[disabled]="canTrack(model.status)" (click)="target()">{{ 'orderbody.trackPackage' | translate }}</button>
+            <div class="col-lg-3 col-md-3 btnsAl">
+                <button class="btn btn-warning mb-3 btns" style="width: 100%;"[disabled]="canTrack(model.status)" (click)="target()">{{ 'orderbody.trackPackage' | translate }}</button>
 
-                <button class="btn btn-secondary my-1" [disabled]="canCancel(model.status)"
+                <button class="btn btn-secondary my-1 btns" [disabled]="canCancel(model.status)"
                  (click)="open(mymodal)" style="width: 100%;">{{ 'orderbody.requestCancellation' | translate }}
                 </button>
                 <ng-template #mymodal let-modal>
@@ -61,10 +61,10 @@
                 </ng-template>
 
 
-                <button class="btn btn-secondary my-1" style="width: 100%;">{{ 'orderbody.returnOrder' | translate }}</button>
-                <button class="btn btn-secondary my-1" style="width: 100%;">{{ 'orderbody.shareGift' | translate }}</button>
-                <button class="btn btn-secondary my-1" style="width: 100%;">{{ 'orderbody.writeReview' | translate }}</button>
-                <button class="btn btn-secondary my-1" style="width: 100%;">{{ 'orderbody.archiveOrder' | translate }}</button>
+                <button class="btn-sm btn btn-secondary my-1 btns" style="width: 100%;">{{ 'orderbody.returnOrder' | translate }}</button>
+                <button class="btn btn-secondary my-1 btns" style="width: 100%;">{{ 'orderbody.shareGift' | translate }}</button>
+                <button class="btn btn-secondary my-1 btns" style="width: 100%;">{{ 'orderbody.writeReview' | translate }}</button>
+                <button class="btn btn-secondary my-1 btns" style="width: 100%;">{{ 'orderbody.archiveOrder' | translate }}</button>
             </div>
 
 

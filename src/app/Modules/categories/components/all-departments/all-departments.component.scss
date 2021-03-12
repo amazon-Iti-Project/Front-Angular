@@ -70,3 +70,9 @@
     position: relative;
     color: black;
   }
+  @media (max-width: 576px) { 
+    .imgS{
+      width: 80%;
+      margin: 0 10%;
+    }
+   }
