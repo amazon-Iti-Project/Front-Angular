@@ -78,10 +78,16 @@
                 </div>
             </form>
         </div>
-        <div class="col order-md-1  order-1">
+        <div class="col ">
+            <!-- payment details -->
             <div class="border p-3">
                 <h1 class="text-center">{{'shippingForm.paymentMethod' | translate}}</h1>
-                <app-payment-gateway [order]="orderForm.value"></app-payment-gateway>
+                
+            </div>
+            <div class="border p-3">
+                <h1 class="text-center">{{'shippingForm.paymentMethod' | translate}}</h1>
+                <app-payment-gateway ></app-payment-gateway>
+                <!-- [order]="orderForm.value" -->
 
             </div>
         </div>
@@ -98,3 +104,28 @@
     </footer>
 
 </div>
+
+
+<!-- <div  class="alert alert-danger"role="alert">{{orderForm.controls['country'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['name'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['address1'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['address2'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['city'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['state'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['zipCode'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['phone'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['customer'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['status'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['shipmentPrice'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['orderShip'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['orderPrice'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['products'].status}}</div> -->
+<!-- <div  class="alert alert-danger"role="alert">{{orderForm.controls['state'].status}}</div> -->
+<!-- <div  class="alert alert-danger"role="alert">{{orderForm.controls['date'].status}}</div> -->
+<!-- <div  class="alert alert-danger"role="alert">{{orderForm.controls['payment'].status}}</div> -->
+<!-- <div  class="alert alert-danger"role="alert">{{orderForm.controls['dueDate'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['orderDate'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['canCancelledUntil'].status}}</div>
+<div  class="alert alert-danger"role="alert">{{orderForm.controls['deliveredDate'].status}}</div> -->
+
+

@@ -71,6 +71,7 @@ export class OrderService {
         //,'Authorization': 'my-auth-token'
       })
     };
+    console.log("adding Order: ",parsedOrder)
     return this.http.post<ItranslatedOrder>(`${environment.API_BASE_URL}/${environment.orders}`, parsedOrder, httpOptions)
     .pipe(map(
       (order)=> {

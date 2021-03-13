@@ -34,8 +34,12 @@ export class DepartmentComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(param => {
       console.log("search")
       let paramName = param.get('depName');
-      let paramId = param.get('dId');
+      console.log("paramName",param)
+      let paramId = param.get('depId');
+      console.log("paramId",param.get('text'))
+
       let searchName = param.get('text');
+      console.log("searchName",param.get('text'))
       if(paramName&&paramId){
         console.log("department request")
         this.departmentCompModel.depName = paramName ? paramName : undefined;
@@ -50,9 +54,6 @@ export class DepartmentComponent implements OnInit {
           )
       }
       else if (searchName == 'all'){
-
-
-
           console.log("search request")
           this.departmentCompModel.depName = 'all'
           this.prodService.getAllProducts()

@@ -1,5 +1,5 @@
 export interface Ishipping{
-    id:number;
+    id?:number;
     period:number;
     shipPrice:number;
 }

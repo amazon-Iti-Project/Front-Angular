@@ -11,18 +11,19 @@
             <ng-container *ngFor="let product of cartItems" id="PRODUCT">
                 <div class="row  mx-0 my-4">
                     <div class="col-auto border-right border-gray" id="menu-check">
-                        <input class="checkbox-size" type="checkbox" checked="true"
-                            aria-label="Checkbox for following text input">
+                        <input class="checkbox-size" type="checkbox" [disabled]="product.valid" [checked]="product.checked "
+                         (click)="checkBtnCheckEvent(product)"   aria-label="Checkbox for following text input">
                     </div>
-                    <div class="col text-center">
-                        <img class="img-fluid" src={{product.product.image}}>
+                    <div class="col  text-center overflow-hidden">
+                        <img  class="img-fluid "src={{product.product.image}}>
                     </div>
-                    <div class="col-lg-7  col-12">
+                    <div class="col-lg-8 col-md-6  col-12">
                         <a class="cart-title" [routerLink]="['/departments/product/'+product.product.id]"
                             routerLinkActive="router-link-active">{{product.product.name}}</a>
                         <br>
                         <span class="status">{{'cart.inStock' | translate}}</span>
                         <span class="status">{{product.product.quantity}}</span>
+                        <p class="text-danger" [class.d-none]="!product.valid" >not valid</p>
                         <br>
                         <div class="gift-mark">
                             <input type="checkbox"  style="margin-inline-end: 7px;">
@@ -68,7 +69,7 @@
                     </div>
                     <div class="col-auto h5 border-left  border-gray">
                         <p id="price-title"><span class="h6">{{'department.price' | translate}}</span></p>
-                        $<span name="price-tag">{{product.product.price*product.orderCount}}</span>
+                        $<span name="price-tag">{{product.netPrice*product.orderCount| number: '1.0-0'}}</span>
                     </div>
                 </div>
             </ng-container>
@@ -80,7 +81,7 @@
             <hr>
             <!-- total price -->
             <div id="main-total-price">
-                $<span class="p-3" name="total-price-tag">{{totalPrice}}</span>
+                $<span class="p-3" name="total-price-tag">{{totalPrice | number: '1.0-0'}}</span>
             </div>
         </div>
         <!-- end main menu -->
@@ -94,16 +95,16 @@
                     <div class="row  justify-content-around align-content-start">
                         
                         <div class="col-12 text-center">
-                            {{'department.subTotal' | translate}}(<span>{{cartItems.length}}</span> {{'cart.items' |
+                            {{'department.subTotal' | translate}}(<span>{{orderedNumber }}</span> {{'cart.items' |
                             translate}}):
-                            <strong>$<span name="total-price-tag">{{totalPrice}}</span></strong>
+                            <strong>$<span name="total-price-tag">{{totalPrice | number: '1.0-0'}}</span></strong>
                         </div>
                         <div class="col-12 text-center">
                             <input type="checkbox" class="mx-2 my-1">{{'cart.giftOrder' | translate}}
                         </div>
                         <div  class="col-12 text-center">
                             <button type="button" class="btn btn-warning px-3 my-3" (click)="proceedToCheckout()"
-                                [disabled]="cartItems.length == 0">{{'cart.proceedToCheckout' | translate}}</button>
+                                [disabled]="orderedNumber == 0">{{'cart.proceedToCheckout' | translate}}</button>
                         </div>
                     </div>
                 </div>

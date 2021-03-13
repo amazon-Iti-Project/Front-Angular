@@ -6,6 +6,7 @@ import { Iproduct, ITranslatedProduct } from 'src/app/viewModel/IProduct';
 import { environment } from 'src/environments/environment.prod';
 import { UserService } from './../user/user.service';
 import { LocalizationService } from './../localization/localization.service';
+import { Iorder } from 'src/app/viewModel/Iorder';
 
 
 @Injectable({
@@ -168,7 +169,8 @@ export class ProductService {
     ));
   }
 
-  addNewProduct(prod: ITranslatedProduct): Observable<ITranslatedProduct> {
+  addNewProduct(prod: Iproduct): Observable<Iproduct> {
+    let parsedProd = this.parseFromJsonToProduct(prod)
     console.log("recieved Product: ", prod)
     const httpOptions = {
       headers: new HttpHeaders({
@@ -177,7 +179,28 @@ export class ProductService {
         //,'Authorization': 'my-auth-token'
       })
     };
-    return this.http.post<ITranslatedProduct>(`${environment.API_BASE_URL}/${environment.products}`, prod, httpOptions);
+    return this.http.post<ITranslatedProduct>(`${environment.API_BASE_URL}/${environment.products}`, parsedProd, httpOptions)
+    .pipe(map(
+      (product)=>
+        this.parseFromJsonToProduct(product)
+    ))
+  }
+
+  parseFromJsonToProduct(product:ITranslatedProduct):Iproduct{
+    let lang: string = this.localeServ.getLanguage();
+    let parsedProduct:Iproduct;
+    if(lang == 'ar')
+    parsedProduct = {...product,...product.ar}
+    else 
+    parsedProduct = {...product,...product.en}
+    return parsedProduct
+  }
+
+  parseProductToJson(product:Iproduct):ITranslatedProduct{
+    let parsedProduct:ITranslatedProduct;
+    let {name,description,tags,color,size,subTitle,...restproduct} = product
+    parsedProduct = {...restproduct}
+    return parsedProduct
   }
 
 
@@ -186,4 +209,19 @@ export class ProductService {
     let prod = this.http.delete<ITranslatedProduct>(`${environment.API_BASE_URL}/${environment.products}/${prodId}`)
     return prod
   }
+
+  updateProductQuantityById(id:number,quantity:number):Observable<Iproduct>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+        //,'Accept':' */*'
+        //,'Authorization': 'my-auth-token'
+      })
+    };
+    let lang: string = this.localeServ.getLanguage();
+    let products = this.http.patch<ITranslatedProduct>(`${environment.API_BASE_URL}/${environment.products}/${id}`,{quantity},httpOptions,)
+    .pipe(map(prod => this.parseFromJsonToProduct(prod)))
+    return products;
+  }
+
 }

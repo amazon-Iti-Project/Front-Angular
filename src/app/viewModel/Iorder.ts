@@ -3,7 +3,7 @@ import { Ipayment } from './Ipayment';
 import { Iproduct, ITranslatedProduct } from 'src/app/viewModel/IProduct';
 
 export interface Iorder{
-    id:number;
+    id?:number;
     products:Iproduct[]; // products id
     user:number; // user id
     status:DELIVERY_STATE;
@@ -22,7 +22,7 @@ export interface Iorder{
 }
 
 export interface ItranslatedOrder{
-    id:number;
+    id?:number;
     products:ITranslatedProduct[]; // products id
     user:number; // user id
     status:DELIVERY_STATE;

@@ -5,13 +5,14 @@ import { ISelectedItem } from 'src/app/Modules/orders/cart/cart.component';
 import { Iproduct } from 'src/app/viewModel/IProduct';
 import { Iuser } from 'src/app/viewModel/Iuser';
 import { environment } from 'src/environments/environment';
+import { Iorder } from 'src/app/viewModel/Iorder';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   totalCartPrice:number=0;
-  selectedItems:ISelectedItem[]=[];
+  selectedItems:Iproduct[]=[];
 
   constructor(private http:HttpClient) { }
 
@@ -22,11 +23,11 @@ export class CartService {
   getTotalPrice(cartProducts : ISelectedItem[]) : number{
     let total = 0;
     cartProducts.forEach(prod =>{
-      total += (prod.product.price*prod.orderCount)
+      total += (prod.product.price*((100-prod.product.discount)/100)*prod.orderCount)
     } );
     this.totalCartPrice = total
 
-    return total;
+    return this.totalCartPrice;
   }
 
   updateUserCart(user:Iuser,cart:number[]):Observable<Iuser>{

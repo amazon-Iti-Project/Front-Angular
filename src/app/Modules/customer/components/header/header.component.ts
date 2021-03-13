@@ -108,10 +108,16 @@ export class HeaderComponent implements OnInit {
 
   searchProducts(text:String):void{
       console.log(text)
-      if(text !== '')
-      this.router.navigate(['departments/search/'+text])
-      else
-      this.router.navigate(['departments/search/'+'all'])
+      if(text !== ''){
+        console.log("text")
+        this.router.navigate(['/departments/search/'+text])
+      }
+      
+      else{
+        console.log("all")
+        this.router.navigate(['/departments/search/'+'all'])
+      }
+      
   }
 
   searchEnterPress(e:any):void{
