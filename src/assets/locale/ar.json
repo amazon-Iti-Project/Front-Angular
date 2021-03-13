@@ -2,6 +2,7 @@
   "direction": "ltr",
   "PRODUCT": {
     "avaliable": "متوفر",
+    "overview":"عن المنتج",
     "size": "الحجم",
     "quantity": "الكميه المتوفره",
     "addtocart": "اضف الي العربه",

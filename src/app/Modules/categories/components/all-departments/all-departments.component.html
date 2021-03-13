@@ -54,9 +54,9 @@
                             <h2 class="title my-2"><strong>{{cat.parsedTitle}}</strong></h2>
                             <div class="row py-4">
                                 <ng-container *ngFor ="let item of cat.data">
-                                    <div class="col-3 sec-details">
+                                    <div class="col-lg-3 col-sm-6 sec-details">
                                         <a [routerLink]="'department/'+item.name+'/'+item.id">
-                                            <img class="img-fluid" src={{item.image}}> 
+                                            <img class="img-fluid imgS" src={{item.image}} width="100%"> 
                                         </a>
                                         <div class="sub-title px-2">
                                             <span>{{item.name}}</span>

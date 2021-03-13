@@ -1,18 +1,20 @@
 
 *:not(.fab ,.fas,.fa ){
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: inherit;
+//   font-weight: inherit;
 }
 .quantity{
   border: 1px solid lightgray;
   padding: 10px;
 }
-
+.page{
+	margin: 0 1%;
+}
 .mainphoto {
   position: relative;
   text-align: center;
-  margin-top: 20px;
-border: 1px solid lightgray;
+  margin-top: 100px;
+// border: 1px solid lightgray;
 }
 
 /* Top left text
@@ -26,19 +28,20 @@ border: 1px solid lightgray;
   background-color: rgb(255, 46, 46);
   position: absolute;
   top: 8px;
-  left: 16px;
+  left: 40px;
+  transform: rotate(-45deg);
 }
 
 //Product Name
 .product-name{
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   border-bottom: 1px solid lightgrey;
-  padding: 5px;
+  padding: 5px 0;
   color: black;
-  font-size: 35px;
-  font-weight:300;
-  padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
   margin-top: 10px;
+  line-height: 50px;
 }
 
 .price {
@@ -47,8 +50,8 @@ border: 1px solid lightgray;
 	white-space: nowrap !important;
 }
 .price-box {
-  padding: 5px;
-	margin: 6px 0 2px;
+  padding: 5px 0;
+  margin: 6px 0 2px;
   min-height: 22px;
   border-bottom: 1px solid lightgrey;
 }
@@ -109,7 +112,7 @@ border: 1px solid lightgray;
 	display: none;
 	font-size: 12px;
 	font-weight: 400;
-	white-space: nowrap
+	// white-space: nowrap
 }
 .special-price .price {
 	font-size: 25px;
@@ -127,16 +130,11 @@ border: 1px solid lightgray;
 	color: #FC0
 }
 .avaliable{
-  border-bottom: 1px solid lightgrey;
-  padding: 15px;
-
-
+//   border-bottom: 1px solid lightgrey;
+  padding: 2% 0 ;
 }
 .av{
-  margin-left: 550px;
-
-
-
+  margin-left: 100px;
 }
 .availability.in-stock span {
     color: #fff;
@@ -166,12 +164,9 @@ border: 1px solid lightgray;
 	font-weight: 600
 }
  .short-description p {
-	font-size: 13px;
-  color: #666;
-  margin-bottom: 10px
-
-
-
+	font-size: 15px;
+  	color: #666;
+  	margin-bottom: 10px;
 }
 h2.saider-bar-title {
 	color: #333333;
@@ -238,13 +233,13 @@ h2.saider-bar-title {
     	display: inline-block;
     	width: 100%;
       margin-bottom: 8px;
-      border-bottom: 1px solid lightgrey;
+    //   border-bottom: 1px solid lightgrey;
 
     }
     .product-color-size-area .color-area {
     	display: inline-block;
     	width: 40%;
-    	float: left;
+    	// float: left;
       margin-right: 18px;
 
     }
@@ -257,7 +252,7 @@ h2.saider-bar-title {
       display: inline-block;
       width: 100%;
       border-top: 1px #eeeeee solid;
-      border-bottom: 1px #eeeeee solid;
+    //   border-bottom: 1px #eeeeee solid;
       padding: 15px 0px;
       margin-bottom: 15px
     }
@@ -308,7 +303,7 @@ h2.saider-bar-title {
 	line-height: 18px;
 	display: inline-block;
 	height: 40px;
-	float: left;
+	// float: left;
 	cursor: pointer;
 	border-radius: 3px;
 }
@@ -401,8 +396,8 @@ button.button.pro-add-to-cart span i {
 
 .share-box {
 	border-top: 1px solid #e5e5e5;
-	border-bottom: 1px solid #e5e5e5;
-	padding: 12px 0;
+	// border-bottom: 1px solid #e5e5e5;
+	padding: 50px 0 0;
 	position: relative;
 }
 .share-box .titlee {

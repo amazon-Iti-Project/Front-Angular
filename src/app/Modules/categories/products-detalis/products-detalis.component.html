@@ -1,35 +1,32 @@
-
-
-<div class="container-fluid">
-  <div class="row">
+<div class="container-fluid  pb-3">
+  <div class="row page">
     <div class=" col-xs-12 col-sm-5 col-lg-4 col-md-5">
       <div class="mainphoto">
-        <img src="{{prd?.image}}" alt="Snow" style="width:100%;">
+        <img src="{{prd?.image}}" alt="Snow" style="width:60%;">
         <div class="top-left">Sale</div>
+        <div class="avaliable">
+          <div class="rating special-price"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> </div>
+          <div class="availability in-stock pull-right  special-price av"> {{ 'PRODUCT.avaliable' | translate }}: <span>In Stock</span></div>
+        </div>
       </div>
     </div>
      <div class="col">
-        <div class="product-name">
-          <h1>{{prd?.name}}</h1>
+       <div class="product-name">
+        {{prd?.name}}
         </div>
         <div class="price-box">
-          <p class="special-price"> <span class="price-label">Special Price</span> <span class="price"> {{prd?.price |currency}} </span> </p>
-          <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> $359.99 </span> </p>
+          <p class="special-price"> <span class="price-label">Special Price</span> <span class="price"> {{prd.price * ((100-(prd.discount))/100) |currency}} </span> </p>
+          <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> {{prd?.price |currency}} </span> </p>
         </div>
-        <div class="avaliable">
-          <div class="rating special-price"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> </div>
-          <p class="availability in-stock pull-right  special-price av"> {{ 'PRODUCT.avaliable' | translate }}Availability: <span>In Stock</span></p>
-        </div>
-
-        <div class="short-description" >
+        <div class="short-description pt-4" >
           <!-- <h2 translate>product.overview</h2> -->
-          <h2 >product.overview</h2>
+          <h2 >{{ 'PRODUCT.overview' | translate }}</h2>
 
           <p>
           {{prd?.description}}
           </p>
         </div>
-        <div class="product-color-size-area">
+        <div class="product-color-size-area py-5">
           <div class="color-area">
             <h2 class="saider-bar-title">Color</h2>
               <select class="form-control" (change)="onChange($event.target)" [ngStyle]="{'background-color':selectedColor}">
@@ -37,9 +34,9 @@
                   {{color.name}}</option>
               </select>
 
-          </div>
+          </div><br>
           <div class="size-area">
-            <h2 class="saider-bar-title"> {{ 'PRODUCT.size' | translate }}Size</h2>
+            <h2 class="saider-bar-title"> {{ 'PRODUCT.size' | translate }}</h2>
             <div class="size">
             <p>{{prd?.size}}</p>
             </div>
@@ -56,17 +53,19 @@
             <button (click)="addtoCart()" class="button pro-add-to-cart" title="Add to Cart" type="button"><span><i class="fa fa-shopping-basket"></i> {{ 'PRODUCT.addtocart' | translate }} Add to Cart</span></button>
           </form>
         </div>
-        <div class="product-cart-option">
-          <ul>
-            <li><i class="fa fa-heart-o"></i><span> {{ 'PRODUCT.wish' | translate }}Add to Wishlist</span></li>
-            <li><i class="fa fa-link"></i><span> {{ 'PRODUCT.compare' | translate }}Add to Compare</span></li>
-            <li><a href="#"><i class="fa fa-envelope"></i><span>{{ 'PRODUCT.email' | translate }} Email to a Friend</span></a></li>
-          </ul>
-        </div>
+
 
         <div class="share-box">
+          <div class="product-cart-option">
+            <ul>
+              <li><i class="fa fa-heart-o"></i><span> {{ 'PRODUCT.wish' | translate }}Add to Wishlist</span></li>
+              <li><i class="fa fa-link"></i><span> {{ 'PRODUCT.compare' | translate }}Add to Compare</span></li>
+             
+            </ul>
+          </div>
           <div class="titlee"> {{ 'PRODUCT.share' | translate }}Share in social media</div>
           <div class="socials-box"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-youtube"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-instagram"></i></a> </div>
+          <a href="#"><i class="fa fa-envelope"></i><span>{{ 'PRODUCT.email' | translate }} Email to a Friend</span></a>
         </div>
 
         </div>
