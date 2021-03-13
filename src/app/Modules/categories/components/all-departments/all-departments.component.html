@@ -1,9 +1,9 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-11 col-sm-12 p-0">
+        <div class=" col-12 col-md-11 col-sm-12 p-0">
             <div class="row mt-4 w-100 mx-0">
                 <!-- left side menu for filtering -->
-                <div class="col-2 left-menu">
+                <div class="col-2 left-menu d-md-block d-lg-block d-none">
                     <div id="department" class="mb-3">
                         <strong><span>{{'department.sideMenuHeader' | translate}}</span></strong><br>
                         <div class="ml-3 mb-3 links">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <!-- main center menu -->
-                <div class="col-10">
+                <div class="col-lg-10 col-sm-12 col-md-10">
                     <a href="#">
                         <img src="assets/images/cat-head1.jpg" class="img-fluid">
                     </a>
@@ -54,9 +54,15 @@
                             <h2 class="title my-2"><strong>{{cat.parsedTitle}}</strong></h2>
                             <div class="row py-4">
                                 <ng-container *ngFor ="let item of cat.data">
+<<<<<<< HEAD
                                     <div class="col-3 sec-details">
                                         <a [routerLink]="'/departments/'+item.name+'/'+item.id">
                                             <img class="img-fluid" src={{item.image}}> 
+=======
+                                    <div class="col-lg-3 col-sm-6 sec-details">
+                                        <a [routerLink]="'/departments/'+item.name">
+                                            <img class="img-fluid imgS" src={{item.image}} width="100%"> 
+>>>>>>> 29e49987fa25a6db612f1d8fbb9033c238f01ce5
                                         </a>
                                         <div class="sub-title px-2">
                                             <span>{{item.name}}</span>
@@ -69,14 +75,14 @@
                 </div>
             </div>
         </div>
-        <div *ngIf="currentUser" class="col-1 sticky-top d-sm-none d-md-block" id="side-menu">
+        <div *ngIf="currentUser" class="col-1 sticky-top  d-lg-block d-none" id="side-menu">
             <span>{{'department.subTotal' | translate}}</span><br>
             <strong class="price-tag">$<span>{{totalPrice}}</span></strong>
             <div class="cart-items w-90 mt-3">
                 <ng-container *ngFor ="let item of cartItems">
                     <div>
                         <a routerLink="/cart">
-                            <img class="img-fluid mt-4" src={{item.image}}>
+                            <img class="img-fluid mt-4 " src={{item.image}}>
                         </a>
                     </div>
                 </ng-container>
