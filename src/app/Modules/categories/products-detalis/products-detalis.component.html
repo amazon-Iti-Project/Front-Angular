@@ -21,12 +21,12 @@
         <div class="short-description pt-4" >
           <!-- <h2 translate>product.overview</h2> -->
           <h2 >{{ 'PRODUCT.overview' | translate }}</h2>
-
+          
           <p>
           {{prd?.description}}
           </p>
         </div>
-        <div class="product-color-size-area py-5">
+        <div class="product-color-size-area pt-3">
           <div class="color-area">
             <h2 class="saider-bar-title">Color</h2>
               <select class="form-control" (change)="onChange($event.target)" [ngStyle]="{'background-color':selectedColor}">
@@ -45,7 +45,7 @@
         <div class="product-variation">
           <form action="#" method="post">
             <div class="cart-plus-minus">
-              <label for="qty"> {{ 'PRODUCT.quantity' | translate }}Quantity:</label>
+              <label for="qty"> {{ 'PRODUCT.quantity' | translate }}</label>
               <div class="numbers-row">
                <p class="quantity">{{prd?.quantity}}</p>
               </div>

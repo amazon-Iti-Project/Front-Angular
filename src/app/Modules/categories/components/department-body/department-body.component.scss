@@ -34,7 +34,21 @@
    div.row div.col > p:hover {
     color: #C4550C;
   }
-
+  .imgPrd{
+    margin: 0 5%;
+    width: 100%;
+  }
+  .prdDes{
+    font-size: 1.1em;
+    line-height: 30px;
+  }
+  
+  @media (max-width: 767px){ 
+    .imgPrd{
+      width: 70%;
+     
+    }
+   }
 //   .comp-img {
 //     width: 100%;
 //     height: 150px;
