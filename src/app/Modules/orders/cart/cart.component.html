@@ -5,7 +5,7 @@
             <!-- main menu header -->
             <div class="container">
                 <h1>{{'cart.shoppingCart' | translate}}</h1>
-                <a (onclick)="deSelectAll()">{{'cart.deselectAll' | translate}}</a>
+                <a (click)="deSelectAll()">{{'cart.deselectAll' | translate}}</a>
             </div>
             <!-- single cart item -->
             <ng-container *ngFor="let product of cartItems" id="PRODUCT">
@@ -25,7 +25,7 @@
                         <span class="status">{{product.product.quantity}}</span>
                         <br>
                         <div class="gift-mark">
-                            <input type="checkbox" style="margin-inline-end: 7px;">
+                            <input type="checkbox"  style="margin-inline-end: 7px;">
                             <label>{{'cart.thisIsGift' | translate}} <a href="#">{{'cart.learnMore' |
                                     translate}}</a></label>
                         </div>

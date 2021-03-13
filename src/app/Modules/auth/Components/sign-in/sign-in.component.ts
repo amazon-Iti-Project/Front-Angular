@@ -16,12 +16,28 @@ export class SignInComponent implements OnInit {
    }
 
   ngOnInit(): void {
-   
+    this.getCurrentUser();
      // init login form
      this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(5)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     })
+  }
+  getCurrentUser():void{
+    let token = this.userServ.isUserSignedIn()
+    if(token){
+    console.log(token)
+    this.userServ.getUserByToken(token).subscribe(res=>{
+      if(res){
+        alert("you already logged in")
+        this.router.navigate(['/'])
+      }else{
+        this.userServ.logOutUser();
+      }
+    }
+      ,err=>alert(`error in get user:${err}`))
+    }
+   
   }
 
 // on click login
@@ -31,7 +47,9 @@ export class SignInComponent implements OnInit {
       console.log('success',res)
       if(res){
       console.log('success',res)
-        let token = this.userServ.createTokenbyUserId(res)
+      let token:string;
+      if(res.token  == null){
+        token= this.userServ.createTokenbyUserId(res)
         this.userServ.updateUserToken(res,token).subscribe(res=>
           {
             console.log(res)
@@ -39,6 +57,13 @@ export class SignInComponent implements OnInit {
             .then(res => { console.log(res) })
             .catch(err => console.log(err))
           },err=>console.log(err))
+      }else {
+        token = this.userServ.SetToken(res.token)
+        this.router.navigate(['/'])
+      }
+       
+
+
       }else alert('Not a user please Register')
      
     }

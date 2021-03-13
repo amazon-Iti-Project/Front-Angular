@@ -50,6 +50,13 @@ export class UserService {
     return token
   }
 
+  SetToken(token:string):string{
+    console.log("this is user and that is token: ", token)
+
+    localStorage.setItem('UserToken', token);
+    return token;
+  }
+
   //3- add token to user in db 
   updateUserToken(user:Iuser,token:string):Observable<Iuser>{
     const httpOptions = {
@@ -76,6 +83,7 @@ export class UserService {
 
 //5- if user get user by token  // 2- in any page if user logged use this method
   getUserByToken(token:string):Observable<Iuser>{
+    console.log(environment.API_BASE_URL)
     return this.http.get<Iuser[]>(`${environment.API_BASE_URL}/${environment.users}?token=${token}`)
     .pipe(map(users=> users[0] ))
   }

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container ">
         <!-- flag & title -->
         <div class="row component my-3">
             <div class="flag">
@@ -6,14 +6,14 @@
             </div>
             <span class="flag-title">{{'department.amazonChoice' |translate}}</span>
         </div>
-    <div class="row nowrap justify-content-md-center justify-content-center  position-relative">
+    <div class="row mx-0  justify-content-md-center justify-content-center position-relative overflow-hidden"
+    style="height: 25em;">
         <ng-container *ngFor="let item of carouselList; index as sn;">
             <!-- <div class="col-md-4 col-12 ">
             </div> -->
-
-            <div class="card mx-2" style="width: 15rem;">
-                <div class="overflow-hidden img-container">
-                    <img [src]="item.image" class="" alt="..." style="height: 100%;width: 100%;">
+            <div class=" card mx-2" style="width: 15rem;height: 25em;">
+                <div class="overflow-hidden img-container"style="height:10em;">
+                    <img [src]="item.image" class="img-fluid" alt="..." style="height: 100%;width: 100%;">
                 </div>
                 <div class="card-header"><span class="badge badge-warning">{{item.categoryName}}</span></div>
                 <div class="card-body">
@@ -36,6 +36,8 @@
           </div>
        
     </div>
+
+
 
 </div>
 <!-- carousel ends -->

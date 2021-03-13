@@ -17,11 +17,11 @@
 
 <ng-container *ngFor="let item of productsList;index as sn;">
     <!-- items row2 component  starts-->
-<div class=" container-fluid btn" [routerLink]="['/departments/product/'+item.id]" routerLinkActive="" >
+<div class=" container-fluid cursor-pointer" [routerLink]="['/departments/product/'+item.id]" routerLinkActive="" >
     <div class="alert row component   border-bottom align-items-center ">
         <!-- img col part starts-->
-        <div class=" col-sm-4 col-md-3 col-12 ">
-            <img class="img-fluid" src={{item.image}} />
+        <div class=" col-sm-4 col-md-3 col-12 "style="height:15rem;">
+            <img class="img-fluid" src={{item.image}} style="height: 100%;width: 100%;"/>
         </div>
         <!-- img col part ends-->
 

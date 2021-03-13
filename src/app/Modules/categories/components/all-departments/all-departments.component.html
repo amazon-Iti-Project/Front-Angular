@@ -49,13 +49,13 @@
                         <img src="assets/images/cat-head2.jpg" class="img-fluid mt-4">
                     </a>
                     <ng-container *ngFor="let cat of catList">
-                        <img *ngIf="cat.title=='Set The Table'" class="img-fluid" src="assets/images/cat-head3.jpg">
+                        <img *ngIf="cat.parsedTitle=='Set The Table'" class="img-fluid" src="assets/images/cat-head3.jpg">
                         <section class="my-2">
-                            <h2 class="title my-2"><strong>{{cat.title}}</strong></h2>
+                            <h2 class="title my-2"><strong>{{cat.parsedTitle}}</strong></h2>
                             <div class="row py-4">
                                 <ng-container *ngFor ="let item of cat.data">
                                     <div class="col-3 sec-details">
-                                        <a [routerLink]="'/departments/'+item.name">
+                                        <a [routerLink]="'/departments/'+item.name+'/'+item.id">
                                             <img class="img-fluid" src={{item.image}}> 
                                         </a>
                                         <div class="sub-title px-2">

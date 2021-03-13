@@ -1,0 +1,40 @@
+<app-seller-home-header class="container"></app-seller-home-header>
+<div class="container">
+    <div class="height-45 ">
+        <table class="table font-amazon-normal table-hover min-content">
+            <thead class="font-amazon-bold thead-dark text-capitalize">
+              <tr>
+                <th scope="col" >serial </th>
+                <th scope="col">Name</th>
+                <th scope="col">in Stock</th>
+                <th scope="col">price</th>
+                <th scope="col">shipping&nbsp; <span class="fas fa-dollar-sign"></span></th>
+                <th scope="col">Tax&nbsp; % <span class="fas fa-dollar-sign"></span></th>
+                <th scope="col">discount&nbsp;%</th>
+                <th scope="col">Net Price&nbsp; <span class="fas fa-dollar-sign"></span></th>
+                <th class="text-center" scope="col" >image</th>
+                <!-- <th scope="col">Delivered&nbsp; %</th>
+                <th scope="col">Cancelled &nbsp;%</th>
+                <th scope="col">Seller</th>
+                <th scope="col">Product Rate</th>
+                <th scope="col">Seller Rate</th> -->
+              </tr>
+        
+            </thead>
+          <tbody>
+              <!-- row1 -->
+              <tr *ngFor="let prod of filteredList ; index as sn;  "> 
+                <th class="font-amazon-normal align-middle" scope="row">{{sn+1}}</th>
+                <td class="align-middle"><p class="mb-1">{{prod.product.name}}</p><p class="badge badge-primary">{{prod.category.name}}</p></td>
+                <td class="align-middle">{{prod.product.quantity}}</td>
+                <td class="align-middle">{{prod.product.price}}&nbsp;<span class="fas fa-dollar-sign"></span></td>
+                <td class="align-middle">{{prod.product.shipping.shipPrice}}&nbsp;<span class="fas fa-dollar-sign"></span></td>
+                <td class="align-middle">{{prod.product.fee.fee}}&nbsp;%</td>
+                <td class="align-middle">{{prod.product.discount}}&nbsp;%</td>
+                <td class="align-middle">{{prod.product.price*(100-prod.product.fee.fee)*(100-prod.product.discount)/10000}}</td>
+                <td class="align-middle "><img width="100" [src]="prod.product.image" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+</div>

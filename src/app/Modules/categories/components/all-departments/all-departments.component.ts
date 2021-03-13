@@ -5,8 +5,8 @@ import { ProductService } from 'src/app/services/product/product.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { Iproduct } from 'src/app/viewModel/IProduct';
 import { Iuser } from 'src/app/viewModel/Iuser';
-import { CategoriesJSONService } from '../../services/categories-json.service';
 import { ICategoryCollection } from '../../viewModels/ICategoryCollection';
+import { CategoryService } from 'src/app/services/category/category.service';
 
 @Component({
   selector: 'app-all-departments',
@@ -20,12 +20,12 @@ export class AllDepartmentsComponent implements OnInit {
   currentUser : Iuser | undefined = undefined;
   cartItems : Iproduct[] = [];
   totalPrice = 0.0;
-  constructor(private catService : CategoriesJSONService,
+  constructor(private catService : CategoryService,
     private prodService : ProductService,
     private userService : UserService) {
   }
   ngOnInit(): void {
-    const sub = this.catService.getAllCategories().subscribe(
+    const sub = this.catService.getAllCategoryCollections().subscribe(
       response => { this.catList = response;
         console.log(this.catList);
       },
@@ -34,7 +34,7 @@ export class AllDepartmentsComponent implements OnInit {
     this.subscriptionList.push(sub);
     // side menu logic
     // let token = this.userService.isUserSignedIn()
-    let token = "aea407a0-7f44-fcd0-c325-b1b3cbbe7711"
+    let token = this.userService.isUserSignedIn()
     if(token){
       this.userService.getUserByToken(token).subscribe(
         response => {

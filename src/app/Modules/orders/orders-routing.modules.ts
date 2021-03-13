@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserGuard } from 'src/app/guards/user.guard';
 // import { CartComponent } from './cart/cart.component';
 import { ArchivedOrderComponent } from './Components/archived-order/archived-order.component';
 import { CanceledListComponent } from './Components/canceled-list/canceled-list.component';
@@ -8,7 +9,7 @@ import { DeliveredPackageComponent } from './Components/delivered-package/delive
 import { DigitalOrdersComponent } from './Components/digital-orders/digital-orders.component';
 import { OrdersListComponent } from './Components/orders-list/orders-list.component';
 import { PackageTrackComponent } from './Components/package-track/package-track.component';
-import { ShippingFormComponent } from './shipping-form/shipping-form.component';
+import { ShippingFormComponent } from '../shipping/shippingComponents/shipping-form/shipping-form.component';
 
 const ordersRoutes: Routes = [
     { path: 'list', component: OrdersListComponent },
@@ -18,6 +19,8 @@ const ordersRoutes: Routes = [
     { path: "Archive", component: ArchivedOrderComponent },
     { path: "DigitalOrders", component: DigitalOrdersComponent },
     { path: "DeliveredPackage/:oID", component: DeliveredPackageComponent },
+    { path: 'shippingDetails', component:ShippingFormComponent,canActivate:[UserGuard]},
+
     { path: "", redirectTo:"list", pathMatch: "full" }
     
 ]

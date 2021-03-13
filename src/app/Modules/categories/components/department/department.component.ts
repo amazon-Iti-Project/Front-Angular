@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 import { ProductService } from 'src/app/services/product/product.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { Iproduct } from 'src/app/viewModel/IProduct';
@@ -33,11 +34,13 @@ export class DepartmentComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(param => {
       console.log("search")
       let paramName = param.get('depName');
+      let paramId = param.get('dId');
       let searchName = param.get('text');
-      if(paramName){
+      if(paramName&&paramId){
         console.log("department request")
         this.departmentCompModel.depName = paramName ? paramName : undefined;
-        this.prodService.getProductsByCatName(this.departmentCompModel.depName ? this.departmentCompModel.depName.toLowerCase() : '')
+        
+        this.prodService.getProductsByCategoryId(Number.parseInt(paramId))
           .subscribe(
             response => {
               this.departmentCompModel.productsList = response;

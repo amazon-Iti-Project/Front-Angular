@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'payment', component:PaymentComponent,canActivate:[UserGuard]  },
   // this is product id path
   { path: 'product/:pId', component:ProductsDetalisComponent  },
-  {path:':depName',component:DepartmentComponent},
+  {path:':depName/:dId',component:DepartmentComponent},
   {path:'search/:text',component:DepartmentComponent},
   {path:'',component:AllDepartmentsComponent},
 

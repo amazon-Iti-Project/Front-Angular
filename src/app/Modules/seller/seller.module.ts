@@ -11,10 +11,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { NotFoundComponent } from 'src/app/appComponent/not-found/not-found.component';
+import { SellerManageInventoryComponent } from './sellerComponents/seller-manage-inventory/seller-manage-inventory.component';
 
 const routes:Routes = [
   {path:'home',component:SellerHomeComponent},
   {path:'add',component:SellerAddProductComponent},
+  {path:'inventory',component:SellerManageInventoryComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: "**", component:NotFoundComponent  }
 ]
@@ -26,7 +28,8 @@ const routes:Routes = [
     SellerHomeLeftComponent,
     SellerHomeRightComponent,
     SellerAddProductComponent,
-    SellerHomeBodyComponent],
+    SellerHomeBodyComponent,
+    SellerManageInventoryComponent],
   imports: [
   CommonModule,
     RouterModule.forChild(routes),

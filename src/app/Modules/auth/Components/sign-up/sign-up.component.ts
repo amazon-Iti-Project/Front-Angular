@@ -14,6 +14,8 @@ export class SignUpComponent implements OnInit {
   constructor( private fb:FormBuilder,private userServ:UserService,private router:Router) { }
 
   ngOnInit(): void {
+    this.getCurrentUser();
+
     this.loginFrm = this.fb.group({
     // Name:['',[Validators.required , Validators.pattern('[a-zA-Z]{6,15}')]],
     name:['',[Validators.required,Validators.minLength(6) ] ],
@@ -36,6 +38,22 @@ this.loginFrm.controls['password'].valueChanges.subscribe(res=>{
 })
     
     console.log(this.loginFrm)
+  }
+  getCurrentUser():void{
+    let token = this.userServ.isUserSignedIn()
+    if(token){
+    console.log(token)
+    this.userServ.getUserByToken(token).subscribe(res=>{
+      if(res){
+        alert("you already logged in")
+        this.router.navigate(['/'])
+      }else{
+        this.userServ.logOutUser();
+      }
+    }
+      ,err=>alert(`error in get user:${err}`))
+    }
+   
   }
 
 

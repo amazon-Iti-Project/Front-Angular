@@ -1,0 +1,100 @@
+<nav>
+    <div class="d-none d-sm-block" id="head-img">
+        <img class="img-fluid" src="assets/images/amazon-full.gif">
+    </div>
+    <div class="d-block d-sm-none" id="head-img">
+        <img class="img-fluid" width="100" src="assets/Amazon-Logo.png">
+    </div>
+</nav>
+<div class="container">
+    <div>
+        <h1>{{'shippingForm.selectAddress' | translate}}</h1>
+        <p>{{'shippingForm.addressTips' | translate}}</p>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <h1>{{'shippingForm.addAddress' | translate}}</h1>
+            <form [formGroup]="orderForm" (ngSubmit)="submitOrder()">
+                <label class="mt-2"><span>{{'shippingForm.country' | translate}}</span></label><br>
+                <select class="selectpicker countrypicker form-control" data-default="DE" formControlName="country">
+                    <option>{{'shippingForm.egypt' | translate}}</option>
+                    <option>{{'shippingForm.usa' | translate}}</option>
+                </select>
+                <label class="mt-2"><span>{{'shippingForm.fullName' | translate}}</span></label><br>
+                <input class="form-control" type="text" formControlName="name">
+                <div *ngIf="orderForm.get('name')?.invalid && orderForm.get('name')?.touched" class="alert alert-danger"
+                    role="alert">
+                    {{'shippingForm.requiredF' | translate}}!
+                </div>
+                <label class="mt-2"><span>{{'shippingForm.address1' | translate}}</span></label><br>
+                <input class="form-control" formControlName="address1" type="text"
+                    placeholder="Street address, P.O.box, company name, c/o">
+                <div *ngIf="orderForm.get('address1')?.invalid && orderForm.get('address1')?.touched"
+                    class="alert alert-danger" role="alert">
+                    {{'shippingForm.lengthMustBe10' | translate}}!
+                </div>
+                <label class="mt-2"><span>{{'shippingForm.address2' | translate}}</span></label><br>
+                <input class="form-control" type="text" formControlName="address2"
+                    placeholder="Apartment, suite, unit, building, floor, etc.">
+                <div *ngIf="orderForm.get('address2')?.invalid && orderForm.get('address2')?.touched"
+                    class="alert alert-danger" role="alert">
+                    {{'shippingForm.lengthMustBe10' | translate}}
+                </div>
+                <label class="mt-2"><span>{{'shippingForm.city' | translate}}</span></label><br>
+                <input class="form-control" type="text" formControlName="city">
+                <div *ngIf="orderForm.get('city')?.invalid && orderForm.get('city')?.touched" class="alert alert-danger"
+                    role="alert">
+                    {{'shippingForm.enterCity' | translate}}!
+                </div>
+                <label class="mt-2"><span>{{'shippingForm.state' | translate}}</span></label><br>
+                <input class="form-control" type="text" formControlName="state">
+                <label class="mt-2"><span>{{'shippingForm.zipCode' | translate}}</span></label><br>
+                <input class="form-control" type="text" formControlName="zipCode">
+                <div *ngIf="orderForm.get('zipCode')?.invalid && orderForm.get('zipCode')?.touched"
+                    class="alert alert-danger" role="alert">
+                    {{'shippingForm.zipLength' | translate}}!
+                </div>
+                <label class="mt-2"><span>{{'shippingForm.phone' | translate}}</span></label><br>
+                <input class="form-control" (onchange)="getFormValue()" type="text" formControlName="phone">
+                <small>{{'shippingForm.mayAssist' | translate}}</small>
+                <div class="mb-5"></div>
+                <input type="checkbox" checked>{{'shippingForm.defaultAddress' | translate}} .
+                <div class="border-top mt-3">
+                    <label class="mt-3"><span>{{'shippingForm.correctAddress' | translate}}</span></label><br>
+                    <small>{{'shippingForm.deliveryNote' | translate}}.</small><br>
+                    <a
+                        href="https://www.amazon.com/gp/help/customer/display.html/ref=chk_addrpop_genhelp_sec?ie=UTF8&nodeId=3285251">
+                        <span>{{'shippingForm.addressNote' | translate}}</span>
+                    </a>
+                    <span class="mx-2"> | </span>
+                    <a
+                        href="https://www.amazon.com/gp/help/customer/display.html/ref=chk_addrpop_apohelp_sec?ie=UTF8&nodeId=201117610">
+                        <span>APO/FPO address tips</span>
+                    </a><br>
+                    <button type="submit" class="btn btn-warning my-5" id="final-btn" [disabled]="orderForm.invalid">
+                        {{'shippingForm.addressBTN' | translate}}</button>
+
+                </div>
+            </form>
+        </div>
+        <div class="col order-md-1  order-1">
+            <div class="border p-3">
+                <h1 class="text-center">{{'shippingForm.paymentMethod' | translate}}</h1>
+                <app-payment-gateway [order]="orderForm.value"></app-payment-gateway>
+
+            </div>
+        </div>
+
+    </div>
+    <footer class="row mx-0">
+        <hr class="col-12 ">
+        <div class="col-12">
+            <p>{{'cart.askForPromo' | translate}}.</p>
+            <p><a href="#">{{'shippingForm.conditionsOfUse' | translate}}</a> | <a href="#">{{'shippingForm.privacyNote'
+                    | translate}}</a> © 1996-2020, Amazon.com, Inc.</p>
+
+        </div>
+    </footer>
+
+</div>

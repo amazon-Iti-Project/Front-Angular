@@ -41,14 +41,14 @@
                 <button class="btn btn-light input-group-text dropdown-toggle text-dark font-1"
                   data-toggle="dropdown">{{'homeHeader.all'|translate}}</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" [routerLink]="['/']">department</a>
+                  <!-- <a class="dropdown-item" [routerLink]="['/']">department</a> -->
                 </div>
               </div>
               <!-- search input -->
-              <input #searchRef type="text" class="form-control" id="inlineFormInputGroup" placeholder="{{'homeHeader.search'|translate}}">
+              <input #searchRef type="text"(keypress)="searchEnterPress($event)" class="form-control" id="inlineFormInputGroup" placeholder="{{'homeHeader.search'|translate}}">
               <!-- search icon -->
               <div class="input-group-append">
-                <button (click)="searchProducts(searchRef.value)" class="btn btn-outline-warning input-group-text icon-color fas fa-search"></button>
+                <button  (click)="searchProducts(searchRef.value)" class="btn btn-outline-warning input-group-text icon-color fas fa-search"></button>
               </div>
             </div>
           </div>
@@ -111,8 +111,8 @@
               <p class="dropdown-item font-amazon-normal" [routerLink]="['/']"><span>{{'homeHeader.changeLanguage'|translate}}</span>
                 <span class="font-1 text-info font-amazon-normal">&nbsp;{{'homeHeader.learnMore'|translate}}</span>
               </p>
-              <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Another action</a>
-              <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Something else here</a>
+              <!-- <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Another action</a>
+              <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Something else here</a> -->
               <!-- //  -->
               <div  data-display="static"  class="dropdown-item  custom-control custom-radio">
                 <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" [checked]="lang=='en'">

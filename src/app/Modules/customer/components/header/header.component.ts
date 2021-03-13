@@ -113,6 +113,14 @@ export class HeaderComponent implements OnInit {
       else
       this.router.navigate(['departments/search/'+'all'])
   }
+
+  searchEnterPress(e:any):void{
+    console.log("event",e.target.value)
+    if (e.keyCode === 13) {
+      this.searchProducts(e.target.value)
+      // rest of your code
+    }
+  }
  
 
 }

@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   API_BASE_URL:'https://amazon-api-jsonserver.herokuapp.com',
-  // API_URL:"http://localhost:3000"
+  // API_BASE_URL:"http://localhost:3000",
   brands:'brands',
   categories:'categories',
   products:'products',

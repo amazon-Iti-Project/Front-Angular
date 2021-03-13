@@ -14,13 +14,11 @@
         <div class="bg-white p-2 col row m-0 ">
           <!-- [ngClass]="{'text-right':{{'direction'| translate}} ==='rtl'}" -->
           <p class="col-12 h5 font-amazon-bold">{{ item.title | translate }}</p>
-          <a [routerLink]="[item.link]">
-          <div class="col-12 px-0 ">
+          <div class="cursor-pointer col-12 px-0 " [routerLink]="[item.link]">
             <a class="d-flex p-2 img-home-container justify-content-center align-items-start">
               <img [src]="item.url" class=" img-fluid img-home ">
             </a>
           </div>
-        </a>
           <a [routerLink]="[item.link]" routerLinkActive="router-link-active"  class="font-0 text-info align-self-end  py-1 font-amazon-normal">{{'home.shopNow'|translate}}</a>
         </div>
       </div>

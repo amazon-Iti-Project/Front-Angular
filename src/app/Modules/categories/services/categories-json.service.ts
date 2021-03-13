@@ -10,7 +10,5 @@ import { environment } from 'src/environments/environment';
 export class CategoriesJSONService {
 
   constructor(private httpClient : HttpClient) { }
-  getAllCategories() : Observable<ICategoryCollection[]>{
-    return this.httpClient.get<ICategoryCollection[]>(`${environment.API_BASE_URL}/categoriesCollection`);
-  }
+
 }

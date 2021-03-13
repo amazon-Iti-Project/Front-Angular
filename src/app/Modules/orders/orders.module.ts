@@ -18,10 +18,11 @@ import { CanceledOrderComponent } from './Components/canceled-order/canceled-ord
 import { DigitalOrdersComponent } from './Components/digital-orders/digital-orders.component';
 import { CanceledListComponent } from './Components/canceled-list/canceled-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ShippingFormComponent } from './shipping-form/shipping-form.component';
+import { ShippingFormComponent } from '../shipping/shippingComponents/shipping-form/shipping-form.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { PaymentGatewayComponent } from '../shipping/shippingComponents/payment-gateway/payment-gateway.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 
 @NgModule({
@@ -38,6 +39,8 @@ import { TranslateModule } from '@ngx-translate/core';
     DigitalOrdersComponent,
     CanceledListComponent,
     ShippingFormComponent,
+    PaymentGatewayComponent,
+
   ],
   imports: [
     CommonModule,
@@ -47,7 +50,8 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
-    TranslateModule
+    TranslateModule,
+    NgxPayPalModule,
 
   ],
   providers: []
