@@ -294,7 +294,8 @@
     "paymentMethod":"Pay by"
   },
   "PRODUCT": {
-    "avaliable": "Avaliable",
+    "avaliable": "Availability",
+    "overview":"Product Overview",
     "size": "Size",
     "quantity": "Quantity",
     "addtocart": "Add To Cart",

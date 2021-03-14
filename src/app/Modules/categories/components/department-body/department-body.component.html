@@ -17,16 +17,16 @@
 
 <ng-container *ngFor="let item of productsList;index as sn;">
     <!-- items row2 component  starts-->
-<div class=" container-fluid cursor-pointer" [routerLink]="['/departments/product/'+item.id]" routerLinkActive="" >
+<div class=" container-fluid cursor-pointer py-5" [routerLink]="['/departments/product/'+item.id]" routerLinkActive="" >
     <div class="alert row component   border-bottom align-items-center ">
         <!-- img col part starts-->
-        <div class=" col-sm-4 col-md-3 col-12 "style="height:15rem;">
-            <img class="img-fluid" src={{item.image}} style="height: 100%;width: 100%;"/>
+        <div class=" col-sm-4 col-md-3 col-12 ">
+            <img class="img-fluid imgPrd pl-5"  src={{item.image}} />
         </div>
         <!-- img col part ends-->
 
         <!-- details col part starts-->
-        <div class="col-sm-8 col-md-9 col mb-3">
+        <div class="col-sm-8 col-md-9 col my-4">
             <div class="row nowrap align-items-center justify-content-center">
                 <div id="price-filter" class=" col-auto ">
                     <strong><span class="heading">Price</span></strong><br>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <p class="h5 text-left ">{{item.description}}</p>
+                    <p class="prdDes text-left ">{{item.description}}</p>
                 </div>
             </div>
         </div>
