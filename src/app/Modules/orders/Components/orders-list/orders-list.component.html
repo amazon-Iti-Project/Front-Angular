@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <app-order-card class="form-group" *ngFor="let order of getFilteredOrders() | filter:filterTerm" [model]="order" ></app-order-card>
+        <app-order-card class="form-group" *ngFor="let order of ordersList | filter:filterTerm" [model]="order" ></app-order-card>
         <!-- <div class="loading" *ngIf="loading">
             Loading Work
         </div> -->

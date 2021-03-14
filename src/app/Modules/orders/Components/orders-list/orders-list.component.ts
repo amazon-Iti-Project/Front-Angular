@@ -57,6 +57,7 @@ export class OrdersListComponent implements OnInit {
             console.log("get order have user: ")
             this.subscribtion = this.ordersSvc.getOrdersByCustomerId(this.currentUser.id).subscribe((response) => {
                 this.ordersList = response;
+                console.log("order return",this.ordersList)
             },
                 (err) => { console.log(err) }
             );

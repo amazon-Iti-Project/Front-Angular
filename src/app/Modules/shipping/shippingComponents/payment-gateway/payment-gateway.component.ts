@@ -77,7 +77,7 @@ export class PaymentGatewayComponent implements OnInit, AfterViewInit {
       clientId:
       "AVfSvOu-WRXXOWdiVVQVj-125HGxFluXv1ZV2Q0QGt6_nzI3AYU-ZbXwMN9Qr-xOWcd78u_Cdyh3aSnu",
         // "AYvU7p49APJ3TWCP7EPq6Z1Sm7LijDirPdDI-G6DjNasJ2tyIVCwb0IZL1v5cKy_tw7qPr_2ybS62gCR",
-      createOrder: data =>
+      createOrder: (data:any) =>
         <ICreateOrderRequest>{
           intent: "CAPTURE",
           purchase_units: [
@@ -113,32 +113,32 @@ export class PaymentGatewayComponent implements OnInit, AfterViewInit {
         label: "paypal",
         layout: "vertical"
       },
-      onApprove: (data, actions) => {
+      onApprove: (data:any, actions:any) => {
         console.log(
           "onApprove - transaction was approved, but not authorized",
           data,
           actions
         );
-        actions.order.get().then(details => {
+        actions.order.get().then((details:any) => {
           console.log(
             "onApprove - you can get full order details inside onApprove: ",
             details
           );
         });
       },
-      onClientAuthorization: data => {
+      onClientAuthorization: (data:any) => {
         console.log(
           "onClientAuthorization - you should probably inform your server about completed transaction at this point",
           data
         );
       },
-      onCancel: (data, actions) => {
+      onCancel: (data:any, actions:any) => {
         console.log("OnCancel", data, actions);
       },
-      onError: err => {
+      onError: (err:any) => {
         console.log("OnError", err);
       },
-      onClick: (data, actions) => {
+      onClick: (data:any, actions:any) => {
         console.log("onClick", data, actions);
       }
     };
