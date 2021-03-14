@@ -14,6 +14,38 @@
         <!-- collapsive nav  -->
         <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav font-amazon-bold font-1 ">
+                <li class="nav-item nav-hover m-auto">
+                    <!-- Language -->
+                    <div class="dropdown pl-1 min-content px-1">
+                      <div class=" dropdown-toggle text-dark " id="langbtn"  data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                       <a><img src="../../../assets/languages logos/US-United-States-Flag-icon.svg" class="imgSize_3 p-1"></a> 
+                      </div>
+                      <!-- lang menu -->
+                      <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton ">
+                        <div class="container ">
+                          <p class="dropdown-item font-amazon-normal" [routerLink]="['/']"><span>{{'homeHeader.changeLanguage'|translate}}</span>
+                            <span class="font-1 text-info font-amazon-normal">&nbsp;{{'homeHeader.learnMore'|translate}}</span>
+                          </p>
+                          <!-- <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Another action</a>
+                          <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Something else here</a> -->
+                          <!-- //  -->
+                          <div  data-display="static"  class="dropdown-item  custom-control custom-radio">
+                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" [checked]="lang=='en'">
+                            <label (click)="changeLang('en')" class="custom-control-label font-amazon-normal" for="customRadio1">{{'homeHeader.english'|translate}}</label>
+                          </div>
+                          <div #arRef  class="dropdown-item custom-control custom-radio">
+                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input"[checked]="lang==='ar'">
+                            <label (click)="changeLang('ar')" class="custom-control-label font-amazon-normal" for="customRadio2">{{'homeHeader.arabic'|translate}}</label>
+                          </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a #safeRef   class="dropdown-item font-amazon-normal text-center" [routerLink]="['/']"><span class="btn btn-outline-info ">Safe</span></a>
+            
+                        <!-- // -->
+                      </div>
+                    </div>
+                  </li>
                 <li class="nav-item active">
                     <a class="nav-link" [routerLink]="['/seller/home']" routerLinkActive="router-link-active" >  {{'sellerHeader.catalog'|translate}}</a>
                 </li>

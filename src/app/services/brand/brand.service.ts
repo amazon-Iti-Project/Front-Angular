@@ -14,17 +14,17 @@ export class BrandService {
   constructor(private http:HttpClient,private localServ:LocalizationService) { }
 
   getAllBrands():Observable<Ibrand[]>{
-    let test = this.http.get<Ibrand[]>(`${environment.API_BASE_URL}/${environment.brands}`)
-    console.log(test)
-    return test;
+    let brandList = this.http.get<ITranslatedBrand[]>(`${environment.API_BASE_URL}/${environment.brands}`)
+    .pipe(map(jsonList =>this.parseFromJsonToBrandList(jsonList)))
+    return brandList;
   }
   parseFromJsonToBrandList(brands:ITranslatedBrand[]):Ibrand[]{
     let parsedBrands =  brands.map(
-      (brand)=>this.parseFromJsonBrand(brand))
+      (brand)=>this.parseFromJsonToBrand(brand))
     return parsedBrands;
   }
 
-  parseFromJsonBrand(brand:ITranslatedBrand):Ibrand{
+  parseFromJsonToBrand(brand:ITranslatedBrand):Ibrand{
     let lang:String = this.localServ.getLanguage();
     let parsedBrand:Ibrand;
     if(lang ==  'ar')
@@ -48,23 +48,26 @@ export class BrandService {
 
 
   getBrandById(id:number):Observable<Ibrand>{
-    let test = this.http.get<Ibrand>(`${environment.API_BASE_URL}/${environment.brands}/${id}`)
-    console.log(test)
-    return test;
+    let brand = this.http.get<ITranslatedBrand>(`${environment.API_BASE_URL}/${environment.brands}/${id}`)
+    .pipe(map(json =>this.parseFromJsonToBrand(json)))
+    return brand;
   }
 
-  addNewBrand(brand:Ibrand):Observable<Ibrand>{
+  addNewBrand(brand:ITranslatedBrand):Observable<Ibrand>{
     console.log("recieved Product: ",brand)
     const httpOptions = {headers: new HttpHeaders({
       'Content-Type': 'application/json'
       //,'Accept':' */*'
       //,'Authorization': 'my-auth-token'
         })};
-        return this.http.post<Ibrand>(`${environment.API_BASE_URL}/${environment.brands}`,brand, httpOptions);
-  }
+        return this.http.post<Ibrand>(`${environment.API_BASE_URL}/${environment.brands}`,brand, httpOptions)
+        .pipe(map(json =>this.parseFromJsonToBrand(json)))
+      }
+
 
 deleteBrand(brandId:number):Observable<Ibrand>{
-  let brand = this.http.delete<Ibrand>(`${environment.API_BASE_URL}/${environment.brands}/${brandId}`)
-    return brand;
+  let brand = this.http.delete<ITranslatedBrand>(`${environment.API_BASE_URL}/${environment.brands}/${brandId}`)
+  .pipe(map(json =>this.parseFromJsonToBrand(json)))
+  return brand;
 }
 }
