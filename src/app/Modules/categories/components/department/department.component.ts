@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 import { ProductService } from 'src/app/services/product/product.service';
@@ -9,7 +9,7 @@ import { Iuser } from 'src/app/viewModel/Iuser';
 interface DepartmentComModel {
   depName?: string;
   productsList?: Iproduct[];
-  currentUser?: Iuser | undefined;
+  currentUser?: Iuser;
   cartItems?: Iproduct[];
   totalPrice?: number;
 }
@@ -19,9 +19,9 @@ interface DepartmentComModel {
   templateUrl: './department.component.html',
   styleUrls: ['./department.component.scss']
 })
-export class DepartmentComponent implements OnInit {
+export class DepartmentComponent implements OnInit{
   departmentCompModel: DepartmentComModel = {};
-
+  p: number = 1;
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
     private prodService: ProductService,

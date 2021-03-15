@@ -37,11 +37,10 @@
             <!-- main center menu -->
             <!-- department body Starts -->
             <app-department-body class=" mt-4  mx-0" [depName]="departmentCompModel.depName"
-                [productsList]="departmentCompModel.productsList">
+                [productsList]="departmentCompModel.productsList | paginate: { itemsPerPage: 5, currentPage: p }">
             </app-department-body>
             <!-- department body Starts -->
-
-
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>
         <!-- divider -->
         <div class="w-100"></div>
