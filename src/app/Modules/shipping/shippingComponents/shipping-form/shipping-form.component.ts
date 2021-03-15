@@ -24,7 +24,7 @@ import { first } from 'rxjs/operators';
 
 export class ShippingFormComponent implements OnInit {
   user: Iuser | undefined = undefined;
-  cartItems: ISelectedItem[] = [];
+  cartItems= [];
   totalPrice = 0;
   orderPayment: Ipayment | undefined = undefined;
   readonly  today = new Date();
@@ -83,13 +83,15 @@ export class ShippingFormComponent implements OnInit {
       let shipping: Ishipping = { period: 0, shipPrice: 0 }
       let orderPrice = 0
       this.cartService.selectedItems.forEach(prod => {
+        this.totalPrice += prod.price * prod.quantity
         shipping.shipPrice += prod.shipping.shipPrice
         shipping.period += prod.shipping.period
-        orderPrice += prod.price * (100 - prod.discount) / 100
+        orderPrice += prod.price * (100 - prod.discount) / 100 * prod.quantity
       })
       this.orderForm.controls["shipmentPrice"].setValue(shipping.shipPrice);
       this.orderForm.controls["orderShip"].setValue(shipping.period);
       this.orderForm.controls["orderPrice"].setValue(orderPrice);
+      this.cartItems = this.cartService.selectedItems;
     } else {
       alert("please go to cart to procced")
       this.router.navigate(['/cart'])

@@ -389,7 +389,9 @@
     "privacyNote": "سياسة الخصوصية",
     "egypt": "مصر",
     "usa": "الولايات المتحدة الامريكية",
-    "paymentMethod":"الدفع عن طريق"
+    "paymentMethod":"الدفع عن طريق",
+    "orderDetails": "تفاصيل الطلب",
+    "itemPrice":"سعر القطعة الواحدة"
 
   },
   "sellerHome": {
