@@ -3,6 +3,7 @@ import { render } from 'creditcardpayments/creditCardPayments'
 import {
   PayPalScriptService, IPayPalConfig, ICreateOrderRequest, IOnApproveCallbackData, IClientAuthorizeCallbackData, ICancelCallbackData, IOnClickCallbackActions
 } from 'ngx-paypal';
+import { Iorder } from 'src/app/viewModel/Iorder';
 
 interface Idata {
   fundingSource: string;
@@ -23,21 +24,23 @@ export class PaymentGatewayComponent implements OnInit, AfterViewInit {
   // @ViewChild('paypalRef',{static:true})private paypalRef:ElementRef;
   public payPalConfig: any;
   public showPaypalButtons: boolean = true;
+  order:Iorder;
   constructor() {
 
-
+    
   }
   ngAfterViewInit(): void {
-    // render({
-    //   id:"#myPaypalBtn",
-    //   currency:"USED",
-    //   value:"150",
-    //   onApprove:(details)=>{
-    //     console.log("success payment")
-    //     alert("transaction successful")
-    //   },
+    let orde = {orderPrice:200}
+    render({
+      id:"#myPaypalBtn",
+      currency:"USD",
+      value:orde.orderPrice.toString(),
+      onApprove:(details)=>{
+        console.log("success payment")
+        alert("transaction successful")
+      },
 
-    // })
+    })
   }
 
   ngOnInit() {
@@ -56,7 +59,7 @@ export class PaymentGatewayComponent implements OnInit, AfterViewInit {
     //   category: "kamal category",
     //   price: 200
     // }
-    this.initPaypalConfig();
+    // this.initPaypalConfig();
 
   }
 
@@ -75,8 +78,8 @@ export class PaymentGatewayComponent implements OnInit, AfterViewInit {
     this.payPalConfig = {
       currency: "EUR",
       clientId:
-      "AVfSvOu-WRXXOWdiVVQVj-125HGxFluXv1ZV2Q0QGt6_nzI3AYU-ZbXwMN9Qr-xOWcd78u_Cdyh3aSnu",
-        // "AYvU7p49APJ3TWCP7EPq6Z1Sm7LijDirPdDI-G6DjNasJ2tyIVCwb0IZL1v5cKy_tw7qPr_2ybS62gCR",
+      // "AVfSvOu-WRXXOWdiVVQVj-125HGxFluXv1ZV2Q0QGt6_nzI3AYU-ZbXwMN9Qr-xOWcd78u_Cdyh3aSnu",
+        "AYvU7p49APJ3TWCP7EPq6Z1Sm7LijDirPdDI-G6DjNasJ2tyIVCwb0IZL1v5cKy_tw7qPr_2ybS62gCR",
       createOrder: (data:any) =>
         <ICreateOrderRequest>{
           intent: "CAPTURE",
@@ -84,11 +87,11 @@ export class PaymentGatewayComponent implements OnInit, AfterViewInit {
             {
               amount: {
                 currency_code: "EUR",
-                value: "9.99",
+                value: "2000",
                 breakdown: {
                   item_total: {
                     currency_code: "EUR",
-                    value: "9.99"
+                    value: "1000"
                   }
                 }
               },
@@ -99,7 +102,7 @@ export class PaymentGatewayComponent implements OnInit, AfterViewInit {
                   category: "DIGITAL_GOODS",
                   unit_amount: {
                     currency_code: "EUR",
-                    value: "9.99"
+                    value: "1000"
                   }
                 }
               ]

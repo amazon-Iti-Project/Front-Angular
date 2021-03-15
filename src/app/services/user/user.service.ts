@@ -99,7 +99,10 @@ export class UserService {
       });
     } 
     else{
-      user.cart?.push(productId)
+     let cart:number[] =[];
+     if  (user.cart?.length>0)cart = user.cart
+     
+     cart.push(productId)
       const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -107,7 +110,7 @@ export class UserService {
         //,'Authorization': 'my-auth-token'
       })
     };
-    return this.http.patch<Iuser>(`${environment.API_BASE_URL}/${environment.users}/${user.id}`,{ cart:user.cart }, httpOptions)
+    return this.http.patch<Iuser>(`${environment.API_BASE_URL}/${environment.users}/${user.id}`,{ cart:cart }, httpOptions)
 
     }
     
