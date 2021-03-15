@@ -122,7 +122,8 @@
     "quantityPlaceHolder": "Quantity",
     "shippingDaysPlaceHolder": "ex: 2 days",
     "enInfo":"Info in English",
-    "arInfo":"Info in Arabic"
+    "arInfo":"Info in Arabic",
+    "update":"update product"
   },
   "sellerHeader": {
     "catalog": "Catalog",

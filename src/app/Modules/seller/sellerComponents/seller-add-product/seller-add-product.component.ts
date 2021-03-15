@@ -276,4 +276,12 @@ export class SellerAddProductComponent implements OnInit {
     this.router.navigate(['/seller/home'])
   }
 
+  updateProduct():void{
+
+    this.proServ.updateProduct(this.prodForm.value).subscribe(res =>{
+      alert("success")
+      this.router.navigate(['/seller/inventory'])
+    })
+  }
+
 }

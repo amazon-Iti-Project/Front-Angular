@@ -4,7 +4,7 @@
     <table class="table font-amazon-normal table-hover min-content tableFixHead">
       <thead class="font-amazon-bold thead-dark text-capitalize">
         <tr>
-          <th scope="col">serial </th>
+          <th scope="col">Sn </th>
           <th scope="col">Name</th>
           <th scope="col">in Stock</th>
           <th scope="col">price</th>
@@ -26,7 +26,8 @@
         <tbody>
           <!-- row1 -->
           <ng-container *ngFor="let prod of filteredList ; index as sn;"  >
-          <tr  [routerLink]="['/departments/product/'+prod.product.id]">
+            <!-- [routerLink]="['/departments/product/'+prod.product.id]" -->
+          <tr  >
             <th class="font-amazon-normal align-middle" scope="row">{{sn+1}}</th>
             <td class="align-middle">
               <p class="mb-1 text-nowrap overflow-hidden text-truncate"style="width: 150px;">{{prod.product.name}}</p>
@@ -48,10 +49,8 @@
             <td class="align-middle ">
               <div class="d-flex flex-column">
                 <div (click)="updateSellerProduct(prod.product)" class="btn btn-dark m-1">updated</div>
-                <div class="btn btn-danger m-1" >delete</div>
+                <div (click)="deleteSellerProduct(prod)" class="btn btn-danger m-1" >delete</div>
               </div>
-                
-              
             </td>
           </tr>
         </ng-container>

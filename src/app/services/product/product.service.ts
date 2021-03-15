@@ -242,4 +242,18 @@ export class ProductService {
     return products;
   }
 
+  updateProduct(product:ITranslatedProduct):Observable<Iproduct>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+        //,'Accept':' */*'
+        //,'Authorization': 'my-auth-token'
+      })
+    };
+    let lang: string = this.localeServ.getLanguage();
+    let products = this.http.patch<ITranslatedProduct>(`${environment.API_BASE_URL}/${environment.products}/${product.id}`,{product},httpOptions,)
+    .pipe(map(prod => this.parseFromJsonToProduct(prod)))
+    return products;
+  }
+
 }

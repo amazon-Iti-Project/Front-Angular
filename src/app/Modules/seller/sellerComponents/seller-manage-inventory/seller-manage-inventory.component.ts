@@ -72,4 +72,13 @@ export class SellerManageInventoryComponent implements OnInit,OnDestroy {
     this.router.navigate(['/seller/add'])
   }
 
+  deleteSellerProduct(prod:adminIproduct):void{
+    confirm("are you sure you want to delete this product")?
+    this.productServ.deleteProduct(prod.product.id).subscribe(res =>{
+     const index =  this.filteredList.indexOf(prod)
+     if(index > -1)
+     this.filteredList.splice(index,1)
+    }):'';
+  }
+
 }

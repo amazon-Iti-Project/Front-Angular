@@ -140,7 +140,8 @@
     "quantityPlaceHolder": "الكمية",
     "shippingDaysPlaceHolder": "مثال: 2 يوم",
     "enInfo":"معلومات المنتج بالانجليزية",
-    "arInfo":"معلومات المنتج بالعربية"
+    "arInfo":"معلومات المنتج بالعربية",
+    "update":"تحديث المنتج"
 
   },
   "sellerHeader": {

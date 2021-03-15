@@ -366,7 +366,11 @@
       <button type="button" (click)="resetForm()" class="btn  mx-sm-2 mx-1  ">{{'sellerAdd.cancel'|translate}}</button>
       <button *ngIf="!product;else templateName" (click)="addProduct()" type="submit" [disabled]="prodForm.invalid"
         class="btn  mx-sm-2 mx-1">{{'sellerAdd.safeAndFinish'|translate}}</button>
-    <ng-template  #templateName  (click)="addProduct()" type="submit" >update</ng-template>
+    <ng-template  #templateName   >
+      <button (click)="updateProduct()" type="submit" [disabled]="prodForm.invalid"
+      class="btn  mx-sm-2 mx-1">{{'sellerAdd.update'|translate}}</button>
+
+    </ng-template>
       </div>
 
   </form>
