@@ -1,4 +1,4 @@
-<table class="table font-amazon-normal table-hover min-content">
+<table class="table font-amazon-normal table-hover min-content tableFixHead">
     <thead class="font-amazon-bold thead-dark text-capitalize">
       <tr>
         <th scope="col">serial </th>
@@ -13,13 +13,20 @@
     <tbody>
      
       <!-- row1 -->
-      <tr (click)="navToOrder(order)" *ngFor="let order of orders ; index as sn;  "> 
+      <tr (click)="navToOrder(order.order)" *ngFor="let order of orders ; index as sn;  "> 
         <th  class="font-amazon-normal" scope="row">{{sn+1}}</th>
-        <td>{{order.id}}</td>
-        <td>{{order.orderPrice}}&nbsp;<span class="fas fa-dollar-sign"></span></td>
-        <td>{{order.orderShip}}&nbsp;<span class="fas fa-dollar-sign"></span></td>
-        <td>{{order.payment.payment}}&nbsp;<span class="fas fa-dollar-sign"></span></td>
-        <td>{{order.status}}&nbsp;%</td>
+        <td>{{order.order.id}}</td>
+        <td>{{order.order.orderPrice}}&nbsp;<span class="fas fa-dollar-sign"></span></td>
+        <td>{{order.order.orderShip}}&nbsp;<span class="fas fa-dollar-sign"></span></td>
+        <td>{{order.order.payment.payment}}&nbsp;<span class="fas fa-dollar-sign"></span></td>
+        <td >
+          <div class="d-flex ">
+        <span *ngIf="order.status=='Delivered'; else elseBlock" class="fas fa-check-circle text-success font-3 px-1"></span>
+        <ng-template #elseBlock><span class="fas fa-times-circle text-danger font-3 px-1"></span></ng-template>
+          <span>{{order.status }}</span>
+      </div>
+      </td>
+
       </tr>
     </tbody>
   </table>

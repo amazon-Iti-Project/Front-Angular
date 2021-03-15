@@ -1,7 +1,7 @@
 import { ProductService } from './../../../../services/product/product.service';
 import { CategoryService } from './../../../../services/category/category.service';
 import { Icategory } from './../../../../viewModel/Icategory';
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
@@ -9,11 +9,12 @@ import { Ibrand } from 'src/app/viewModel/Ibrand';
 import { BrandService } from './../../../../services/brand/brand.service';
 import { ShippingService } from './../../../../services/shipping/shipping.service';
 import { FeeService } from './../../../../services/feeService/fee.service';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { UserService } from './../../../../services/user/user.service';
 import { Iuser } from 'src/app/viewModel/Iuser';
-import { getEnabledCategories } from 'trace_events';
+import { Iproduct } from './../../../../viewModel/IProduct';
+import { first } from 'rxjs/operators';
+import { SellerModuleService } from '../../seller-module.service';
 
 @Component({
   selector: 'app-seller-add-product',
@@ -27,83 +28,139 @@ export class SellerAddProductComponent implements OnInit {
   subscription: Subscription[] = [];
   categories: Icategory[] = [];
   brands: Ibrand[] = [];
-  constructor(private fb: FormBuilder, private catServ: CategoryService, private brandSer: BrandService, private proServ: ProductService
+  product: Iproduct
+  constructor(private sellerServ: SellerModuleService,
+    private fb: FormBuilder, private catServ: CategoryService, private brandSer: BrandService, private proServ: ProductService
     , private router: Router, private shipService: ShippingService, private feeServ: FeeService, private storage: AngularFireStorage, private userServ: UserService) { }
 
 
   ngOnInit(): void {
+    //3- get current user
+    this.getCurrentUser();
+    //- get product that need updated if exist
+    this.getUpdateProduct()
     //1- get categories
     this.getCategories()
     //2- get brands
     this.getBrands()
-    //3- get current user
-    this.getCurrentUser();
     // 4- init ProdFrom
     this.initProductForm()
-    console.log(this.prodForm.valueChanges.subscribe(console.log))
+    this.prodForm.valueChanges.subscribe(console.log)
 
   }
+
+  setProductForm(prod: Iproduct):void{
+    if (prod != undefined ) {
+      // init from
+      this.prodForm = this.fb.group({
+        price: [prod.price, [Validators.required, Validators.min(1)]],
+        quantity: [prod.quantity, [Validators.required, Validators.min(1)]],
+        category: [prod.category, Validators.required],
+        brand: [prod.brand, Validators.required],
+        discount: [prod.discount, [Validators.required, Validators.min(0), Validators.max(100
+          // this.prodForm.controls['fee'].value.fee?(100-this.prodForm.controls['fee'].value.fee):100
+        )]],
+        ar: this.fb.group({
+          name: [prod.ar.name, [Validators.required, Validators.minLength(5)]],
+          size: [prod.ar.size, Validators.required],
+          color: [prod.ar.color, Validators.required],
+          tags: [[],],
+          description: [prod.ar.description, Validators.required],
+          subTitle: ['',],
+        }),
+        en: this.fb.group({
+          name: [prod.en.name, [Validators.required, Validators.minLength(5)]],
+          size: [prod.en.size, Validators.required],
+          color: [prod.en.color, Validators.required],
+          tags: [[],],
+          description: [prod.en.description, Validators.required],
+          subTitle: ['',],
+        }),
+        shipping: this.fb.group({
+          period: [prod.shipping.period, [Validators.required, Validators.min(0)]],
+          shipPrice: [prod.shipping.shipPrice, [Validators.required, Validators.min(1)]]
+        }),
+        // test: [{value:0,disabled:true}, Validators.required],  // failed in value check
+        // fee: new FormControl({value: '', disabled: false},[Validators.required]),
+        fee: this.fb.group({
+          fee: new FormControl(prod.fee.fee, [Validators.required]),
+          admin: [prod.fee.admin, [Validators.required]],
+          category: [prod.fee.category, [Validators.required]]
+        }),
+        image: [prod.image, Validators.required],
+        seller: [prod.seller, Validators.required]
+
+      })
+    } 
+  }
+  async getUpdateProduct() {
+  this.product = await  this.sellerServ.productUpdateChanges.pipe(first()).toPromise()
+    this.setProductForm(this.product)
+  }
   initProductForm() {
-        // init from
-        this.prodForm = this.fb.group({
-          price: [, [Validators.required, Validators.min(1)]],
-          quantity: [, [Validators.required, Validators.min(1)]],
-          category: ['', Validators.required],
-          brand: [, Validators.required],
-          discount: [, [Validators.required, Validators.min(0), Validators.max(100
-            // this.prodForm.controls['fee'].value.fee?(100-this.prodForm.controls['fee'].value.fee):100
-          )]],
-          ar: this.fb.group({
-            name: ['', [Validators.required, Validators.minLength(5)]],
-            size: ['', Validators.required],
-            color: ['', Validators.required],
-            tags: [[],],
-            description: ['', Validators.required],
-            subTitle: ['', ],
-          }),
-          en: this.fb.group({
-            name: ['', [Validators.required, Validators.minLength(5)]],
-            size: ['', Validators.required],
-            color: ['', Validators.required],
-            tags: [[],],
-            description: ['', Validators.required],
-            subTitle: ['', ],
-          }),
-          shipping: this.fb.group({
-            period: [, [Validators.required, Validators.min(0)]],
-            shipPrice: [, [Validators.required, Validators.min(1)]]
-          }),
-          // test: [{value:0,disabled:true}, Validators.required],  // failed in value check
-          // fee: new FormControl({value: '', disabled: false},[Validators.required]),
-          fee: this.fb.group({
-            fee: new FormControl('', [Validators.required]),
-            admin: [, [Validators.required]],
-            category: [, [Validators.required]]
-          }),
-          image: [, Validators.required],
-          seller: [this.user?.id, Validators.required]
-    
-        })
+      // init from
+      this.prodForm = this.fb.group({
+        price: ['', [Validators.required, Validators.min(1)]],
+        quantity: [, [Validators.required, Validators.min(1)]],
+        category: ['', Validators.required],
+        brand: [, Validators.required],
+        discount: [, [Validators.required, Validators.min(0), Validators.max(100
+          // this.prodForm.controls['fee'].value.fee?(100-this.prodForm.controls['fee'].value.fee):100
+        )]],
+        ar: this.fb.group({
+          name: ['', [Validators.required, Validators.minLength(5)]],
+          size: ['', Validators.required],
+          color: ['', Validators.required],
+          tags: [[],],
+          description: ['', Validators.required],
+          subTitle: ['',],
+        }),
+        en: this.fb.group({
+          name: ['', [Validators.required, Validators.minLength(5)]],
+          size: ['', Validators.required],
+          color: ['', Validators.required],
+          tags: [[],],
+          description: ['', Validators.required],
+          subTitle: ['',],
+        }),
+        shipping: this.fb.group({
+          period: [, [Validators.required, Validators.min(0)]],
+          shipPrice: [, [Validators.required, Validators.min(1)]]
+        }),
+        // test: [{value:0,disabled:true}, Validators.required],  // failed in value check
+        // fee: new FormControl({value: '', disabled: false},[Validators.required]),
+        fee: this.fb.group({
+          fee: new FormControl('', [Validators.required]),
+          admin: [, [Validators.required]],
+          category: [, [Validators.required]]
+        }),
+        image: [, Validators.required],
+        seller: ['', Validators.required]
+      })
   }
   getBrands() {
-    this.brandSer.getAllBrands().subscribe((res) => {
-      this.brands = res
-    }, err => console.log(err))
+    this.brandSer.getAllBrands()
+      .subscribe((res) => {
+        this.brands = res
+      }, err => console.log(err))
   }
   getCategories() {
     this.catServ.getAllCategories().subscribe((res) => {
       this.categories = res
-      console.log("categories:",res)
+      console.log("categories:", res)
     }, err => console.log(err))
   }
 
-  getCurrentUser(): void {
+  async getCurrentUser(){
     let token = this.userServ.isUserSignedIn()
     if (token)
-      this.userServ.getUserByToken(token).subscribe(res => {
-        this.user = res;
+      try {
+        this.user = await this.userServ.getUserByToken(token).pipe(first()).toPromise()
         this.prodForm.controls['seller'].setValue(this.user.id)
-      }, err => alert(err))
+
+      } catch (e) {
+        console.log(e)
+      }
     else {
       alert('please Log in')
       this.router.navigate(['/home'])
@@ -217,6 +274,14 @@ export class SellerAddProductComponent implements OnInit {
   resetForm(): void {
     this.prodForm.reset();
     this.router.navigate(['/seller/home'])
+  }
+
+  updateProduct():void{
+
+    this.proServ.updateProduct(this.prodForm.value).subscribe(res =>{
+      alert("success")
+      this.router.navigate(['/seller/inventory'])
+    })
   }
 
 }

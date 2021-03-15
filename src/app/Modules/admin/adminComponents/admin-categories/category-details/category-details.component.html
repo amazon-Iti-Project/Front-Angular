@@ -1,6 +1,6 @@
 <div class="height-45 overflow-auto">
-    <table class="table font-amazon-normal table-hover min-content">
-        <thead class="font-amazon-bold thead-dark text-capitalize">
+    <table class="table font-amazon-normal table-hover min-content tableFixHead">
+        <thead class="font-amazon-bold thead-dark text-capitalize ">
             <tr>
                 <th scope="col">serial </th>
                 <th scope="col"> Id </th>
@@ -17,7 +17,7 @@
             <tr scope="row" (click)="navToOrder(cat)" *ngFor="let cat of adminCategories ; index as sn;  ">
                 <th class="font-amazon-normal align-middle" scope="row">{{sn+1}}</th>
                 <td class="align-middle">{{cat.categoty.id}}</td>
-                <td class="align-middle">{{cat.categoty.name}}</td>
+                <td class="align-middle categories">{{cat.categoty.name}}</td>
                 <td class="align-middle text-center"><img width="100" [src]="cat.categoty.image"></td>
                 <td class="align-middle text-center">{{cat.products.length}}</td>
             </tr>

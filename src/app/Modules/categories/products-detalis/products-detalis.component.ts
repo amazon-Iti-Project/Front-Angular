@@ -17,7 +17,7 @@ import { UserService } from './../../../services/user/user.service';
 
 
 export class ProductsDetalisComponent implements OnInit {
-  prd:Iproduct|null=null;
+  prd:Iproduct|undefined;
   // this is passed Id >>>
   prdID:number=1;
 
@@ -39,6 +39,7 @@ export class ProductsDetalisComponent implements OnInit {
         (res) => {
           console.log(res)
           this.prd = res;
+          console.log("product: ",this.prd)
         })
     })
 

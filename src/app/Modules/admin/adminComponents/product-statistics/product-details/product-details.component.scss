@@ -1,22 +1,31 @@
 ::-webkit-scrollbar {
-    height: 4px;              /* height of horizontal scrollbar ← You're missing this */
-    width: 4px;               /* width of vertical scrollbar */
+    height: 8px;              /* height of horizontal scrollbar ← You're missing this */
+    width: 8px;  
+    will-change: scroll-position;             /* width of vertical scrollbar */
   
   }
-  
+
   /* Track */
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 1px lightgray; 
-    border-radius: 1px;
+    box-shadow: inset 0 0 8px lightgray; 
+    border-radius: 8px;
   }
+
+
    
   /* Handle */
   ::-webkit-scrollbar-thumb  {
     background: lightgray; 
-    border-radius: 1px;
+    border-radius: 3px;
   }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb :hover {
-    background: lightgray; 
-  }
+
+
+
+// .tableFixHead{ overflow-y: auto; height: 100px; }
+.tableFixHead thead th { position: sticky; top: 0;padding: 20px; }
+// .tableFixHead thead  { padding: 20px;}
+
+// /* Just common table stuff. Really. */
+// table  { border-collapse: collapse; width: 100%; }
+// th, td { padding: 8px 16px; }
+// th     { background:#eee; }

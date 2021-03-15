@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { NotFoundComponent } from 'src/app/appComponent/not-found/not-found.component';
 import { SellerManageInventoryComponent } from './sellerComponents/seller-manage-inventory/seller-manage-inventory.component';
+import { SellerModuleService } from './seller-module.service';
 
 const routes:Routes = [
   {path:'home',component:SellerHomeComponent},
@@ -31,15 +32,18 @@ const routes:Routes = [
     SellerHomeBodyComponent,
     SellerManageInventoryComponent],
   imports: [
-  CommonModule,
+CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
     //have service to use Http requests for apis 
     HttpClientModule,
     // for reactive forms
     ReactiveFormsModule,
-    TranslateModule
+    TranslateModule,
+    
 
-  ]
+  ],
+  providers: [SellerModuleService],
+
 })
 export class SellerModule { }
