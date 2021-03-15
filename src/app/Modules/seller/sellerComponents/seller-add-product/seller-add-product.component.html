@@ -65,122 +65,150 @@
         <!-- en form -->
         <form formGroupName="en" class="col-12   col-sm px-0  rounded">
           <div class=" alert-secondary p-2">
-          <p class="h5 text-center alert">{{'sellerAdd.enInfo'|translate}} </p>
-          <!-- product Name -->
-          <div class=" row form-group no-gutters">
-            <!-- product Name label -->
-            <label class="col-sm-3 col-12 align-self-center  "
-              for="pId"><span>{{'sellerAdd.productName'|translate}}</span></label>
-            <!-- product Name label -->
-            <div class="col">
-              <input formControlName="name" type="text" class="form-control " id="prodId"
-                placeholder="{{'sellerAdd.productNameExample'|translate}}" autocomplete="off"
-                [class.is-invalid]="prodForm.controls['en'].get('name').invalid&&prodForm.controls['en'].get('name').dirty"
-                [class.is-valid]="prodForm.controls['en'].get('name').valid&&prodForm.controls['en'].get('name').dirty" />
+            <p class="h5 text-center alert">
+              Info of Product in English / Arabic
+              <!-- {{'sellerAdd.enInfo'|translate}} -->
+            </p>
+            <!-- product Name -->
+            <div class="col-12 row form-group no-gutters p-0">
+              <!-- product Name label -->
+              <label class=" col-2 d-flex  justify-content-center align-items-center"
+                for="pId"><span>{{'sellerAdd.productName'|translate}}</span></label>
+              <!-- product Name label -->
+              <div class="col-4">
+                <input formControlName="name" type="text" class="form-control " id="prodId"
+                  placeholder="{{'sellerAdd.productNameExample'|translate}}" autocomplete="off"
+                  [class.is-invalid]="prodForm.controls['en'].get('name').invalid&&prodForm.controls['en'].get('name').dirty"
+                  [class.is-valid]="prodForm.controls['en'].get('name').valid&&prodForm.controls['en'].get('name').dirty" />
+              </div>
+              <span class="d-flex align-items-center">/</span>
+              <div class="col-4">
+                <input formControlName="name" type="text" class="form-control " id="prodId"
+                  placeholder="سي 50 كاميرا ديجيتال" autocomplete="off"
+                  [class.is-invalid]="prodForm.controls['ar'].get('name').invalid&&prodForm.controls['ar'].get('name').dirty"
+                  [class.is-valid]="prodForm.controls['ar'].get('name').valid&&prodForm.controls['ar'].get('name').dirty" />
+              </div>
+              <!-- divider -->
+              <div class="w-100 "></div>
+              <!-- hint for product name -->
+              <div class="text-sm-right col ">
+                <small
+                  [hidden]="(prodForm.controls['en'].get('name').valid||prodForm.controls['en'].get('name').pristine) "
+                  class=" text-muted  text-end font-0">{{'sellerAdd.min5Char'|translate}}</small>
+              </div>
+            </div>
+            <!-- product description -->
+            <div class=" row form-group no-gutters ">
+              <!-- product description label -->
+              <label class="col-2 d-flex  justify-content-center align-items-center "
+                for="pId"><span>{{'sellerAdd.description'|translate}}</span></label>
+              <!-- product description input -->
+              <div class=" col-4 ">
+                <input formControlName="description" type="text" class="form-control" id="prodDesc"
+                  placeholder="{{'sellerAdd.productDescriptionPlaceHolder'|translate}}" autocomplete="off"
+                  [class.is-invalid]="prodForm.controls['en'].get('description').invalid&&prodForm.controls['en'].get('description').dirty"
+                  [class.is-valid]="prodForm.controls['en'].get('description').valid&&prodForm.controls['en'].get('description').dirty" />
+              </div>
+              <span class="d-flex align-items-center">/</span>
+              <div class=" col-4 ">
+                <input formControlName="description" type="text" class="form-control" id="prodDesc"
+                  placeholder="وصف المنتج" autocomplete="off"
+                  [class.is-invalid]="prodForm.controls['ar'].get('description').invalid&&prodForm.controls['en'].get('description').dirty"
+                  [class.is-valid]="prodForm.controls['ar'].get('description').valid&&prodForm.controls['en'].get('description').dirty" />
+              </div>
             </div>
             <!-- divider -->
             <div class="w-100 "></div>
-            <!-- hint for product name -->
-            <div class="text-sm-right col ">
-              <small
-                [hidden]="(prodForm.controls['en'].get('name').valid||prodForm.controls['en'].get('name').pristine) "
-                class=" text-muted  text-end font-0">{{'sellerAdd.min5Char'|translate}}</small>
+            <div class=" row form-group no-gutters">
+              <!-- product color -->
+              <label class="col-2 d-flex  justify-content-center align-items-center" for="prodId">{{'sellerAdd.color'|translate}}</label>
+              <div class="col-4 ">
+                <input formControlName="color" type="text" class="form-control" id="pcolor "
+                  placeholder="{{'sellerAdd.colorPlaceHolder'|translate}}"
+                  [class.is-invalid]="prodForm.controls['en'].get('color').invalid&&prodForm.controls['en'].get('color').dirty"
+                  [class.is-valid]="prodForm.controls['en'].get('color').valid&&prodForm.controls['en'].get('color').dirty" />
+              </div>
+              <span class="d-flex align-items-center">/</span>
+              <div class="col-4 ">
+                <input formControlName="color" type="text" class="form-control" id="pcolor "
+                  placeholder="أحمر"
+                  [class.is-invalid]="prodForm.controls['ar'].get('color').invalid&&prodForm.controls['ar'].get('color').dirty"
+                  [class.is-valid]="prodForm.controls['ar'].get('color').valid&&prodForm.controls['ar'].get('color').dirty" />
+              </div>
             </div>
-          </div>
-          <!-- product description -->
-          <div class=" row form-group no-gutters ">
-            <!-- product description label -->
-            <label class="col-sm-3 col-12   align-self-center "
-              for="pId"><span>{{'sellerAdd.description'|translate}}</span></label>
-            <!-- product description input -->
-            <div class=" col ">
-              <input formControlName="description" type="text" class="form-control" id="prodDesc"
-                placeholder="{{'sellerAdd.productDescriptionPlaceHolder'|translate}}" autocomplete="off"
-                [class.is-invalid]="prodForm.controls['en'].get('description').invalid&&prodForm.controls['en'].get('description').dirty"
-                [class.is-valid]="prodForm.controls['en'].get('description').valid&&prodForm.controls['en'].get('description').dirty" />
-            </div>
-          </div>
-          <!-- divider -->
-          <div class="w-100 "></div>
-          <div class=" row form-group no-gutters">
-            <!-- product color -->
-            <label class="col-sm-3 col-12 align-self-center"
-              for="prodId">{{'sellerAdd.color'|translate}}</label>
-            <div class="col ">
-              <input formControlName="color" type="text" class="form-control" id="pcolor "
-                placeholder="{{'sellerAdd.colorPlaceHolder'|translate}}"
-                [class.is-invalid]="prodForm.controls['en'].get('color').invalid&&prodForm.controls['en'].get('color').dirty"
-                [class.is-valid]="prodForm.controls['en'].get('color').valid&&prodForm.controls['en'].get('color').dirty" />
-            </div>
-          </div>
 
-          <!-- product size -->
-          <div class="row form-group no-gutters">
-            <label class="col-sm-3 col-12  align-self-center"
-              for="prodId">{{'sellerAdd.size'|translate}}</label>
+            <!-- product size -->
+            <div class="row form-group no-gutters">
+              <label class="col-2 d-flex  justify-content-center align-items-center" for="prodId">{{'sellerAdd.size'|translate}}</label>
 
-            <div class="col">
-              <input formControlName="size" type="text" class="form-control" id="psize"
-                placeholder="{{'sellerAdd.sizePlaceHolder'|translate}}"
-                [class.is-invalid]="prodForm.controls['en'].get('size').invalid&&prodForm.controls['en'].get('size').dirty"
-                [class.is-valid]="prodForm.controls['en'].get('size').valid&&prodForm.controls['en'].get('size').dirty" />
+              <div class="col-4">
+                <input formControlName="size" type="text" class="form-control" id="psize"
+                  placeholder="{{'sellerAdd.sizePlaceHolder'|translate}}"
+                  [class.is-invalid]="prodForm.controls['en'].get('size').invalid&&prodForm.controls['en'].get('size').dirty"
+                  [class.is-valid]="prodForm.controls['en'].get('size').valid&&prodForm.controls['en'].get('size').dirty" />
+              </div>
+              <span class="d-flex align-items-center">/</span>
+              <div class="col-4 ">
+                <input formControlName="color" type="text" class="form-control" id="pcolor "
+                  placeholder="اكس-لارج"
+                  [class.is-invalid]="prodForm.controls['ar'].get('color').invalid&&prodForm.controls['ar'].get('color').dirty"
+                  [class.is-valid]="prodForm.controls['ar'].get('color').valid&&prodForm.controls['ar'].get('color').dirty" />
+              </div>
             </div>
           </div>
-        </div>
         </form>
         <!-- ar form -->
-       
+<!-- 
         <form formGroupName="ar" class="col-12 col-sm  px-0">
           <div class=" alert-secondary p-2">
-          <p class="h5 text-center alert">{{'sellerAdd.arInfo'|translate}} </p>
-          <!-- product Name -->
-          <div class="row form-group no-gutters">
-            <label class=" col-sm-3 col-12 align-self-center"
-              for="pId"><span>{{'sellerAdd.productName'|translate}}</span></label>
-            <div class="col ">
+            <p class="h5 text-center alert">{{'sellerAdd.arInfo'|translate}} </p> -->
+            <!-- product Name -->
+            <!-- <div class="row form-group no-gutters"> -->
+              <!-- <span class="d-flex  justify-content-center align-items-center">/</span> -->
+              <!-- <label class=" col-sm-3 col-12 align-self-center"
+              for="pId"><span>{{'sellerAdd.productName'|translate}}</span></label> -->
+              <!-- <div class="col ">
               <input formControlName="name" type="text" class="form-control " id="prodId"
                 placeholder="{{'sellerAdd.productNameExample'|translate}}" autocomplete="off"
                 [class.is-invalid]="prodForm.controls['ar'].get('name').invalid&&prodForm.controls['ar'].get('name').dirty"
                 [class.is-valid]="prodForm.controls['ar'].get('name').valid&&prodForm.controls['ar'].get('name').dirty" />
-            </div>
-            <!-- divider -->
-            <div class="w-100 "></div>
-            <!-- hint for product name -->
-            <div class="text-sm-right col ">
-              <small
-                [hidden]="(prodForm.controls['ar'].get('name').valid||prodForm.controls['ar'].get('name').pristine) "
-                class=" text-muted  text-end font-0">{{'sellerAdd.min5Char'|translate}}</small>
-            </div>
-          </div>
+            </div> -->
+              <!-- divider -->
+              <!-- <div class="w-100 "></div> -->
+              <!-- hint for product name -->
+              <!-- <div class="text-sm-right col "> -->
+                <!-- <small
+                  [hidden]="(prodForm.controls['ar'].get('name').valid||prodForm.controls['ar'].get('name').pristine) "
+                  class=" text-muted  text-end font-0">{{'sellerAdd.min5Char'|translate}}</small>
+              </div>
+            </div> -->
 
-          <!-- product description -->
-          <div class="row form-group no-gutters">
+            <!-- product description -->
+            <!-- <div class="row form-group no-gutters">
             <label class="col-sm-3 col-12  my-2 align-self-center "
-              for="pId"><span>{{'sellerAdd.description'|translate}}</span></label>
+              for="pId"><span>{{'sellerAdd.description'|translate}}</span></label> -->
 
-            <div class=" col ">
+            <!-- <div class=" col ">
               <input formControlName="description" type="text" class="form-control" id="prodDesc"
                 placeholder="{{'sellerAdd.productDescriptionPlaceHolder'|translate}}" autocomplete="off"
                 [class.is-invalid]="prodForm.controls['ar'].get('description').invalid&&prodForm.controls['en'].get('description').dirty"
                 [class.is-valid]="prodForm.controls['ar'].get('description').valid&&prodForm.controls['en'].get('description').dirty" />
-            </div>
-          </div>
+            </div> -->
+          <!-- </div> -->
           <!-- product color -->
-          <div class="row form-group no-gutters">
-            <label class="col-sm-3 col-12 align-self-center "
-              for="prodId">{{'sellerAdd.color'|translate}}</label>
+          <!-- <div class="row form-group no-gutters">
+            <label class="col-sm-3 col-12 align-self-center " for="prodId">{{'sellerAdd.color'|translate}}</label>
             <div class="col ">
               <input formControlName="color" type="text" class="form-control" id="pcolor "
                 placeholder="{{'sellerAdd.colorPlaceHolder'|translate}}"
                 [class.is-invalid]="prodForm.controls['ar'].get('color').invalid&&prodForm.controls['ar'].get('color').dirty"
                 [class.is-valid]="prodForm.controls['ar'].get('color').valid&&prodForm.controls['ar'].get('color').dirty" />
             </div>
-          </div>
+          </div> -->
 
           <!-- product size -->
-          <div class="row form-group no-gutters">
-            <label class="col-sm-3 col-12  align-self-center "
-              for="prodId">{{'sellerAdd.size'|translate}}</label>
+          <!-- <div class="row form-group no-gutters">
+            <label class="col-sm-3 col-12  align-self-center " for="prodId">{{'sellerAdd.size'|translate}}</label>
 
             <div class="col  ">
               <input formControlName="size" type="text" class="form-control" id="psize"
@@ -189,9 +217,8 @@
                 [class.is-valid]="prodForm.controls['ar'].get('size').valid&&prodForm.controls['ar'].get('size').dirty" />
             </div>
           </div>
-        </div>
-        </form>
-     
+        </form> -->
+
 
       </div>
 
@@ -366,12 +393,12 @@
       <button type="button" (click)="resetForm()" class="btn  mx-sm-2 mx-1  ">{{'sellerAdd.cancel'|translate}}</button>
       <button *ngIf="!product;else templateName" (click)="addProduct()" type="submit" [disabled]="prodForm.invalid"
         class="btn  mx-sm-2 mx-1">{{'sellerAdd.safeAndFinish'|translate}}</button>
-    <ng-template  #templateName   >
-      <button (click)="updateProduct()" type="submit" [disabled]="prodForm.invalid"
-      class="btn  mx-sm-2 mx-1">{{'sellerAdd.update'|translate}}</button>
+      <ng-template #templateName>
+        <button (click)="updateProduct()" type="submit" [disabled]="prodForm.invalid"
+          class="btn  mx-sm-2 mx-1">{{'sellerAdd.update'|translate}}</button>
 
-    </ng-template>
-      </div>
+      </ng-template>
+    </div>
 
   </form>
 </div>
