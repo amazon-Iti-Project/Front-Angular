@@ -88,6 +88,26 @@
                 <h1 class="text-center">{{'shippingForm.paymentMethod' | translate}}</h1>
                 <app-payment-gateway ></app-payment-gateway>
                 <!-- [order]="orderForm.value" -->
+            </div>
+            <div class="border p-2 my-5 orderDetails">
+                <h1 class="text-center">{{'shippingForm.orderDetails' | translate}}</h1>
+                <strong>{{'PAYMENT.orderprice' | translate}} :</strong>
+                <span style="color: red;" class="px-1">{{orderForm.value.orderPrice}}</span>
+                <span style="text-decoration: line-through; color: gray;">{{totalPrice}}</span><br>
+                <ng-container *ngFor="let item of orderForm.value.products" class="w-80">
+                    <div class="border row m-3 py-2 singleOrder">
+                        <div class="image-cont col-4">
+                            <img class="img-fluid w-70" src={{item.image}}>
+                        </div>
+                        <div class="col-5">
+                            <span>{{item.name}}</span><br>
+                            <span>{{'sellerAdd.quantity' | translate}} : </span>
+                            <span>{{item.quantity}}</span><br>
+                            <span>{{'shippingForm.itemPrice' | translate}} : </span>
+                            <span>{{item.price}}</span><br>
+                        </div>
+                    </div>
+                </ng-container>
 
             </div>
         </div>

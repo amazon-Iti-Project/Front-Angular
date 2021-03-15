@@ -293,7 +293,9 @@
     "privacyNote": "Privacy Notice",
     "egypt": "Egypt",
     "usa": "USA",
-    "paymentMethod":"Pay by"
+    "paymentMethod":"Pay by",
+    "orderDetails": "Order Details",
+    "itemPrice":"Single item Price"
   },
   "PRODUCT": {
     "avaliable": "Availability",
