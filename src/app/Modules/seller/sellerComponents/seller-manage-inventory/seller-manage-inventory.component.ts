@@ -1,23 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FeeService } from 'src/app/services/feeService/fee.service';
 import { ProductService } from 'src/app/services/product/product.service';
 import { adminIproduct, Iproduct } from 'src/app/viewModel/IProduct';
 import { CategoryService } from 'src/app/services/category/category.service';
+import { UserService } from './../../../../services/user/user.service';
+import { Iuser } from './../../../../viewModel/Iuser';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { SellerModuleService } from './../../seller-module.service';
 
 @Component({
   selector: 'app-seller-manage-inventory',
   templateUrl: './seller-manage-inventory.component.html',
-  styleUrls: ['./seller-manage-inventory.component.scss']
+  styleUrls: ['./seller-manage-inventory.component.scss'],
 })
-export class SellerManageInventoryComponent implements OnInit {
+export class SellerManageInventoryComponent implements OnInit,OnDestroy {
   products:Iproduct[]=[]
   adminProducts:adminIproduct[]=[];
   filteredList:adminIproduct[]= []
+  user:Iuser
+  subscriptions:Subscription[]=[];
 
-  constructor(private productServ:ProductService,private feeServ:FeeService,private catServ:CategoryService) { }
+  constructor(private sellerServ:SellerModuleService,private router:Router,private userServ:UserService,private productServ:ProductService,private feeServ:FeeService,private catServ:CategoryService) { }
+  ngOnDestroy(): void {
+    for (let  sub of this.subscriptions){
+      console.log('in loop')
+      sub.unsubscribe()
+    }
+  }
 
   ngOnInit(): void {
-    this.productServ.getAllProducts().subscribe(res=>{
+    this.getCurrentUser()
+    
+
+    
+  }
+  getProducts(id:number) {
+    // getProductsBySellerId(id)
+  let sub =   this.productServ.getAllProducts().subscribe(res=>{
       console.log(res)
      this.products  =res
      if(this.products && this.products.length){
@@ -30,7 +50,26 @@ export class SellerManageInventoryComponent implements OnInit {
      }
 
     },err=>console.log(err))
-    
+    this.subscriptions.push(sub)
+  }
+  getCurrentUser(): void {
+    let token = this.userServ.isUserSignedIn()
+    if (token){
+    let sub =  this.userServ.getUserByToken(token).subscribe(res => {
+        this.user = res;
+        this.getProducts(this.user.id)
+      }, err => alert(err))
+    this.subscriptions.push(sub)
+  }
+    else {
+      alert('please Log in')
+      this.router.navigate(['/home'])
+    }
+  }
+
+  updateSellerProduct(prod:Iproduct):void{
+    this.sellerServ.sendProductToUpdate(prod);
+    this.router.navigate(['/seller/add'])
   }
 
 }

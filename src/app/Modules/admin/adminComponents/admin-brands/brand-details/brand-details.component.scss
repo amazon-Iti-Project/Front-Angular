@@ -18,3 +18,5 @@
   ::-webkit-scrollbar-thumb :hover {
     background: lightgray; 
   }
+
+.tableFixHead thead th { position: sticky; top: 0;padding: 20px; }

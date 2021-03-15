@@ -15,13 +15,12 @@
         {{prd?.name}}
         </div>
         <div class="price-box">
-          <p class="special-price"> <span class="price-label">Special Price</span> <span class="price"> {{prd.price * ((100-(prd.discount))/100) |currency}} </span> </p>
+          <p class="special-price"> <span class="price-label">Special Price</span> <span class="price"> {{prd?.price *(100-prd?.fee.fee)/100* (100-prd?.discount)/100 |currency}} </span> </p>
           <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price"> {{prd?.price |currency}} </span> </p>
         </div>
         <div class="short-description pt-4" >
           <!-- <h2 translate>product.overview</h2> -->
           <h2 >{{ 'PRODUCT.overview' | translate }}</h2>
-          
           <p>
           {{prd?.description}}
           </p>

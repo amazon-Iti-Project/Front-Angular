@@ -7,6 +7,40 @@
         </a>
         <!-- toggler button -->
         <div class="collapse navbar-collapse  justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav font-amazon-bold font-1">
+            <li class="nav-item nav-hover m-auto">
+              <!-- Language -->
+              <div class="dropdown pl-1 min-content px-3">
+                <div class=" dropdown-toggle text-light " id="langbtn"  data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                 <a><img src="../../../assets/languages logos/US-United-States-Flag-icon.svg" class="imgSize_3 p-1"></a> 
+                </div>
+                <!-- lang menu -->
+                <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton ">
+                  <div class="container ">
+                    <p class="dropdown-item font-amazon-normal" [routerLink]="['/']"><span>{{'homeHeader.changeLanguage'|translate}}</span>
+                      <span class="font-1 text-info font-amazon-normal">&nbsp;{{'homeHeader.learnMore'|translate}}</span>
+                    </p>
+                    <!-- <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Another action</a>
+                    <a class="dropdown-item font-amazon-normal" [routerLink]="['/']">Something else here</a> -->
+                    <!-- //  -->
+                    <div  data-display="static"  class="dropdown-item  custom-control custom-radio">
+                      <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" [checked]="lang=='en'">
+                      <label (click)="changeLang('en')" class="custom-control-label font-amazon-normal" for="customRadio1">{{'homeHeader.english'|translate}}</label>
+                    </div>
+                    <div #arRef  class="dropdown-item custom-control custom-radio">
+                      <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input"[checked]="lang==='ar'">
+                      <label (click)="changeLang('ar')" class="custom-control-label font-amazon-normal" for="customRadio2">{{'homeHeader.arabic'|translate}}</label>
+                    </div>
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <a #safeRef   class="dropdown-item font-amazon-normal text-center" [routerLink]="['/']"><span class="btn btn-outline-info ">Safe</span></a>
+      
+                  <!-- // -->
+                </div>
+              </div>
+            </li>
+          </ul>
           <!-- search input -->
           <form class="w-50 d-md-block d-none ">
             <div class="form-row align-items-center">
@@ -37,7 +71,7 @@
       </nav>
     
       <!-- Nav Bar2 -->
-      <nav class="navbar navbar-expand-md navbar-dark nav-2-Bg py-0 px-2 nav-height font-amazon-normal" >
+      <nav class="navbar navbar-expand-sm navbar-dark nav-2-Bg py-0 px-2 nav-height font-amazon-normal" >
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- list1 start -->
           <ul class="nav nav-tabs navbar-nav justify-content-start align-items-baseline " role="tablist">
@@ -92,9 +126,9 @@
         </div>
       </nav>
         <!-- nav bar3 -->
-        <nav class="navbar navbar-expand navbar-light bg-white shadow-sm ">
-            <span class="nav-item font-amazon-bold font-1">{{'adminHeader.resultNumbers'|translate}}</span>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <nav class="navbar navbar-expand navbar-light bg-white shadow-sm  ">
+            <span class="nav-item font-amazon-bold font-1 ">{{'adminHeader.resultNumbers'|translate}}</span>
+            <div class="collapse navbar-collapse justify-content-end mx-0 " id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item d-flex">
                         <div class="dropdown px-2">
@@ -107,26 +141,29 @@
                                 <a class="dropdown-item font-amazon-normal font-1" href="#">{{'adminHeader.ascending'|translate}} </a>
                             </div>
                         </div>
-                        <div class="dropdown px-2">
-                            <button class="btn btn-light shadow-sm dropdown-toggle rounded shadow-sm p-0" type="button"
-                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="font-amazon-normal">{{'adminHeader.sortBy'|translate}}</span><span class="font-amazon-normal">
-                                  {{'adminHeader.stockNumber'|translate}}</span>
-                                   
-                            </button>
-                            <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item font-amazon-normal" href="#">{{'adminHeader.price'|translate}} </a>
-                                <a class="dropdown-item font-amazon-normal" href="#">{{'adminHeader.price'|translate}} </a>
-                                <a class="dropdown-item font-amazon-normal" href="#">{{'adminHeader.stockNumber'|translate}}</a>
-                            </div>
+
+                    </li>
+                    <li>
+                      <div class="dropdown px-2">
+                        <button class="btn btn-light shadow-sm dropdown-toggle rounded shadow-sm p-0" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="font-amazon-normal">{{'adminHeader.sortBy'|translate}}</span><span class="font-amazon-normal">
+                              {{'adminHeader.stockNumber'|translate}}</span>
+                               
+                        </button>
+                        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item font-amazon-normal" href="#">{{'adminHeader.price'|translate}} </a>
+                            <a class="dropdown-item font-amazon-normal" href="#">{{'adminHeader.price'|translate}} </a>
+                            <a class="dropdown-item font-amazon-normal" href="#">{{'adminHeader.stockNumber'|translate}}</a>
                         </div>
+                    </div>
                     </li>
                 </ul>
             </div>
         </nav>
        
          <!--Product top bar filter -->
-           <div class="container">
+           <div class="container-fluid ">
          <div class="row shadow-sm p-2 ">
           <div class="max-content filter-bg filter-bg font-amazon-normal text-white p-1 mx-1 rounded-pill font-0">
             <span class="">Department1</span>

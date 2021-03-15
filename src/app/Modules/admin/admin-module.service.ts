@@ -11,7 +11,7 @@ export class AdminModuleService {
   constructor(private filter:BehaviorSubject<[]>) {
     filter = new BehaviorSubject([]);
    }
-   getFilterArray(){
-     return filter;
+   getFilterArray():BehaviorSubject<[]>{
+     return this.filter;
    }
 }

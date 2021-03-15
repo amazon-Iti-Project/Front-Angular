@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { LocalizationService } from 'src/app/services/localization/localization.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { Iuser } from 'src/app/viewModel/Iuser';
@@ -13,12 +14,14 @@ import { Iuser } from 'src/app/viewModel/Iuser';
 ],
 
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit ,OnDestroy{
   @Input() isOpen:boolean = false;
   @Output() sideBarClosed:EventEmitter<boolean> = new EventEmitter<boolean>();
   lang:String|undefined
   user:Iuser|undefined
   currentUrl:string = '/'
+  subscriptions:Subscription[]=[];
+
   constructor(private localServ:LocalizationService,private router:Router,private userServ:UserService,private localizationServ:LocalizationService) { }
 
   ngOnInit(): void {
@@ -36,7 +39,7 @@ export class SidebarComponent implements OnInit {
     let token = this.userServ.isUserSignedIn()
     if(token){
     console.log(token)
-    this.userServ.getUserByToken(token).subscribe(res=>{
+    let sub = this.userServ.getUserByToken(token).subscribe(res=>{
       if(res){
         this.user=res
         console.log(res)
@@ -46,6 +49,8 @@ export class SidebarComponent implements OnInit {
       }
     }
       ,err=>alert(`error in get user:${err}`))
+      this.subscriptions.push(sub)
+
     }
    
   }
@@ -82,6 +87,13 @@ export class SidebarComponent implements OnInit {
     this.closeSideBar();
     this.localServ.changeSelectedLanguage(lang);
     // console.log("event",lang)
+  }
+
+  ngOnDestroy(): void {
+    for (let  sub of this.subscriptions){
+      console.log('in loop')
+      sub.unsubscribe()
+    }
   }
   
 

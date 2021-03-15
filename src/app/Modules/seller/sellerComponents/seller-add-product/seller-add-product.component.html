@@ -364,9 +364,10 @@
     <!-- submit button -->
     <div class="container row justify-content-center mt-2 ">
       <button type="button" (click)="resetForm()" class="btn  mx-sm-2 mx-1  ">{{'sellerAdd.cancel'|translate}}</button>
-      <button (click)="addProduct()" type="submit" [disabled]="prodForm.invalid"
+      <button *ngIf="!product;else templateName" (click)="addProduct()" type="submit" [disabled]="prodForm.invalid"
         class="btn  mx-sm-2 mx-1">{{'sellerAdd.safeAndFinish'|translate}}</button>
-    </div>
+    <ng-template  #templateName  (click)="addProduct()" type="submit" >update</ng-template>
+      </div>
 
   </form>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalizationService } from 'src/app/services/localization/localization.service';
 import { ProductService } from 'src/app/services/product/product.service';
 import { AdminCategoryService } from './../admin-categories/admin-category.service';
 
@@ -8,10 +9,12 @@ import { AdminCategoryService } from './../admin-categories/admin-category.servi
   styleUrls: ['./admin-header.component.scss']
 })
 export class AdminHeaderComponent implements OnInit {
+  lang:string;
 
-  constructor(private productServ:ProductService,) { }
+  constructor(private localServ:LocalizationService,private productServ:ProductService,) { }
 
   ngOnInit(): void {
+    this.lang = this.localServ.getLanguage()
     
   }
 
@@ -20,6 +23,10 @@ getProducts():void {
   console.log("click")
   
 
+}
+changeLang(lang:string):void{
+  this.localServ.changeSelectedLanguage(lang);
+  // console.log("event",lang)
 }
 
 

@@ -99,6 +99,12 @@ export class ProductService {
     return test;
   }
 
+  getProductsBySellerId(id: number): Observable<Iproduct[]> {
+    let test = this.http.get<ITranslatedProduct[]>(`${environment.API_BASE_URL}/${environment.products}?seller=${id}`)
+    .pipe(map(jsonList=>this.parseFromJsonToProductList(jsonList)));
+    return test;
+  }
+
 
   getListOfProductsById(productsId:number[]):Observable<Iproduct[]>|undefined{
     let lang: string = this.localeServ.getLanguage();
@@ -201,6 +207,18 @@ export class ProductService {
     let {name,description,tags,color,size,subTitle,...restproduct} = product
     parsedProduct = {...restproduct}
     return parsedProduct
+  }
+
+  parseFromProductListToJson(brands: Iproduct[]): ITranslatedProduct[] {
+    let parsedBrands = brands.map(
+      (brand) => this.parseProductToJson(brand))
+    return parsedBrands;
+  }
+
+  parseFromJsonToProductList(brands: ITranslatedProduct[]): Iproduct[] {
+    let parsedBrands = brands.map(
+      (brand) => this.parseFromJsonToProduct(brand))
+    return parsedBrands;
   }
 
 

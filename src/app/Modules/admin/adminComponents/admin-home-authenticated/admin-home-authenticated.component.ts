@@ -17,7 +17,7 @@ export class AdminHomeAuthenticatedComponent implements OnInit ,OnDestroy{
     ) { }
   ngOnDestroy(): void {
     console.log("on destroy admin")
-    this.adminServ.logOutAdmin()
+    // this.adminServ.logOutAdmin()
   }
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class AdminHomeAuthenticatedComponent implements OnInit ,OnDestroy{
         this.currentUrl = evt.url
         console.log(this.currentUrl);
       } );
-      window.onbeforeunload = () => this.ngOnDestroy();
+      // window.onbeforeunload = () => this.ngOnDestroy();
 
       
   }
