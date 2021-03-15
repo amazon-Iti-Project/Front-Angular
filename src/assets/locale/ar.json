@@ -138,7 +138,10 @@
     "sizePlaceHolder": "مثال : صغير",
     "pricePlaceHolder": "السعر",
     "quantityPlaceHolder": "الكمية",
-    "shippingDaysPlaceHolder": "مثال: 2 يوم"
+    "shippingDaysPlaceHolder": "مثال: 2 يوم",
+    "enInfo":"معلومات المنتج بالانجليزية",
+    "arInfo":"معلومات المنتج بالعربية"
+
   },
   "sellerHeader": {
     "catalog": "كتالوج",

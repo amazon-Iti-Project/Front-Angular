@@ -42,7 +42,8 @@ export class CartComponent implements OnInit {
             this.prodService.getListOfProductsById(response.cart)?.subscribe(
               result => {
                 let cartProducts = result.map((item)=>{
-                 let prod:ISelectedItem={product:item,orderCount:1,checked:false,valid:false,
+                 let prod:ISelectedItem={product:item,orderCount:1,checked:false,
+                  valid:item.quantity>=1,
                   netPrice:item.price*((100-item.discount)/100)
                 }
 
@@ -76,7 +77,10 @@ export class CartComponent implements OnInit {
   //it must be for all elements array ?? & it must affect product price and total price
   changeItemCount(product:ISelectedItem,val:number){
     product.orderCount = val;
-    product.valid == product.product.quantity >= product.orderCount
+    // console.log(product.product.quantity ,product.orderCount)
+    // console.log(product.product.quantity >= product.orderCount)
+    product.valid = product.product.quantity >= product.orderCount
+    console.log(product)
     this.setOrdersNumber()
     this.totalPrice = this.cartService.getTotalPrice(this.getCheckedProducts(this.cartItems))
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { BrandService } from 'src/app/services/brand/brand.service';
 import { AdminBrandService } from '../admin-brand.service';
 
@@ -19,12 +19,21 @@ export class BrandModalComponent implements OnInit {
   ngOnInit(): void {
       console.log('Brand details')
 
-      // category form
-      this.brandForm = this.fb.group({
-        name: ['', [Validators.required, Validators.minLength(5)]],
-        image: [, Validators.required],
-  
-      })
+      this.initBrandForm()
+      this.brandForm.valueChanges.subscribe(console.log)
+  }
+  initBrandForm() {
+          // category form
+          this.brandForm = this.fb.group({
+            en:this.fb.group({
+              name: new FormControl('', [Validators.required, Validators.minLength(5)]),
+            }),
+            ar:this.fb.group({
+              name: new FormControl('', [Validators.required, Validators.minLength(5)]),
+            }),
+            image: [, Validators.required],
+      
+          })
   }
 
   // on select image 

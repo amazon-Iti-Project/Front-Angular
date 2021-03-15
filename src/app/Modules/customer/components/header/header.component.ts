@@ -108,14 +108,13 @@ export class HeaderComponent implements OnInit {
 
   searchProducts(text:String):void{
       console.log(text)
-      if(text !== ''){
-        console.log("text")
-        this.router.navigate(['/departments/search/'+text])
-      }
-      
-      else{
+      if(text == ''){
         console.log("all")
         this.router.navigate(['/departments/search/'+'all'])
+      }
+      else{
+        console.log("text")
+        this.router.navigate(['/departments/search/'+text])
       }
       
   }
@@ -126,6 +125,10 @@ export class HeaderComponent implements OnInit {
       this.searchProducts(e.target.value)
       // rest of your code
     }
+  }
+
+  changeEvent(text:string):void{
+    console.log(text)
   }
  
 

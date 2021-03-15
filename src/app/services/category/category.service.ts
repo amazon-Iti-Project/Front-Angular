@@ -17,9 +17,9 @@ export class CategoryService {
 
 
   getAllCategories(): Observable<Icategory[]> {
-    let test = this.http.get<Icategory[]>(`${environment.API_BASE_URL}/${environment.categories}`)
-    console.log(test)
-    return test;
+    let catList = this.http.get<Icategory[]>(`${environment.API_BASE_URL}/${environment.categories}`)
+    .pipe(map(jsonList => this.parseFromJsonToCategoryList(jsonList)))
+    return catList;
   }
 
   getAllCategoryCollections(): Observable<ICategoryCollection[]> {
@@ -46,12 +46,12 @@ export class CategoryService {
 
 
   getCategoryById(id: number): Observable<Icategory> {
-    let test = this.http.get<Icategory>(`${environment.API_BASE_URL}/${environment.categories}/${id}`)
-    console.log(test)
-    return test;
+    let cateogry = this.http.get<Icategory>(`${environment.API_BASE_URL}/${environment.categories}/${id}`)
+    .pipe(map(jsonCategory => this.parseFromJsonCategory(jsonCategory)))
+    return cateogry;
   }
 
-  addNewCategory(category: Icategory): Observable<Icategory> {
+  addNewCategory(category: ITranslatedCategory): Observable<Icategory> {
     console.log("recieved Product: ", category)
     const httpOptions = {
       headers: new HttpHeaders({
@@ -60,26 +60,29 @@ export class CategoryService {
         //,'Authorization': 'my-auth-token'
       })
     };
-    return this.http.post<Icategory>(`${environment.API_BASE_URL}/${environment.categories}`, category, httpOptions);
-
+    return this.http.post<Icategory>(`${environment.API_BASE_URL}/${environment.categories}`, category, httpOptions)
+    .pipe(map(jsonCategory => this.parseFromJsonCategory(jsonCategory)))
 
   }
+
 
   deleteCategory(catId: number): Observable<Icategory> {
     let cat = this.http.delete<Icategory>(`${environment.API_BASE_URL}/${environment.categories}/${catId}`)
-
+    .pipe(map(jsonCategory => this.parseFromJsonCategory(jsonCategory)))
     return cat
   }
-  addToCart(prd: Iproduct) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-        // ,'Authorization': 'my-auth-token'
-      })
-    };
 
-    return this.http.post(`${environment.API_BASE_URL}/Cart`, prd, httpOptions);
-  }
+  // old method
+  // addToCart(prd: Iproduct) {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json'
+  //       // ,'Authorization': 'my-auth-token'
+  //     })
+  //   };
+
+  //   return this.http.post(`${environment.API_BASE_URL}/Cart`, prd, httpOptions);
+  // }
 
   parseFromJsonToCategoryList(brands: ITranslatedCategory[]): Icategory[] {
     let parsedBrands = brands.map(

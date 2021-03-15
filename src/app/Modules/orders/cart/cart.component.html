@@ -11,7 +11,7 @@
             <ng-container *ngFor="let product of cartItems" id="PRODUCT">
                 <div class="row  mx-0 my-4">
                     <div class="col-auto border-right border-gray" id="menu-check">
-                        <input class="checkbox-size" type="checkbox" [disabled]="product.valid" [checked]="product.checked "
+                        <input class="checkbox-size" type="checkbox" [disabled]="!product.valid" [checked]="product.checked "
                          (click)="checkBtnCheckEvent(product)"   aria-label="Checkbox for following text input">
                     </div>
                     <div class="col  text-center overflow-hidden">
@@ -23,7 +23,7 @@
                         <br>
                         <span class="status">{{'cart.inStock' | translate}}</span>
                         <span class="status">{{product.product.quantity}}</span>
-                        <p class="text-danger" [class.d-none]="!product.valid" >not valid</p>
+                        <p class="text-danger" [class.d-none]="product.valid" >not valid</p>
                         <br>
                         <div class="gift-mark">
                             <input type="checkbox"  style="margin-inline-end: 7px;">
