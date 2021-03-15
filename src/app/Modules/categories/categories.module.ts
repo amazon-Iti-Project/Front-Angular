@@ -14,6 +14,8 @@ import { DepartmentBodyComponent } from './components/department-body/department
 import { DepartmentFooterComponent } from './components/department-footer/department-footer.component';
 import { RecommentaionSectionComponent } from './components/department/recommentaion-section/recommentaion-section.component';
 import { UserGuard } from 'src/app/guards/user.guard';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 const routes: Routes = [
   { path: 'payment', component:PaymentComponent,canActivate:[UserGuard]  },
@@ -33,6 +35,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     HttpClientModule,
     TranslateModule,
+    NgxPaginationModule
   ],
   // exports: [RouterModule],
   // bootstrap: [AllDepartmentsComponent]
