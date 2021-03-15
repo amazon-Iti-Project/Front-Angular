@@ -76,6 +76,8 @@ export class ShippingFormComponent implements OnInit {
     }
   }
   setorderdProducts() {
+    
+
     if (this.cartService.selectedItems.length >0) {
       this.orderForm.controls["products"].setValue(this.cartService.selectedItems);
       let shipping: Ishipping = { period: 0, shipPrice: 0 }

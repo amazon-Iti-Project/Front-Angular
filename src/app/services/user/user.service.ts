@@ -92,7 +92,7 @@ export class UserService {
   // steps to add to cart
   // 1- get the user and on click add to cart send user and productId tp addTpCart method
   addToCart(user:Iuser,productId:number):Observable<Iuser>{
-    if(user.cart.includes(productId)){
+    if(user.cart && user.cart.includes(productId)){
       alert("added before")
       return new Observable<Iuser>(subscriber => {
         subscriber.next(user);

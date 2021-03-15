@@ -126,10 +126,6 @@ export class HeaderComponent implements OnInit {
       // rest of your code
     }
   }
-
-  changeEvent(text:string):void{
-    console.log(text)
-  }
  
 
 }
