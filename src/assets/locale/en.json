@@ -123,7 +123,12 @@
     "shippingDaysPlaceHolder": "ex: 2 days",
     "enInfo":"Info in English",
     "arInfo":"Info in Arabic",
-    "update":"update product"
+    "update":"update product",
+    "chooseCategory":"you must choose category ",
+    "minChar":"min. 5 char. ",
+    "arabic":"arabic",
+    "english":"english",
+    "required":"required"
   },
   "sellerHeader": {
     "catalog": "Catalog",

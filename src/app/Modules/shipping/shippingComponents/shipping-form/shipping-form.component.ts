@@ -14,7 +14,7 @@ import { ISelectedItem } from 'src/app/Modules/orders/cart/cart.component';
 import { DELIVERY_STATE, PAYMENT_TYPE } from 'src/app/enums/enums';
 import { CategoryService } from 'src/app/services/category/category.service';
 import { Ishipping } from './../../../../viewModel/Ishipping';
-import { first } from 'rxjs/operators';
+import { first, retry } from 'rxjs/operators';
 
 @Component({
   selector: 'app-shipping-form',
@@ -160,6 +160,16 @@ export class ShippingFormComponent implements OnInit {
                 if(res){
                     this.prodService.updateProductQuantityById(res.id,res.quantity-product.quantity)
                     .subscribe(console.log)
+                    
+                    let orderCarts = response.products.map(prod=>prod.id)
+                    let newCart = this.user.cart.filter(cart=>{
+                      for(let orderCart of orderCarts){
+                       if (cart == orderCart) return false;
+                      }
+                      return true
+                    })
+                    console.log(newCart)
+                    this.cartService.updateUserCart(this.user,newCart).subscribe(console.log)
               }
           }
         }
@@ -167,7 +177,7 @@ export class ShippingFormComponent implements OnInit {
   
   }
   setOrderDate() {
-    this.orderForm.controls["orderDate"].setValue(this.today.getDate().toLocaleString());
+    this.orderForm.controls["orderDate"].setValue(this.today.toLocaleString());
     this.orderForm.controls["canCancelledUntil"].setValue(this.cancelValidationDate.toLocaleString());
    
     let expectedDate = new Date()
@@ -182,4 +192,6 @@ export class ShippingFormComponent implements OnInit {
     console.log(this.orderForm.valid)
 
   }
+
+  
 }

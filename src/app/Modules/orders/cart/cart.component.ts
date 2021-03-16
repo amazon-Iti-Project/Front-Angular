@@ -38,7 +38,7 @@ export class CartComponent implements OnInit {
       this.userService.getUserByToken(token).subscribe(
         response => {
           this.currentUser = response
-          if(response && response.cart){
+          if(response && response.cart && response.cart.length>0){
             this.prodService.getListOfProductsById(response.cart)?.subscribe(
               result => {
                 let cartProducts = result.map((item)=>{

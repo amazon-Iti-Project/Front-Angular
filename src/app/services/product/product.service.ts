@@ -250,8 +250,7 @@ export class ProductService {
         //,'Authorization': 'my-auth-token'
       })
     };
-    let lang: string = this.localeServ.getLanguage();
-    let products = this.http.patch<ITranslatedProduct>(`${environment.API_BASE_URL}/${environment.products}/${product.id}`,{product},httpOptions,)
+    let products = this.http.patch<ITranslatedProduct>(`${environment.API_BASE_URL}/${environment.products}/${product.id}`,{...product},httpOptions,)
     .pipe(map(prod => this.parseFromJsonToProduct(prod)))
     return products;
   }

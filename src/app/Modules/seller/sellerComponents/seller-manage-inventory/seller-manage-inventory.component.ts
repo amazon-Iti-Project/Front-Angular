@@ -37,7 +37,8 @@ export class SellerManageInventoryComponent implements OnInit,OnDestroy {
   }
   getProducts(id:number) {
     // getProductsBySellerId(id)
-  let sub =   this.productServ.getAllProducts().subscribe(res=>{
+    console.log(this.user);
+  let sub =   this.productServ.getProductsBySellerId(id).subscribe(res=>{
       console.log(res)
      this.products  =res
      if(this.products && this.products.length){

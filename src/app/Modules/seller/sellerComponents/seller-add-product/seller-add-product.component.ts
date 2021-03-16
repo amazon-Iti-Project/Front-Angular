@@ -28,7 +28,8 @@ export class SellerAddProductComponent implements OnInit {
   subscription: Subscription[] = [];
   categories: Icategory[] = [];
   brands: Ibrand[] = [];
-  product: Iproduct
+  product: Iproduct;
+  returnPrice:number=0;
   constructor(private sellerServ: SellerModuleService,
     private fb: FormBuilder, private catServ: CategoryService, private brandSer: BrandService, private proServ: ProductService
     , private router: Router, private shipService: ShippingService, private feeServ: FeeService, private storage: AngularFireStorage, private userServ: UserService) { }
@@ -45,8 +46,10 @@ export class SellerAddProductComponent implements OnInit {
     this.getBrands()
     // 4- init ProdFrom
     this.initProductForm()
-    this.prodForm.valueChanges.subscribe(console.log)
-
+    // this.prodForm.valueChanges.subscribe(val=>{
+    //   console.log(val)
+    //   this.updateTotalPrice()
+    // })
   }
 
   setProductForm(prod: Iproduct):void{
@@ -91,7 +94,12 @@ export class SellerAddProductComponent implements OnInit {
         seller: [prod.seller, Validators.required]
 
       })
-    } 
+    }
+    this.prodForm.valueChanges.subscribe(val =>{
+      this.updateTotalPrice()
+      console.log(this.prodForm.pristine)
+    } )
+
   }
   async getUpdateProduct() {
   this.product = await  this.sellerServ.productUpdateChanges.pipe(first()).toPromise()
@@ -240,7 +248,7 @@ export class SellerAddProductComponent implements OnInit {
 
   }
   // on change price
-  updateTotalPrice(priceEle: any) {
+  updateTotalPrice() {
     let price = this.prodForm.controls['price'].value;
     let discount = this.prodForm.controls['discount'].value;
     let fee = this.prodForm.controls['fee'].value.fee
@@ -248,7 +256,7 @@ export class SellerAddProductComponent implements OnInit {
     let totalPrice = netPrice * (100 - fee) / (100)
     console.log(this.prodForm.value)
     // this.prodForm.controls['price'].setValue()
-    priceEle.value = totalPrice
+    this.returnPrice = totalPrice
 
     console.log("prod state: ", this.prodForm.value)
 
@@ -278,10 +286,10 @@ export class SellerAddProductComponent implements OnInit {
 
   updateProduct():void{
 
-    this.proServ.updateProduct(this.prodForm.value).subscribe(res =>{
+    this.proServ.updateProduct({id:this.product.id,...this.prodForm.value}).subscribe(res =>{
       alert("success")
       this.router.navigate(['/seller/inventory'])
-    })
+    },err=>alert("please try again"))
   }
 
 }

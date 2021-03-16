@@ -141,7 +141,14 @@
     "shippingDaysPlaceHolder": "مثال: 2 يوم",
     "enInfo":"معلومات المنتج بالانجليزية",
     "arInfo":"معلومات المنتج بالعربية",
-    "update":"تحديث المنتج"
+    "update":"تحديث المنتج",
+    "chooseCategory":"يجب اختيار قسم ",
+    "minChar":"5 احرف على الاقل",
+    "arabic":"بالعربية",
+    "english":"بالانجليزية",
+    "required":"مطلوب"
+
+
 
   },
   "sellerHeader": {
