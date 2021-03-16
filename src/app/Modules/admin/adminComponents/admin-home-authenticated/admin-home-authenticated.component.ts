@@ -17,7 +17,7 @@ export class AdminHomeAuthenticatedComponent implements OnInit ,OnDestroy{
     ) { }
   ngOnDestroy(): void {
     console.log("on destroy admin")
-    // this.adminServ.logOutAdmin()
+    this.adminServ.logOutAdmin()
   }
 
   ngOnInit(): void {
