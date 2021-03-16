@@ -25,7 +25,7 @@ getProducts():void {
 
 }
 changeLang(lang:string):void{
-  this.localServ.changeSelectedLanguage(lang);
+  this.localServ.changeSelectedLanguageAdmin(lang);
   // console.log("event",lang)
 }
 

@@ -1,7 +1,7 @@
 import { ProductService } from './../../../../services/product/product.service';
 import { CategoryService } from './../../../../services/category/category.service';
 import { Icategory } from './../../../../viewModel/Icategory';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
@@ -21,7 +21,7 @@ import { SellerModuleService } from '../../seller-module.service';
   templateUrl: './seller-add-product.component.html',
   styleUrls: ['./seller-add-product.component.scss']
 })
-export class SellerAddProductComponent implements OnInit {
+export class SellerAddProductComponent implements OnInit ,OnDestroy{
   user: Iuser | undefined
   imgName: string | undefined
   prodForm: FormGroup = this.fb.group({})
@@ -33,6 +33,9 @@ export class SellerAddProductComponent implements OnInit {
   constructor(private sellerServ: SellerModuleService,
     private fb: FormBuilder, private catServ: CategoryService, private brandSer: BrandService, private proServ: ProductService
     , private router: Router, private shipService: ShippingService, private feeServ: FeeService, private storage: AngularFireStorage, private userServ: UserService) { }
+  ngOnDestroy(): void {
+    this.sellerServ.sendProductToUpdate(undefined)
+  }
 
 
   ngOnInit(): void {

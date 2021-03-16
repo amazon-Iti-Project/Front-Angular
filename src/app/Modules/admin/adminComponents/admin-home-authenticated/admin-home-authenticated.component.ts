@@ -30,7 +30,7 @@ export class AdminHomeAuthenticatedComponent implements OnInit ,OnDestroy{
         this.currentUrl = evt.url
         console.log(this.currentUrl);
       } );
-      // window.onbeforeunload = () => this.ngOnDestroy();
+      window.onbeforeunload = () => this.ngOnDestroy();
 
       
   }

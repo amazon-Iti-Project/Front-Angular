@@ -18,35 +18,52 @@
 
             <!-- body -->
             <form [formGroup]="catForm" class="modal-body">
-
-
-
-
                 <div class="alert form-group  row justify-content-between  align-items-center">
 
-                    <!-- Category Name -->
-                    <div class=" col form-group ">
-                        <div class="row ">
-                            <label class="col-sm-4 col-12 align-self-center px-0 text-sm-left my-2" for="pId">
-                                <span>Category Name</span></label>
-                            <div class="col px-0">
-                                <input formControlName="name" type="text" class="form-control " id="prodId"
-                                    placeholder="beauty and Fashion" autocomplete="off"
-                                    [class.is-invalid]="catForm.controls['name'].invalid&&catForm.controls['name'].dirty"
-                                    [class.is-valid]="catForm.controls['name'].valid&&catForm.controls['name'].dirty" />
-                            </div>
-                            <!-- divider -->
-                            <div class="w-100 "></div>
-                            <!-- hint for Category name -->
-                            <div class=" col text-right">
-                                <small [hidden]="(catForm.controls['name'].valid||catForm.controls['name'].pristine) "
-                                    class=" text-muted  text-end font-0">min 5 char.</small>
-                            </div>
+                    <!-- Brand Name -->
+                    <div class="col-12 ">
+                    <div class="card bg-light ">
+                        <label class="card-header  h5" for="pId">
+                            <span>Cateogry Name</span></label>
+                            <!-- english form -->
+                            <form formGroupName="en"class="form-group p-2 " >
+                                <div class="input-group ">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">english</span>
+                                    </div>
+
+                                    <input formControlName="name" type="text" class="form-control " id="prodId"
+                                        placeholder="ex: clothes" autocomplete="off"
+                                        [class.is-invalid]="catForm.controls['en'].get('name').invalid&&catForm.controls['en'].get('name').dirty"
+                                        [class.is-valid]="catForm.controls['en'].get('name').valid&&catForm.controls['en'].get('name').dirty" />
+                                </div>
+                            </form>
+                             <!-- arabic form -->
+                            <form formGroupName="ar"class="form-group p-2" >
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">arabic</span>
+                                    </div>
+                                    <input formControlName="name" type="text" class="form-control " id="prodId"
+                                        placeholder="ex: clothes" autocomplete="off"
+                                        [class.is-invalid]="catForm.controls['ar'].get('name').invalid&&catForm.controls['ar'].get('name').dirty"
+                                        [class.is-valid]="catForm.controls['ar'].get('name').valid&&catForm.controls['ar'].get('name').dirty" />
+                                </div>
+                            </form>
+
+                        <!-- hint for Category name -->
+                        <div class=" col text-right">
+                            <small [hidden]="(catForm.controls['ar'].get('name').valid||catForm.controls['ar'].get('name').pristine)
+                            && (catForm.controls['en'].get('name').valid||catForm.controls['en'].get('name').pristine)"
+                                class=" text-muted  text-end font-0">min 5 char.</small>
                         </div>
                     </div>
-                       <!-- divider -->
-                       <div class="w-100 "></div>
-                    <!-- input -->
+                </div>
+                    <!-- divider -->
+                    <div class="w-100 "></div>
+
+
+                    <!-- input image starts-->
                     <div class="col custom-file ">
                         <input #selecImgRef type="file" (change)="onSeleInput($event)" class="custom-file-input "
                             id="inputGroupFile02">

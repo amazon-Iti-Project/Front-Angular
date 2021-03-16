@@ -112,7 +112,9 @@ getCheckedProducts(cartItems:ISelectedItem[]):ISelectedItem[]{
     let num = this.cartItems.indexOf(prod);
     // this.currentUser?.cart.splice(num, 1);
     this.cartItems.splice(num, 1);
-    this.totalPrice -= (prod.product.price*prod.orderCount);
+    console.log(this.cartItems)
+    this.setOrdersNumber()
+   this.totalPrice = this.cartService.getTotalPrice(this.getCheckedProducts(this.cartItems))
     let userCart:number[] = this.cartItems.map(item=>item.product.id)
     if(this.currentUser)
     this.cartService.updateUserCart(this.currentUser,userCart).subscribe(console.log);

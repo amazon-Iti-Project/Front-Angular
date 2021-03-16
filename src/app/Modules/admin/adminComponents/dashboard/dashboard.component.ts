@@ -26,8 +26,10 @@ users:number=0;
     this.prodServ.getAllProducts().subscribe(res=>{
       this.productsNumber=res.length
       for(let prod of res){
+        if(prod.price as number){
           this.productsValue += prod.price
           this.earings += prod.fee.fee
+        }
       }
     },err=>alert(err))
     this.userServ.getAllUsers().subscribe(res=>this.users =res.length,err=>alert(err))

@@ -24,6 +24,17 @@ export class LocalizationService {
   }); 
   }
 
+  // to change selected language 
+  changeSelectedLanguageAdmin(selectedLang: string):void {
+    this.langDataSubject.next(selectedLang)
+    // to set in local storage and use this language
+    this.setLanguage(selectedLang);
+    let currUrl = this.router.url;
+    this.router.navigateByUrl('admin/home', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currUrl]);
+  }); 
+  }
+
     setLanguage(lang: string) {
       // alert("set"+lang);
       this.translate.setDefaultLang(lang);

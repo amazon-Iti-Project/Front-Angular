@@ -24,7 +24,7 @@ export class ProductDetailsComponent implements OnInit {
        for(let product of  this.products){
           this.catServ.getCategoryById(product.category).subscribe(res=>{
             this.adminProducts.push({product:product,category:res})
-          },err=> alert(err));
+          },err=> console.log("error in getting category:"+product.category));
        }
        this.filteredList = this.adminProducts
      }
